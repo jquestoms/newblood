@@ -18,6 +18,24 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
+/* Gradient mesh canvas */
+.nb-hero-gradient {
+  position: relative;
+  overflow: hidden;
+}
+
+.nb-gradient-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.nb-hero-gradient > *:not(.nb-gradient-canvas) {
+  position: relative;
+  z-index: 2;
+}
+
 /* Dot grid texture */
 .nb-dot-grid {
   position: relative;

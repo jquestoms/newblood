@@ -6,8 +6,8 @@
  * Description: Homepage hero section with headline, subtitle, and CTAs
  */
 ?>
-<!-- wp:group {"className":"nb-gradient-primary nb-dot-grid","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
-<div class="wp-block-group nb-gradient-primary nb-dot-grid">
+<!-- wp:group {"className":"nb-gradient-primary nb-dot-grid nb-hero-gradient","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+<div class="wp-block-group nb-gradient-primary nb-dot-grid nb-hero-gradient">
   <!-- wp:paragraph {"className":"nb-label nb-hero-label"} -->
   <p class="nb-label nb-hero-label">Modern websites, delivered fast</p>
   <!-- /wp:paragraph -->
