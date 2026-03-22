@@ -18,3 +18,27 @@
 .nb-footer a:hover {
   color: var(--wp--preset--color--accent-light) !important;
 }
+
+/* Portfolio grid asymmetric layout */
+@media (max-width: 768px) {
+  .nb-stagger > .wp-block-column {
+    flex-basis: 100% !important;
+  }
+}
+
+/* Icon badge in service cards */
+.nb-icon-badge {
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonial quote mark */
+.nb-divider-top [class*="has-accent-color"] {
+  line-height: 1;
+  margin-bottom: -0.5rem;
+}
+
+/* Ensure dot-grid sits behind content */
+.nb-dot-grid > * {
+  position: relative;
+  z-index: 1;
+}
