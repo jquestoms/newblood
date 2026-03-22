@@ -8,14 +8,14 @@
 }
 
 .nb-glass {
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .nb-glass:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.12);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(34, 197, 94, 0.05);
 }
 
 /* Gradient mesh canvas */
@@ -34,6 +34,20 @@
 .nb-hero-gradient > *:not(.nb-gradient-canvas) {
   position: relative;
   z-index: 2;
+}
+
+/* Card particle canvas */
+.nb-card-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.nb-glass > *:not(.nb-card-particles) {
+  position: relative;
+  z-index: 1;
 }
 
 /* Dot grid texture */

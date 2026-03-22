@@ -43,6 +43,13 @@ function newblood_enqueue_assets() {
         NEWBLOOD_VERSION,
         true
     );
+    wp_enqueue_script(
+        'newblood-interactive-cards',
+        get_template_directory_uri() . '/assets/js/interactive-cards.js',
+        array(),
+        NEWBLOOD_VERSION,
+        true
+    );
 }
 add_action( 'wp_enqueue_scripts', 'newblood_enqueue_assets' );
 
