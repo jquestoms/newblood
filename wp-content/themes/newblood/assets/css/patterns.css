@@ -42,3 +42,36 @@
   position: relative;
   z-index: 1;
 }
+
+/* FAQ details/summary styling */
+details {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 0;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 1rem;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::before {
+  content: "+";
+  color: var(--wp--preset--color--accent);
+  font-weight: 700;
+  margin-right: 0.75rem;
+}
+
+details[open] summary::before {
+  content: "−";
+}
+
+details p {
+  margin-top: 0.75rem;
+}
