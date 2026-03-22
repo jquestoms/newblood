@@ -161,14 +161,14 @@ A custom block theme built from scratch (no commercial theme like Kadence or Gen
 
 - **Hosting:** Nexcess (existing, WordPress-optimized)
 - **Caching:** Redis object cache (existing) + Hummingbird page cache
-- **CDN:** Evaluate if Nexcess includes one, otherwise consider Cloudflare
+- **CDN:** No CDN at this time
 - **Version control:** GitHub (`git@github.com:jquestoms/newblood.git`)
 
 ### Development Workflow
 
 1. Build and test locally on Laravel Herd
 2. Commit changes to Git / push to GitHub
-3. Deploy to Nexcess production via SFTP when ready
+3. Deploy to Nexcess production via SFTP when ready on approval by user only
 
 ## Success Criteria
 
