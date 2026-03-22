@@ -1,0 +1,516 @@
+# Copyright (C) 2024 Barn2 Plugins
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Multiple Email Recipients 1.2.12\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-multiple-email-recipients\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-12-12T10:27:10+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: woocommerce-multiple-email-recipients\n"
+
+#. Plugin Name of the plugin
+#: D:\local\amir\app\public\wp-content\plugins\woocommerce-multiple-email-recipients\woocommerce-multiple-email-recipients.php
+msgid "WooCommerce Multiple Email Recipients"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: D:\local\amir\app\public\wp-content\plugins\woocommerce-multiple-email-recipients\woocommerce-multiple-email-recipients.php
+msgid "https://barn2.com/woocommerce-multiple-email-recipients/"
+msgstr ""
+
+#. Description of the plugin
+#: D:\local\amir\app\public\wp-content\plugins\woocommerce-multiple-email-recipients\woocommerce-multiple-email-recipients.php
+msgid "Stores multiple email addresses for each customer."
+msgstr ""
+
+#. Author of the plugin
+#: D:\local\amir\app\public\wp-content\plugins\woocommerce-multiple-email-recipients\woocommerce-multiple-email-recipients.php
+msgid "Barn2 Plugins"
+msgstr ""
+
+#. Author URI of the plugin
+#: D:\local\amir\app\public\wp-content\plugins\woocommerce-multiple-email-recipients\woocommerce-multiple-email-recipients.php
+msgid "https://barn2.com"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Admin/Settings_API_Helper.php:154
+msgid "[View page]"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Admin/Settings_API_Helper.php:615
+#: dependencies/barn2/barn2-lib/src/WooCommerce/Admin/Custom_Settings_Fields.php:138
+msgid "Size"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Admin/Settings_Util.php:70
+msgid "Documentation"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Admin/Settings_Util.php:70
+msgid "Support"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/Admin/Admin_Links.php:38
+msgid "Settings"
+msgstr ""
+
+#. translators: %s: The plugin name
+#: dependencies/barn2/barn2-lib/src/Plugin/Admin/Admin_Links.php:54
+msgid "View %s documentation"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/Admin/Admin_Links.php:55
+msgid "Docs"
+msgstr ""
+
+#. translators: 1: licence key link start, 2: license key link end
+#: dependencies/barn2/barn2-lib/src/Plugin/Admin/Plugin_Updater.php:155
+msgid "Activate %1$syour license key%2$s to enable updates."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/Admin/Plugin_Updater.php:210
+msgid "Auto-updates unavailable."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:59
+msgid "License key successfully activated."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:59
+msgid "There was an error activating your license key."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:63
+msgid "License key successfully deactivated."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:63
+msgid "There was an error deactivating your license key, please try again."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:66
+msgid "The license key looks good!"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:66
+msgid "There's a problem with your license key."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:108
+msgid "License key"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:110
+#: src/Admin/Wizard/Setup_Wizard.php:47
+msgid "The licence key is contained in your order confirmation email."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:113
+msgid "License Key"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:132
+msgid "Check"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:132
+msgid "Activate"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:132
+msgid "Deactivate"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Key_Setting.php:140
+msgid "License key deactivated."
+msgstr ""
+
+#. translators: 1: the plugin name, 2: settings link start, 3: settings link end.
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Notices.php:84
+msgid "Thank you for installing %1$s. To get started, please %2$s enter your license key%3$s."
+msgstr ""
+
+#. translators: 1: the plugin name, 2: renewal link start, 3: renewal link end.
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Notices.php:109
+msgid "Your license key for %1$s has expired. %2$sClick here to renew for 20%% discount%3$s."
+msgstr ""
+
+#. translators: 1: the plugin name, 2: renewal link start, 3: renewal link end.
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Notices.php:134
+msgid "You no longer have a valid license for %1$s. Please %2$spurchase a new license key%3$s to continue using the plugin."
+msgstr ""
+
+#. translators: 1: the plugin name, 2: settings link start, 3: settings link end.
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Admin/License_Notices.php:162
+msgid "%1$s - your site has moved to a new domain. Please %2$sreactivate your license key%3$s."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/EDD_Licensing.php:158
+msgid "An error has occurred, please try again."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:91
+msgid "Your license key is active."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:111
+msgid "Please enter your license key."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:113
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:391
+msgid "Your license key is invalid."
+msgstr ""
+
+#. translators: 1: account page link start, 2: account page link end
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:335
+msgid "Invalid license key - please check your order confirmation email or %1$sAccount%2$s."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:341
+msgid "No URL was supplied for activation, please contact support."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:344
+msgid "License key mismatch, please contact support."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:347
+msgid "This license is for a bundled product and cannot be activated."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:351
+msgid "Your license key is not valid for this plugin."
+msgstr ""
+
+#. translators: %s: The number of sites the license is activated on
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:357
+msgid "%s site active"
+msgid_plural "%s sites active"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: The sites active description, e.g. '2 sites active'
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:360
+msgid "Your license key has reached its activation limit (%s)."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:361
+#: dependencies/barn2/barn2-lib/src/Util.php:35
+msgid "Read more"
+msgstr ""
+
+#. translators: support for RTL, 1: the license error, 2: a link
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:363
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:381
+msgid "%1$s %2$s"
+msgstr ""
+
+#. translators: %s: The license expiry date
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:376
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:379
+msgid "Renew now for 20% discount."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:582
+msgid "Your license key is not active. Please reactivate or save the settings."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:586
+msgid "Your license key has expired."
+msgstr ""
+
+#. translators: 1: purchase link start, 2: purchase link end.
+#: dependencies/barn2/barn2-lib/src/Plugin/License/Plugin_License.php:592
+msgid "Your license key has been disabled. Please %1$spurchase a new license key%2$s to continue using the plugin."
+msgstr ""
+
+#. translators: %1$s: Plugin name. %2$s: PHP version required.
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:103
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:112
+msgid "%1$s requires PHP %2$s or greater. Please update the PHP version used by your web server."
+msgstr ""
+
+#. translators: %1$s: Plugin name. %2$s: WP version required.
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:136
+msgid "%1$s requires WordPress %2$s or greater. Please update your WordPress installation."
+msgstr ""
+
+#. translators: %1$s: Plugin name. %2$s: Update Core <a> tag open. %3$s: <a> tag close. %4$s: WP version required.
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:146
+msgid "%1$s requires WordPress %4$s or greater. Please %2$supdate%3$s your WordPress installation."
+msgstr ""
+
+#. translators: %1$s: Plugin name.
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:169
+msgid "%1$s requires WooCommerce to be installed and active."
+msgstr ""
+
+#. translators: %1$s: Plugin name. %2$s: WooCommerce link. %3$s Install/Upgrade/Activate WooCommerce link.
+#. translators: %1$s: Plugin name. %2$s: EDD link. %3$s Install/Upgrade/Activate EDD link.
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:175
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:224
+msgid "%1$s requires %2$s to be installed and active.%3$s"
+msgstr ""
+
+#. translators: %1$s: Plugin name. %2$s: WooCommerce version required.
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:189
+msgid "%1$s requires WooCommerce %2$s or greater. Please update your WooCommerce setup first."
+msgstr ""
+
+#. translators: %1$s: Plugin name. %2$s: WooCommerce link. %3$s WooCommerce version required. %4$s Install/Upgrade/Activate WooCommerce link.
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:195
+msgid "%1$s requires %2$s %3$s or greater. Please %4$s your WooCommerce setup first."
+msgstr ""
+
+#. translators: %1$s: Plugin name.
+#: dependencies/barn2/barn2-lib/src/Plugin/Requirements.php:218
+msgid "%1$s requires Easy Digital Downloads to be installed and active."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Plugin/Simple_Plugin.php:102
+msgid "%1$s could not complete its first activation because the following error occurred:<br>%2$s"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Service/Updater.php:101
+msgid "%1$s database update required"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Service/Updater.php:101
+msgid "<p>%1$s has been updated! To keep things running smoothly, we have to update your database to the newest version. The database update process runs in the background and may take a little while, so please be patient.</p>"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Service/Updater.php:101
+msgid "%1$s database update"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Service/Updater.php:101
+msgid "<p>%1$s is updating the database in the background. The database update process may take a little while, so please be patient.</p>"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Service/Updater.php:101
+msgid "%1$s database update done"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Service/Updater.php:101
+msgid "<p>%1$s database update complete. Thank you for updating to the latest version!</p>"
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Util.php:552
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr ""
+
+#: dependencies/barn2/barn2-lib/src/Util.php:580
+msgid "You don't have permission to activate the plugin."
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Api.php:151
+msgid "Could not find the appropriate step."
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Api.php:196
+msgid "Please enter a license key."
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Api.php:199
+msgid "Invalid action requested."
+msgstr ""
+
+#. translators: %s: The name of the plugin.
+#: dependencies/barn2/setup-wizard/src/Setup_Wizard.php:344
+msgid "%s setup wizard"
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Setup_Wizard.php:434
+#: dependencies/barn2/setup-wizard/src/Setup_Wizard.php:507
+msgid "Warning: This will overwrite your existing settings for %s. Are you sure you want to continue?"
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Setup_Wizard.php:484
+#: dependencies/barn2/setup-wizard/src/Setup_Wizard.php:492
+#: dependencies/barn2/setup-wizard/src/Setup_Wizard.php:541
+msgid "Setup wizard"
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Setup_Wizard.php:487
+msgid "If you need to access the setup wizard again, please click on the button below."
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Steps/Cross_Selling.php:23
+#: src/Admin/Wizard/Steps/Upsell.php:17
+msgid "More"
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Steps/Cross_Selling.php:24
+#: src/Admin/Wizard/Steps/Upsell.php:19
+msgid "Extra features"
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Steps/Cross_Selling.php:25
+msgid "Enhance your site with these fantastic plugins from Barn2."
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Steps/Ready.php:23
+#: src/Admin/Wizard/Steps/Completed.php:17
+msgid "Ready"
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Steps/Ready.php:24
+msgid "Setup Complete"
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Steps/Welcome.php:25
+#: dependencies/barn2/setup-wizard/src/Steps/Welcome_Free.php:24
+#: src/Admin/Wizard/Steps/License_Verification.php:17
+msgid "Welcome"
+msgstr ""
+
+#: dependencies/barn2/setup-wizard/src/Util.php:28
+msgid "Select an option"
+msgstr ""
+
+#: src/Admin/Admin_Controller.php:67
+#: src/Admin/Settings_Page.php:158
+#: src/Fields_Manager.php:47
+msgid "Email address"
+msgstr ""
+
+#: src/Admin/Admin_Controller.php:68
+msgid "Warning! If you reduce the number of additional email address fields then any customer data stored in these fields will become inactive. Notifications will only be sent to the remaining email addresses."
+msgstr ""
+
+#: src/Admin/Admin_Controller.php:78
+msgid "Are you sure you want to remove these additional recipients?"
+msgstr ""
+
+#: src/Admin/Admin_Controller.php:79
+#: src/Admin/views/html-recipient-addon-field.php:42
+msgid "Add recipient"
+msgstr ""
+
+#: src/Admin/Admin_Controller.php:80
+#: src/Admin/views/html-recipient-addon-field.php:10
+msgid "Enter additional recipients (comma separated) for this email, and optionally select which products and/or categories they will receive it for."
+msgstr ""
+
+#: src/Admin/Admin_Controller.php:135
+msgid "Invalid order ID"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:50
+#: src/Util/Settings.php:30
+msgid "Multiple email recipients"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:142
+#: src/Admin/Wizard/Steps/Emails.php:40
+msgid "Additional email labels"
+msgstr ""
+
+#: src/Admin/views/html-recipient-addon-field.php:17
+msgid "Email address(es)"
+msgstr ""
+
+#: src/Admin/views/html-recipient-addon-field.php:27
+#: src/Emails_Service.php:357
+msgid "Search for a category"
+msgstr ""
+
+#: src/Admin/views/html-recipient-addon-field.php:37
+#: src/Emails_Service.php:367
+msgid "Search for a product"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Completed.php:18
+msgid "Complete Setup"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Completed.php:22
+msgid "Congratulations, you can now start using the plugin!"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Completed.php:23
+msgid "The next step is to choose which customer emails to send to the additional recipients; and to add extra recipients for admin-related emails."
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Emails.php:23
+msgid "Emails"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Emails.php:24
+msgid "Customer Emails"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Emails.php:25
+msgid "Add extra email addresses for your customers"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Emails.php:35
+#: src/Util/Settings.php:41
+msgid "Customer email addresses"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Emails.php:50
+#: src/Util/Settings.php:49
+msgid "Display additional email fields"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Emails.php:61
+#: src/Util/Settings.php:50
+msgid "Account page"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Emails.php:73
+#: src/Util/Settings.php:57
+msgid "Checkout"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/License_Verification.php:18
+msgid "Welcome to WooCommerce Multiple Email Recipients"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/License_Verification.php:19
+msgid "Add extra recipients in minutes"
+msgstr ""
+
+#: src/Admin/Wizard/Steps/License_Verification.php:20
+msgid "Use this setup wizard to quickly configure the plugin’s main options. You can easily change these options later on the plugin settings page or by relaunching the setup wizard."
+msgstr ""
+
+#: src/Admin/Wizard/Steps/Upsell.php:18
+msgid "Enhance your store with these fantastic plugins from Barn2."
+msgstr ""
+
+#: src/Emails_Service.php:121
+#: src/Emails_Service.php:135
+msgid "Enable this notification for additional customer email addresses"
+msgstr ""
+
+#: src/Plugin.php:73
+msgid "Please %1$sinstall WooCommerce%2$s in order to use WooCommerce Multiple Email Recipients."
+msgstr ""
+
+#: src/Plugin.php:91
+msgid "View details"
+msgstr ""
+
+#: src/Util/Settings.php:32
+msgid "The following options control the WooCommerce Multiple Email Recipients extension."
+msgstr ""
+
+#: src/Util/Settings.php:43
+msgid "The number of email addresses to allow per customer."
+msgstr ""
+
+#: src/Util/Settings.php:44
+msgid "Choose how many customer email addresses to allow for each user. This number should include the email address field that is provided by WooCommerce itself, plus any additional email address fields that you wish to add."
+msgstr ""

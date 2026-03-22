@@ -1,0 +1,31 @@
+/*
+Theme Name: Newblood Child
+Description: Child theme for Grand Portfolio Theme
+Author: New Blood
+Template: grandportfolio
+*/
+
+/* write custom css */
+
+
+#footer_menu li a {
+	font-size:20px;
+}
+
+/* Footer widget area - fix unreadable white text on light background */
+#footer .sidebar_widget li h2.widgettitle {
+	color: #333333 !important;
+}
+
+#footer a,
+#footer a:active {
+	color: #555555 !important;
+}
+
+#footer a:hover {
+	color: #81d742 !important;
+}
+
+#footer {
+	color: #555555 !important;
+}

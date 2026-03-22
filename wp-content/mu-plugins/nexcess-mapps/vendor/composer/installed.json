@@ -1,0 +1,1056 @@
+{
+    "packages": [
+        {
+            "name": "bradp/where",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liquidweb/where.git",
+                "reference": "78ccbd5fd3ecbf7f03356c88b842e95f98e58fca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liquidweb/where/zipball/78ccbd5fd3ecbf7f03356c88b842e95f98e58fca",
+                "reference": "78ccbd5fd3ecbf7f03356c88b842e95f98e58fca",
+                "shasum": ""
+            },
+            "time": "2021-08-25T16:54:43+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Brad Parbs",
+                    "email": "brad@bradparbs.com"
+                }
+            ],
+            "description": "A WordPress plugin to display your site's environment type in the admin bar",
+            "support": {
+                "source": "https://github.com/liquidweb/where/tree/1.0.1"
+            },
+            "install-path": "../bradp/where"
+        },
+        {
+            "name": "composer/installers",
+            "version": "v1.12.0",
+            "version_normalized": "1.12.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.6.* || ^2.0",
+                "composer/semver": "^1 || ^3",
+                "phpstan/phpstan": "^0.12.55",
+                "phpstan/phpstan-phpunit": "^0.12.16",
+                "symfony/phpunit-bridge": "^4.2 || ^5",
+                "symfony/process": "^2.3"
+            },
+            "time": "2021-09-13T08:19:44+00:00",
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "MantisBT",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Starbug",
+                "Thelia",
+                "Whmcs",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "known",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "miaoxing",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "pantheon",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "processwire",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "sylius",
+                "symfony",
+                "tastyigniter",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v1.12.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "./installers"
+        },
+        {
+            "name": "cweagans/composer-patches",
+            "version": "1.7.3",
+            "version_normalized": "1.7.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cweagans/composer-patches.git",
+                "reference": "e190d4466fe2b103a55467dfa83fc2fecfcaf2db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/e190d4466fe2b103a55467dfa83fc2fecfcaf2db",
+                "reference": "e190d4466fe2b103a55467dfa83fc2fecfcaf2db",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0 || ~2.0",
+                "phpunit/phpunit": "~4.6"
+            },
+            "time": "2022-12-20T22:53:13+00:00",
+            "type": "composer-plugin",
+            "extra": {
+                "class": "cweagans\\Composer\\Patches"
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "cweagans\\Composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cameron Eagans",
+                    "email": "me@cweagans.net"
+                }
+            ],
+            "description": "Provides a way to patch Composer packages.",
+            "support": {
+                "issues": "https://github.com/cweagans/composer-patches/issues",
+                "source": "https://github.com/cweagans/composer-patches/tree/1.7.3"
+            },
+            "install-path": "../cweagans/composer-patches"
+        },
+        {
+            "name": "keycdn/cache-enabler",
+            "version": "v1.9.0+mapps",
+            "version_normalized": "1.9.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nexcess/cache-enabler.git",
+                "reference": "dd1438f2f9e6085bd78e137c3894341f6ced7dc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nexcess/cache-enabler/zipball/dd1438f2f9e6085bd78e137c3894341f6ced7dc7",
+                "reference": "dd1438f2f9e6085bd78e137c3894341f6ced7dc7",
+                "shasum": ""
+            },
+            "time": "2021-05-26T17:05:09+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "A lightweight caching plugin for WordPress that makes your website faster by generating static HTML files.",
+            "homepage": "https://wordpress.org/plugins/cache-enabler/",
+            "support": {
+                "issues": "https://wordpress.org/support/plugin/cache-enabler/",
+                "source": "https://github.com/keycdn/cache-enabler",
+                "docs": "https://www.keycdn.com/support/wordpress-cache-enabler-plugin"
+            },
+            "install-path": "../keycdn/cache-enabler"
+        },
+        {
+            "name": "liquidweb/htaccess-validator",
+            "version": "v0.2.0",
+            "version_normalized": "0.2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liquidweb/htaccess-validator-php.git",
+                "reference": "d0cbe8062fad85d7c390f516fb55ea183bb0b0ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liquidweb/htaccess-validator-php/zipball/d0cbe8062fad85d7c390f516fb55ea183bb0b0ec",
+                "reference": "d0cbe8062fad85d7c390f516fb55ea183bb0b0ec",
+                "shasum": ""
+            },
+            "require": {
+                "liquidweb/htaccess-validator-shell": "^0.1",
+                "php": "^5.6||^7.0||^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "symfony/phpunit-bridge": "^5.2"
+            },
+            "time": "2021-03-08T22:45:23+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LiquidWeb\\HtaccessValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Grunwell",
+                    "homepage": "https://stevegrunwell.com"
+                }
+            ],
+            "description": "Lint and validate Apache2 Htaccess files",
+            "support": {
+                "issues": "https://github.com/liquidweb/htaccess-validator-php/issues",
+                "source": "https://github.com/liquidweb/htaccess-validator-php"
+            },
+            "install-path": "../liquidweb/htaccess-validator"
+        },
+        {
+            "name": "liquidweb/htaccess-validator-shell",
+            "version": "v0.1.0",
+            "version_normalized": "0.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liquidweb/htaccess-validator.git",
+                "reference": "e6acccc4f0b6a6cba53dffb56fcede6ed73053c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liquidweb/htaccess-validator/zipball/e6acccc4f0b6a6cba53dffb56fcede6ed73053c7",
+                "reference": "e6acccc4f0b6a6cba53dffb56fcede6ed73053c7",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "time": "2021-02-24T18:40:40+00:00",
+            "bin": [
+                "bin/validate-htaccess"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Grunwell",
+                    "homepage": "https://stevegrunwell.com"
+                }
+            ],
+            "description": "Shell script for linting and validating Apache2 Htaccess files",
+            "support": {
+                "issues": "https://github.com/liquidweb/htaccess-validator/issues",
+                "source": "https://github.com/liquidweb/htaccess-validator"
+            },
+            "install-path": "../liquidweb/htaccess-validator-shell"
+        },
+        {
+            "name": "liquidweb/nexcess-mapps-dashboard",
+            "version": "v1.4.3",
+            "version_normalized": "1.4.3.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:liquidweb/nexcess-mapps-dashboard.git",
+                "reference": "999b507fdbdb43a8675bb8f56d2f07508ecbdc3f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liquidweb/nexcess-mapps-dashboard/zipball/999b507fdbdb43a8675bb8f56d2f07508ecbdc3f",
+                "reference": "999b507fdbdb43a8675bb8f56d2f07508ecbdc3f",
+                "shasum": ""
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "php": "^7.1",
+                "phpcompatibility/phpcompatibility-wp": "^2.0",
+                "phpunit/phpunit": "^6.5",
+                "wp-coding-standards/wpcs": "^2.1",
+                "yoast/phpunit-polyfills": "^1.0.1"
+            },
+            "time": "2025-01-06T03:54:05+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload-dev": {
+                "psr-4": {
+                    "Nexcess\\MAPPS\\Dashboard\\": "nexcess-mapps-dashboard/",
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "build": [
+                    "git archive -o nexcess-mapps-dashboard.zip --format=zip --worktree-attributes HEAD"
+                ],
+                "test": [
+                    "phpunit --testdox"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Liquid Web",
+                    "email": "support@liquidweb.com"
+                }
+            ],
+            "description": "Allows Nexcess customers to self-install specific plugins.",
+            "support": {
+                "source": "https://github.com/liquidweb/nexcess-mapps-dashboard/tree/v1.4.3",
+                "issues": "https://github.com/liquidweb/nexcess-mapps-dashboard/issues"
+            },
+            "install-path": "../liquidweb/nexcess-mapps-dashboard"
+        },
+        {
+            "name": "moderntribe/wme-sitebuilder",
+            "version": "v0.6.2",
+            "version_normalized": "0.6.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liquidweb/wme-sitebuilder.git",
+                "reference": "20c560e17620d67ac005ffc9f043b7d7166ade8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liquidweb/wme-sitebuilder/zipball/20c560e17620d67ac005ffc9f043b7d7166ade8f",
+                "reference": "20c560e17620d67ac005ffc9f043b7d7166ade8f",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2",
+                "composer/installers": "~1.0 || ^2.0",
+                "php": "^5.6 || ^7.0 || ^8.0",
+                "psr/log": "^1.1",
+                "stellarwp/container": "^0.1.1"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "friendsofphp/php-cs-fixer": "^3.12",
+                "phpcompatibility/phpcompatibility-wp": "^2.0",
+                "phpmd/phpmd": "^2.13",
+                "szepeviktor/phpstan-wordpress": "^0.7",
+                "wp-coding-standards/wpcs": "^2.1",
+                "wpackagist-plugin/woocommerce": ">=7.1",
+                "wpackagist-plugin/woocommerce-gateway-stripe": "6.4.1",
+                "wpackagist-plugin/woocommerce-paypal-payments": "1.9.0"
+            },
+            "time": "2023-09-12T19:36:33+00:00",
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "external/wp-content/mu-plugins/{$name}/": [
+                        "type:wordpress-muplugin"
+                    ],
+                    "external/wp-content/plugins/{$name}/": [
+                        "type:wordpress-plugin"
+                    ],
+                    "external/wp-content/themes/{$name}/": [
+                        "type:wordpress-theme"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Tribe\\WME\\Sitebuilder\\": "wme-sitebuilder/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "build:plugin": [
+                    "bash bin/build wme-sitebuilder.zip"
+                ],
+                "fix:standards": [
+                    "phpcbf --cache",
+                    "php-cs-fixer fix -v --diff"
+                ],
+                "test": [
+                    "@test:all"
+                ],
+                "test:all": [
+                    "@test:standards",
+                    "@test:analysis"
+                ],
+                "test:analysis": [
+                    "phpstan analyse -c phpstan.neon.dist --memory-limit=768M"
+                ],
+                "test:coverage": [
+                    "phpdbg -qrr -d memory_limit=-1 ./wme-sitebuilder/vendor/bin/phpunit --coverage-html=tests/coverage --coverage-text --colors=always"
+                ],
+                "test:standards": [
+                    "phpcs --cache",
+                    "php-cs-fixer fix -v --diff --dry-run"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Modern Tribe Incubator Team"
+                }
+            ],
+            "description": "Easily build and configure a site.",
+            "support": {
+                "issues": "https://github.com/moderntribe/wme-sitebuilder/issues",
+                "source": "https://github.com/moderntribe/wme-sitebuilder"
+            },
+            "install-path": "../moderntribe/wme-sitebuilder"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2017-02-14T16:28:37+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/master"
+            },
+            "install-path": "../psr/container"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.1.4",
+            "version_normalized": "1.1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2021-05-03T11:20:27+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
+            },
+            "install-path": "../psr/log"
+        },
+        {
+            "name": "stellarwp/admin-notice",
+            "version": "v0.1.0",
+            "version_normalized": "0.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stellarwp/admin-notice.git",
+                "reference": "aa4bfd9eb08de2f8ad25779c4fff45f307a4ea84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stellarwp/admin-notice/zipball/aa4bfd9eb08de2f8ad25779c4fff45f307a4ea84",
+                "reference": "aa4bfd9eb08de2f8ad25779c4fff45f307a4ea84",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 | ^7.0 | ^8.0"
+            },
+            "require-dev": {
+                "assertwell/shellcheck": "^1.0",
+                "assertwell/wp-core-test-framework": "^0.2.0",
+                "php-stubs/wordpress-tests-stubs": "^5.8",
+                "stellarwp/coding-standards": "dev-develop",
+                "stevegrunwell/phpunit-markup-assertions": "^1.3",
+                "szepeviktor/phpstan-wordpress": "^1.0",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2022-04-22T23:04:48+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "StellarWP\\AdminNotice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "StellarWP",
+                    "homepage": "https://stellarwp.com"
+                }
+            ],
+            "description": "An object-oriented interface around WordPress' admin notices",
+            "support": {
+                "issues": "https://github.com/stellarwp/admin-notice/issues",
+                "source": "https://github.com/stellarwp/admin-notice"
+            },
+            "install-path": "../stellarwp/admin-notice"
+        },
+        {
+            "name": "stellarwp/container",
+            "version": "v0.1.1",
+            "version_normalized": "0.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stellarwp/container.git",
+                "reference": "eb421de316b393bf0af37cf4adb68074832ab17d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stellarwp/container/zipball/eb421de316b393bf0af37cf4adb68074832ab17d",
+                "reference": "eb421de316b393bf0af37cf4adb68074832ab17d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 | ^7.0 | ^8.0",
+                "psr/container": "~1.0.0"
+            },
+            "provide": {
+                "psr/container-implementation": "^1.0.0"
+            },
+            "require-dev": {
+                "league/climate": "^3.8",
+                "stellarwp/coding-standards": "dev-develop",
+                "szepeviktor/phpstan-wordpress": "^1.0",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2022-03-28T19:13:54+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "StellarWP\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "StellarWP",
+                    "homepage": "https://stellarwp.com"
+                }
+            ],
+            "description": "A PSR-11 Dependency Injection (DI) container for use in WordPress codebases",
+            "support": {
+                "issues": "https://github.com/stellarwp/container/issues",
+                "source": "https://github.com/stellarwp/container"
+            },
+            "install-path": "../stellarwp/container"
+        },
+        {
+            "name": "stellarwp/plugin-framework",
+            "version": "v1.17.0",
+            "version_normalized": "1.17.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:stellarwp/plugin-framework.git",
+                "reference": "05641220e68df6d46ae992a2a4da0018fb2461c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stellarwp/plugin-framework/zipball/05641220e68df6d46ae992a2a4da0018fb2461c5",
+                "reference": "05641220e68df6d46ae992a2a4da0018fb2461c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 | ^7.0 | ^8.0",
+                "psr/log": "^1.1",
+                "stellarwp/admin-notice": "^0.1",
+                "stellarwp/container": "^0.1",
+                "stevegrunwell/wp-cache-remember": "^1.1",
+                "wp-cli/wp-config-transformer": "^1.3"
+            },
+            "require-dev": {
+                "assertwell/phpunit-global-state": "^0.2",
+                "assertwell/shellcheck": "^1.0",
+                "assertwell/wp-core-test-framework": "^0.2",
+                "mockery/mockery": "^1.3",
+                "php-stubs/wordpress-tests-stubs": "^6.1",
+                "stellarwp/coding-standards": "^0.9",
+                "stevegrunwell/phpunit-markup-assertions": "^1.3",
+                "stevegrunwell/runkit7-installer": "^1.2",
+                "szepeviktor/phpstan-wordpress": "^1.0",
+                "wp-cli/wp-cli": "^2.8",
+                "wpackagist-plugin/cache-enabler": "^1.8",
+                "wpackagist-plugin/hello-dolly": "*",
+                "wpackagist-plugin/w3-total-cache": "^2.3",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2025-01-20T20:09:19+00:00",
+            "bin": [
+                "bin/check-version.sh"
+            ],
+            "type": "library",
+            "extra": {
+                "installer-disable": true
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "StellarWP\\PluginFramework\\": "src/"
+                },
+                "files": [
+                    "src/Support/Compat.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "fix:standards": [
+                    "phpcbf",
+                    "php-cs-fixer fix -v --diff"
+                ],
+                "test": [
+                    "@test:all"
+                ],
+                "test:all": [
+                    "@test:unit",
+                    "@test:standards",
+                    "@test:analysis"
+                ],
+                "test:analysis": [
+                    "phpstan analyse -c phpstan.neon.dist --memory-limit=1G"
+                ],
+                "test:coverage": [
+                    "phpdbg -qrr -d memory_limit=-1 ./vendor/bin/phpunit --coverage-html=tests/coverage --coverage-text --colors=always"
+                ],
+                "test:shellcheck": [
+                    "shellcheck bin/*"
+                ],
+                "test:standards": [
+                    "phpcs --cache",
+                    "php-cs-fixer fix --config=vendor/stellarwp/coding-standards/src/php-cs-fixer.php -v --diff --dry-run"
+                ],
+                "test:unit": [
+                    "phpunit --testdox --colors=always"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "StellarWP",
+                    "homepage": "https://stellarwp.com"
+                }
+            ],
+            "description": "A framework for creating complex WordPress plugins",
+            "support": {
+                "issues": "https://github.com/stellarwp/plugin-framework/issues",
+                "source": "https://github.com/stellarwp/plugin-framework"
+            },
+            "install-path": "../stellarwp/plugin-framework"
+        },
+        {
+            "name": "stellarwp/stellarwp-plugin-installer",
+            "version": "v1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stellarwp/stellarwp-plugin-installer.git",
+                "reference": "6ac14a238ade1467caac85821c987ab230dd07f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stellarwp/stellarwp-plugin-installer/zipball/6ac14a238ade1467caac85821c987ab230dd07f8",
+                "reference": "6ac14a238ade1467caac85821c987ab230dd07f8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "wp-coding-standards/wpcs": "^2.3"
+            },
+            "time": "2022-03-03T16:38:45+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Stellarwp\\PluginInstaller\\": "src/"
+                }
+            },
+            "scripts": {
+                "fix:standards": [
+                    "/vendor/bin/phpcbf"
+                ],
+                "test:standards": [
+                    "./vendor/bin/phpcs"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "StellarWP",
+                    "email": "support@stellarwp.com"
+                }
+            ],
+            "description": "A user-friendly interface for installing plugins from StellarWP",
+            "support": {
+                "source": "https://github.com/stellarwp/stellarwp-plugin-installer/tree/v1.0.1",
+                "issues": "https://github.com/stellarwp/stellarwp-plugin-installer/issues"
+            },
+            "install-path": "../stellarwp/stellarwp-plugin-installer"
+        },
+        {
+            "name": "stevegrunwell/wp-admin-tabbed-settings-pages",
+            "version": "v0.2.0",
+            "version_normalized": "0.2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liquidweb/wp-admin-tabbed-settings-pages.git",
+                "reference": "d8fbcce4bde4fbee623c659166b42bce0a7d09d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liquidweb/wp-admin-tabbed-settings-pages/zipball/d8fbcce4bde4fbee623c659166b42bce0a7d09d8",
+                "reference": "d8fbcce4bde4fbee623c659166b42bce0a7d09d8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "assertwell/wp-core-test-framework": "^0.1.1",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "phpunit/phpunit": "^7.5",
+                "wp-coding-standards/wpcs": "^2.3"
+            },
+            "time": "2020-08-27T17:20:05+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "scripts": {
+                "test": [
+                    "@test:all"
+                ],
+                "test:all": [
+                    "@test:unit",
+                    "@test:standards"
+                ],
+                "test:standards": [
+                    "phpcs"
+                ],
+                "test:unit": [
+                    "phpunit"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Grunwell",
+                    "email": "steve@stevegrunwell.com"
+                }
+            ],
+            "description": "A polyfill for Trac #51086, bringing tabbed settings pages into WP-Admin.",
+            "support": {
+                "source": "https://github.com/liquidweb/wp-admin-tabbed-settings-pages/tree/v0.2.0"
+            },
+            "install-path": "../stevegrunwell/wp-admin-tabbed-settings-pages"
+        },
+        {
+            "name": "stevegrunwell/wp-cache-remember",
+            "version": "v1.1.2",
+            "version_normalized": "1.1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stevegrunwell/wp-cache-remember.git",
+                "reference": "7ad1da18b1cab08e638539176961f71c2fff2ac7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stevegrunwell/wp-cache-remember/zipball/7ad1da18b1cab08e638539176961f71c2fff2ac7",
+                "reference": "7ad1da18b1cab08e638539176961f71c2fff2ac7",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0||^2.0",
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5||^0.6||^0.7",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "wp-coding-standards/wpcs": "^2.2"
+            },
+            "time": "2022-07-08T18:13:53+00:00",
+            "type": "wordpress-muplugin",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "wp-cache-remember.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Grunwell",
+                    "email": "steve@stevegrunwell.com",
+                    "homepage": "https://stevegrunwell.com"
+                }
+            ],
+            "description": "Helper for the WordPress object cache and transients",
+            "keywords": [
+                "wordpress",
+                "wordpress-object-cache",
+                "wordpress-plugin",
+                "wordpress-transients"
+            ],
+            "support": {
+                "issues": "https://github.com/stevegrunwell/wp-cache-remember/issues",
+                "source": "https://github.com/stevegrunwell/wp-cache-remember"
+            },
+            "install-path": "../stevegrunwell/wp-cache-remember"
+        },
+        {
+            "name": "wp-cli/wp-config-transformer",
+            "version": "v1.3.6",
+            "version_normalized": "1.3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli/wp-config-transformer.git",
+                "reference": "88f516f44dce1660fc4b780da513e3ca12d7d24f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli/wp-config-transformer/zipball/88f516f44dce1660fc4b780da513e3ca12d7d24f",
+                "reference": "88f516f44dce1660fc4b780da513e3ca12d7d24f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "wp-cli/wp-cli-tests": "^4.0"
+            },
+            "time": "2024-05-23T06:32:14+00:00",
+            "type": "library",
+            "extra": {
+                "patches_applied": {
+                    "Namespacing and autoloading": "patches/wp-config-transformer-namespace.patch"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/WPConfigTransformer.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frankie Jarrett",
+                    "email": "fjarrett@gmail.com"
+                }
+            ],
+            "description": "Programmatically edit a wp-config.php file.",
+            "homepage": "https://github.com/wp-cli/wp-config-transformer",
+            "support": {
+                "issues": "https://github.com/wp-cli/wp-config-transformer/issues",
+                "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.3.6"
+            },
+            "install-path": "../wp-cli/wp-config-transformer"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

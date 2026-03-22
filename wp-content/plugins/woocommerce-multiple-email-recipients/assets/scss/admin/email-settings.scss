@@ -1,0 +1,108 @@
+button.button {
+	&.wmer-button-icon {
+		font: 20px/1 dashicons;
+		padding: 0;
+		padding-left: 5px;
+		display: inline-block;
+		color: #787c82;
+
+		&, &:focus, &:visited, &:active {
+			background: none;
+			outline: none;
+			border: none;
+			box-shadow: none;
+		}
+
+		&::before { display: block; }
+
+		&.wmer-plus-button::before  { content: "\f543"; }
+		&.wmer-minus-button {
+			&:hover {
+				color: #d63638;
+			}
+			&::before { content: "\f153"; }
+		}
+	}
+	&.wmer-action {
+		padding: 0;
+		background: none;
+		outline: none;
+		border: none;
+		display: none;
+		font-size: 14px;
+
+		&, &:focus, &:visited, &:active {
+			background: none;
+			outline: none;
+			border: none;
+			box-shadow: none;
+		}
+	}
+}
+.wmer-addons {
+	fieldset{
+		font-size: 0;
+	}
+	span.select2-container {
+		font-size: 14px;
+	}
+	> :last-child {
+		.wmer-action {
+			display: block;
+		}
+	}	
+}
+
+.wmer-field-wrapper {
+    margin-top: 20px;
+
+	fieldset {
+		display: flex;
+	}
+	
+	.select2-search__field {
+		padding-left: 2px!important;
+	}
+	
+	.select2-container .select2-search--inline {
+		.select2-search__field {
+			padding-left: 2px!important;
+			width: auto!important;
+		}
+
+		&:not(:first-child) {
+			.select2-search__field {
+				width: 50px!important;
+			}
+		}
+	}	
+}
+
+.woocommerce table.form-table {
+	.wmer-field-wrapper:nth-child(2) {
+		span.woocommerce-help-tip {
+			display: inline-block;
+		}
+	}
+
+	.wmer-field-wrapper {
+		span.woocommerce-help-tip {
+			margin-left: -26px;
+			margin-top: 7px;
+			position: absolute;
+			display: none;
+		}
+
+		.select2-container {
+			margin-bottom: 0;
+		
+			.select2-selection--multiple {
+				line-height: 1;
+		
+				.select2-search__field {
+					min-width: 50px;
+				}
+			}
+		}	
+	}
+}

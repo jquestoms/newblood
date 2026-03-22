@@ -1,0 +1,9 @@
+.barn2-no-bottom-margin {
+  .components-base-control__label {
+    display: none;
+  }
+  margin-bottom: 0!important;
+  .components-base-control__help {
+    height: 0!important;
+  }
+}

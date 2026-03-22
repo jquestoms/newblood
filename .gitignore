@@ -1,0 +1,21 @@
+# WordPress
+wp-config.php
+*.log
+*.sql
+
+# Uploads (too large for git)
+wp-content/uploads/
+
+# Cache & compiled
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/object-cache.php
+wp-content/wp-cache-config.php
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Superpowers brainstorming sessions
+.superpowers/
+.idea/
