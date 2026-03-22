@@ -17,9 +17,14 @@
 }
 
 .nb-logo a {
-  color: #ffffff !important;
+  display: block;
   text-decoration: none !important;
-  white-space: nowrap;
+}
+
+.nb-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* ===== Global Spacing Overrides ===== */
