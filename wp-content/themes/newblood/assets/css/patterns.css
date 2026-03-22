@@ -22,7 +22,62 @@
   white-space: nowrap;
 }
 
+/* ===== Global Spacing Overrides ===== */
+
+/* Ensure all full-width sections have generous horizontal padding */
+.nb-gradient-primary,
+.nb-gradient-section,
+.nb-divider-top {
+  padding-left: clamp(1.5rem, 5vw, 4rem) !important;
+  padding-right: clamp(1.5rem, 5vw, 4rem) !important;
+}
+
+/* Glass cards need internal padding */
+.nb-glass {
+  padding: 1.75rem !important;
+}
+
+/* Content inside constrained layouts needs breathing room */
+.wp-block-group.nb-gradient-primary > .wp-block-group,
+.wp-block-group.nb-gradient-section > .wp-block-group {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Columns within sections */
+.nb-stagger.wp-block-columns {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1.5rem;
+}
+
+/* Testimonial section */
+.nb-divider-top.nb-reveal {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+/* Testimonial quote mark — make it visible */
+.nb-divider-top .has-accent-color {
+  font-size: 3rem !important;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+/* CTA section generous padding */
+.nb-gradient-primary.nb-dot-grid.nb-reveal {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
 /* Footer */
+.nb-footer {
+  padding-left: clamp(1.5rem, 5vw, 4rem) !important;
+  padding-right: clamp(1.5rem, 5vw, 4rem) !important;
+}
+
 .nb-footer a:hover {
   color: var(--wp--preset--color--accent-light) !important;
 }

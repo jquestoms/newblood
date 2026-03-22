@@ -7,15 +7,15 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
+.nb-glass {
+  transition: all 0.3s ease;
+}
+
 .nb-glass:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.nb-glass {
-  transition: all 0.3s ease;
 }
 
 /* Dot grid texture */
