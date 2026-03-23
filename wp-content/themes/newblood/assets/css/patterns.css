@@ -39,7 +39,72 @@
 
 .nb-nav-cta a:hover {
   opacity: 0.9 !important;
-  object-fit: contain;
+}
+
+/* ===== Section Transitions ===== */
+
+/* Remove hard edges between sections — overlap with pseudo-element gradients */
+.nb-gradient-primary,
+.nb-gradient-section,
+.nb-divider-top {
+  position: relative;
+}
+
+/* Top fade-in from previous section */
+.nb-gradient-section::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #111827);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Testimonial section blends from section above */
+.nb-divider-top::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #0d0f14);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* CTA section blends from testimonial */
+.nb-gradient-primary.nb-dot-grid.nb-reveal::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #0f1117);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Footer blends from CTA */
+.nb-footer::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #0a0c10);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure sections have enough margin-top for the bleed overlap */
+main > .wp-block-group + .wp-block-group {
+  margin-top: 0 !important;
 }
 
 /* ===== Global Spacing Overrides ===== */

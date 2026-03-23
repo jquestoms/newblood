@@ -134,9 +134,9 @@
   color: #ffffff;
 }
 
-/* Section divider (subtle top border) */
+/* Section divider — gradient transition handles the visual break now */
 .nb-divider-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: none;
 }
 
 /* Reduced motion */
