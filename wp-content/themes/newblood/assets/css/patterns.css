@@ -26,6 +26,22 @@
   object-fit: contain;
 }
 
+/* Nav CTA button */
+.nb-nav-cta a {
+  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  color: #ffffff !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 0.8125rem !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.nb-nav-cta a:hover {
+  opacity: 0.9 !important;
+  object-fit: contain;
+}
+
 /* ===== Global Spacing Overrides ===== */
 
 /* Ensure all full-width sections have generous horizontal padding */
