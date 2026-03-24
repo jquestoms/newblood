@@ -50,7 +50,7 @@
         <p class="has-text-secondary-color">A premium jazz guitar education platform featuring master-level courses from world-class musicians. Built with a modern dark theme, integrated e-commerce, and optimized for a seamless learning experience.</p>
         <!-- /wp:paragraph -->
         <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-        <p><a class="nb-btn-secondary" href="https://mikesmasterclasses.com" target="_blank" rel="noopener" style="font-size:0.8125rem;padding:0.4rem 1rem">Visit Site →</a></p>
+        <p><a class="nb-btn-secondary" href="/case-study-mikes-master-classes/" style="font-size:0.8125rem;padding:0.4rem 1rem">View Case Study →</a></p>
         <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
@@ -77,6 +77,9 @@
         <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
         <p class="has-text-muted-color">Baltimore's trusted door and dock solutions provider since 1954.</p>
         <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-overhead-door/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
     </div>
@@ -101,6 +104,9 @@
         <!-- /wp:paragraph -->
         <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
         <p class="has-text-muted-color">Structural repair and building restoration specialists since 1990.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-ca-lindman/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
         <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->

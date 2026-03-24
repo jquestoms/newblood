@@ -254,6 +254,73 @@ main > .wp-block-group + .wp-block-group {
   }
 }
 
+/* ===== Case Study Pages ===== */
+
+.nb-case-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.nb-case-meta-item {
+  flex: 1;
+  min-width: 150px;
+}
+
+.nb-case-meta-label {
+  font-size: 0.625rem !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: var(--wp--preset--color--accent-light) !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.nb-case-meta-value {
+  font-size: 0.9375rem !important;
+  color: #e2e8f0 !important;
+  font-weight: 500;
+}
+
+.nb-case-screenshot {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 2.5rem 0 !important;
+}
+
+.nb-case-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nb-case-highlight {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 2rem !important;
+  margin: 2rem 0 !important;
+}
+
+.nb-case-stat {
+  text-align: center;
+}
+
+.nb-case-stat-number {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #4ade80 !important;
+  line-height: 1.1;
+  margin-bottom: 0.25rem !important;
+}
+
+.nb-case-stat-label {
+  font-size: 0.8125rem !important;
+  color: var(--wp--preset--color--text-muted) !important;
+}
+
 /* Icon badge in service cards */
 .nb-icon-badge {
   margin-bottom: 0.5rem;
