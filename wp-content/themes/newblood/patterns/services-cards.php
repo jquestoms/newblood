@@ -14,7 +14,7 @@
     <p class="nb-label">What we do</p>
     <!-- /wp:paragraph -->
     <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)"}}} -->
-    <h2>Everything your website needs</h2>
+    <h2>Build fast. Stay fast. Stay in control.</h2>
     <!-- /wp:heading -->
   </div>
   <!-- /wp:group -->
@@ -27,7 +27,7 @@
       <h3>Build</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">Custom-designed, fast-loading websites built with modern tools. Delivered in days, not months.</p>
+      <p class="has-text-muted-color">We design and develop your site using AI-accelerated workflows — delivering a polished, performant website in a fraction of the traditional timeline.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
@@ -38,7 +38,7 @@
       <h3>Manage</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">Hosting, security, updates, backups — we keep your site running so you don't have to think about it.</p>
+      <p class="has-text-muted-color">Hosting, security patches, daily backups, uptime monitoring — we keep everything running so you never have to think about it.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
@@ -49,7 +49,7 @@
       <h3>Empower</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">You get the keys — edit your own content anytime through an intuitive dashboard. We're here when you need us.</p>
+      <p class="has-text-muted-color">Your site, your content. Update pages, posts, and images through an intuitive visual editor — no developer required. We're a call away when you need us.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->

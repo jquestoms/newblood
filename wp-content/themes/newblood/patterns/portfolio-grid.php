@@ -3,81 +3,111 @@
  * Title: Portfolio Grid
  * Slug: newblood/portfolio-grid
  * Categories: newblood
- * Description: Asymmetric portfolio grid with featured project
+ * Description: Showcase-style portfolio grid with featured project
  */
 ?>
 <!-- wp:group {"className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group nb-gradient-section">
-  <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
-  <div class="wp-block-group nb-reveal">
-    <!-- wp:group {"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group">
-      <!-- wp:paragraph {"className":"nb-label"} -->
-      <p class="nb-label">Our work</p>
-      <!-- /wp:paragraph -->
-      <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)"}}} -->
-      <h2>Recent projects</h2>
-      <!-- /wp:heading -->
-    </div>
-    <!-- /wp:group -->
-    <!-- wp:paragraph {"textColor":"accent"} -->
-    <p class="has-accent-color"><a href="/work" style="color:inherit;text-decoration:none">View all →</a></p>
+  <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
+  <div class="wp-block-group nb-reveal" style="text-align:center">
+    <!-- wp:paragraph {"className":"nb-label"} -->
+    <p class="nb-label">Showcase</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)"}}} -->
+    <h2>Built with New Blood</h2>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1rem"}}} -->
+    <p class="has-text-secondary-color">Real projects. Modern design. Blazing performance.</p>
     <!-- /wp:paragraph -->
   </div>
   <!-- /wp:group -->
-  <!-- wp:columns {"className":"nb-stagger","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}}} -->
-  <div class="wp-block-columns nb-stagger">
-    <!-- wp:column {"width":"58%","className":"nb-reveal-scale"} -->
-    <div class="wp-block-column nb-reveal-scale" style="flex-basis:58%">
-      <!-- wp:group {"className":"nb-glass","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|40"}}}} -->
-      <div class="wp-block-group nb-glass">
-        <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}},"dimensions":{"minHeight":"200px"},"color":{"background":"#1a2332"}},"layout":{"type":"flex","justifyContent":"center"}} -->
-        <div class="wp-block-group" style="min-height:200px;border-radius:12px 12px 0 0">
-          <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"}}} -->
-          <p class="has-text-muted-color">[ Project Screenshot ]</p>
-          <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
-        <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}}} -->
+
+  <!-- wp:group {"className":"nb-showcase-grid nb-reveal-scale","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
+  <div class="wp-block-group nb-showcase-grid">
+
+    <!-- wp:group {"className":"nb-showcase-card nb-showcase-featured","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card nb-showcase-featured">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"dimensions":{"minHeight":"320px"},"color":{"background":"#1a1a2e"}}} -->
+      <div class="wp-block-group nb-showcase-image" style="min-height:320px">
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem","fontWeight":"600"}},"textColor":"text-muted"} -->
+        <p class="has-text-muted-color">mikesmasterclasses.com</p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"}} -->
         <div class="wp-block-group">
-          <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem"}}} -->
-          <h3>Coming Soon</h3>
+          <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.25rem"}}} -->
+          <h3>Mike's Master Classes</h3>
           <!-- /wp:heading -->
-          <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
-          <p class="has-text-muted-color">Our first modern project showcase</p>
+          <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+          <p class="nb-showcase-badge">E-Commerce · Education</p>
           <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
+        <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"0.875rem","lineHeight":"1.6"}}} -->
+        <p class="has-text-secondary-color">A premium jazz guitar education platform featuring master-level courses from world-class musicians. Built with a modern dark theme, integrated e-commerce, and optimized for a seamless learning experience.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+        <p><a class="nb-btn-secondary" href="https://mikesmasterclasses.com" target="_blank" rel="noopener" style="font-size:0.8125rem;padding:0.4rem 1rem">Visit Site →</a></p>
+        <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
     </div>
-    <!-- /wp:column -->
-    <!-- wp:column {"width":"42%","className":"nb-reveal-scale"} -->
-    <div class="wp-block-column nb-reveal-scale" style="flex-basis:42%">
-      <!-- wp:group {"className":"nb-glass","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|30"}},"dimensions":{"minHeight":"100%"}}} -->
-      <div class="wp-block-group nb-glass" style="min-height:100%">
-        <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}},"dimensions":{"minHeight":"120px"},"color":{"background":"#1e1a2e"}},"layout":{"type":"flex","justifyContent":"center"}} -->
-        <div class="wp-block-group" style="min-height:120px;border-radius:12px 12px 0 0">
-          <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.75rem","fontWeight":"600"}}} -->
-          <p class="has-text-muted-color">[ Screenshot ]</p>
-          <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
-        <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
-        <div class="wp-block-group">
-          <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
-          <h3>Your Project Here</h3>
-          <!-- /wp:heading -->
-          <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.75rem"}}} -->
-          <p class="has-text-muted-color">Let's build something great together</p>
-          <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"dimensions":{"minHeight":"180px"},"color":{"background":"#162415"}}} -->
+      <div class="wp-block-group nb-showcase-image" style="min-height:180px">
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"}},"textColor":"text-muted"} -->
+        <p class="has-text-muted-color">ohdbalt.com</p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>Overhead Door Co.</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Commercial · Service</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">Baltimore's trusted door and dock solutions provider since 1954.</p>
+        <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
     </div>
-    <!-- /wp:column -->
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"dimensions":{"minHeight":"180px"},"color":{"background":"#1a2332"}}} -->
+      <div class="wp-block-group nb-showcase-image" style="min-height:180px">
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"}},"textColor":"text-muted"} -->
+        <p class="has-text-muted-color">calindman.com</p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>C.A. Lindman</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Construction · Restoration</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">Structural repair and building restoration specialists since 1990.</p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
   </div>
-  <!-- /wp:columns -->
+  <!-- /wp:group -->
 </div>
 <!-- /wp:group -->

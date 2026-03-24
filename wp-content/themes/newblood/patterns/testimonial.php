@@ -12,10 +12,10 @@
   <p class="has-accent-color">"</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"1.125rem","lineHeight":"1.7","fontStyle":"italic"}}} -->
-  <p class="has-text-body-color">They rebuilt our entire website in a week. It loads instantly, looks incredible, and I can update it myself. Best investment we've made.</p>
+  <p class="has-text-body-color">We'd been through three web developers before finding New Blood. They rebuilt our site in days, not months — and for the first time, we can actually update it ourselves without breaking anything.</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"textColor":"text-muted"} -->
-  <p class="has-text-muted-color"><strong style="color:#94a3b8">Sarah M.</strong> — Local Business Owner</p>
+  <p class="has-text-muted-color"><strong style="color:#94a3b8">Sarah M.</strong> — Small Business Owner</p>
   <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
