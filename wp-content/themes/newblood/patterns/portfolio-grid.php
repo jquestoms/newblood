@@ -27,11 +27,11 @@
 
     <!-- wp:group {"className":"nb-showcase-card nb-showcase-featured","layout":{"type":"constrained"}} -->
     <div class="wp-block-group nb-showcase-card nb-showcase-featured">
-      <!-- wp:group {"className":"nb-showcase-image","style":{"dimensions":{"minHeight":"320px"},"color":{"background":"#1a1a2e"}}} -->
-      <div class="wp-block-group nb-showcase-image" style="min-height:320px">
-        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem","fontWeight":"600"}},"textColor":"text-muted"} -->
-        <p class="has-text-muted-color">mikesmasterclasses.com</p>
-        <!-- /wp:paragraph -->
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a1a2e"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6743,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/03/screenshot-mikes-master-classes-1.png" alt="Mike's Master Classes website screenshot" class="wp-image-6743"/></figure>
+        <!-- /wp:image -->
       </div>
       <!-- /wp:group -->
       <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}}} -->
@@ -59,11 +59,11 @@
 
     <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
     <div class="wp-block-group nb-showcase-card">
-      <!-- wp:group {"className":"nb-showcase-image","style":{"dimensions":{"minHeight":"180px"},"color":{"background":"#162415"}}} -->
-      <div class="wp-block-group nb-showcase-image" style="min-height:180px">
-        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"}},"textColor":"text-muted"} -->
-        <p class="has-text-muted-color">ohdbalt.com</p>
-        <!-- /wp:paragraph -->
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#162415"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6744,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/03/screenshot-overhead-door-1.png" alt="Overhead Door Company website screenshot" class="wp-image-6744"/></figure>
+        <!-- /wp:image -->
       </div>
       <!-- /wp:group -->
       <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
@@ -87,11 +87,11 @@
 
     <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
     <div class="wp-block-group nb-showcase-card">
-      <!-- wp:group {"className":"nb-showcase-image","style":{"dimensions":{"minHeight":"180px"},"color":{"background":"#1a2332"}}} -->
-      <div class="wp-block-group nb-showcase-image" style="min-height:180px">
-        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"}},"textColor":"text-muted"} -->
-        <p class="has-text-muted-color">calindman.com</p>
-        <!-- /wp:paragraph -->
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a2332"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6745,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/03/screenshot-ca-lindman-1.png" alt="C.A. Lindman website screenshot" class="wp-image-6745"/></figure>
+        <!-- /wp:image -->
       </div>
       <!-- /wp:group -->
       <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
