@@ -21,13 +21,13 @@
 
   // Globe parameters
   var points = [];
-  var numPoints = 200;
+  var numPoints = 250;
   var globeRadius;
   var rotationY = 0;
   var rotationX = 0.3;
   var baseSpeedY = 0.002;
   var baseSpeedX = 0.0003;
-  var connectionDist = 0.35; // relative to globeRadius
+  var connectionDist = 0.32; // relative to globeRadius
 
   // Generate points on a sphere using fibonacci distribution
   function generatePoints() {
@@ -60,7 +60,8 @@
     canvas.style.width = w + 'px';
     canvas.style.height = h + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    globeRadius = Math.min(w, h) * 0.35;
+    // Use height as the base so the globe is always spherical, not squished
+    globeRadius = h * 0.4;
   }
 
   function project(point) {
@@ -124,7 +125,7 @@
           var avgZ = (sorted[i].pz + sorted[j].pz) / 2;
           var depthAlpha = (avgZ + 1) / 2; // 0 (back) to 1 (front)
           var distAlpha = 1 - dist / maxDist;
-          var alpha = distAlpha * depthAlpha * 0.12;
+          var alpha = distAlpha * depthAlpha * 0.2;
 
           if (alpha > 0.01) {
             ctx.beginPath();
@@ -142,8 +143,8 @@
     for (var i = 0; i < sorted.length; i++) {
       var p = sorted[i];
       var depthAlpha = (p.pz + 1) / 2; // 0 (back) to 1 (front)
-      var alpha = 0.1 + depthAlpha * 0.4;
-      var size = p.size * (0.6 + depthAlpha * 0.6);
+      var alpha = 0.15 + depthAlpha * 0.55;
+      var size = p.size * (0.7 + depthAlpha * 0.8);
 
       ctx.beginPath();
       ctx.arc(cx + p.px * globeRadius, cy + p.py * globeRadius, size, 0, Math.PI * 2);
@@ -153,8 +154,8 @@
 
     // Subtle ambient glow in the center of the globe
     var glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, globeRadius * 1.2);
-    glow.addColorStop(0, 'rgba(34, 197, 94, 0.03)');
-    glow.addColorStop(0.5, 'rgba(34, 197, 94, 0.01)');
+    glow.addColorStop(0, 'rgba(34, 197, 94, 0.06)');
+    glow.addColorStop(0.5, 'rgba(34, 197, 94, 0.02)');
     glow.addColorStop(1, 'rgba(34, 197, 94, 0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, w, h);
