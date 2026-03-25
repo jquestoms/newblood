@@ -236,6 +236,7 @@ main > .wp-block-group + .wp-block-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 2rem !important;
 }
 
 /* Category badge */
