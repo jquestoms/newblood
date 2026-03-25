@@ -151,6 +151,12 @@ main > .wp-block-group + .wp-block-group {
   margin-bottom: 0.5rem;
 }
 
+/* Hero section generous padding */
+.nb-hero-gradient {
+  padding-top: 10rem !important;
+  padding-bottom: 10rem !important;
+}
+
 /* CTA section generous padding */
 .nb-gradient-primary.nb-dot-grid.nb-reveal {
   padding-top: 6rem !important;
