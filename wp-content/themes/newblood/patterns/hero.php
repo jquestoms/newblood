@@ -9,7 +9,7 @@
 <!-- wp:group {"className":"nb-gradient-primary nb-dot-grid nb-hero-gradient","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
 <div class="wp-block-group nb-gradient-primary nb-dot-grid nb-hero-gradient">
   <!-- wp:paragraph {"className":"nb-label nb-hero-label"} -->
-  <p class="nb-label nb-hero-label">15+ years of web expertise, accelerated by AI</p>
+  <p class="nb-label nb-hero-label">25+ years of web expertise, accelerated by AI</p>
   <!-- /wp:paragraph -->
   <!-- wp:heading {"level":1,"className":"nb-hero-headline","style":{"typography":{"fontSize":"clamp(2.5rem, 5vw, 3.5rem)","lineHeight":"1.1","letterSpacing":"-0.03em"}}} -->
   <h1 class="nb-hero-headline">Websites that move as fast as your business<span style="color:#4ade80">.</span></h1>
