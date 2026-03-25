@@ -60,11 +60,10 @@
     canvas.style.width = w + 'px';
     canvas.style.height = h + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    // Globe should always appear as a true sphere regardless of section aspect ratio
-    // On wide screens: use height as base so it fills vertically
-    // On narrow screens: constrain to width so it doesn't overflow
-    // Minimum 200px so it's always visible
-    globeRadius = Math.max(Math.min(h * 0.38, w * 0.3), 200);
+    // Fixed radius independent of section aspect ratio — always a true sphere
+    // Scales with viewport width only, clamped between 200-350px
+    var vw = window.innerWidth;
+    globeRadius = Math.min(Math.max(vw * 0.22, 200), 350);
   }
 
   function project(point) {
