@@ -52,18 +52,16 @@
   }
 
   function resize() {
+    // Use the container's full size — not the canvas element, which may be
+    // constrained by WordPress content width wrappers
     var rect = container.getBoundingClientRect();
     w = rect.width;
     h = rect.height;
     canvas.width = w * dpr;
     canvas.height = h * dpr;
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    // Fixed radius independent of section aspect ratio — always a true sphere
-    // Scales with viewport width only, clamped between 200-350px
-    var vw = window.innerWidth;
-    globeRadius = Math.min(Math.max(vw * 0.22, 200), 350);
+    // Fixed radius — scales with viewport, clamped 220-380px
+    globeRadius = Math.min(Math.max(window.innerWidth * 0.22, 220), 380);
   }
 
   function project(point) {
