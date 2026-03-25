@@ -32,7 +32,7 @@
       <p class="has-text-muted-color">Perfect for small businesses getting started online.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">$X,XXX</span></p>
+      <p><span style="color:#4ade80">$3,500</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
@@ -63,7 +63,7 @@
       <p class="has-text-muted-color">For businesses that need more functionality and a custom look.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">$X,XXX</span></p>
+      <p><span style="color:#4ade80">$5,000</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
