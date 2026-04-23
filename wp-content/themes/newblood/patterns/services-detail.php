@@ -6,8 +6,8 @@
  * Description: Expanded services page with detailed descriptions of Build, Manage, and Empower
  */
 ?>
-<!-- wp:group {"className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
-<div class="wp-block-group nb-gradient-section">
+<!-- wp:group {"align":"full","className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
+<div class="wp-block-group alignfull nb-gradient-section">
 
   <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|70"}}}} -->
   <div class="wp-block-group nb-reveal">
