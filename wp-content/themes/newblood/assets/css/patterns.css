@@ -138,6 +138,20 @@ main > .wp-block-group + .wp-block-group {
   gap: 1.5rem;
 }
 
+/* Pricing section — wider to give cards room to breathe */
+.nb-pricing.wp-block-group > .wp-block-group,
+.nb-pricing .nb-stagger.wp-block-columns {
+  max-width: 1500px !important;
+}
+
+.nb-pricing .nb-stagger.wp-block-columns {
+  gap: 2.5rem;
+}
+
+.nb-pricing .wp-block-column.nb-glass {
+  padding: 2.5rem !important;
+}
+
 /* Testimonial section */
 .nb-divider-top.nb-reveal {
   padding-top: 5rem !important;

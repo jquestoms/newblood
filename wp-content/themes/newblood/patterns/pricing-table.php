@@ -6,8 +6,8 @@
  * Description: Pricing tiers for build packages and management plans
  */
 ?>
-<!-- wp:group {"className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1000px"}} -->
-<div class="wp-block-group nb-gradient-section">
+<!-- wp:group {"align":"full","className":"nb-gradient-section nb-pricing","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1500px"}} -->
+<div class="wp-block-group alignfull nb-gradient-section nb-pricing">
   <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
   <div class="wp-block-group nb-reveal" style="text-align:center">
     <!-- wp:paragraph {"className":"nb-label"} -->
@@ -76,6 +76,32 @@
       <!-- /wp:list -->
       <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
       <p><a class="nb-btn-primary" href="/contact" style="display:block;text-align:center">Get Started</a></p>
+      <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+    <!-- wp:column {"className":"nb-glass nb-reveal"} -->
+    <div class="wp-block-column nb-glass nb-reveal" style="padding:2rem">
+      <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.25rem"}}} -->
+      <h3>Reach</h3>
+      <!-- /wp:heading -->
+      <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
+      <p class="has-text-muted-color">For ambitious projects that demand custom development and advanced functionality.</p>
+      <!-- /wp:paragraph -->
+      <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
+      <p><span style="color:#4ade80">Let's Talk</span></p>
+      <!-- /wp:paragraph -->
+      <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
+      <ul class="has-text-body-color">
+        <li>Fully custom design &amp; development</li>
+        <li>Advanced integrations &amp; APIs</li>
+        <li>AI-powered features</li>
+        <li>Complex functionality &amp; workflows</li>
+        <li>Unlimited pages &amp; revisions</li>
+        <li>Dedicated collaboration</li>
+      </ul>
+      <!-- /wp:list -->
+      <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+      <p><a class="nb-btn-primary" href="/contact" style="display:block;text-align:center">Contact Us</a></p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
