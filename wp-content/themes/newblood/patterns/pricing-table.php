@@ -10,12 +10,6 @@
 <div class="wp-block-group alignfull nb-gradient-section nb-pricing">
   <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
   <div class="wp-block-group nb-reveal" style="text-align:center">
-    <!-- wp:paragraph {"className":"nb-label"} -->
-    <p class="nb-label">Pricing</p>
-    <!-- /wp:paragraph -->
-    <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)"}}} -->
-    <h2>Simple, transparent pricing</h2>
-    <!-- /wp:heading -->
     <!-- wp:paragraph {"textColor":"text-secondary"} -->
     <p class="has-text-secondary-color">Every plan includes hosting on our managed infrastructure.</p>
     <!-- /wp:paragraph -->
