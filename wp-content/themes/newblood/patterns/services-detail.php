@@ -31,7 +31,7 @@
     </div>
     <!-- /wp:group -->
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
-    <p class="has-text-body-color">We design and develop custom websites using AI-accelerated workflows — combining 25+ years of development experience with modern tools that let us deliver in days what traditionally takes weeks or months. Every site is built from the ground up to be fast, accessible, and tailored to your brand.</p>
+    <p class="has-text-body-color">We design and develop custom websites using AI-accelerated workflows — combining 25+ years of craft with modern tools that bring large-agency creative ambition within reach. Every site is built from the ground up to be fast, accessible, and tailored to your brand.</p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">No templates. No page builders. No cookie-cutter layouts. We write clean, modern code that performs — and we bring the same level of strategic thinking and creative design that Fortune 500 companies expect, at a price that works for growing businesses.</p>

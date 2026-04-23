@@ -14,7 +14,7 @@
     <p class="nb-label">What we do</p>
     <!-- /wp:paragraph -->
     <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)"}}} -->
-    <h2>Build fast. Stay fast. Stay in control.</h2>
+    <h2>Built to last. Kept in tune. Yours to run.</h2>
     <!-- /wp:heading -->
   </div>
   <!-- /wp:group -->
@@ -27,7 +27,7 @@
       <h3>Build</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">We design and develop your site using AI-accelerated workflows — delivering a polished, performant website in a fraction of the traditional timeline.</p>
+      <p class="has-text-muted-color">We design and develop your site from the ground up — pairing 25+ years of craft with modern AI workflows to build a considered, performant website made for your business.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
