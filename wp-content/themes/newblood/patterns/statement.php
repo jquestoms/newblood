@@ -14,7 +14,7 @@
     <p class="nb-label">Composition</p>
     <!-- /wp:paragraph -->
     <!-- wp:heading {"level":2,"className":"nb-statement-quote","style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2.25rem)","lineHeight":"1.25","fontWeight":"400","letterSpacing":"-0.01em"}}} -->
-    <h2 class="nb-statement-quote">A studio trained across more than one form<span style="color:#4ade80">.</span></h2>
+    <h2 class="nb-statement-quote">A studio trained across more than one form.</h2>
     <!-- /wp:heading -->
   </div>
   <!-- /wp:group -->

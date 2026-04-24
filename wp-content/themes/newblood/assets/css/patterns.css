@@ -156,45 +156,51 @@ main > .wp-block-group + .wp-block-group {
 /* Full-bleed still-life image with a single pull-line between hero and social proof */
 .nb-statement {
   position: relative;
-  min-height: clamp(420px, 48vw, 640px);
+  min-height: clamp(480px, 55vw, 720px);
   background-image: url('../images/nb-workplace-design.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: center;
   padding-left: clamp(1.5rem, 5vw, 4rem) !important;
   padding-right: clamp(1.5rem, 5vw, 4rem) !important;
   padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: clamp(3rem, 6vw, 5rem) !important;
   overflow: hidden;
 }
 
-/* Dark vignette on the right where the pull-line sits, so text stays readable over the image */
+/* Bottom darken — gives the pull-line a clean dark field to sit on */
 .nb-statement::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to right,
-    transparent 35%,
-    rgba(15, 17, 23, 0.6) 70%,
-    rgba(15, 17, 23, 0.82) 100%
+    to bottom,
+    transparent 45%,
+    rgba(15, 17, 23, 0.65) 78%,
+    #0f1117 100%
   );
   pointer-events: none;
   z-index: 1;
 }
 
-/* Top and bottom fades so the section blends with hero above and social-proof below */
+/* Top fade blends the image into the hero above so the section transition disappears */
 .nb-statement::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, #0f1117, transparent);
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    #111827 0%,
+    rgba(17, 24, 39, 0.85) 30%,
+    rgba(17, 24, 39, 0.35) 70%,
+    transparent 100%
+  );
   pointer-events: none;
   z-index: 1;
 }
@@ -203,10 +209,9 @@ main > .wp-block-group + .wp-block-group {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: 0;
-  text-align: right;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .nb-statement-inner .nb-label {
@@ -220,23 +225,20 @@ main > .wp-block-group + .wp-block-group {
 
 @media (max-width: 768px) {
   .nb-statement {
-    min-height: 380px;
-    justify-content: center;
+    min-height: 420px;
   }
 
   .nb-statement::before {
     background: linear-gradient(
       to bottom,
-      rgba(15, 17, 23, 0.35) 0%,
-      rgba(15, 17, 23, 0.75) 60%,
-      rgba(15, 17, 23, 0.9) 100%
+      rgba(15, 17, 23, 0.2) 0%,
+      rgba(15, 17, 23, 0.55) 55%,
+      rgba(15, 17, 23, 0.92) 100%
     );
   }
 
   .nb-statement-inner {
     max-width: 100%;
-    text-align: center;
-    margin: 0 auto;
   }
 }
 
