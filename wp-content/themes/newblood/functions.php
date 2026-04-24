@@ -10,44 +10,49 @@ define( 'NEWBLOOD_VERSION', '1.0.0' );
 /**
  * Enqueue theme styles and scripts
  */
+function newblood_asset_version( $relative_path ) {
+    $file = get_template_directory() . $relative_path;
+    return file_exists( $file ) ? filemtime( $file ) : NEWBLOOD_VERSION;
+}
+
 function newblood_enqueue_assets() {
     wp_enqueue_style(
         'newblood-animations',
         get_template_directory_uri() . '/assets/css/animations.css',
         array(),
-        NEWBLOOD_VERSION
+        newblood_asset_version( '/assets/css/animations.css' )
     );
     wp_enqueue_style(
         'newblood-patterns',
         get_template_directory_uri() . '/assets/css/patterns.css',
         array(),
-        NEWBLOOD_VERSION
+        newblood_asset_version( '/assets/css/patterns.css' )
     );
     wp_enqueue_style(
         'newblood-utilities',
         get_template_directory_uri() . '/assets/css/utilities.css',
         array(),
-        NEWBLOOD_VERSION
+        newblood_asset_version( '/assets/css/utilities.css' )
     );
     wp_enqueue_script(
         'newblood-scroll-reveal',
         get_template_directory_uri() . '/assets/js/scroll-reveal.js',
         array(),
-        NEWBLOOD_VERSION,
+        newblood_asset_version( '/assets/js/scroll-reveal.js' ),
         true
     );
     wp_enqueue_script(
         'newblood-gradient-mesh',
         get_template_directory_uri() . '/assets/js/gradient-mesh.js',
         array(),
-        NEWBLOOD_VERSION,
+        newblood_asset_version( '/assets/js/gradient-mesh.js' ),
         true
     );
     wp_enqueue_script(
         'newblood-interactive-cards',
         get_template_directory_uri() . '/assets/js/interactive-cards.js',
         array(),
-        NEWBLOOD_VERSION,
+        newblood_asset_version( '/assets/js/interactive-cards.js' ),
         true
     );
 }
