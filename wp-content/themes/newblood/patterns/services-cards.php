@@ -3,7 +3,7 @@
  * Title: Services Cards
  * Slug: newblood/services-cards
  * Categories: newblood
- * Description: Build, Manage, Empower service cards
+ * Description: Build, Tune, Manage, Empower service cards
  */
 ?>
 <!-- wp:group {"className":"nb-gradient-section nb-services-cards","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
