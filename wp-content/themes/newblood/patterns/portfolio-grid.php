@@ -3,7 +3,7 @@
  * Title: Portfolio Grid
  * Slug: newblood/portfolio-grid
  * Categories: newblood
- * Description: Showcase-style portfolio grid with featured project
+ * Description: Showcase-style portfolio grid with featured project and build/tune secondary cards
  */
 ?>
 <!-- wp:group {"align":"full","className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
@@ -118,7 +118,7 @@
       <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1f1814"}}} -->
       <div class="wp-block-group nb-showcase-image">
         <!-- wp:image {"id":6747,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
-        <figure class="wp-block-image size-large nb-showcase-img"><img src="http://newblood.test/wp-content/uploads/2026/04/57cards-website-scan.png" alt="57Cards website homepage" class="wp-image-6747"/></figure>
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/04/57cards-website-scan.png" alt="57Cards website homepage" class="wp-image-6747"/></figure>
         <!-- /wp:image -->
       </div>
       <!-- /wp:group -->
