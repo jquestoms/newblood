@@ -3,7 +3,7 @@
  * Title: Services Detail
  * Slug: newblood/services-detail
  * Categories: newblood-pages
- * Description: Expanded services page with detailed descriptions of Build, Manage, and Empower
+ * Description: Expanded services page with detailed descriptions of Build, Tune, Manage, and Empower
  */
 ?>
 <!-- wp:group {"align":"full","className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
@@ -135,7 +135,7 @@
     </div>
     <!-- /wp:group -->
     <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem","fontStyle":"italic","lineHeight":"1.7"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-    <p class="has-text-muted-color"><em>What we don't promise: a specific PageSpeed score. Real-world variance is ±5 points run-to-run. Mobile 70+ is reasonable; Mobile 90+ needs the Tune Plus engagement.</em></p>
+    <p class="has-text-muted-color">What we don't promise: a specific PageSpeed score. Real-world variance is ±5 points run-to-run. Mobile 70+ is reasonable; Mobile 90+ needs the Tune Plus engagement.</p>
     <!-- /wp:paragraph -->
   </div>
   <!-- /wp:group -->
