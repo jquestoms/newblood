@@ -81,6 +81,75 @@
     <div class="wp-block-group">
       <!-- wp:group {"style":{"spacing":{"margin":{"right":"var:preset|spacing|40"}}}} -->
       <div class="wp-block-group">
+        <div class="nb-icon-badge" style="width:56px;height:56px;font-size:1.75rem">🎛️</div>
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"layout":{"type":"constrained"}} -->
+      <div class="wp-block-group">
+        <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
+        <h2>Tune</h2>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
+        <p class="has-text-secondary-color">Existing site, sharper performance.</p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+    <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
+    <p class="has-text-body-color">Most WordPress sites running heavy commercial themes ship 200-400 KB of CSS and 100-200 KB of JS site-wide, even on pages that need almost none of it. The result is mobile load times Google notices — and so do your visitors. We tune what's there: diagnostic first, then a focused 5-7 hour engagement against the small set of well-known offenders that produce the biggest gains.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
+    <p class="has-text-body-color">We don't rebuild your theme. We don't add more plugins. We don't change your editorial workflow. Every change ships as one focused pull request, organized by phase, with before-and-after PageSpeed screenshots so you can see the move.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:group {"className":"nb-case-highlight","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+    <div class="wp-block-group nb-case-highlight">
+      <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}}} -->
+      <div class="wp-block-columns">
+        <!-- wp:column -->
+        <div class="wp-block-column">
+          <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem","lineHeight":"2"}}} -->
+          <ul class="has-text-body-color">
+            <li>Diagnostic SEO + PageSpeed audit</li>
+            <li>LCP image conversion (fetchpriority, srcset)</li>
+            <li>Plugin asset cleanup (conditional dequeue)</li>
+            <li>Selective CSS deferral</li>
+          </ul>
+          <!-- /wp:list -->
+        </div>
+        <!-- /wp:column -->
+        <!-- wp:column -->
+        <div class="wp-block-column">
+          <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem","lineHeight":"2"}}} -->
+          <ul class="has-text-body-color">
+            <li>JavaScript audit + targeted fixes</li>
+            <li>Search Console + sitemap submission</li>
+            <li>Per-phase before/after PageSpeed screenshots</li>
+            <li>Handover doc with extensible kill-list</li>
+          </ul>
+          <!-- /wp:list -->
+        </div>
+        <!-- /wp:column -->
+      </div>
+      <!-- /wp:columns -->
+    </div>
+    <!-- /wp:group -->
+    <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem","fontStyle":"italic","lineHeight":"1.7"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+    <p class="has-text-muted-color"><em>What we don't promise: a specific PageSpeed score. Real-world variance is ±5 points run-to-run. Mobile 70+ is reasonable; Mobile 90+ needs the Tune Plus engagement.</em></p>
+    <!-- /wp:paragraph -->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:separator {"opacity":"css","style":{"color":{"background":"rgba(255,255,255,0.06)"}}} -->
+  <hr class="wp-block-separator has-css-opacity has-background"/>
+  <!-- /wp:separator -->
+
+  <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}}} -->
+  <div class="wp-block-group nb-reveal">
+    <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+    <div class="wp-block-group">
+      <!-- wp:group {"style":{"spacing":{"margin":{"right":"var:preset|spacing|40"}}}} -->
+      <div class="wp-block-group">
         <div class="nb-icon-badge" style="width:56px;height:56px;font-size:1.75rem">🛡️</div>
       </div>
       <!-- /wp:group -->
