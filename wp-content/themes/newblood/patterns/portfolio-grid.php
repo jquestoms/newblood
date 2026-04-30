@@ -14,7 +14,7 @@
     <p class="nb-label">Showcase</p>
     <!-- /wp:paragraph -->
     <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)"}}} -->
-    <h2>Built with New Blood</h2>
+    <h2>Built and tuned with New Blood</h2>
     <!-- /wp:heading -->
     <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1rem"}}} -->
     <p class="has-text-secondary-color">Real projects. Modern design. Blazing performance.</p>
@@ -107,6 +107,34 @@
         <!-- /wp:paragraph -->
         <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
         <p><a href="/case-study-ca-lindman/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1f1814"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6747,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="http://newblood.test/wp-content/uploads/2026/04/57cards-website-scan.png" alt="57Cards website homepage" class="wp-image-6747"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>57Cards</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Performance · Tune Engagement</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">A working WooCommerce store, made fast without a rebuild.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-57cards/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
         <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
