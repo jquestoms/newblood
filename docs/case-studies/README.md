@@ -57,6 +57,12 @@ Reason: `newblood.test` is the local Herd hostname. Production is `newblood.com`
    ```
 5. Add a card to `wp-content/themes/newblood/patterns/portfolio-grid.php` linking to `/case-study-<slug>/`.
 
+### Don't prefix the body with a header pattern reference
+
+Body files in this directory must start directly with the case study's outer `wp:group` block. Do NOT prepend `<!-- wp:pattern {"slug":"newblood/page-header"} /-->` or `<!-- wp:pattern {"slug":"newblood/case-study"} /-->` — `templates/page.html` already auto-renders the page-header for every page. Adding a pattern reference at the top of `post_content` produces a duplicate H1 stacked on top of the auto-rendered header.
+
+The other case studies (`/case-study-mikes-master-classes/`, `/case-study-overhead-door/`, `/case-study-ca-lindman/`) start their `post_content` directly with body content. Match that convention.
+
 ## Updating an existing case study
 
 ```
@@ -79,3 +85,21 @@ Treat this directory as the editing surface, push to the DB via `wp post update`
 ## Production deploy
 
 When the site deploys to production (Nexcess), the WordPress media URLs change from `newblood.test` to `newblood.com`. Because the markup files in this directory use root-relative paths, no search-replace is needed for these specific case-study pages. Other content (legacy posts, theme patterns) may still need a `wp search-replace` pass — that's a separate concern.
+
+## Excerpt label convention
+
+The `post_excerpt` field renders as the small green label above the page H1, via the `wp:post-excerpt` block in the page-header pattern.
+
+- **Build engagements** (`/case-study-mikes-master-classes/`, `/case-study-overhead-door/`, `/case-study-ca-lindman/`): use `post_excerpt = "Case Study"` — neutral, signals "this is a case study."
+- **Tune engagements** (`/case-study-57cards/`): use `post_excerpt = "<Pillar> · Tune Engagement"` (e.g., `"Performance · Tune Engagement"`, `"SEO · Tune Engagement"`). The label does double duty — it both identifies the page as a case study and signals it's a Tune-not-Build project.
+
+The two conventions are intentionally different. Don't homogenize them.
+
+## Portfolio-grid badge convention
+
+The `nb-showcase-badge` text on each card in `wp-content/themes/newblood/patterns/portfolio-grid.php` follows different shapes for Build vs Tune engagements:
+
+- **Build engagements:** `<Industry> · <Service-Type>` — e.g., `E-Commerce · Education`, `Commercial · Service`.
+- **Tune engagements:** `<Pillar> · Tune Engagement` — e.g., `Performance · Tune Engagement`, `SEO · Tune Engagement`.
+
+The Tune shape signals the engagement type at a glance, since the user can't tell from the screenshot alone whether NewBlood built the site or tuned it. Match this convention for new cards.
