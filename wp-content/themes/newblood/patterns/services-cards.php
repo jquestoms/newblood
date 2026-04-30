@@ -6,8 +6,8 @@
  * Description: Build, Manage, Empower service cards
  */
 ?>
-<!-- wp:group {"className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
-<div class="wp-block-group nb-gradient-section">
+<!-- wp:group {"className":"nb-gradient-section nb-services-cards","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group nb-gradient-section nb-services-cards">
   <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
   <div class="wp-block-group nb-reveal" style="text-align:center">
     <!-- wp:paragraph {"className":"nb-label"} -->
@@ -28,6 +28,17 @@
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
       <p class="has-text-muted-color">We design and develop your site from the ground up — pairing 25+ years of craft with modern AI workflows to build a considered, performant website made for your business.</p>
+      <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+    <!-- wp:column {"className":"nb-glass nb-reveal"} -->
+    <div class="wp-block-column nb-glass nb-reveal" style="padding:1.5rem">
+      <div class="nb-icon-badge">🎛️</div>
+      <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+      <h3>Tune</h3>
+      <!-- /wp:heading -->
+      <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
+      <p class="has-text-muted-color">Bring your existing site up to speed. A fixed-price tune-up that gets your performance and SEO into the band Google rewards — without rebuilding anything.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->

@@ -284,6 +284,17 @@ main > .wp-block-group + .wp-block-group {
   }
 }
 
+/* Services cards — wrap to 2x2 at tablet width when there are 4 cards */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .nb-services-cards .wp-block-columns.nb-stagger {
+    flex-wrap: wrap !important;
+  }
+  .nb-services-cards .wp-block-columns.nb-stagger > .wp-block-column {
+    flex-basis: calc(50% - 0.75rem) !important;
+    flex-grow: 0 !important;
+  }
+}
+
 /* ===== Showcase Portfolio Grid ===== */
 
 .nb-showcase-grid {
