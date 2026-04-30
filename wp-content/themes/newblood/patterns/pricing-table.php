@@ -3,7 +3,7 @@
  * Title: Pricing Table
  * Slug: newblood/pricing-table
  * Categories: newblood
- * Description: Pricing tiers for build packages and management plans
+ * Description: Pricing tiers for build packages and Tune services
  */
 ?>
 <!-- wp:group {"align":"full","className":"nb-gradient-section nb-pricing","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1500px"}} -->
