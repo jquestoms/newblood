@@ -149,7 +149,7 @@
       <h3>Tune Plus</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">Tune plus critical-CSS extraction for clients targeting Mobile 90+. Stretch engagement.</p>
+      <p class="has-text-muted-color">Adds critical-CSS extraction for clients targeting Mobile 90+. Stretch engagement.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
       <p><span style="color:#4ade80">$4,500</span></p>
