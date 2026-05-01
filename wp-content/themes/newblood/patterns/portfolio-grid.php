@@ -29,8 +29,8 @@
     <div class="wp-block-group nb-showcase-card nb-showcase-featured">
       <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a1a2e"}}} -->
       <div class="wp-block-group nb-showcase-image">
-        <!-- wp:image {"id":6743,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
-        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/03/screenshot-mikes-master-classes-1.png" alt="Mike's Master Classes website screenshot" class="wp-image-6743"/></figure>
+        <!-- wp:image {"id":6749,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/05/mikesmasterclasses-case-study.png" alt="Mike's Master Classes online jazz guitar education platform" class="wp-image-6749"/></figure>
         <!-- /wp:image -->
       </div>
       <!-- /wp:group -->
