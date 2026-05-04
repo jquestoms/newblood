@@ -90,9 +90,9 @@ When the site deploys to production (Nexcess), the WordPress media URLs change f
 
 The `post_excerpt` field renders as the small green label above the page H1, via the `wp:post-excerpt` block in the page-header pattern.
 
-- **Build engagements** (`/case-study-mikes-master-classes/`, `/case-study-ca-lindman/`): use `post_excerpt = "Case Study"` — neutral, signals "this is a case study."
+- **Build engagements** (`/case-study-mikes-master-classes/`): use `post_excerpt = "Case Study"` — neutral, signals "this is a case study."
 - **Tune engagements** (`/case-study-57cards/`): use `post_excerpt = "<Pillar> · Tune Engagement"` (e.g., `"Performance · Tune Engagement"`, `"SEO · Tune Engagement"`). The label does double duty — it both identifies the page as a case study and signals it's a Tune-not-Build project.
-- **Manage engagements** (`/case-study-overhead-door/`): use `post_excerpt = "<Pillar> · Manage Engagement"` (e.g., `"Hosting & Care · Manage Engagement"`). Same logic as Tune — signals the engagement shape, since a Manage case study tells a different story than a Build (relationship and stewardship rather than launch).
+- **Manage engagements** (`/case-study-overhead-door/`, `/case-study-ca-lindman/`): use `post_excerpt = "<Pillar> · Manage Engagement"` (e.g., `"Hosting & Care · Manage Engagement"`, `"Content control · Manage Engagement"`). Same logic as Tune — signals the engagement shape, since a Manage case study tells a different story than a Build (relationship and stewardship rather than launch). Note that Manage engagements may sit on top of an original Build that we did years ago; the case study features the long-running care relationship, not the (often dated) original site work.
 
 The three conventions are intentionally different. Don't homogenize them.
 

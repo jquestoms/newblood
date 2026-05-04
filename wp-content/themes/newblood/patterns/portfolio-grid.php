@@ -100,10 +100,10 @@
         <h3>C.A. Lindman</h3>
         <!-- /wp:heading -->
         <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
-        <p class="nb-showcase-badge">Construction · Restoration</p>
+        <p class="nb-showcase-badge">Content control · Manage Engagement</p>
         <!-- /wp:paragraph -->
         <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
-        <p class="has-text-muted-color">Structural repair and building restoration specialists since 1990.</p>
+        <p class="has-text-muted-color">A 36-year-old restoration firm that publishes its own content while we look after everything underneath.</p>
         <!-- /wp:paragraph -->
         <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
         <p><a href="/case-study-ca-lindman/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
