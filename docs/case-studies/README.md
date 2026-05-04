@@ -90,16 +90,18 @@ When the site deploys to production (Nexcess), the WordPress media URLs change f
 
 The `post_excerpt` field renders as the small green label above the page H1, via the `wp:post-excerpt` block in the page-header pattern.
 
-- **Build engagements** (`/case-study-mikes-master-classes/`, `/case-study-overhead-door/`, `/case-study-ca-lindman/`): use `post_excerpt = "Case Study"` — neutral, signals "this is a case study."
+- **Build engagements** (`/case-study-mikes-master-classes/`, `/case-study-ca-lindman/`): use `post_excerpt = "Case Study"` — neutral, signals "this is a case study."
 - **Tune engagements** (`/case-study-57cards/`): use `post_excerpt = "<Pillar> · Tune Engagement"` (e.g., `"Performance · Tune Engagement"`, `"SEO · Tune Engagement"`). The label does double duty — it both identifies the page as a case study and signals it's a Tune-not-Build project.
+- **Manage engagements** (`/case-study-overhead-door/`): use `post_excerpt = "<Pillar> · Manage Engagement"` (e.g., `"Hosting & Care · Manage Engagement"`). Same logic as Tune — signals the engagement shape, since a Manage case study tells a different story than a Build (relationship and stewardship rather than launch).
 
-The two conventions are intentionally different. Don't homogenize them.
+The three conventions are intentionally different. Don't homogenize them.
 
 ## Portfolio-grid badge convention
 
-The `nb-showcase-badge` text on each card in `wp-content/themes/newblood/patterns/portfolio-grid.php` follows different shapes for Build vs Tune engagements:
+The `nb-showcase-badge` text on each card in `wp-content/themes/newblood/patterns/portfolio-grid.php` follows different shapes per engagement type:
 
-- **Build engagements:** `<Industry> · <Service-Type>` — e.g., `E-Commerce · Education`, `Commercial · Service`.
+- **Build engagements:** `<Industry> · <Service-Type>` — e.g., `E-Commerce · Education`, `Construction · Restoration`.
 - **Tune engagements:** `<Pillar> · Tune Engagement` — e.g., `Performance · Tune Engagement`, `SEO · Tune Engagement`.
+- **Manage engagements:** `<Pillar> · Manage Engagement` — e.g., `Hosting & Care · Manage Engagement`.
 
-The Tune shape signals the engagement type at a glance, since the user can't tell from the screenshot alone whether NewBlood built the site or tuned it. Match this convention for new cards.
+The Tune and Manage shapes signal the engagement type at a glance, since the user can't tell from the screenshot alone what NewBlood actually did for the client. Match this convention for new cards.
