@@ -22,7 +22,15 @@
   <div class="wp-block-columns nb-stagger">
     <!-- wp:column {"className":"nb-glass nb-reveal"} -->
     <div class="wp-block-column nb-glass nb-reveal" style="padding:1.5rem">
-      <div class="nb-icon-badge">⚡</div>
+      <div class="nb-service-mark">
+        <svg viewBox="0 0 80 80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <line class="stroke draw" x1="14" y1="62" x2="14" y2="50"/>
+          <line class="stroke draw draw--2" x1="28" y1="62" x2="28" y2="40"/>
+          <line class="stroke draw draw--2" x1="42" y1="62" x2="42" y2="28"/>
+          <line class="stroke draw draw--3" x1="56" y1="62" x2="56" y2="16"/>
+          <line class="baseline" x1="6" y1="68" x2="74" y2="68"/>
+        </svg>
+      </div>
       <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
       <h3>Build</h3>
       <!-- /wp:heading -->
@@ -33,7 +41,12 @@
     <!-- /wp:column -->
     <!-- wp:column {"className":"nb-glass nb-reveal"} -->
     <div class="wp-block-column nb-glass nb-reveal" style="padding:1.5rem">
-      <div class="nb-icon-badge">🎛️</div>
+      <div class="nb-service-mark">
+        <svg viewBox="0 0 80 80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <path class="stroke draw" d="M8 40 Q 20 18, 32 40 T 56 40 T 72 40"/>
+          <line class="baseline" x1="6" y1="68" x2="74" y2="68"/>
+        </svg>
+      </div>
       <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
       <h3>Tune</h3>
       <!-- /wp:heading -->
@@ -44,7 +57,13 @@
     <!-- /wp:column -->
     <!-- wp:column {"className":"nb-glass nb-reveal"} -->
     <div class="wp-block-column nb-glass nb-reveal" style="padding:1.5rem">
-      <div class="nb-icon-badge">🛡️</div>
+      <div class="nb-service-mark">
+        <svg viewBox="0 0 80 80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <circle class="stroke draw" cx="40" cy="40" r="22"/>
+          <circle class="inner-ring" cx="40" cy="40" r="14"/>
+          <circle class="dot" cx="40" cy="40" r="3"/>
+        </svg>
+      </div>
       <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
       <h3>Manage</h3>
       <!-- /wp:heading -->
@@ -55,7 +74,13 @@
     <!-- /wp:column -->
     <!-- wp:column {"className":"nb-glass nb-reveal"} -->
     <div class="wp-block-column nb-glass nb-reveal" style="padding:1.5rem">
-      <div class="nb-icon-badge">🤝</div>
+      <div class="nb-service-mark">
+        <svg viewBox="0 0 80 80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <circle class="stroke draw" cx="28" cy="40" r="14"/>
+          <line class="stroke draw draw--2" x1="42" y1="40" x2="64" y2="40"/>
+          <polyline class="stroke draw draw--3" points="56,32 64,40 56,48" fill="none"/>
+        </svg>
+      </div>
       <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
       <h3>Empower</h3>
       <!-- /wp:heading -->
