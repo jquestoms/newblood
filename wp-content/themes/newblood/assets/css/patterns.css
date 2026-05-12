@@ -657,3 +657,74 @@ details p {
     transition: none;
   }
 }
+
+/* ---- Service TL;DR card ----
+ * Three-field scan-friendly summary (For / Get / Includes) that replaces the
+ * lede paragraph under each service h2 in services-detail.php.
+ * Visual treatment echoes the .nb-case-meta pattern from case-study pages.
+ * Spec: docs/superpowers/specs/2026-05-11-services-tldr-card-design.md
+ */
+
+.nb-service-tldr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "for get"
+    "includes includes";
+  gap: 22px 36px;
+  padding: 22px 0;
+  margin: 18px 0 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nb-service-tldr-item {
+  /* Grid item defaults to min-width: auto, which lets long unbreakable
+   * strings blow out the column. Reset to 0 so the 1fr column track
+   * truly fills 1fr and overflow gets handled by the text itself. */
+  min-width: 0;
+}
+
+.nb-service-tldr-item--for { grid-area: for; }
+.nb-service-tldr-item--get { grid-area: get; }
+.nb-service-tldr-item--includes { grid-area: includes; }
+
+.nb-service-tldr-label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(74, 222, 128, 0.75);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.nb-service-tldr-value {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.nb-service-tldr-value--get {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.nb-service-tldr-value--includes {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 640px) {
+  .nb-service-tldr {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "for"
+      "get"
+      "includes";
+    gap: 18px;
+  }
+}

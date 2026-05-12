@@ -31,13 +31,28 @@
         <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
         <h2>Build</h2>
         <!-- /wp:heading -->
-        <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
-        <p class="has-text-secondary-color">Your website is the first impression most customers will have of your business. We make it count.</p>
-        <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:html -->
+    <div class="nb-service-tldr">
+      <div class="nb-service-tldr-item nb-service-tldr-item--for">
+        <span class="nb-service-tldr-label">For</span>
+        <p class="nb-service-tldr-value">businesses that want a website made for them, not chosen from a template</p>
+      </div>
+      <div class="nb-service-tldr-item nb-service-tldr-item--get">
+        <span class="nb-service-tldr-label">Get</span>
+        <p class="nb-service-tldr-value nb-service-tldr-value--get">a custom, modern website tuned to your brand and built to perform</p>
+      </div>
+      <div class="nb-service-tldr-item nb-service-tldr-item--includes">
+        <span class="nb-service-tldr-label">Includes</span>
+        <p class="nb-service-tldr-value nb-service-tldr-value--includes">Custom design · Modern code · Performance from day one</p>
+      </div>
+    </div>
+    <!-- /wp:html -->
+
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">We design and develop custom websites using AI-accelerated workflows — combining 25+ years of craft with modern tools that bring large-agency creative ambition within reach. Every site is built from the ground up to be fast, accessible, and tailored to your brand.</p>
     <!-- /wp:paragraph -->
@@ -102,13 +117,28 @@
         <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
         <h2>Tune</h2>
         <!-- /wp:heading -->
-        <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
-        <p class="has-text-secondary-color">Existing site, sharper performance.</p>
-        <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:html -->
+    <div class="nb-service-tldr">
+      <div class="nb-service-tldr-item nb-service-tldr-item--for">
+        <span class="nb-service-tldr-label">For</span>
+        <p class="nb-service-tldr-value">an existing site losing visitors and ad spend to slow mobile load times</p>
+      </div>
+      <div class="nb-service-tldr-item nb-service-tldr-item--get">
+        <span class="nb-service-tldr-label">Get</span>
+        <p class="nb-service-tldr-value nb-service-tldr-value--get">a measurably faster site — without rebuilding anything</p>
+      </div>
+      <div class="nb-service-tldr-item nb-service-tldr-item--includes">
+        <span class="nb-service-tldr-label">Includes</span>
+        <p class="nb-service-tldr-value nb-service-tldr-value--includes">PageSpeed audit · Surgical fixes · Before-and-after proof</p>
+      </div>
+    </div>
+    <!-- /wp:html -->
+
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">Most WordPress sites running heavy commercial themes ship 200-400 KB of CSS and 100-200 KB of JS site-wide, even on pages that need almost none of it. The result is mobile load times Google notices — and so do your visitors. We tune what's there: diagnostic first, then a focused 5-7 hour engagement against the small set of well-known offenders that produce the biggest gains.</p>
     <!-- /wp:paragraph -->
@@ -177,13 +207,28 @@
         <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
         <h2>Manage</h2>
         <!-- /wp:heading -->
-        <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
-        <p class="has-text-secondary-color">A website isn't a one-time project — it's a living asset that needs care.</p>
-        <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:html -->
+    <div class="nb-service-tldr">
+      <div class="nb-service-tldr-item nb-service-tldr-item--for">
+        <span class="nb-service-tldr-label">For</span>
+        <p class="nb-service-tldr-value">owners who don't want to think about updates, backups, or whether the site is up at 2 AM</p>
+      </div>
+      <div class="nb-service-tldr-item nb-service-tldr-item--get">
+        <span class="nb-service-tldr-label">Get</span>
+        <p class="nb-service-tldr-value nb-service-tldr-value--get">a site that just runs, looked after in the background</p>
+      </div>
+      <div class="nb-service-tldr-item nb-service-tldr-item--includes">
+        <span class="nb-service-tldr-label">Includes</span>
+        <p class="nb-service-tldr-value nb-service-tldr-value--includes">Managed hosting · Security &amp; updates · Backups &amp; monitoring</p>
+      </div>
+    </div>
+    <!-- /wp:html -->
+
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">Every site we build comes with the option to join our managed hosting and maintenance plans. We handle the technical infrastructure so you can focus entirely on running your business — no worrying about security patches, software updates, or whether your site is online at 2 AM.</p>
     <!-- /wp:paragraph -->
@@ -249,13 +294,28 @@
         <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
         <h2>Empower</h2>
         <!-- /wp:heading -->
-        <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
-        <p class="has-text-secondary-color">Your website. Your content. Your control.</p>
-        <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:html -->
+    <div class="nb-service-tldr">
+      <div class="nb-service-tldr-item nb-service-tldr-item--for">
+        <span class="nb-service-tldr-label">For</span>
+        <p class="nb-service-tldr-value">teams that want to publish their own content without breaking the design</p>
+      </div>
+      <div class="nb-service-tldr-item nb-service-tldr-item--get">
+        <span class="nb-service-tldr-label">Get</span>
+        <p class="nb-service-tldr-value nb-service-tldr-value--get">editorial control of your own site, with the structural side held safely by us</p>
+      </div>
+      <div class="nb-service-tldr-item nb-service-tldr-item--includes">
+        <span class="nb-service-tldr-label">Includes</span>
+        <p class="nb-service-tldr-value nb-service-tldr-value--includes">Block editor · Hands-on training · A real point of contact</p>
+      </div>
+    </div>
+    <!-- /wp:html -->
+
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">We believe you shouldn't need to call a developer every time you want to update your hours, add a blog post, or change an image. That's why every site we build uses WordPress's modern block editor — a visual, drag-and-drop interface that puts you in control of your own content.</p>
     <!-- /wp:paragraph -->
