@@ -19,3 +19,6 @@ Thumbs.db
 # Superpowers brainstorming sessions
 .superpowers/
 .idea/
+
+# Source-image staging area — optimized copies live in WP media; raw files don't belong in git
+image-import/

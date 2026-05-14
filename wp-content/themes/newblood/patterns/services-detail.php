@@ -53,6 +53,10 @@
     </div>
     <!-- /wp:html -->
 
+    <!-- wp:image {"id":6750,"sizeSlug":"large","linkDestination":"none","className":"nb-service-illustration"} -->
+    <figure class="wp-block-image size-large nb-service-illustration"><img src="/wp-content/uploads/2026/05/nb-services-build.jpg" alt="Holographic website being composed from colorful particles" class="wp-image-6750"/></figure>
+    <!-- /wp:image -->
+
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">We design and develop custom websites using AI-accelerated workflows — combining 25+ years of craft with modern tools that bring large-agency creative ambition within reach. Every site is built from the ground up to be fast, accessible, and tailored to your brand.</p>
     <!-- /wp:paragraph -->
@@ -138,6 +142,10 @@
       </div>
     </div>
     <!-- /wp:html -->
+
+    <!-- wp:image {"id":6751,"sizeSlug":"large","linkDestination":"none","className":"nb-service-illustration"} -->
+    <figure class="wp-block-image size-large nb-service-illustration"><img src="/wp-content/uploads/2026/05/nb-services-tune.jpg" alt="Laptop displaying PageSpeed Insights with 98 mobile and desktop scores" class="wp-image-6751"/></figure>
+    <!-- /wp:image -->
 
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">Most WordPress sites running heavy commercial themes ship 200-400 KB of CSS and 100-200 KB of JS site-wide, even on pages that need almost none of it. The result is mobile load times Google notices — and so do your visitors. We tune what's there: diagnostic first, then a focused 5-7 hour engagement against the small set of well-known offenders that produce the biggest gains.</p>
@@ -229,6 +237,10 @@
     </div>
     <!-- /wp:html -->
 
+    <!-- wp:image {"id":6752,"sizeSlug":"large","linkDestination":"none","className":"nb-service-illustration"} -->
+    <figure class="wp-block-image size-large nb-service-illustration"><img src="/wp-content/uploads/2026/05/nb-services-manage.jpg" alt="Holographic server connected to laptop, phone, and desktop monitor" class="wp-image-6752"/></figure>
+    <!-- /wp:image -->
+
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">Every site we build comes with the option to join our managed hosting and maintenance plans. We handle the technical infrastructure so you can focus entirely on running your business — no worrying about security patches, software updates, or whether your site is online at 2 AM.</p>
     <!-- /wp:paragraph -->
@@ -315,6 +327,10 @@
       </div>
     </div>
     <!-- /wp:html -->
+
+    <!-- wp:image {"id":6753,"sizeSlug":"large","linkDestination":"none","className":"nb-service-illustration"} -->
+    <figure class="wp-block-image size-large nb-service-illustration"><img src="/wp-content/uploads/2026/05/nb-services-empower.jpg" alt="Visual drag-and-drop block editor for a website" class="wp-image-6753"/></figure>
+    <!-- /wp:image -->
 
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">We believe you shouldn't need to call a developer every time you want to update your hours, add a blog post, or change an image. That's why every site we build uses WordPress's modern block editor — a visual, drag-and-drop interface that puts you in control of your own content.</p>

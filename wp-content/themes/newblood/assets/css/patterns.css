@@ -672,10 +672,11 @@ details p {
     "for get"
     "includes includes";
   gap: 22px 36px;
-  padding: 22px 0;
-  margin: 18px 0 26px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 24px 22px;
+  margin: 18px -22px 26px;
+  background: rgba(74, 222, 128, 0.035);
+  border-top: 1px solid rgba(74, 222, 128, 0.22);
+  border-bottom: 1px solid rgba(74, 222, 128, 0.22);
 }
 
 .nb-service-tldr-item {
@@ -694,7 +695,7 @@ details p {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: rgba(74, 222, 128, 0.75);
+  color: #4ade80;
   font-weight: 600;
   margin-bottom: 6px;
 }
@@ -727,4 +728,22 @@ details p {
       "includes";
     gap: 18px;
   }
+}
+
+/* ---- Service illustration ----
+ * Visual break between TL;DR card and body paragraphs in services-detail.php.
+ * One illustration per service. Full content width with rounded corners and
+ * a subtle border so the imagery harmonizes with the dark theme.
+ */
+.nb-service-illustration {
+  margin: 28px 0 32px;
+}
+
+.nb-service-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
