@@ -106,19 +106,10 @@ function newblood_notes_body_class( $classes ) {
 }
 add_filter( 'body_class', 'newblood_notes_body_class' );
 
-/**
- * Tag the "Notes" menu items so CSS can hide them while pre-launch.
- * Matches by URL ending in /notes/ or /notes.
- */
-function newblood_tag_notes_menu_items( $items ) {
-    foreach ( $items as $item ) {
-        if ( preg_match( '#/notes/?$#', $item->url ) ) {
-            $item->classes[] = 'menu-item--notes';
-        }
-    }
-    return $items;
-}
-add_filter( 'wp_nav_menu_objects', 'newblood_tag_notes_menu_items' );
+// Note: the site uses block-based navigation (wp:navigation refs in header/footer
+// templates), not classic menus. The "menu-item--notes" class is added directly
+// in the wp:navigation-link block's `className` attribute on the Notes link.
+// No wp_nav_menu_objects filter needed — that hook only fires for classic menus.
 
 /**
  * Reading time in whole minutes (250 wpm). Returns int.
