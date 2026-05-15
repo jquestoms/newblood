@@ -161,3 +161,41 @@ function newblood_notes_featured_image_notice() {
     echo '<div class="notice notice-warning"><p><strong>Notes:</strong> this published post has no featured image. It will render with a fallback gradient on /notes/ until one is added.</p></div>';
 }
 add_action( 'admin_notices', 'newblood_notes_featured_image_notice' );
+
+/**
+ * Shortcode: [nb_note_card]
+ * Renders ONE Notes index card using the current post context (must be inside a loop,
+ * typically wp:post-template). Block patterns execute their PHP at registration time,
+ * not render time — so per-post dynamic markup goes through a shortcode that runs
+ * with proper loop context on each request.
+ */
+function newblood_shortcode_note_card() {
+    $post_id   = get_the_ID();
+    if ( ! $post_id ) {
+        return '';
+    }
+    $primary   = newblood_primary_category( $post_id );
+    $permalink = get_permalink( $post_id );
+    $title     = get_the_title( $post_id );
+    $excerpt   = wp_trim_words( wp_strip_all_tags( get_the_excerpt( $post_id ) ), 28, '…' );
+    $date      = get_the_date( 'F j, Y', $post_id );
+    $reading   = newblood_reading_time( $post_id );
+    $thumb     = has_post_thumbnail( $post_id ) ? get_the_post_thumbnail( $post_id, 'large' ) : '';
+
+    ob_start();
+    ?>
+    <a class="nb-note-card" href="<?php echo esc_url( $permalink ); ?>">
+      <div class="nb-note-card-image"><?php echo $thumb; ?></div>
+      <div class="nb-note-card-body">
+        <?php if ( $primary ) : ?>
+          <span class="nb-note-badge"><?php echo esc_html( $primary->name ); ?></span>
+        <?php endif; ?>
+        <h2 class="nb-note-card-title"><?php echo esc_html( $title ); ?></h2>
+        <p class="nb-note-card-dek"><?php echo esc_html( $excerpt ); ?></p>
+        <p class="nb-note-card-meta"><?php echo esc_html( $date ); ?> &middot; <?php echo esc_html( $reading ); ?> min read</p>
+      </div>
+    </a>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode( 'nb_note_card', 'newblood_shortcode_note_card' );
