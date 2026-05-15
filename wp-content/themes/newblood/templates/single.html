@@ -1,18 +1,29 @@
 <!-- wp:template-part {"slug":"header","area":"header"} /-->
 <!-- wp:group {"tagName":"main"} -->
 <main class="wp-block-group">
-  <!-- wp:group {"className":"nb-gradient-primary nb-dot-grid","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|60","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
-  <div class="wp-block-group nb-gradient-primary nb-dot-grid" style="text-align:center">
+
+  <!-- wp:group {"align":"full","className":"nb-gradient-primary nb-dot-grid","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|60","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+  <div class="wp-block-group alignfull nb-gradient-primary nb-dot-grid" style="text-align:center">
+
+    <!-- wp:shortcode -->[nb_note_hero_image]<!-- /wp:shortcode -->
+
     <!-- wp:post-title {"level":1,"className":"nb-hero-headline","style":{"typography":{"fontSize":"clamp(2rem, 4vw, 3rem)","lineHeight":"1.15","letterSpacing":"-0.02em"}}} /-->
-    <!-- wp:post-date {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} /-->
+
+    <!-- wp:shortcode -->[nb_note_hero_meta]<!-- /wp:shortcode -->
+
   </div>
   <!-- /wp:group -->
-  <!-- wp:group {"className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+
+  <!-- wp:group {"className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"layout":{"type":"constrained","contentSize":"720px"}}} -->
   <div class="wp-block-group nb-gradient-section">
     <!-- wp:post-content /-->
   </div>
   <!-- /wp:group -->
+
+  <!-- wp:pattern {"slug":"newblood/more-notes"} /-->
+
   <!-- wp:pattern {"slug":"newblood/cta"} /-->
+
 </main>
 <!-- /wp:group -->
 <!-- wp:template-part {"slug":"footer","area":"footer"} /-->

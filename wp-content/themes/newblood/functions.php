@@ -199,3 +199,45 @@ function newblood_shortcode_note_card() {
     return ob_get_clean();
 }
 add_shortcode( 'nb_note_card', 'newblood_shortcode_note_card' );
+
+/**
+ * Shortcode: [nb_note_hero_image]
+ * Renders the featured image inside the single-post hero, wrapped in .nb-note-hero-image.
+ */
+function newblood_shortcode_note_hero_image() {
+    $post_id = get_the_ID();
+    if ( ! $post_id || ! has_post_thumbnail( $post_id ) ) {
+        return '';
+    }
+    return '<figure class="nb-note-hero-image">' . get_the_post_thumbnail( $post_id, 'large' ) . '</figure>';
+}
+add_shortcode( 'nb_note_hero_image', 'newblood_shortcode_note_hero_image' );
+
+/**
+ * Shortcode: [nb_note_hero_meta]
+ * Renders the meta row on a single Notes post: category badge + date + reading time.
+ */
+function newblood_shortcode_note_hero_meta() {
+    $post_id = get_the_ID();
+    if ( ! $post_id ) {
+        return '';
+    }
+    $primary = newblood_primary_category( $post_id );
+    $date    = get_the_date( 'F j, Y', $post_id );
+    $reading = newblood_reading_time( $post_id );
+
+    ob_start();
+    ?>
+    <p class="nb-note-hero-meta">
+      <?php if ( $primary ) : ?>
+        <a class="nb-note-badge" href="<?php echo esc_url( get_category_link( $primary->term_id ) ); ?>"><?php echo esc_html( $primary->name ); ?></a>
+        &nbsp;&middot;&nbsp;
+      <?php endif; ?>
+      <?php echo esc_html( $date ); ?>
+      &nbsp;&middot;&nbsp;
+      <?php echo esc_html( $reading ); ?> min read
+    </p>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode( 'nb_note_hero_meta', 'newblood_shortcode_note_hero_meta' );
