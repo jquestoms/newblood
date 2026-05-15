@@ -291,3 +291,52 @@ function newblood_shortcode_more_notes() {
     return ob_get_clean();
 }
 add_shortcode( 'nb_more_notes', 'newblood_shortcode_more_notes' );
+
+/**
+ * Shortcode: [nb_latest_note]
+ * Renders the homepage "Latest from Notes" hook — single card with image left, text right.
+ * Outputs nothing when no posts are published (independent guard from NB_NOTES_PUBLIC).
+ */
+function newblood_shortcode_latest_note() {
+    $latest = get_posts( array(
+        'numberposts' => 1,
+        'post_status' => 'publish',
+    ) );
+
+    if ( empty( $latest ) ) {
+        return '';
+    }
+
+    $post_obj  = $latest[0];
+    $primary   = newblood_primary_category( $post_obj->ID );
+    $permalink = get_permalink( $post_obj->ID );
+    $thumb     = has_post_thumbnail( $post_obj->ID ) ? get_the_post_thumbnail( $post_obj->ID, 'large' ) : '';
+    $date      = get_the_date( 'F j, Y', $post_obj->ID );
+    $reading   = newblood_reading_time( $post_obj->ID );
+    $excerpt   = wp_trim_words( wp_strip_all_tags( get_the_excerpt( $post_obj ) ), 36, '…' );
+
+    ob_start();
+    ?>
+    <div class="wp-block-group alignfull nb-gradient-section nb-latest-note-section" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="nb-latest-note-section-label">
+          <span class="nb-label">From Notes<span style="color:#4ade80">.</span></span>
+          <a class="nb-view-all" href="<?php echo esc_url( home_url( '/notes/' ) ); ?>">View all &rarr;</a>
+        </div>
+        <a class="nb-latest-note-card" href="<?php echo esc_url( $permalink ); ?>">
+          <div class="nb-latest-note-card-image"><?php echo $thumb; ?></div>
+          <div class="nb-latest-note-card-body">
+            <?php if ( $primary ) : ?>
+              <span class="nb-note-badge"><?php echo esc_html( $primary->name ); ?></span>
+            <?php endif; ?>
+            <h2 class="nb-latest-note-card-title"><?php echo esc_html( get_the_title( $post_obj->ID ) ); ?></h2>
+            <p class="nb-latest-note-card-dek"><?php echo esc_html( $excerpt ); ?></p>
+            <p class="nb-latest-note-card-meta"><?php echo esc_html( $date ); ?> &middot; <?php echo esc_html( $reading ); ?> min read</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode( 'nb_latest_note', 'newblood_shortcode_latest_note' );
