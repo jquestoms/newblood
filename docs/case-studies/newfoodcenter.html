@@ -2,7 +2,7 @@
 <div class="wp-block-group alignfull nb-gradient-section nb-reveal">
 
   <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.7"}}} -->
-  <p class="has-text-secondary-color"><strong>Stack:</strong> Modern web app · AI-augmented build<br><strong>Engagement:</strong> Build — new product from scratch</p>
+  <p class="has-text-secondary-color"><strong>Stack:</strong> Next.js 15 · TypeScript · Neon Postgres + pgvector · Payload CMS 3 · Anthropic Claude · Cohere · Vercel<br><strong>Engagement:</strong> Build — new product from scratch<br><strong>Live:</strong> <a href="https://newfoodcenter-claude.vercel.app" rel="noopener" target="_blank">newfoodcenter-claude.vercel.app</a> (apex cutover to newfoodcenter.com pending)</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:image {"id":6760,"sizeSlug":"large","linkDestination":"none","className":"nb-case-screenshot"} -->
@@ -10,16 +10,184 @@
   <!-- /wp:image -->
 
   <!-- wp:heading -->
-  <h2>About newfoodcenter.com</h2>
+  <h2>At a glance</h2>
   <!-- /wp:heading -->
 
   <!-- wp:paragraph -->
-  <p>A multilingual grocery-deals platform that helps Inland Empire shoppers find the best weekly prices across Northgate, Vallarta, Seafood City, and other multicultural markets. Built as a modern web application with a conversational interface — shoppers can search in their own language and get back the real deals at the stores they already shop at.</p>
+  <p>A multilingual, AI-native weekly grocery deals platform serving Spanish-speaking Latino and Filipino households in Southern California's Inland Empire. The product makes ethnic grocery flyers — long ignored by the big national aggregators — discoverable, searchable, and conversational. Every week, an automated pipeline reads each chain's weekly ad and turns it into structured, searchable, multilingual deals.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem","fontStyle":"italic","lineHeight":"1.7"}}} -->
-  <p class="has-text-muted-color">Full case study coming soon.</p>
+  <!-- wp:pullquote {"className":"is-style-default"} -->
+  <figure class="wp-block-pullquote"><blockquote><p>Your weekly grocery deals, in your language, for the stores Flipp forgot.</p></blockquote></figure>
+  <!-- /wp:pullquote -->
+
+  <!-- wp:heading -->
+  <h2>The brief</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The original NewFoodCenter launched in 2008 with a simple idea: aggregate every neighborhood grocery store's weekly ad in one place. The concept was sound — but the technology of the day couldn't read messy flyer PDFs at scale, couldn't translate at conversational quality, and couldn't operate near-zero-cost at small scale. The site sunset.</p>
   <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>In 2026, three shifts made the original concept newly viable:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list {"ordered":true} -->
+  <ol><li><strong>Vision-capable LLMs</strong> can read any flyer image — PDF, paginated viewer, even photos — and produce clean structured data at fractions of a cent per page.</li><li><strong>Multilingual AI</strong> at production quality finally serves bilingual households the way they actually shop: switching between languages mid-conversation, asking in Spanish, getting answers in English.</li><li><strong>Modern serverless platforms</strong> make small-scale community products operationally viable without a dedicated ops team.</li></ol>
+  <!-- /wp:list -->
+
+  <!-- wp:paragraph -->
+  <p>We rebuilt the platform from scratch on a modern stack with three differentiators in mind: ethnic-grocery focus, multilingual UX, and an AI assistant as the front door — not a flyer browser dressed up with a chatbot.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>What it does</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>Conversational AI assistant (the hero feature)</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The home page is a chat — not a search bar. Shoppers ask in plain language:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:quote -->
+  <blockquote class="wp-block-quote"><p><em>"What pork is on sale at Cardenas this week?"</em></p><p><em>"¿Dónde encuentro tortillas y carnitas para tacos esta noche?"</em></p><p><em>"What's the cheapest seafood near 92505?"</em></p></blockquote>
+  <!-- /wp:quote -->
+
+  <!-- wp:paragraph -->
+  <p>The assistant grounds every answer in the live deals database: it pulls real items + prices, names the store, links to the flyer. No hallucination — the assistant only answers from indexed data. Multilingual by default; users can switch languages mid-conversation and the assistant follows.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>Under the hood, the assistant uses a small set of tools (find-stores-near, get-current-flyer, search-items) and a hybrid retrieval pipeline: full-text search on item names, semantic search over 1024-dimension multilingual embeddings, fused into a single ranked result.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>Location-aware store directory</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>Shoppers see only stores relevant to them. The directory clusters by chain (Cardenas, Northgate González, Vallarta, Seafood City, El Super…), filters by community tag (Latino, Filipino, Asian), and supports ZIP-based proximity sorting. Each store page shows its address, hours in three languages, current published flyer, and the items on sale this week.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The geo + community model is built to extend — adding a new metro is a data exercise, not a code change.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>Automated weekly content ingestion</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The hardest problem in flyer aggregation is the supply side: every grocery chain publishes its weekly ad differently, often through interactive third-party viewers that resist scraping. We built a pipeline that handles them all.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>Every Monday at 6 AM Pacific, a scheduled job runs across the entire store roster. For each chain, it:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list {"ordered":true} -->
+  <ol><li><strong>Discovers</strong> the current week's flyer URL — by static URL, CSS selector, or AI-driven inference for chains whose URLs change weekly.</li><li><strong>Fetches</strong> the flyer — direct PDF download, paginated image scrape, or headless-browser rendering for JavaScript-driven viewers.</li><li><strong>Extracts items</strong> — Sonnet-class vision LLM reads each flyer page and returns structured item data: name, sale price, regular price, unit, validity dates, category, confidence score.</li><li><strong>Loads</strong> into the database with full multilingual support, semantic embedding, and quality flagging.</li><li><strong>Publishes</strong> the new week's flyer and archives the previous one.</li></ol>
+  <!-- /wp:list -->
+
+  <!-- wp:paragraph -->
+  <p>Operators see every run in a dashboard with cost, items extracted, and confidence breakdowns. Low-confidence items route to a one-click approve/reject review queue. The whole pipeline is metered and cost-capped — a single chain's weekly extraction runs around $0.25 in API spend.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The architecture supports the inevitable: new chains slot in with a small config block, no code changes required.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>Multilingual from the foundation up</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>Three languages at launch — English, Spanish, Tagalog — with the platform built to add more without rework. Every page, every email, every chat reply respects the user's language choice. Search and AI embeddings are multilingual: a Spanish query against an English item description still finds the right product, because both vectors live in the same 1024-dimension space.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The translation strategy is pragmatic: human-curated copy for marketing surfaces, AI-assisted operator translation for store-specific text, model-native multilingual responses for chat. Right tool for each surface.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>Email deal alerts</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>Shoppers subscribe to keyword alerts ("notify me when chicken thighs drop below $1.99/lb"). A weekly digest matches new items against active alerts and sends a personalized email. RFC-compliant one-click unsubscribe, HMAC-signed tokens, full GDPR/CAN-SPAM hygiene.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>Operator-grade admin</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>A custom admin surface at <code>/admin/ingestion/{runs,review}</code> gives operators visibility into the pipeline they own: cost dashboards, run history, items pending QA, error breakdowns by chain and phase. Built so a small operator can run a citywide deals platform without a dedicated ops team.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>Built for scale, deployed at community scale</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The infrastructure is designed for the eventual product — citywide, then regional, then national — while operating efficiently at today's launch scale:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list -->
+  <ul><li><strong>Postgres with pgvector</strong> for native semantic search. Items are stored once, queryable by keyword (full-text) and meaning (vector). The same column scales from hundreds of items to millions without a schema migration.</li><li><strong>Serverless throughout.</strong> No always-on servers. Cron jobs run on demand. Storage is object-based (Vercel Blob). API calls bill per-token (Vercel AI Gateway, provider-agnostic).</li><li><strong>Per-chain isolation in the ingestion pipeline.</strong> One store's failure doesn't block the others. Cost caps are per-store-per-week. Failure surfaces in the dashboard, not in user-facing 500s.</li><li><strong>Edge-rendered public pages</strong> with ISR caching. Pages stay fresh without re-rendering on every request.</li><li><strong>Auth, mail, search, AI — all platform services.</strong> No bespoke infrastructure. When a service improves (cheaper models on the gateway, faster Postgres on Neon), the app inherits the improvement without code changes.</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:paragraph -->
+  <p>The pattern: build the small thing well so it scales gracefully into the large thing.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>Tech stack highlights</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:table -->
+  <figure class="wp-block-table"><table><thead><tr><th>Layer</th><th>Choice</th><th>Why</th></tr></thead><tbody><tr><td>Frontend</td><td>Next.js 15 (App Router, Turbopack)</td><td>RSC + ISR + edge rendering in one framework</td></tr><tr><td>Language</td><td>TypeScript (strict mode)</td><td>Types catch entire classes of bugs at compile time</td></tr><tr><td>Database</td><td>Neon (serverless Postgres) + pgvector</td><td>Branch-per-environment; vector search native</td></tr><tr><td>CMS</td><td>Payload CMS 3</td><td>Type-safe, code-first, no separate admin app to maintain</td></tr><tr><td>Auth</td><td>Auth.js v5 + Google OAuth + magic-link</td><td>Modern, multi-provider, sessions in Postgres</td></tr><tr><td>i18n</td><td>next-intl</td><td>Server-rendered translations + locale routing</td></tr><tr><td>AI (chat + extraction)</td><td>Anthropic Claude Sonnet via Vercel AI Gateway</td><td>Provider-agnostic; swap models without code changes</td></tr><tr><td>AI (search embeddings)</td><td>Cohere multilingual via AI Gateway</td><td>Best-in-class multilingual vectors at 1024 dims</td></tr><tr><td>Storage</td><td>Vercel Blob</td><td>Public + private objects, pay-per-use</td></tr><tr><td>Email</td><td>Amazon SES + Nodemailer</td><td>Reliable delivery, custom MAIL FROM, DKIM-signed</td></tr><tr><td>Headless browser</td><td>Playwright</td><td>For JavaScript-rendered chain flyer viewers</td></tr><tr><td>Hosting</td><td>Vercel (Fluid Compute)</td><td>Cold-start-resilient serverless, full Node.js</td></tr></tbody></table></figure>
+  <!-- /wp:table -->
+
+  <!-- wp:paragraph -->
+  <p>The stack is opinionated: AI-first, type-safe, serverless throughout, observable by default. Each piece chosen because it does one thing well and composes cleanly with the others.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>By the numbers</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:list -->
+  <ul><li><strong>3 languages</strong> at launch (English, Spanish, Tagalog) with infrastructure for any number</li><li><strong>1,024-dimensional</strong> multilingual embeddings — every item searchable by meaning</li><li><strong>266 items</strong> extracted from a single chain's flyer in one weekly run</li><li><strong>~$0.24</strong> API cost per chain per weekly run (vision extraction included)</li><li><strong>&lt;$200/month</strong> projected ingestion spend for the full 12-store launch roster</li><li><strong>7-phase pipeline</strong> with per-phase failure isolation</li><li><strong>52+ test files / 255+ unit tests</strong> covering the ingestion + auth + chat surfaces</li><li><strong>One operator</strong> can run the entire weekly cycle</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:heading -->
+  <h2>What's next</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>NewFoodCenter is in active development. On the near roadmap:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list -->
+  <ul><li><strong>Curated product image library</strong> with semantic matching — a growing set of brand-consistent product images, matched to items by embedding similarity, fallback to category icons.</li><li><strong>Per-store automated onboarding</strong> for the remaining 11 chains in the launch roster.</li><li><strong>Apex domain cutover</strong> from the staging URL to newfoodcenter.com.</li><li><strong>Citywide expansion</strong> to LA County after the Inland Empire launch settles.</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:heading -->
+  <h2>Why this matters as a case study</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>Three patterns from this project translate directly to other client work:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list {"ordered":true} -->
+  <ol><li><strong>AI as the interface, not the bolt-on.</strong> The chat assistant isn't a widget on the side — it's the home page. Designing AI in from the start, not retrofitting it, changes how the whole product feels.</li><li><strong>Hyperlocal serves underserved communities profitably.</strong> The big aggregators chase scale and miss real demand. A focused platform for one community in one metro can operate at near-zero marginal cost while delivering measurably better UX for its audience.</li><li><strong>The hardest part of consumer AI is the supply side.</strong> Beautiful frontend, smart chat — none of it matters if the data is stale. The unsexy 90% of this build is the automated weekly ingestion pipeline. We invested there first and shipped the rest on top.</li></ol>
+  <!-- /wp:list -->
 
 </div>
 <!-- /wp:group -->
