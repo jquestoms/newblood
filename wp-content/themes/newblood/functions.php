@@ -112,6 +112,27 @@ add_filter( 'body_class', 'newblood_notes_body_class' );
 // No wp_nav_menu_objects filter needed — that hook only fires for classic menus.
 
 /**
+ * Process shortcodes inside core/shortcode blocks during block rendering.
+ *
+ * WP core's render_block_core_shortcode only calls wpautop(); shortcode expansion
+ * normally happens later via the `the_content` filter. When patterns/templates
+ * are rendered server-side (outside post content), `the_content` doesn't run, so
+ * shortcodes embedded in wp:shortcode blocks render as literal `[name]` text.
+ * This filter intercepts the rendered block content for core/shortcode and runs
+ * do_shortcode on it, restoring expected behavior in any context.
+ */
+function newblood_process_shortcodes_in_blocks( $block_content, $block ) {
+    if ( isset( $block['blockName'] ) && $block['blockName'] === 'core/shortcode' ) {
+        // wpautop has already wrapped the bare shortcode in <p> tags.
+        // shortcode_unautop strips those so block-level expansion isn't trapped
+        // inside an invalid <p> wrapper.
+        return do_shortcode( shortcode_unautop( $block_content ) );
+    }
+    return $block_content;
+}
+add_filter( 'render_block', 'newblood_process_shortcodes_in_blocks', 10, 2 );
+
+/**
  * Reading time in whole minutes (250 wpm). Returns int.
  */
 function newblood_reading_time( $post_id ) {
