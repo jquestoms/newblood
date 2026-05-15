@@ -3,10 +3,7 @@
  * Title: Notes Index
  * Slug: newblood/notes-index
  * Categories: newblood
- * Description: Card grid of all published Notes posts (reverse chronological)
- *
- * Card markup comes from the [nb_note_card] shortcode (functions.php), which runs
- * inside wp:post-template's loop context.
+ * Description: Card grid of all published Notes posts
  */
 ?>
 <!-- wp:group {"align":"full","className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
