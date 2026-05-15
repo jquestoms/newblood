@@ -141,6 +141,34 @@
     </div>
     <!-- /wp:group -->
 
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a1f12"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6760,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/05/newfoodcenter-website.png" alt="newfoodcenter.com homepage — multilingual grocery deals web app for the Inland Empire" class="wp-image-6760"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>newfoodcenter.com</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Grocery Deals · AI Web App</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">A multilingual grocery-deals platform for the Inland Empire — search the week's best prices in your own language.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-newfoodcenter/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
   </div>
   <!-- /wp:group -->
 </div>
