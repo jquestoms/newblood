@@ -79,5 +79,85 @@ function newblood_setup() {
     add_theme_support( 'editor-styles' );
     add_theme_support( 'responsive-embeds' );
     add_theme_support( 'woocommerce' );
+    add_theme_support( 'automatic-feed-links' );
 }
 add_action( 'after_setup_theme', 'newblood_setup' );
+
+/**
+ * ============================================================
+ * Notes section — helpers, launch gate, admin notices, SEO head
+ * Spec: docs/superpowers/specs/2026-05-15-notes-section-design.md
+ * ============================================================
+ */
+
+// Launch gate. Flip to true once 3 real posts are published.
+if ( ! defined( 'NB_NOTES_PUBLIC' ) ) {
+    define( 'NB_NOTES_PUBLIC', false );
+}
+
+/**
+ * Add `is-prelaunch` to body when the Notes section isn't yet public.
+ */
+function newblood_notes_body_class( $classes ) {
+    if ( ! NB_NOTES_PUBLIC ) {
+        $classes[] = 'is-prelaunch';
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'newblood_notes_body_class' );
+
+/**
+ * Tag the "Notes" menu items so CSS can hide them while pre-launch.
+ * Matches by URL ending in /notes/ or /notes.
+ */
+function newblood_tag_notes_menu_items( $items ) {
+    foreach ( $items as $item ) {
+        if ( preg_match( '#/notes/?$#', $item->url ) ) {
+            $item->classes[] = 'menu-item--notes';
+        }
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_objects', 'newblood_tag_notes_menu_items' );
+
+/**
+ * Reading time in whole minutes (250 wpm). Returns int.
+ */
+function newblood_reading_time( $post_id ) {
+    $content = get_post_field( 'post_content', $post_id );
+    $words   = str_word_count( wp_strip_all_tags( $content ) );
+    return max( 1, (int) ceil( $words / 250 ) );
+}
+
+/**
+ * Primary category for a post. Returns WP_Term or null.
+ * Convention: first category by term_id when a post has multiple.
+ */
+function newblood_primary_category( $post_id ) {
+    $cats = get_the_category( $post_id );
+    if ( empty( $cats ) ) {
+        return null;
+    }
+    usort( $cats, function( $a, $b ) { return $a->term_id - $b->term_id; } );
+    return $cats[0];
+}
+
+/**
+ * Admin notice on the post-edit screen when a published post has no featured image.
+ * Soft warning — does not block publish.
+ */
+function newblood_notes_featured_image_notice() {
+    $screen = get_current_screen();
+    if ( ! $screen || $screen->base !== 'post' || $screen->post_type !== 'post' ) {
+        return;
+    }
+    global $post;
+    if ( ! $post || $post->post_status !== 'publish' ) {
+        return;
+    }
+    if ( has_post_thumbnail( $post->ID ) ) {
+        return;
+    }
+    echo '<div class="notice notice-warning"><p><strong>Notes:</strong> this published post has no featured image. It will render with a fallback gradient on /notes/ until one is added.</p></div>';
+}
+add_action( 'admin_notices', 'newblood_notes_featured_image_notice' );
