@@ -95,6 +95,8 @@
       <!-- /wp:columns -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:pattern {"slug":"newblood/related-notes"} /-->
   </div>
   <!-- /wp:group -->
 
@@ -185,6 +187,9 @@
       <!-- /wp:columns -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:pattern {"slug":"newblood/related-notes"} /-->
+
     <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem","fontStyle":"italic","lineHeight":"1.7"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
     <p class="has-text-muted-color">What we don't promise: a specific PageSpeed score. Real-world variance is ±5 points run-to-run. Mobile 70+ is reasonable; Mobile 90+ needs the Tune Plus engagement.</p>
     <!-- /wp:paragraph -->
@@ -279,6 +284,8 @@
       <!-- /wp:columns -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:pattern {"slug":"newblood/related-notes"} /-->
   </div>
   <!-- /wp:group -->
 
@@ -368,6 +375,8 @@
       <!-- /wp:columns -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:pattern {"slug":"newblood/related-notes"} /-->
   </div>
   <!-- /wp:group -->
 
