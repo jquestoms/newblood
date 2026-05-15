@@ -340,3 +340,46 @@ function newblood_shortcode_latest_note() {
     return ob_get_clean();
 }
 add_shortcode( 'nb_latest_note', 'newblood_shortcode_latest_note' );
+
+/**
+ * Shortcode: [nb_related_notes]
+ * Renders the compact two-card "Related notes" rail at the bottom of each /services/ block.
+ * v1: latest 2 published posts overall (no category filter). Per-service category mapping
+ * is a follow-up once the real category taxonomy is finalized — spec open item.
+ * Returns empty when fewer than 1 post exists.
+ */
+function newblood_shortcode_related_notes() {
+    $related = get_posts( array(
+        'numberposts' => 2,
+        'post_status' => 'publish',
+    ) );
+
+    if ( empty( $related ) ) {
+        return '';
+    }
+
+    ob_start();
+    ?>
+    <div style="margin-top:var(--wp--preset--spacing--50);">
+      <div class="nb-related-notes">
+        <p class="nb-related-notes-label">Related notes<span style="color:#4ade80">.</span></p>
+        <?php foreach ( $related as $rp ) :
+            $permalink = get_permalink( $rp->ID );
+            $thumb     = has_post_thumbnail( $rp->ID ) ? get_the_post_thumbnail( $rp->ID, 'thumbnail' ) : '';
+            $date      = get_the_date( 'F Y', $rp->ID );
+            $reading   = newblood_reading_time( $rp->ID );
+        ?>
+          <a class="nb-note-card-mini" href="<?php echo esc_url( $permalink ); ?>">
+            <div class="nb-note-card-mini-image"><?php echo $thumb; ?></div>
+            <div>
+              <h4 class="nb-note-card-mini-title"><?php echo esc_html( get_the_title( $rp->ID ) ); ?></h4>
+              <p class="nb-note-card-mini-meta"><?php echo esc_html( $date ); ?> &middot; <?php echo esc_html( $reading ); ?> min read</p>
+            </div>
+          </a>
+        <?php endforeach; ?>
+      </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode( 'nb_related_notes', 'newblood_shortcode_related_notes' );
