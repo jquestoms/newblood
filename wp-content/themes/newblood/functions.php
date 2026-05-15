@@ -241,3 +241,53 @@ function newblood_shortcode_note_hero_meta() {
     return ob_get_clean();
 }
 add_shortcode( 'nb_note_hero_meta', 'newblood_shortcode_note_hero_meta' );
+
+/**
+ * Shortcode: [nb_more_notes]
+ * Renders the "More notes" rail on single posts — up to 3 recent posts excluding current.
+ * Outputs nothing when no other posts exist.
+ */
+function newblood_shortcode_more_notes() {
+    $current_id = get_the_ID();
+    $recent = get_posts( array(
+        'numberposts'      => 3,
+        'post_status'      => 'publish',
+        'exclude'          => $current_id ? array( $current_id ) : array(),
+        'suppress_filters' => false,
+    ) );
+
+    if ( empty( $recent ) ) {
+        return '';
+    }
+
+    ob_start();
+    ?>
+    <div class="wp-block-group alignfull nb-gradient-section" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);">
+      <div style="max-width:1200px;margin:0 auto;">
+        <h2 class="wp-block-heading" style="font-size:1.25rem;margin-bottom:var(--wp--preset--spacing--50);">More notes<span style="color:#4ade80">.</span></h2>
+        <div class="nb-more-notes nb-stagger">
+          <?php foreach ( $recent as $rp ) :
+              $primary = newblood_primary_category( $rp->ID );
+              $permalink = get_permalink( $rp->ID );
+              $thumb     = has_post_thumbnail( $rp->ID ) ? get_the_post_thumbnail( $rp->ID, 'medium' ) : '';
+              $date      = get_the_date( 'F j, Y', $rp->ID );
+              $reading   = newblood_reading_time( $rp->ID );
+          ?>
+            <a class="nb-note-card" href="<?php echo esc_url( $permalink ); ?>">
+              <div class="nb-note-card-image"><?php echo $thumb; ?></div>
+              <div class="nb-note-card-body">
+                <?php if ( $primary ) : ?>
+                  <span class="nb-note-badge"><?php echo esc_html( $primary->name ); ?></span>
+                <?php endif; ?>
+                <h3 class="nb-note-card-title"><?php echo esc_html( get_the_title( $rp->ID ) ); ?></h3>
+                <p class="nb-note-card-meta"><?php echo esc_html( $date ); ?> &middot; <?php echo esc_html( $reading ); ?> min read</p>
+              </div>
+            </a>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode( 'nb_more_notes', 'newblood_shortcode_more_notes' );
