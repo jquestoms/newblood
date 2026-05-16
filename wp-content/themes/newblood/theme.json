@@ -13,8 +13,8 @@
         { "slug": "accent-light", "color": "#4ade80", "name": "Accent Light" },
         { "slug": "text-primary", "color": "#ffffff", "name": "Text Primary" },
         { "slug": "text-body", "color": "#cbd5e1", "name": "Text Body" },
-        { "slug": "text-secondary", "color": "#94a3b8", "name": "Text Secondary" },
-        { "slug": "text-muted", "color": "#64748b", "name": "Text Muted" },
+        { "slug": "text-secondary", "color": "#adb8c8", "name": "Text Secondary" },
+        { "slug": "text-muted", "color": "#828ea0", "name": "Text Muted" },
         { "slug": "border", "color": "rgba(255,255,255,0.08)", "name": "Border" },
         { "slug": "border-subtle", "color": "rgba(255,255,255,0.05)", "name": "Border Subtle" }
       ],
