@@ -28,8 +28,8 @@
       <!-- /wp:group -->
       <!-- wp:group {"layout":{"type":"constrained"}} -->
       <div class="wp-block-group">
-        <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
-        <h2>Build</h2>
+        <!-- wp:heading {"anchor":"build","style":{"typography":{"fontSize":"1.5rem"}}} -->
+        <h2 id="build">Build</h2>
         <!-- /wp:heading -->
       </div>
       <!-- /wp:group -->
@@ -120,8 +120,8 @@
       <!-- /wp:group -->
       <!-- wp:group {"layout":{"type":"constrained"}} -->
       <div class="wp-block-group">
-        <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
-        <h2>Tune</h2>
+        <!-- wp:heading {"anchor":"tune","style":{"typography":{"fontSize":"1.5rem"}}} -->
+        <h2 id="tune">Tune</h2>
         <!-- /wp:heading -->
       </div>
       <!-- /wp:group -->
@@ -217,8 +217,8 @@
       <!-- /wp:group -->
       <!-- wp:group {"layout":{"type":"constrained"}} -->
       <div class="wp-block-group">
-        <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
-        <h2>Manage</h2>
+        <!-- wp:heading {"anchor":"manage","style":{"typography":{"fontSize":"1.5rem"}}} -->
+        <h2 id="manage">Manage</h2>
         <!-- /wp:heading -->
       </div>
       <!-- /wp:group -->
@@ -310,8 +310,8 @@
       <!-- /wp:group -->
       <!-- wp:group {"layout":{"type":"constrained"}} -->
       <div class="wp-block-group">
-        <!-- wp:heading {"style":{"typography":{"fontSize":"1.5rem"}}} -->
-        <h2>Empower</h2>
+        <!-- wp:heading {"anchor":"empower","style":{"typography":{"fontSize":"1.5rem"}}} -->
+        <h2 id="empower">Empower</h2>
         <!-- /wp:heading -->
       </div>
       <!-- /wp:group -->

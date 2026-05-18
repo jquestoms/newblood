@@ -1056,3 +1056,49 @@ body.is-prelaunch .nb-latest-note-section {
   grid-column: 1 / -1;
   margin: 0;
 }
+
+/* ===== Services-cards stretched-link cards ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Account for any chrome above the target so the h2 doesn't anchor flush to the top */
+#build,
+#tune,
+#manage,
+#empower {
+  scroll-margin-top: 96px;
+}
+
+.nb-service-card-link {
+  position: relative;
+  cursor: pointer;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+.nb-service-card-link:hover {
+  transform: translateY(-4px);
+}
+.nb-service-card-link .nb-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  text-decoration: none;
+}
+.nb-service-card-link .nb-card-link:focus-visible {
+  outline: 2px solid #4ade80;
+  outline-offset: 2px;
+}
+.nb-service-card-link h3 {
+  transition: color 200ms ease;
+}
+.nb-service-card-link:hover h3 {
+  color: #4ade80;
+}
+.nb-service-card-link .nb-service-mark {
+  transition: transform 280ms ease;
+}
+.nb-service-card-link:hover .nb-service-mark {
+  transform: scale(1.05);
+}
