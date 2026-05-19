@@ -48,7 +48,7 @@
   border-radius: 12px;
 }
 
-.nb-glass > *:not(.nb-card-particles) {
+.nb-glass > *:not(.nb-card-particles):not(.nb-card-link) {
   position: relative;
   z-index: 1;
 }
