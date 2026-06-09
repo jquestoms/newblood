@@ -398,6 +398,32 @@ function newblood_shortcode_contact_form() {
 add_shortcode( 'nb_contact_form', 'newblood_shortcode_contact_form' );
 
 /**
+ * Legacy URL redirects (301).
+ *
+ * Yoast Free has no redirect manager, so retired classic-theme URLs are mapped
+ * to their new homes here. Keys are the request path with no leading/trailing
+ * slashes; values are the destination path. Add a line per URL as needed.
+ *
+ * Intentionally NOT redirecting orphaned, off-topic legacy pages (old soccer/
+ * photography galleries, old blog posts) — sending unrelated URLs to the
+ * homepage reads as a soft-404 to search engines. A clean 404 is better.
+ */
+function newblood_legacy_redirects() {
+    if ( is_admin() ) {
+        return;
+    }
+    $redirects = array(
+        'case-studies' => '/work/',
+    );
+    $path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+    if ( '' !== $path && isset( $redirects[ $path ] ) ) {
+        wp_safe_redirect( home_url( $redirects[ $path ] ), 301 );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'newblood_legacy_redirects' );
+
+/**
  * Shortcode: [nb_related_notes]
  * Renders the compact two-card "Related notes" rail at the bottom of each /services/ block.
  * v1: latest 2 published posts overall (no category filter). Per-service category mapping
