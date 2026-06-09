@@ -1,12 +1,13 @@
 # 📋 Tasks — New Blood
 
-**Status:** NOW (priority 1)
-**Goal (one sentence):** Launch the redesigned New Blood site — new theme + reworked content — live and clean.
+**Status:** ✅ LAUNCHED — 2026-06-09 (live on prod, version-controlled on `main`). Optional polish deferred.
+**Goal (one sentence):** Launch the redesigned New Blood site — new theme + reworked content — live and clean. — **Achieved.**
 
 ---
 
 ## ▶️ Doing now
-- [ ] Post-launch polish (launch done & on `main`; Yoast meta + /case-studies/ 301 done): mobile/cross-browser pass, test a WooCommerce checkout, confirm footer email/phone are current. Swap RTZ status line to a live link when the RTZ site launches Jul 1.
+- [x] ✅ **Launch complete & signed off (2026-06-09)** — site live on prod, merged to `main`, commerce intact, SEO meta + /case-studies/ 301 done.
+- [ ] _Deferred (optional polish, no rush):_ mobile/cross-browser pass · test a WooCommerce checkout · confirm footer email/phone are current · swap RTZ status line to a live link when the RTZ site launches Jul 1.
 
 ## 🔜 Up next
 > _Launch checklist — done items checked off this activity._
@@ -21,6 +22,7 @@
 - [ ] Analytics installed and firing
 
 ## ✅ Done (newest first)
+- [x] 2026-06-09 — ✅ REDESIGN LAUNCH SIGNED OFF as complete — live on prod, version-controlled on `main`, commerce intact, SEO meta + legacy redirect done. Remaining items are optional polish.
 - [x] 2026-06-09 — Added theme-level 301 redirect /case-studies/ → /work/ (verified live; Yoast Free has no redirect manager). Orphaned legacy URLs left as clean 404s by design.
 - [x] 2026-06-09 — Set Yoast SEO titles + meta descriptions + focus keyphrases for all 11 redesign pages (live + verified); reproducible record at docs/seo/page-meta.php
 - [x] 2026-06-09 — Pushed feature/redesign to GitHub + fast-forward merged → main (99 commits; redesign now version-controlled & backed up on origin/main)
