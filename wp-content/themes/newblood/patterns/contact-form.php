@@ -18,7 +18,7 @@
   <p class="has-text-secondary-color">Tell us about your business and what you need. We'll get back to you within 24 hours.</p>
   <!-- /wp:paragraph -->
   <!-- wp:shortcode -->
-  [wpforms id="6746"]
+  [nb_contact_form]
   <!-- /wp:shortcode -->
 </div>
 <!-- /wp:group -->

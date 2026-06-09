@@ -1,0 +1,369 @@
+/**
+ * New Blood — WooCommerce alignment
+ *
+ * Maps WooCommerce's default block + classic markup onto the theme design
+ * tokens (--wp--preset--color--*) and reuses the .nb-glass / .nb-btn-primary
+ * visual language. Loaded ONLY on commerce surfaces (single product, cart,
+ * checkout, My Account) via a conditional enqueue in functions.php.
+ *
+ * Scope is direct-link / billing pages — the shop archive is intentionally
+ * not featured, so it is not styled here.
+ *
+ * Note: glass treatments write their properties directly into WC selectors
+ * rather than applying the .nb-glass *class*, because utilities.css has a
+ * `.nb-glass > *:not(...)` child rule that would fight WC's positioned
+ * children (e.g. the product gallery).
+ */
+
+/* ---------------------------------------------------------------------------
+   Shared primitives
+   --------------------------------------------------------------------------- */
+
+/* Primary CTA — mirrors .nb-btn-primary (utilities.css) */
+.single-product .single_add_to_cart_button,
+.single-product .single_add_to_cart_button.button.alt,
+.wc-block-cart__submit-button,
+.wc-block-components-button.contained,
+.wc-block-components-checkout-place-order-button,
+.woocommerce-MyAccount-content a.button:not(.cancel),
+.woocommerce-MyAccount-content button.button:not(.cancel) {
+    display: inline-block;
+    background: linear-gradient( 135deg, #22c55e, #16a34a );
+    color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.single-product .single_add_to_cart_button:hover,
+.wc-block-cart__submit-button:hover,
+.wc-block-components-button.contained:hover,
+.wc-block-components-checkout-place-order-button:hover,
+.woocommerce-MyAccount-content a.button:not(.cancel):hover,
+.woocommerce-MyAccount-content button.button:not(.cancel):hover {
+    opacity: 0.9;
+    transform: translateY( -1px );
+    color: #ffffff;
+}
+
+/* Ghost / secondary buttons — mirrors .nb-btn-secondary */
+.woocommerce-MyAccount-content a.button.cancel,
+.woocommerce a.button.wc-backward,
+.wc-block-components-button.outlined {
+    background: transparent;
+    border: 1.5px solid #334155;
+    color: var( --wp--preset--color--text-body );
+    border-radius: 8px;
+    padding: 0.625rem 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.woocommerce-MyAccount-content a.button.cancel:hover,
+.woocommerce a.button.wc-backward:hover,
+.wc-block-components-button.outlined:hover {
+    border-color: var( --wp--preset--color--accent-light );
+    color: var( --wp--preset--color--text-primary );
+}
+
+/* Glass surface — props written directly (see header note) */
+.wp-block-woocommerce-checkout-order-summary-block,
+.wc-block-checkout__sidebar .wc-block-components-totals-wrapper,
+.wc-block-cart__sidebar .wc-block-components-totals-wrapper,
+.wp-block-woocommerce-cart-order-summary-block {
+    background: rgba( 255, 255, 255, 0.03 );
+    border: 1px solid rgba( 255, 255, 255, 0.07 );
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur( 10px );
+    backdrop-filter: blur( 10px );
+    padding: 1.5rem;
+}
+
+/* Product gallery: a thin frame that hugs the image, not a padded card —
+   avoids the frame-within-frame look so a clean image fills the frame edge to
+   edge. No .nb-glass class (its child z-index rule would fight the gallery's
+   positioned zoom trigger / flexslider). */
+.wp-block-woocommerce-product-image-gallery .woocommerce-product-gallery,
+.single-product .woocommerce-product-gallery {
+    border: 1px solid rgba( 255, 255, 255, 0.07 );
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.woocommerce-product-gallery__image,
+.woocommerce-product-gallery__image a,
+.woocommerce-product-gallery__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Dark form fields + accent focus ring */
+.woocommerce form .form-row input.input-text,
+.woocommerce input.qty,
+.woocommerce input.input-text,
+.woocommerce textarea,
+.woocommerce select,
+.wc-block-components-text-input input,
+.wc-block-components-text-input select,
+.wc-block-checkout__form textarea {
+    background: var( --wp--preset--color--surface );
+    color: var( --wp--preset--color--text-body );
+    border: 1px solid var( --wp--preset--color--border );
+    border-radius: 8px;
+    padding: 0.625rem 0.75rem;
+}
+
+.woocommerce form .form-row input.input-text:focus,
+.woocommerce input.qty:focus,
+.woocommerce select:focus,
+.woocommerce textarea:focus,
+.wc-block-components-text-input input:focus {
+    outline: none;
+    border-color: var( --wp--preset--color--accent );
+    box-shadow: 0 0 0 3px rgba( 34, 197, 94, 0.25 );
+}
+
+.woocommerce ::placeholder,
+.wc-block-components-text-input input::placeholder {
+    color: var( --wp--preset--color--text-muted );
+}
+
+/* Keep autofilled fields legible on the dark surface */
+.woocommerce input:-webkit-autofill,
+.wc-block-components-text-input input:-webkit-autofill {
+    -webkit-text-fill-color: var( --wp--preset--color--text-body );
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ---------------------------------------------------------------------------
+   Single product
+   --------------------------------------------------------------------------- */
+
+.single-product .wp-block-post-title {
+    color: var( --wp--preset--color--text-primary );
+}
+
+/* Subscription price: $50.00 (struck) → $25.00 / month */
+.wc-block-components-product-price ins .woocommerce-Price-amount,
+.wc-block-components-product-price ins {
+    color: var( --wp--preset--color--accent-light );
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.wc-block-components-product-price del .woocommerce-Price-amount,
+.wc-block-components-product-price del {
+    color: var( --wp--preset--color--text-muted );
+}
+
+.wc-block-components-product-price .subscription-details,
+.first-payment-date {
+    color: var( --wp--preset--color--text-secondary );
+    font-weight: 400;
+}
+
+.wp-block-post-excerpt__excerpt {
+    color: var( --wp--preset--color--text-body );
+    line-height: 1.7;
+}
+
+/* Add-to-cart form: align quantity + button on one row */
+.wp-block-add-to-cart-form form.cart {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.wp-block-add-to-cart-form .quantity input.qty {
+    width: 4.5rem;
+    text-align: center;
+}
+
+/* Product meta / SKU / category terms */
+.wp-block-woocommerce-product-meta,
+.woocommerce-product-sku,
+.wp-block-post-terms__prefix,
+.product_meta {
+    color: var( --wp--preset--color--text-muted );
+    font-size: 0.875rem;
+}
+
+.wp-block-woocommerce-product-meta a,
+.product_meta a {
+    color: var( --wp--preset--color--accent );
+}
+
+.wp-block-woocommerce-product-meta a:hover,
+.product_meta a:hover {
+    color: var( --wp--preset--color--accent-light );
+}
+
+/* Sale flash → accent pill */
+.woocommerce span.onsale,
+.single-product span.onsale {
+    background: linear-gradient( 135deg, #22c55e, #16a34a );
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-height: 0;
+    min-width: 0;
+    line-height: 1.4;
+}
+
+/* Product detail / tabs body */
+.wp-block-woocommerce-product-details,
+.woocommerce-Tabs-panel {
+    color: var( --wp--preset--color--text-body );
+}
+
+/* ---------------------------------------------------------------------------
+   Cart
+   --------------------------------------------------------------------------- */
+
+.wc-block-cart-items__row,
+.wc-block-cart-items {
+    border-color: var( --wp--preset--color--border );
+}
+
+.wc-block-components-product-name {
+    color: var( --wp--preset--color--text-primary );
+}
+
+.wc-block-components-product-name:hover {
+    color: var( --wp--preset--color--accent-light );
+}
+
+.wc-block-cart .wc-block-components-totals-item__label,
+.wc-block-components-totals-item {
+    color: var( --wp--preset--color--text-body );
+}
+
+/* ---------------------------------------------------------------------------
+   Checkout
+   --------------------------------------------------------------------------- */
+
+.wc-block-components-text-input label,
+.wc-block-checkout__form label {
+    color: var( --wp--preset--color--text-secondary );
+}
+
+.wc-block-components-text-input.is-active label {
+    color: var( --wp--preset--color--accent-light );
+}
+
+/* Stripe Payment Element: theme CSS can only reach the wrapper, not the
+   cross-origin iframe fields. Style the container so it sits on-brand;
+   field internals are a gateway 'appearance' config concern (out of scope). */
+.wc-block-components-payment-method,
+.wp-block-woocommerce-checkout-payment-block .wc-block-checkout__payment-method {
+    background: var( --wp--preset--color--surface );
+    border: 1px solid var( --wp--preset--color--border );
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* ---------------------------------------------------------------------------
+   My Account (orders + Subscriptions endpoints reuse .shop_table)
+   --------------------------------------------------------------------------- */
+
+.woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var( --wp--preset--color--border );
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.woocommerce-MyAccount-navigation ul li {
+    border-bottom: 1px solid var( --wp--preset--color--border-subtle );
+}
+
+.woocommerce-MyAccount-navigation ul li:last-child {
+    border-bottom: 0;
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var( --wp--preset--color--text-body );
+    text-decoration: none;
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active a,
+.woocommerce-MyAccount-navigation ul li a:hover {
+    color: var( --wp--preset--color--text-primary );
+    background: rgba( 34, 197, 94, 0.08 );
+    box-shadow: inset 3px 0 0 var( --wp--preset--color--accent );
+}
+
+.woocommerce-MyAccount-content {
+    color: var( --wp--preset--color--text-body );
+}
+
+/* Tables — orders, downloads, subscriptions */
+.woocommerce table.shop_table,
+.woocommerce table.woocommerce-table,
+.woocommerce-orders-table {
+    border: 1px solid var( --wp--preset--color--border );
+    border-radius: 12px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.woocommerce table.shop_table thead th,
+.woocommerce-orders-table thead th {
+    background: var( --wp--preset--color--surface );
+    color: var( --wp--preset--color--text-secondary );
+}
+
+.woocommerce table.shop_table td,
+.woocommerce table.shop_table th,
+.woocommerce-orders-table td,
+.woocommerce-orders-table th {
+    border-top: 1px solid var( --wp--preset--color--border-subtle );
+    color: var( --wp--preset--color--text-body );
+}
+
+/* Status pills (order + subscription) */
+.subscription-status,
+.order-status {
+    display: inline-block;
+    border: 1px solid var( --wp--preset--color--border );
+    border-radius: 999px;
+    padding: 0.15rem 0.625rem;
+    font-size: 0.75rem;
+    color: var( --wp--preset--color--accent-light );
+}
+
+/* ---------------------------------------------------------------------------
+   Notices
+   --------------------------------------------------------------------------- */
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.wc-block-components-notice-banner {
+    background: var( --wp--preset--color--surface );
+    border: 1px solid var( --wp--preset--color--border );
+    border-radius: 8px;
+    color: var( --wp--preset--color--text-body );
+}
+
+.woocommerce-message,
+.wc-block-components-notice-banner.is-success {
+    border-left: 3px solid var( --wp--preset--color--accent );
+}

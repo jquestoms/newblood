@@ -34,6 +34,17 @@ function newblood_enqueue_assets() {
         array(),
         newblood_asset_version( '/assets/css/utilities.css' )
     );
+    // Commerce surfaces only — keeps WooCommerce overrides off the ~95% of
+    // pages that aren't commerce, and out of the global cascade.
+    if ( function_exists( 'is_woocommerce' )
+        && ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) ) {
+        wp_enqueue_style(
+            'newblood-woocommerce',
+            get_template_directory_uri() . '/assets/css/woocommerce.css',
+            array( 'newblood-utilities' ),
+            newblood_asset_version( '/assets/css/woocommerce.css' )
+        );
+    }
     wp_enqueue_script(
         'newblood-scroll-reveal',
         get_template_directory_uri() . '/assets/js/scroll-reveal.js',
@@ -352,6 +363,39 @@ function newblood_shortcode_latest_note() {
     return ob_get_clean();
 }
 add_shortcode( 'nb_latest_note', 'newblood_shortcode_latest_note' );
+
+/**
+ * Shortcode: [nb_contact_form]
+ * Renders the WPForms contact form resolved by TITLE (not a hardcoded id), so it
+ * stays correct across environments — WPForms post ids differ between local and
+ * prod. The form's title is the binding contract; change it in one place below.
+ * If the form can't be found, degrades gracefully to a mailto link rather than
+ * silently dropping the page's contact path.
+ */
+if ( ! defined( 'NB_CONTACT_FORM_TITLE' ) ) {
+    define( 'NB_CONTACT_FORM_TITLE', 'Contact Form' );
+}
+
+function newblood_shortcode_contact_form() {
+    $forms = get_posts( array(
+        'post_type'   => 'wpforms',
+        'title'       => NB_CONTACT_FORM_TITLE,
+        'post_status' => 'publish',
+        'numberposts' => 1,
+        'fields'      => 'ids',
+    ) );
+    if ( ! empty( $forms ) ) {
+        return do_shortcode( '[wpforms id="' . (int) $forms[0] . '"]' );
+    }
+
+    // Fallback: never silently lose the contact path if the form is missing.
+    $email = sanitize_email( get_option( 'admin_email' ) );
+    if ( ! $email ) {
+        return '';
+    }
+    return '<p class="nb-contact-fallback" style="font-size:1rem">Reach us directly at <a href="mailto:' . esc_attr( $email ) . '">' . esc_html( $email ) . '</a>.</p>';
+}
+add_shortcode( 'nb_contact_form', 'newblood_shortcode_contact_form' );
 
 /**
  * Shortcode: [nb_related_notes]
