@@ -59,34 +59,6 @@
 
     <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
     <div class="wp-block-group nb-showcase-card">
-      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#162415"}}} -->
-      <div class="wp-block-group nb-showcase-image">
-        <!-- wp:image {"id":6744,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
-        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/03/screenshot-overhead-door-1.png" alt="Overhead Door Company website screenshot" class="wp-image-6744"/></figure>
-        <!-- /wp:image -->
-      </div>
-      <!-- /wp:group -->
-      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
-      <div class="wp-block-group nb-showcase-info">
-        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
-        <h3>Overhead Door Co.</h3>
-        <!-- /wp:heading -->
-        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
-        <p class="nb-showcase-badge">Hosting &amp; Care · Manage Engagement</p>
-        <!-- /wp:paragraph -->
-        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
-        <p class="has-text-muted-color">A 70-year-old Mid-Atlantic institution whose website has been quietly looked after for years.</p>
-        <!-- /wp:paragraph -->
-        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
-        <p><a href="/case-study-overhead-door/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
-        <!-- /wp:paragraph -->
-      </div>
-      <!-- /wp:group -->
-    </div>
-    <!-- /wp:group -->
-
-    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
-    <div class="wp-block-group nb-showcase-card">
       <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a2332"}}} -->
       <div class="wp-block-group nb-showcase-image">
         <!-- wp:image {"id":6745,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
