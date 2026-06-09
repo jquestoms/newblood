@@ -107,6 +107,18 @@ main > .wp-block-group + .wp-block-group {
   margin-top: 0 !important;
 }
 
+/* Interior page / case-study body: keep content above the section blend
+   gradient (::before, z-index:0) so the first line isn't darkened — body
+   sections lack the .nb-dot-grid content lift. Also restore top breathing room
+   on the first body section (its inline top padding doesn't always emit). */
+.entry-content .nb-gradient-section > * {
+  position: relative;
+  z-index: 1;
+}
+.entry-content > .nb-gradient-section:first-child {
+  padding-top: var(--wp--preset--spacing--60, 3rem) !important;
+}
+
 /* ===== Global Spacing Overrides ===== */
 
 /* Ensure all full-width sections have generous horizontal padding */
@@ -282,6 +294,28 @@ main > .wp-block-group + .wp-block-group {
 
 .nb-footer a:hover {
   color: var(--wp--preset--color--accent-light) !important;
+}
+
+/* Footer content must sit ABOVE the .nb-footer::before blend gradient
+   (z-index:0) — otherwise it darkens the top row (site title + column headings),
+   which sit at the footer's top edge. This was the real cause of the "dark
+   header" look, not the text color. */
+.nb-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer brand name — the block-level white color doesn't always emit, so set
+   it explicitly for legibility on the near-black footer. */
+.nb-footer .wp-block-site-title,
+.nb-footer .wp-block-site-title a {
+  color: #ffffff !important;
+}
+
+/* Column headings (Company / Connect) — bump from muted to a brighter label
+   color so the small uppercase eyebrows are readable. */
+.nb-footer h6 {
+  color: var(--wp--preset--color--text-secondary) !important;
 }
 
 /* Portfolio grid asymmetric layout */
