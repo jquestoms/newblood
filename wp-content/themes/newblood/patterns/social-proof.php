@@ -12,7 +12,7 @@
   <p class="has-text-muted-color">Trusted by</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem","fontWeight":"700","letterSpacing":"1px"}},"textColor":"text-muted"} -->
-  <p class="has-text-muted-color">&nbsp;&nbsp;&nbsp;C.A. LINDMAN&nbsp;&nbsp;&nbsp;&nbsp;MIKE'S MASTER CLASSES</p>
+  <p class="has-text-muted-color">&nbsp;&nbsp;&nbsp;RTZ AUDIO VISUAL&nbsp;&nbsp;&nbsp;&nbsp;C.A. LINDMAN&nbsp;&nbsp;&nbsp;&nbsp;MIKE'S MASTER CLASSES</p>
   <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

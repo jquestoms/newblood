@@ -18,6 +18,7 @@
 - [ ] Post-launch smoke test on the live URL (incl. WooCommerce checkout + subscription renewal scheduler intact)
 
 ## ✅ Done (newest first)
+- [x] 2026-06-09 — Added RTZ Audio Visual case study (Build engagement, launching Jul 1): body markup, page (prod id 6855), showcase card + trusted-by entry; live on prod for prospect review
 - [x] 2026-06-09 — Footer "dark header" real fix: text was white but covered by the .nb-footer::before blend; z-lifted footer content above it (verified headless). Same root cause as case-study faded line.
 - [x] 2026-06-09 — Case-study fixes: migrated page excerpts (killed the green run-on "blob" eyebrow on prod) + fixed faded first body line (section-blend z-index/padding)
 - [x] 2026-06-09 — Footer legibility fix (white site-title, brighter column headings) + contact-form hardening (title-constant binding + mailto fallback); deployed to prod

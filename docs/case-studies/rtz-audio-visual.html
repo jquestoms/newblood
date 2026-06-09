@@ -1,0 +1,182 @@
+<!-- wp:group {"align":"full","className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"800px"}} -->
+<div class="wp-block-group alignfull nb-gradient-section">
+
+  <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.7"}}} -->
+  <p class="has-text-secondary-color"><strong>Stack:</strong> Next.js 16 App Router · React 19 · TypeScript strict · Drizzle ORM · Neon Postgres · Vercel Blob · Tailwind CSS v4 · shadcn/ui · Anthropic Claude API<br><strong>Engagement:</strong> Build — new marketing site + custom CMS from scratch<br><strong>Status:</strong> Launching July 2026</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:image {"id":6763,"sizeSlug":"large","linkDestination":"none","className":"nb-case-screenshot"} -->
+  <figure class="wp-block-image size-large nb-case-screenshot"><img src="/wp-content/uploads/2026/06/rtzav-custom-web-project.png" alt="RTZ Audio Visual marketing site — Maryland AV integrator, custom Next.js CMS" class="wp-image-6763"/></figure>
+  <!-- /wp:image -->
+
+  <!-- wp:paragraph -->
+  <p>Built a full editorial CMS on top of a modern Next.js site for a Maryland AV integrator with 35+ years of work to show off — 231 manufacturer brands, 17 active case studies, and federal agencies in the client roster, on a WordPress site that couldn't keep up.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>At a glance</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:table {"className":"nb-case-table"} -->
+  <figure class="wp-block-table nb-case-table"><table><tbody>
+    <tr><td><strong>Project</strong></td><td>RTZ Audio Visual website + custom CMS</td></tr>
+    <tr><td><strong>Architecture</strong></td><td>Server-rendered marketing site + admin SPA + Postgres-backed CMS</td></tr>
+    <tr><td><strong>Content types managed</strong></td><td>9 — projects, testimonials, team, news, FAQs, clients, brands, brand categories, client categories</td></tr>
+    <tr><td><strong>Brands managed</strong></td><td>231 manufacturer partners across a 4-main / 10-sub taxonomy</td></tr>
+    <tr><td><strong>Clients managed</strong></td><td>22 featured organizations across a 5-main / 7-sub taxonomy</td></tr>
+    <tr><td><strong>Knowledge base</strong></td><td>4,117 source documents → 33,672 indexed chunks</td></tr>
+  </tbody></table></figure>
+  <!-- /wp:table -->
+
+  <!-- wp:heading -->
+  <h2>The brief</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>RTZ Audio Visual Associates has been designing and installing AV systems out of Elkridge, Maryland since 1988. Their client roster reads like an institutional who's-who — federal research agencies, military academies, major universities, the National Aquarium, multi-campus religious organizations. They carry 200+ manufacturer partnerships and install everything from huddle-room conferencing to multi-million-dollar conference centers.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The brief: rebuild the marketing site to match the level of the work; bring the entire content surface under editorial control so RTZ staff can keep it current without a developer in the loop; and build it on infrastructure that will still be the right choice in five years.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>Three engineering shifts since the original WordPress build made the new approach not just better, but cheaper to maintain over time:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list {"ordered":true} -->
+  <ol><li><strong>Serverless Postgres</strong> (Neon) makes a typed schema, real migrations, and a proper admin surface as cheap to run as a static site.</li><li><strong>Server Components + App Router</strong> (Next.js 16) render database-driven pages with the SEO and performance of static HTML.</li><li><strong>Vercel Blob + AI alt-text</strong> (Anthropic Claude) let non-technical editors upload images and get accessible markup for free.</li></ol>
+  <!-- /wp:list -->
+
+  <!-- wp:heading -->
+  <h2>What it does</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>A marketing site that ranks like a brochure but updates like a CMS</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The public site is a textbook React-on-the-edge build — Server Components per page, structured-data JSON-LD on every route, automatic Open Graph meta, lazy-loaded <code>next/image</code> throughout. Lighthouse SEO is 100, performance in the 90s.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The notable bit is what's underneath. <strong>Every</strong> public surface that displays content — homepage hero, manufacturer brand list, client credibility wall, projects portfolio, news feed, FAQs, testimonials, team page — reads from a typed Drizzle schema against Postgres. There are no markdown files in the repo. There is no headless CMS bill. RTZ owns the data and the editing surface end-to-end.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>A custom CMS — built without a CMS</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>We didn't reach for Sanity, Strapi, or Payload. The content model was specific enough that bolting onto an off-the-shelf CMS would have meant fighting it. Instead, the admin at <code>/admin</code> is a small SPA built from the same primitives as the public site:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list -->
+  <ul><li>A sidebar nav lists every editable entity (9 types).</li><li>Each entity has a list view with sortable columns and a featured-item toggle.</li><li>Each entity has a form view with React Hook Form + Zod validation, Vercel Blob–backed image uploads, and Anthropic-powered alt-text suggestions.</li><li>Drag-and-drop reordering via @dnd-kit on the lists that benefit from it.</li><li>Every mutation writes an audit row to a <code>content_revisions</code> table — so if a content editor breaks something, we can replay exactly what they did.</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:paragraph -->
+  <p>The whole admin is auth-gated through iron-session, sits behind a <code>/admin/(authed)</code> route group, and renders <code>force-dynamic</code> so it never gets statically baked into the build.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>A two-level category system visitors can actually browse</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The brief asked us to surface RTZ's 231 manufacturer brands cleanly on the public <code>/brands</code> page. We could have shipped 231 logos in a flat grid. Instead we designed a two-level taxonomy that does meaningful work for both the editor and the visitor:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list -->
+  <ul><li><strong>Two levels by design</strong>, enforced by a Postgres trigger that rejects any third level. Intentional YAGNI — the deepest reasonable taxonomy for "we sell AV gear" is "Video → Displays," not five levels deep.</li><li><strong>Multi-select</strong>, so a brand or client can sit in multiple categories. A manufacturer that makes both PTZ cameras and audio interfaces belongs in both.</li><li><strong>Mixed tagging</strong>, where each item can be tagged at the main level, the sub level, or both. A deterministic "lowest display-order wins" rule renders each brand exactly once.</li><li><strong>Editor-managed</strong>, with a two-column drag-and-drop interface — mains on the left, subs of the selected main on the right.</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:paragraph -->
+  <p>The same system runs for clients (Government → Federal, Education → Higher Education, Houses of Worship → Local Church). The visitor sees a main heading on <code>/clients</code>, with sub-headings appearing as soon as any client is tagged that specifically — content-driven progressive disclosure rather than a static information architecture.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>A homepage hero that feels like the inside of an AV install</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The hero is a custom React carousel of full-bleed install photography — university lecture halls, federal command centers, broadcast spaces, houses of worship. Over the photos we ship a custom HTML Canvas component, CircuitPulse, that draws PCB traces and animated signal pulses traveling across the foreground: subtle enough to read as ambient texture, on-brand enough that the metaphor lands instantly.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The carousel is custom because Swiper EffectFade — the obvious off-the-shelf choice — does not coexist with Turbopack's module graph. We wrote a small React state machine instead: Ken Burns zoom, 5-second slide / 800ms cross-fade, pause-on-hover, dots pagination, full <code>prefers-reduced-motion</code> support.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>A searchable AV knowledge base</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>RTZ maintains a 4,117-document internal knowledge base on SharePoint — install guides, manufacturer datasheets, project specs, training material. We scraped it, chunked it into 33,672 searchable units, and embedded the corpus with MiniLM-L6-v2. The vector index ships to Vercel Blob and is served by a Web Worker, giving RTZ staff single-pane search across years of accumulated tribal knowledge. The route is currently hidden from public nav — it surfaces as part of a customer-portal initiative in a future phase.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>A digital site-survey form that replaced an Excel template</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>We rebuilt RTZ's field survey as a multi-step web form at <code>/site-survey</code>. Reps fill it in on a tablet during a walkthrough; results email back to the office on submit. Same data, no paper, no version drift.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>Built for content scale</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>Every editorial decision had to assume the people maintaining this site might be the same people who scheduled the installs that week:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list -->
+  <ul><li><strong>Saves are idempotent.</strong> Each form save round-trips through a typed Zod schema, validates, writes to Postgres, fires <code>revalidatePath</code> for affected pages, and writes the audit row — in a single server action. No async indexing step to misfire.</li><li><strong>Reorders are drag-and-drop everywhere.</strong> Editors drag to bump a brand up the list rather than typing into a "display order" field.</li><li><strong>Image uploads handle themselves.</strong> Drop a file, get a Vercel Blob upload, an AI-generated alt-text suggestion, and a <code>next/image</code> everywhere it renders. The editor never touches a filename.</li><li><strong>Two parallel taxonomies, one admin pattern.</strong> Brand and client categories work identically — the cognitive cost of learning category management is paid once.</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:heading -->
+  <h2>Tech stack highlights</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:table {"className":"nb-case-table"} -->
+  <figure class="wp-block-table nb-case-table"><table><thead><tr><th>Layer</th><th>Choice</th><th>Why</th></tr></thead><tbody>
+    <tr><td>Framework</td><td>Next.js 16 App Router + Turbopack</td><td>Server Components keep pages SEO-clean while running real DB queries at render time</td></tr>
+    <tr><td>Language</td><td>TypeScript strict</td><td>Every DB column, API route, and React prop is type-checked end-to-end</td></tr>
+    <tr><td>Database</td><td>Neon serverless Postgres</td><td>Per-millisecond billing fits the read-heavy admin; branchable DBs make previews cheap</td></tr>
+    <tr><td>ORM</td><td>Drizzle</td><td>Migrations live as TypeScript; zero runtime overhead; clean SQL escape hatches</td></tr>
+    <tr><td>Schema enforcement</td><td>Postgres triggers</td><td>Two-level category depth is enforced at the storage layer, not just app code</td></tr>
+    <tr><td>Auth</td><td>iron-session</td><td>Cookie sessions are the right tool for an admin used by ~5 staff</td></tr>
+    <tr><td>Image storage</td><td>Vercel Blob</td><td>Direct browser upload, CDN-served, near-zero ops</td></tr>
+    <tr><td>AI alt-text</td><td>Anthropic Claude API</td><td>Runs on save; the editor sees a suggestion and accepts or edits</td></tr>
+    <tr><td>Styling</td><td>Tailwind CSS v4 + shadcn/ui</td><td>Inline-theme config, no runtime CSS-in-JS, no component-library tax</td></tr>
+  </tbody></table></figure>
+  <!-- /wp:table -->
+
+  <!-- wp:heading -->
+  <h2>Why this matters</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>Three patterns from this build show up in almost every content-heavy project:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p><strong>The CMS is the product.</strong> Companies with 35 years of work to show want to keep showing it — and how fast they can publish new work, partnerships, and wins is a function of how good the admin feels. A great public site with a bad CMS goes stale within a year; a great CMS with a decent public site ages well.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p><strong>The right level of structure is "exactly enough."</strong> A two-level taxonomy with a hard cap, a multi-select join, and a deterministic ordering rule covers 95% of real-world cases without paying for arbitrary-depth tree complexity. Saying no to deeper structure is part of the design.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p><strong>The database is part of the design system.</strong> Schema decisions shape what content editors can express. We modeled the category system, the audit log, and the image-upload flow as first-class design surfaces, not engineering afterthoughts — and the editorial experience is better for it.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:pullquote {"className":"is-style-default"} -->
+  <figure class="wp-block-pullquote"><blockquote><p>If your business runs on relationships, work product, and credibility — and your website is supposed to represent all three — this is the shape of the build.</p></blockquote></figure>
+  <!-- /wp:pullquote -->
+
+</div>
+<!-- /wp:group -->
