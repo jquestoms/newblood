@@ -61,3 +61,16 @@ The brand is **deliberative, not fast.** Don't frame work as "in days," "quick t
 ## Auto mode
 
 Jeremy typically runs in auto mode and expects continuous execution. Make reasonable assumptions, prefer action over confirmation for low-risk work, and surface course-corrections for anything that affects shared state (deploys, GitHub repos, external publishing).
+## Project hub protocol
+
+This project is tracked in the central hub at `~/Herd/_hub/PROJECTS.md`.
+Its task list is `./TASKS.md` (create from `~/Herd/_hub/TASKS.template.md` if missing).
+
+When you finish a meaningful task in this project, BEFORE ending your turn:
+1. In `./TASKS.md`, move the item to **✅ Done** with today's date and a one-line summary,
+   and surface the next concrete step under **▶️ Doing now**.
+2. In `~/Herd/_hub/PROJECTS.md`, update this project's `⟳ YYYY-MM-DD` status date to today.
+3. If the work changed the project's priority (e.g. it's now blocked, or finished),
+   note it — but do NOT move it between NOW/NEXT/SOMEDAY unless I asked. Buckets are mine to set.
+
+Keep updates terse: one line each. Never invent progress that didn't happen.
