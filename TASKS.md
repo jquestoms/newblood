@@ -6,18 +6,22 @@
 ---
 
 ## ▶️ Doing now
-- [ ] Post-launch QA on live newblood.com: mobile/cross-browser, test contact form + WooCommerce checkout, 301 legacy URLs (/case-studies/ → /work/), Yoast titles/meta for new pages, confirm homepage latest-note isn't stale.
+- [ ] Post-launch polish (launch itself is done & on `main`): mobile/cross-browser pass, test a WooCommerce checkout, 301 legacy URLs (/case-studies/ → /work/) via Yoast, Yoast titles/meta for new pages, confirm footer email/phone are current. Swap RTZ status line to a live link when the RTZ site launches Jul 1.
 
 ## 🔜 Up next
-> _Suggested launch checklist — edit to match reality, delete what doesn't apply._
+> _Launch checklist — done items checked off this activity._
+- [x] Full backup before go-live (Nexcess, downloaded)
+- [x] Cutover to production (theme activated, content migrated, commerce intact)
+- [x] Post-launch smoke test on the live URL (pages 200, footer/case-study fixes, contact form, commerce untouched)
+- [x] Pushed to GitHub + merged `feature/redesign` → `main`
 - [ ] Proofread all reworked content (typos, headings, calls-to-action)
 - [ ] Mobile + cross-browser check (Safari, Chrome, mobile widths)
-- [ ] Test every link, form, and button
-- [ ] SEO basics: page titles, meta descriptions, sitemap, favicon; 301s for legacy URLs (/case-studies/ → /work/)
+- [ ] Test every link, form, and button (contact form verified; checkout still to test)
+- [ ] SEO: page titles, meta descriptions, sitemap; 301s for legacy URLs (/case-studies/ → /work/)
 - [ ] Analytics installed and firing
-- [ ] Post-launch smoke test on the live URL (incl. WooCommerce checkout + subscription renewal scheduler intact)
 
 ## ✅ Done (newest first)
+- [x] 2026-06-09 — Pushed feature/redesign to GitHub + fast-forward merged → main (99 commits; redesign now version-controlled & backed up on origin/main)
 - [x] 2026-06-09 — Added RTZ Audio Visual case study (Build engagement, launching Jul 1): body markup, page (prod id 6855), showcase card + trusted-by entry; live on prod for prospect review
 - [x] 2026-06-09 — Footer "dark header" real fix: text was white but covered by the .nb-footer::before blend; z-lifted footer content above it (verified headless). Same root cause as case-study faded line.
 - [x] 2026-06-09 — Case-study fixes: migrated page excerpts (killed the green run-on "blob" eyebrow on prod) + fixed faded first body line (section-blend z-index/padding)
