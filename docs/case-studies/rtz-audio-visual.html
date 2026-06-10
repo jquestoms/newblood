@@ -2,7 +2,7 @@
 <div class="wp-block-group alignfull nb-gradient-section">
 
   <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.7"}}} -->
-  <p class="has-text-secondary-color"><strong>Stack:</strong> Next.js 16 App Router · React 19 · TypeScript strict · Drizzle ORM · Neon Postgres · Vercel Blob · Tailwind CSS v4 · shadcn/ui · Anthropic Claude API<br><strong>Engagement:</strong> Build — new marketing site + custom CMS from scratch<br><strong>Status:</strong> Launching July 2026</p>
+  <p class="has-text-secondary-color"><strong>Stack:</strong> Next.js 16 App Router · React 19 · TypeScript strict · Drizzle ORM · Neon Postgres · Vercel Blob · Tailwind CSS v4 · shadcn/ui · TipTap · Anthropic Claude API (structured outputs)<br><strong>Engagement:</strong> Build — new marketing site + custom CMS from scratch<br><strong>Status:</strong> Launching July 2026</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:image {"id":6763,"sizeSlug":"large","linkDestination":"none","className":"nb-case-screenshot"} -->
@@ -22,6 +22,7 @@
     <tr><td><strong>Project</strong></td><td>RTZ Audio Visual website + custom CMS</td></tr>
     <tr><td><strong>Architecture</strong></td><td>Server-rendered marketing site + admin SPA + Postgres-backed CMS</td></tr>
     <tr><td><strong>Content types managed</strong></td><td>9 — projects, testimonials, team, news, FAQs, clients, brands, brand categories, client categories</td></tr>
+    <tr><td><strong>Editorial AI</strong></td><td>Paste an email or drop a Word doc → Claude drafts the entire entry (structured outputs, schema-constrained) — editors review and publish</td></tr>
     <tr><td><strong>Brands managed</strong></td><td>231 manufacturer partners across a 4-main / 10-sub taxonomy</td></tr>
     <tr><td><strong>Clients managed</strong></td><td>22 featured organizations across a 5-main / 7-sub taxonomy</td></tr>
     <tr><td><strong>Knowledge base</strong></td><td>4,117 source documents → 33,672 indexed chunks</td></tr>
@@ -73,11 +74,27 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:list -->
-  <ul><li>A sidebar nav lists every editable entity (9 types).</li><li>Each entity has a list view with sortable columns and a featured-item toggle.</li><li>Each entity has a form view with React Hook Form + Zod validation, Vercel Blob–backed image uploads, and Anthropic-powered alt-text suggestions.</li><li>Drag-and-drop reordering via @dnd-kit on the lists that benefit from it.</li><li>Every mutation writes an audit row to a <code>content_revisions</code> table — so if a content editor breaks something, we can replay exactly what they did.</li></ul>
+  <ul><li>A <strong>task-first home screen</strong> — "Share a finished project," "Post news," "Update something" — instead of a database menu. Section names are plain English ("Customer quotes," "Common questions"), and so is every label: no slugs, no "display order," no publish states. Things are <em>shown on the website</em> or <em>hidden</em>.</li><li>Each entity has a form view built on a shared kit: React Hook Form + Zod validation, a TipTap rich-text editor that <strong>stores markdown</strong> (clean paste from Word, no syntax exposed), Vercel Blob image uploads, and Claude-powered alt-text suggestions.</li><li><strong>Drag-and-drop ordering everywhere it matters</strong> — projects, testimonials, team, clients — via @dnd-kit. URL slugs auto-derive from titles and lock once published so links never silently break.</li><li><strong>Real-page preview.</strong> "Save &amp; view on site" opens the actual public route with a preview banner — not a simulation. What editors see is byte-for-byte what publishes.</li><li>Every mutation writes an audit row to a <code>content_revisions</code> table, surfaced in-admin as a plain-English <strong>"Recent changes"</strong> feed ("Project 'Sligo SDA Church' updated — 3 days ago") — enabling exact replay if an editor introduces errors.</li></ul>
   <!-- /wp:list -->
 
   <!-- wp:paragraph -->
   <p>The whole admin is auth-gated through iron-session, sits behind a <code>/admin/(authed)</code> route group, and renders <code>force-dynamic</code> so it never gets statically baked into the build.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>An intake that writes the first draft</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The blank form is where client-maintained sites go to die. So "new project" doesn't open a form — it opens a drop box. Paste an email, raw install notes, or drag in a Word document, and Claude (Sonnet, via structured outputs) returns a complete draft: title, market vertical, challenge/solution narrative, and the equipment list <strong>auto-grouped into Audio / Video / Control</strong> categories.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The output is constrained by the same Zod schemas the form validates against — the API route and the client share one source of truth, so a malformed draft is structurally impossible. A strict system prompt forbids invented facts: no client names, model numbers, dates, or quotes that aren't in the source material; if the notes contain no testimonial, the testimonial fields come back null.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>Every draft arrives <strong>hidden</strong>, flagged with a review banner. The editor reads, tweaks, previews on the real page, and flips it live. In testing, five messy sentences about a church sanctuary install became a publishable case study — correctly categorized, equipment sorted — in thirteen seconds, for about three cents.</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:heading {"level":3} -->
@@ -133,7 +150,7 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:list -->
-  <ul><li><strong>Saves are idempotent.</strong> Each form save round-trips through a typed Zod schema, validates, writes to Postgres, fires <code>revalidatePath</code> for affected pages, and writes the audit row — in a single server action. No async indexing step to misfire.</li><li><strong>Reorders are drag-and-drop everywhere.</strong> Editors drag to bump a brand up the list rather than typing into a "display order" field.</li><li><strong>Image uploads handle themselves.</strong> Drop a file, get a Vercel Blob upload, an AI-generated alt-text suggestion, and a <code>next/image</code> everywhere it renders. The editor never touches a filename.</li><li><strong>Two parallel taxonomies, one admin pattern.</strong> Brand and client categories work identically — the cognitive cost of learning category management is paid once.</li></ul>
+  <ul><li><strong>Saves are idempotent.</strong> Each form save round-trips through a typed Zod schema, validates, writes to Postgres, fires <code>revalidatePath</code> for affected pages, and writes the audit row — in a single server action. No async indexing step to misfire.</li><li><strong>Reorders are drag-and-drop everywhere.</strong> Editors drag to bump a brand up the list rather than typing into a "display order" field.</li><li><strong>Image uploads handle themselves.</strong> Drop a file, get a Vercel Blob upload, an AI-generated alt-text suggestion, and a <code>next/image</code> everywhere it renders. The editor never touches a filename.</li><li><strong>Preview is the real page.</strong> Detail queries don't filter drafts and saves revalidate the route, so "Save &amp; view on site" shows the production-rendered page — no draft-mode cookies, no preview infrastructure to drift out of sync. Draft pages are noindexed.</li><li><strong>The first draft writes itself.</strong> The AI intake means the activation energy for publishing new work is "forward me the email about it."</li><li><strong>Two parallel taxonomies, one admin pattern.</strong> Brand and client categories work identically — the cognitive cost of learning category management is paid once.</li></ul>
   <!-- /wp:list -->
 
   <!-- wp:heading -->
@@ -149,8 +166,9 @@
     <tr><td>Schema enforcement</td><td>Postgres triggers</td><td>Two-level category depth is enforced at the storage layer, not just app code</td></tr>
     <tr><td>Auth</td><td>iron-session</td><td>Cookie sessions are the right tool for an admin used by ~5 staff</td></tr>
     <tr><td>Image storage</td><td>Vercel Blob</td><td>Direct browser upload, CDN-served, near-zero ops</td></tr>
-    <tr><td>AI alt-text</td><td>Anthropic Claude API</td><td>Runs on save; the editor sees a suggestion and accepts or edits</td></tr>
+    <tr><td>AI assist</td><td>Anthropic Claude API</td><td>Alt-text on every upload (Haiku) + paste-anything draft generation via structured outputs (Sonnet), schema-constrained end to end</td></tr>
     <tr><td>Styling</td><td>Tailwind CSS v4 + shadcn/ui</td><td>Inline-theme config, no runtime CSS-in-JS, no component-library tax</td></tr>
+    <tr><td>Rich text</td><td>TipTap (markdown in/out)</td><td>Editors get a word-processor; the database and public renderer keep plain markdown</td></tr>
   </tbody></table></figure>
   <!-- /wp:table -->
 
@@ -159,7 +177,7 @@
   <!-- /wp:heading -->
 
   <!-- wp:paragraph -->
-  <p>Three patterns from this build show up in almost every content-heavy project:</p>
+  <p>Four patterns from this build show up in almost every content-heavy project:</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:paragraph -->
@@ -174,8 +192,12 @@
   <p><strong>The database is part of the design system.</strong> Schema decisions shape what content editors can express. We modeled the category system, the audit log, and the image-upload flow as first-class design surfaces, not engineering afterthoughts — and the editorial experience is better for it.</p>
   <!-- /wp:paragraph -->
 
+  <!-- wp:paragraph -->
+  <p><strong>Meet editors where the content already lives.</strong> The work product already exists — in emails, install notes, Word docs. A CMS that demands re-typing it into fields will lose to inertia every time. Letting editors paste what they already have and reviewing an AI-structured draft turns "I should update the website" from an evening chore into a two-minute decision.</p>
+  <!-- /wp:paragraph -->
+
   <!-- wp:pullquote {"className":"is-style-default"} -->
-  <figure class="wp-block-pullquote"><blockquote><p>If your business runs on relationships, work product, and credibility — and your website is supposed to represent all three — this is the shape of the build.</p></blockquote></figure>
+  <figure class="wp-block-pullquote"><blockquote><p>The client asked for something simpler than WordPress. They got a website that writes its own first drafts.</p></blockquote></figure>
   <!-- /wp:pullquote -->
 
 </div>
