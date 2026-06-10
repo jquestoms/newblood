@@ -31,6 +31,30 @@ _Prepared 2026-06-10 for the 6/11 discovery call. Companion to `seo-discovery-ca
 
 **Fire door drop testing is a compliance product.** NFPA 80 requires annual testing; hospitals/institutions are audited on it. Recurring, deadline-driven demand that almost nobody targets with content. Same for planned-maintenance contracts — the highest-LTV lead type they have.
 
+## 2b. Review deep-dive (added 2026-06-10)
+
+**Footprint by platform:**
+| Platform | Standing |
+|---|---|
+| Google | 3.8★ / 59 reviews |
+| Angi | 4.0★ — punctuality praised; pricing-disclosure gripes |
+| Yelp | 12 reviews (Halethorpe listing) |
+| BBB | **A+**, no visible complaints — but **not accredited**. Also corrects the record: founded **1947** (78 yrs), president **Joseph S. Gross** |
+| ServiceAgent / directories | Listed but **"not yet verified"** — the citation profile looks unmanaged |
+
+**What the reviews actually say — the pattern is clean:**
+- **The field operation gets praised.** Techs called ahead, arrived early, "professional and friendly," came back quickly for a follow-up issue, "good job for a good price" on full installs.
+- **The complaints are almost all front-office, not workmanship:** the billing structure (1-hr labor minimum + 1-hr travel time + $9 fuel surcharge) **not disclosed before booking** — one customer billed ~$180 for a 5-minute sensor adjustment; a customer-service manager described as "appallingly unsympathetic and robot-like"; one serious allegation of a **forged signature on a work order** with no documentation sent. No evidence anyone from the company responds to any review, anywhere.
+
+**Why this is good news for the pitch:** the product is fine — the *expectation-setting* is broken, and that's a digital fix:
+1. **A transparent service-call pricing page** (minimum, travel, surcharge, what to expect) pre-frames every booking, cuts the angriest review category off at the source — and doubles as an SEO asset ("garage door service call cost Baltimore").
+2. **A review-response protocol** — the forged-signature accusation has sat unanswered in public; a measured owner response is reputation triage.
+3. **The capture-rate machine** — 9,000 jobs/yr funneling even 2% into Google reviews buries the back-catalog of complaints within two quarters.
+
+**Entity fragmentation (clarify on the call):** corporate lists the New Castle and Milford addresses as *separate distributorships* — "Overhead Door Co. of Northern Delaware" and "Overhead Door Co. of DelMar" (which runs its own site, overheaddoordelmar.com) — while ohdbalt.com presents them as branches. Same family? Separate entities under common ownership? This determines whether the program manages one entity or three, and explains why Google's understanding of "who is this company" is likely muddled.
+
+Review sources: [BBB](https://www.bbb.org/us/md/halethorpe/profile/garage-doors/overhead-door-company-of-baltimore-inc-0011-3010286) · [Angi](https://www.angi.com/companylist/us/md/halethorpe/overhead-door-co-of-baltimore-inc-reviews-162379.htm) · [Yelp](https://www.yelp.com/biz/overhead-door-co-halethorpe) · [HomeAdvisor](https://www.homeadvisor.com/rated.OverheadDoorCompany.2093998.html) · [ServiceAgent](https://serviceagent.ai/directory/maryland/baltimore/garage-door/overhead-door-company-of-baltimore/) · [OHD Northern Delaware (corporate)](https://www.overheaddoor.com/northern-delaware) · [OHD DelMar](https://www.overheaddoordelmar.com/)
+
 ## 3. The customized question line
 
 **Opening (relationship + why now)**
