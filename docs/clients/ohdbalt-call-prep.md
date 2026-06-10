@@ -55,6 +55,16 @@ _Prepared 2026-06-10 for the 6/11 discovery call. Companion to `seo-discovery-ca
 
 Review sources: [BBB](https://www.bbb.org/us/md/halethorpe/profile/garage-doors/overhead-door-company-of-baltimore-inc-0011-3010286) · [Angi](https://www.angi.com/companylist/us/md/halethorpe/overhead-door-co-of-baltimore-inc-reviews-162379.htm) · [Yelp](https://www.yelp.com/biz/overhead-door-co-halethorpe) · [HomeAdvisor](https://www.homeadvisor.com/rated.OverheadDoorCompany.2093998.html) · [ServiceAgent](https://serviceagent.ai/directory/maryland/baltimore/garage-door/overhead-door-company-of-baltimore/) · [OHD Northern Delaware (corporate)](https://www.overheaddoor.com/northern-delaware) · [OHD DelMar](https://www.overheaddoordelmar.com/)
 
+## 2c. The fire-door proof point — and the hijacked phone number (added 2026-06-10, eve of call)
+
+Jeremy spot-checked **"fire door drop testing baltimore md"**: OHDBalt is **#1 in organic AND cited first in Google's AI Overview** (and well-positioned on Gemini) — the AI quotes their own 2019 fire-door page ("annual compliance requirement mandated by NFPA 80"). With zero optimization. **This is the live proof that the niche-commercial content thesis works** — one real page in a thin niche owns the answer. Imagine it done deliberately for dock levelers, high-speed doors, planned maintenance, rolling steel.
+
+**But — the AI Overview tells customers to call (888) 594-0830. That is not their number.** It appears nowhere on ohdbalt.com (real lines: 410-636-6300 main, 410-636-6306 on the fire-door page). Separately, garagedoorrepair.com (a confirmed lead-gen directory) lists them under **(410) 773-9711** — also not theirs. Pattern: lead-broker directories overlay tracking numbers on unclaimed listings, intercept the calls, and monetize the leads. Google's AI assembled its answer from their site's *content* but a polluted citation ecosystem's *phone number*.
+
+**The call moment this creates:** "Google's AI already recommends you first for fire door testing — and then it hands the customer a phone number that isn't yours. You're winning the answer and possibly losing the call." Nobody else quoting Chase can show him that. It also turns 'citations and entity consistency' from boring maintenance into visible revenue defense — and it's exactly what the sweep's schema + listings reset fixes, and what Signal monitoring would have caught automatically.
+
+Also visible in the same AI answer: **Mid-Atlantic Door Group** (overheaddoors.com) — *another* Overhead Door Red Ribbon distributor serving Maryland — sharing the citation block. Territory blur inside AI answers; one more reason for the corporate/territory question.
+
 ## 3. The customized question line
 
 **Opening (relationship + why now)**
