@@ -59,9 +59,23 @@ Review sources: [BBB](https://www.bbb.org/us/md/halethorpe/profile/garage-doors/
 
 Jeremy spot-checked **"fire door drop testing baltimore md"**: OHDBalt is **#1 in organic AND cited first in Google's AI Overview** (and well-positioned on Gemini) — the AI quotes their own 2019 fire-door page ("annual compliance requirement mandated by NFPA 80"). With zero optimization. **This is the live proof that the niche-commercial content thesis works** — one real page in a thin niche owns the answer. Imagine it done deliberately for dock levelers, high-speed doors, planned maintenance, rolling steel.
 
-**But — the AI Overview tells customers to call (888) 594-0830. That is not their number.** It appears nowhere on ohdbalt.com (real lines: 410-636-6300 main, 410-636-6306 on the fire-door page). Separately, garagedoorrepair.com (a confirmed lead-gen directory) lists them under **(410) 773-9711** — also not theirs. Pattern: lead-broker directories overlay tracking numbers on unclaimed listings, intercept the calls, and monetize the leads. Google's AI assembled its answer from their site's *content* but a polluted citation ecosystem's *phone number*.
+**The (888) 594-0830 number — SOLVED (corrected 2026-06-10 evening).** Initial read ("lead-broker hijack") was wrong. It's **YoTrack dynamic number insertion (Natpal platform), installed by Jeremy himself in April 2021** for **Enspire for Enterprise** (contact then: Kristin Slocum), per email records. The script (`yotrack.cdn.ybn.io/yotrack_auto.min.js`) lives in the prod DB (theme custom-JS, not in files), swaps the displayed 410 number to Enspire's tracking line after page load, and forwards callers to the real business. It **also pipes Forminator form submissions to Enspire** via a `submitWebLead()` hook. Not a hack; an attribution product someone has presumably been paying for since 2021.
 
-**The call moment this creates:** "Google's AI already recommends you first for fire door testing — and then it hands the customer a phone number that isn't yours. You're winning the answer and possibly losing the call." Nobody else quoting Chase can show him that. It also turns 'citations and entity consistency' from boring maintenance into visible revenue defense — and it's exactly what the sweep's schema + listings reset fixes, and what Signal monitoring would have caught automatically.
+**The real risks (these survive the correction):**
+1. **Google's AI indexed the tracking line as their public phone number.** JS number-swapping leaks: the AI Overview now publishes Enspire's 888 line, which conflicts with GBP/citations showing 410-636-6300 — a self-inflicted NAP inconsistency, machine-amplified.
+2. **Enspire currently claims attribution for OHDBalt's inbound calls AND web leads.** Any SEO program's results would flow through a *third party's* measurement — and that vendor has every incentive to credit its own campaigns. Reporting integrity question.
+3. **If the Enspire campaign is no longer active**, the swap is pure downside: wrong number in AI answers, leads reported to a vendor nobody's paying attention to.
+
+**Ask Chase tomorrow (genuinely curious tone, not gotcha — Jeremy installed it at their request):**
+- Is the **Enspire for Enterprise** relationship still active? What is it — directory ads, lead-gen, media buy? What does it cost?
+- What does Enspire report monthly, and does anyone reconcile their claimed call/lead numbers against reality?
+- Does Chase know the website swaps its displayed phone number for Enspire's tracking line — and that Google's AI now shows that 888 number?
+
+**The revised call moment:** "Google's AI already recommends you first for fire door testing — and the phone number it publishes is your ad vendor's tracking line, not yours. Do you know what Enspire's reporting claims about those calls?" Still a moment nobody else quoting Chase can produce — and it sets up clean measurement (call tracking *you* control, reconciled reporting) as part of the program.
+
+**Removal note:** if they ever want it gone, it's the script tag in the prod theme custom-JS field + the Forminator `submitWebLead` hooks — but do NOT remove unilaterally; it may be tied to an active ad contract.
+
+**Separate, still-unexplained:** garagedoorrepair.com (a lead-gen directory) lists them under **(410) 773-9711** — possibly that directory's own tracking overlay, possibly another Enspire line. Minor; the citation-cleanup pass handles it.
 
 Also visible in the same AI answer: **Mid-Atlantic Door Group** (overheaddoors.com) — *another* Overhead Door Red Ribbon distributor serving Maryland — sharing the citation block. Territory blur inside AI answers; one more reason for the corporate/territory question.
 
