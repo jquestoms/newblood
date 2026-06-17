@@ -2,6 +2,7 @@
 """Signal Logs v0 — AI-crawler & traffic analysis from Nexcess transfer logs.
 
 Usage:
+  python3 signal.py fetch     # rsync new rotated transfer-log zips from each Nexcess site
   python3 signal.py ingest    # parse data/raw/<site>/* into data/signal.db
   python3 signal.py verify    # fetch published crawler IP ranges, verify bot claims
   python3 signal.py report    # write reports/<site>.md + reports/index.md
@@ -10,7 +11,7 @@ Usage:
 Bot signatures live in ~/Herd/signal-ingest/lib/bots.json (shared with the TS
 rollup cron) — the tables below are a fallback if that file is missing.
 """
-import sys, os, re, json, sqlite3, zipfile, ipaddress, socket, urllib.request
+import sys, os, re, json, sqlite3, zipfile, ipaddress, socket, urllib.request, subprocess
 from collections import defaultdict
 from datetime import datetime
 
@@ -19,6 +20,12 @@ DB = os.path.join(ROOT, 'data', 'signal.db')
 RAW = os.path.join(ROOT, 'data', 'raw')
 REPORTS = os.path.join(ROOT, 'reports')
 RANGES_CACHE = os.path.join(ROOT, 'data', 'ip-ranges.json')
+
+# Nexcess collection: SSH+rsync new rotated transfer-log zips into data/raw/<site>/.
+# Creds live in ~/Herd/<site>/.nexcess-credentials (NEXCESS_HOST/USER/PASS/PORT; optional
+# NEXCESS_LOG_DIR, default 'logs' relative to the SSH home — Nexcess puts transfer.log there).
+HERD = os.path.expanduser('~/Herd')
+NEXCESS_SITES = ['akta', 'ohdbalt', 'dadabilities', 'newblood']
 
 # --- bot signature table: substring (lowercased) -> (bot_id, family, kind) ---
 # kind: ai-train = AI training crawler, ai-search = AI search indexer,
@@ -128,6 +135,62 @@ def parse_lines(fh, site, db):
     if rows:
         db.executemany('INSERT INTO events VALUES(?,?,?,?,?,?,?,?,?,?,?,0)', rows)
     return n
+
+def _read_creds(path):
+    creds = {}
+    for line in open(path):
+        line = line.strip()
+        if not line or line.startswith('#') or '=' not in line:
+            continue
+        k, v = line.split('=', 1)
+        creds[k.strip()] = v.strip().strip('"').strip("'")
+    return creds
+
+def fetch():
+    """rsync newly-rotated transfer-log zips from each Nexcess site into data/raw/<site>/.
+
+    Only the dated, rotated `transfer.log-YYYY-MM-DD.zip` files are pulled — they have
+    unique names (so ingest's per-file cursor picks them up) and are complete. The live
+    `transfer.log` (today, still growing) is skipped; it arrives as a dated zip after it
+    rotates (~1-day lag, fine — the Vercel-drain sites cover real-time). rsync only
+    transfers files we don't already have, so this is cheap to run daily.
+    """
+    if not (subprocess.run(['which', 'sshpass'], capture_output=True).returncode == 0):
+        print('fetch: sshpass not installed (brew install sshpass) — aborting'); return
+    total_new = 0
+    for site in NEXCESS_SITES:
+        cred_path = os.path.join(HERD, site, '.nexcess-credentials')
+        if not os.path.exists(cred_path):
+            print(f'{site}: no creds at {cred_path}, skipping'); continue
+        c = _read_creds(cred_path)
+        host, user, pw = c.get('NEXCESS_HOST'), c.get('NEXCESS_USER'), c.get('NEXCESS_PASS')
+        port = c.get('NEXCESS_PORT', '22')
+        logdir = c.get('NEXCESS_LOG_DIR', 'logs').rstrip('/')
+        if not (host and user and pw):
+            print(f'{site}: missing NEXCESS_HOST/USER/PASS, skipping'); continue
+        dest = os.path.join(RAW, site)
+        os.makedirs(dest, exist_ok=True)
+        before = set(os.listdir(dest))
+        env = dict(os.environ, SSHPASS=pw)
+        ssh = f'ssh -p {port} -o StrictHostKeyChecking=no -o ConnectTimeout=25 -o BatchMode=no'
+        # remote glob is expanded by the login shell; --ignore-existing keeps it incremental
+        src = f'{user}@{host}:{logdir}/transfer.log-*.zip'
+        cmd = ['sshpass', '-e', 'rsync', '-az', '--ignore-existing', '-e', ssh, src, dest + '/']
+        try:
+            r = subprocess.run(cmd, env=env, capture_output=True, text=True, timeout=600)
+        except subprocess.TimeoutExpired:
+            print(f'{site}: rsync timed out'); continue
+        new = sorted(set(os.listdir(dest)) - before)
+        if r.returncode != 0 and not new:
+            err = (r.stderr or '').strip().splitlines()
+            hint = ''
+            if any('No such file' in e or 'change_dir' in e for e in err):
+                hint = f"  (is the remote path right? set NEXCESS_LOG_DIR in {site}/.nexcess-credentials)"
+            print(f'{site}: rsync failed (rc={r.returncode}): {err[-1] if err else "unknown"}{hint}')
+            continue
+        total_new += len(new)
+        print(f'{site}: +{len(new)} new log file(s)' + (f' ({new[-1]})' if new else ''))
+    print(f'fetch: {total_new} new file(s) pulled')
 
 def ingest():
     db = open_db()
@@ -336,5 +399,5 @@ def report():
 
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'report'
-    {'ingest': ingest, 'ingest-vercel': ingest_vercel, 'verify': verify, 'report': report,
-     'push': push}[cmd]()
+    {'fetch': fetch, 'ingest': ingest, 'ingest-vercel': ingest_vercel, 'verify': verify,
+     'report': report, 'push': push}[cmd]()
