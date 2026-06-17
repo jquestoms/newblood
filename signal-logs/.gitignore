@@ -1,0 +1,6 @@
+# Runtime artifacts — never commit (signal.db is ~300MB)
+data/
+*.db
+*.log
+.drain-secret
+.bypass-secret
