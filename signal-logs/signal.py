@@ -146,6 +146,34 @@ def _read_creds(path):
         creds[k.strip()] = v.strip().strip('"').strip("'")
     return creds
 
+def discover():
+    """Read-only: SSH each Nexcess site and locate its transfer.log files, so we know what
+    to set NEXCESS_LOG_DIR to. Prints the remote home + any transfer.log* paths found."""
+    for site in NEXCESS_SITES:
+        cred_path = os.path.join(HERD, site, '.nexcess-credentials')
+        if not os.path.exists(cred_path):
+            print(f'{site}: no creds'); continue
+        c = _read_creds(cred_path)
+        host, user, pw = c.get('NEXCESS_HOST'), c.get('NEXCESS_USER'), c.get('NEXCESS_PASS')
+        port = c.get('NEXCESS_PORT', '22')
+        env = dict(os.environ, SSHPASS=pw or '')
+        remote = ("echo HOME=$HOME; "
+                  "echo '--- ls -la ~/logs ---'; ls -la ~/logs 2>/dev/null | head -40; "
+                  "echo '--- any *log* under ~/logs ---'; ls -la ~/logs/* 2>/dev/null | head -20; "
+                  "echo '--- find access/transfer logs (depth 6) ---'; "
+                  "find ~ -maxdepth 6 \\( -iname '*transfer*' -o -iname '*access*log*' -o -iname '*.log' -o -iname '*.log.*' \\) 2>/dev/null | head -20")
+        cmd = ['sshpass', '-e', 'ssh', '-p', port, '-o', 'StrictHostKeyChecking=no',
+               '-o', 'ConnectTimeout=25', f'{user}@{host}', remote]
+        print(f'\n=== {site} ({user}@{host}:{port}) ===')
+        try:
+            r = subprocess.run(cmd, env=env, capture_output=True, text=True, timeout=60)
+            if r.stdout.strip():
+                print(r.stdout.strip())
+            if r.returncode != 0:
+                print(f'[rc={r.returncode}] {(r.stderr or "").strip().splitlines()[-1] if r.stderr.strip() else ""}')
+        except subprocess.TimeoutExpired:
+            print('  timed out')
+
 def fetch():
     """rsync newly-rotated transfer-log zips from each Nexcess site into data/raw/<site>/.
 
@@ -165,7 +193,8 @@ def fetch():
         c = _read_creds(cred_path)
         host, user, pw = c.get('NEXCESS_HOST'), c.get('NEXCESS_USER'), c.get('NEXCESS_PASS')
         port = c.get('NEXCESS_PORT', '22')
-        logdir = c.get('NEXCESS_LOG_DIR', 'logs').rstrip('/')
+        # Nexcess access logs live at ~/var/<host>/logs, reachable via the ~/logs/<host> symlink.
+        logdir = (c.get('NEXCESS_LOG_DIR') or f'logs/{host}').rstrip('/')
         if not (host and user and pw):
             print(f'{site}: missing NEXCESS_HOST/USER/PASS, skipping'); continue
         dest = os.path.join(RAW, site)
@@ -399,5 +428,5 @@ def report():
 
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'report'
-    {'fetch': fetch, 'ingest': ingest, 'ingest-vercel': ingest_vercel, 'verify': verify,
-     'report': report, 'push': push}[cmd]()
+    {'discover': discover, 'fetch': fetch, 'ingest': ingest, 'ingest-vercel': ingest_vercel,
+     'verify': verify, 'report': report, 'push': push}[cmd]()
