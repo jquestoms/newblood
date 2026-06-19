@@ -12,4 +12,4 @@ require_once __DIR__ . '/routing.php';
 require_once __DIR__ . '/view.php';
 require_once __DIR__ . '/controller.php';
 require_once __DIR__ . '/submission.php';
-// Later tasks append: email.php
+require_once __DIR__ . '/email.php';
