@@ -16,3 +16,6 @@ if ( ! function_exists( 'sanitize_email' ) ) {
 if ( ! function_exists( 'esc_html' ) ) { function esc_html( $s ) { return htmlspecialchars( (string) $s, ENT_QUOTES ); } }
 if ( ! function_exists( 'esc_attr' ) ) { function esc_attr( $s ) { return htmlspecialchars( (string) $s, ENT_QUOTES ); } }
 if ( ! function_exists( 'absint' ) ) { function absint( $n ) { return abs( (int) $n ); } }
+if ( ! function_exists( 'add_action' ) ) { function add_action() {} }
+if ( ! function_exists( 'sanitize_title' ) ) { function sanitize_title( $s ) { return strtolower( trim( preg_replace( '/[^a-z0-9-]/', '-', strtolower( (string) $s ) ) ) ); } }
+if ( ! function_exists( 'is_email' ) ) { function is_email( $s ) { return (bool) filter_var( $s, FILTER_VALIDATE_EMAIL ); } }

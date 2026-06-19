@@ -11,4 +11,5 @@ require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/routing.php';
 require_once __DIR__ . '/view.php';
 require_once __DIR__ . '/controller.php';
-// Later tasks append: submission.php, email.php
+require_once __DIR__ . '/submission.php';
+// Later tasks append: email.php
