@@ -38,8 +38,8 @@ function nb_discovery_sanitize_payload( $raw, $instance ) {
     $gbp = isset( $raw['systems']['gbp_access'] ) ? $raw['systems']['gbp_access'] : 'unsure';
     if ( ! in_array( $gbp, array( 'yes', 'no', 'unsure' ), true ) ) $gbp = 'unsure';
 
-    $txt  = function ( $v ) { return isset( $v ) ? sanitize_text_field( $v ) : ''; };
-    $area = function ( $v ) { return isset( $v ) ? sanitize_textarea_field( $v ) : ''; };
+    $txt  = function ( $v ) { return sanitize_text_field( (string) $v ); };
+    $area = function ( $v ) { return sanitize_textarea_field( (string) $v ); };
 
     return array(
         'instance'   => $instance['slug'],
@@ -102,7 +102,7 @@ function nb_discovery_handle_submit( $req ) {
     $clean['services'] = nb_discovery_compute_gaps( $clean['services'] );
 
     global $wpdb;
-    $wpdb->insert(
+    $inserted = $wpdb->insert(
         nb_discovery_table_name(),
         array(
             'instance'         => $clean['instance'],
@@ -114,6 +114,9 @@ function nb_discovery_handle_submit( $req ) {
         ),
         array( '%s', '%s', '%s', '%s', '%s', '%s' )
     );
+    if ( false === $inserted ) {
+        return new WP_REST_Response( array( 'ok' => false, 'error' => 'db_error' ), 500 );
+    }
 
     if ( function_exists( 'nb_discovery_send_email' ) ) {
         nb_discovery_send_email( $clean, $instance );
@@ -127,8 +130,7 @@ function nb_discovery_register_rest() {
         'methods'             => 'POST',
         'callback'            => 'nb_discovery_handle_submit',
         'permission_callback' => function () {
-            // Public form; nonce checked by WP because route is under wp-json
-            // and JS sends X-WP-Nonce. Accept without login.
+            // Public discovery form — no auth required.
             return true;
         },
     ) );
