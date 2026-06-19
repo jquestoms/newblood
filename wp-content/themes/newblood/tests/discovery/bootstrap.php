@@ -1,5 +1,11 @@
 <?php
-assert_options( ASSERT_EXCEPTION, 1 );
+// Guarantee a failed assert() aborts the run. PHP 8 throws AssertionError by
+// default; bail loudly if the runtime has assertions disabled so the tests
+// can never silently no-op (instead of using the deprecated assert_options()).
+if ( ini_get( 'zend.assertions' ) != 1 || ! ini_get( 'assert.exception' ) ) {
+	fwrite( STDERR, "FATAL: assertions are disabled; tests would be meaningless. Run PHP with zend.assertions=1 and assert.exception=1.\n" );
+	exit( 2 );
+}
 
 // Minimal WP-function stubs so pure-logic module files run under plain PHP CLI.
 // Existence-only stub: config.php checks defined('ABSPATH'), not its value.
