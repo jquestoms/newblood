@@ -24,14 +24,16 @@ function nb_discovery_install_table() {
         payload LONGTEXT NOT NULL,
         created_at DATETIME NOT NULL,
         ip VARCHAR(45) NOT NULL DEFAULT '',
-        PRIMARY KEY (id),
+        PRIMARY KEY  (id),
         KEY instance (instance),
         KEY created_at (created_at)
     ) {$charset};";
 
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
     dbDelta( $sql );
-    update_option( 'nb_discovery_db_version', NB_DISCOVERY_DB_VERSION );
+    if ( $wpdb->last_error === '' ) {
+        update_option( 'nb_discovery_db_version', NB_DISCOVERY_DB_VERSION );
+    }
 }
 
 /**
