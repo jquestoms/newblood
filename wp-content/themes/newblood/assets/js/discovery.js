@@ -47,6 +47,7 @@
     var gbp = form.querySelector('input[name="gbp_access"]:checked');
     return {
       instance: cfg.instance || form.getAttribute('data-instance'),
+      hp: get('hp_company'),
       respondent: { name: get('respondent_name'), email: get('respondent_email') },
       services: services,
       vision: get('vision'),

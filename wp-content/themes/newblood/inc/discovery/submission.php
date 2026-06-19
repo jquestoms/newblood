@@ -95,6 +95,20 @@ function nb_discovery_handle_submit( $req ) {
         return new WP_REST_Response( array( 'ok' => false, 'error' => 'unknown_instance' ), 400 );
     }
 
+	// Honeypot: real users leave this empty. Bots that fill it get a polite OK but no storage.
+	if ( ! empty( $raw['hp'] ) ) {
+		return new WP_REST_Response( array( 'ok' => true ), 200 );
+	}
+
+	// Lightweight per-IP throttle — proportionate abuse protection for a public, unauthenticated form.
+	$ip       = isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : '';
+	$rl_key   = 'nb_disc_rl_' . md5( $ip );
+	$rl_count = (int) get_transient( $rl_key );
+	if ( $rl_count >= 8 ) {
+		return new WP_REST_Response( array( 'ok' => false, 'error' => 'rate_limited' ), 429 );
+	}
+	set_transient( $rl_key, $rl_count + 1, HOUR_IN_SECONDS );
+
     $clean = nb_discovery_sanitize_payload( $raw, $instance );
     if ( ! is_email( $clean['respondent']['email'] ) || $clean['respondent']['name'] === '' ) {
         return new WP_REST_Response( array( 'ok' => false, 'error' => 'missing_identity' ), 422 );
@@ -119,7 +133,9 @@ function nb_discovery_handle_submit( $req ) {
     }
 
     if ( function_exists( 'nb_discovery_send_email' ) ) {
-        nb_discovery_send_email( $clean, $instance );
+        if ( ! nb_discovery_send_email( $clean, $instance ) ) {
+            error_log( 'nb_discovery: wp_mail failed for instance ' . $clean['instance'] . ' (' . $clean['respondent']['email'] . ')' );
+        }
     }
 
     return new WP_REST_Response( array( 'ok' => true ), 200 );
@@ -129,6 +145,7 @@ function nb_discovery_register_rest() {
     register_rest_route( 'newblood/v1', '/discovery', array(
         'methods'             => 'POST',
         'callback'            => 'nb_discovery_handle_submit',
+        // Public-by-design: unauthenticated prospect form. Abuse is bounded by the honeypot + per-IP throttle in the handler, not by a nonce.
         'permission_callback' => function () {
             // Public discovery form — no auth required.
             return true;

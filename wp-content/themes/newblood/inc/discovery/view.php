@@ -2,8 +2,15 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 function nb_discovery_render_page( $instance ) {
+	// Standalone page embeds a per-request nonce — never let a page cache (e.g. Hummingbird) store it.
+	if ( ! defined( 'DONOTCACHEPAGE' ) ) {
+		define( 'DONOTCACHEPAGE', true );
+	}
+	nocache_headers();
+
     $ver_css = newblood_asset_version( '/assets/css/discovery.css' );
     $ver_js  = newblood_asset_version( '/assets/js/discovery.js' );
+    // Standalone page — wp_enqueue_* isn't available here, so cache-bust by filemtime() inline.
     $css_uri = get_template_directory_uri() . '/assets/css/discovery.css?v=' . $ver_css;
     $js_uri  = get_template_directory_uri() . '/assets/js/discovery.js?v=' . $ver_js;
 
@@ -41,6 +48,12 @@ function nb_discovery_render_page( $instance ) {
   </header>
 
   <form id="nb-discovery-form" data-instance="<?php echo esc_attr( $instance['slug'] ); ?>" novalidate>
+
+		<div class="nb-d-hp" aria-hidden="true" style="position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden;">
+			<label>Company website (leave blank)
+				<input type="text" name="hp_company" tabindex="-1" autocomplete="off">
+			</label>
+		</div>
 
     <section class="nb-d-section">
       <h2><?php echo esc_html( $sc['priorities'][0] ); ?><span class="nb-d-dot">.</span></h2>
