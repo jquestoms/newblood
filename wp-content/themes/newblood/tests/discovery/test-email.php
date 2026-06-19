@@ -29,4 +29,7 @@ $posWeb  = strpos( $mail['body'], 'Website design' );
 assert( $posLead !== false && $posWeb !== false && $posLead < $posWeb, 'gap-descending order' );
 assert( strpos( $mail['body'], 'Own the commercial market.' ) !== false, 'vision included' );
 assert( strpos( $mail['body'], 'Enspire' ) !== false, 'systems included' );
+assert( strpos( $mail['subject'], '—' ) !== false, 'subject uses em dash' );
+$posContent = strpos( $mail['body'], 'Content' );
+assert( $posContent !== false && $posContent > $posWeb, 'null-gap service sinks below rated services' );
 echo "test-email: PASS\n";

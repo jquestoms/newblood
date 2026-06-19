@@ -15,6 +15,7 @@ function nb_discovery_format_email( $record, $instance ) {
     // Sort services by gap desc; null gaps sink to the bottom.
     $services = $record['services'];
     usort( $services, function ( $a, $b ) {
+        // Null gaps (service not rated) use a -100 sentinel to sort below all real gaps.
         $ga = is_null( $a['gap'] ) ? -100 : $a['gap'];
         $gb = is_null( $b['gap'] ) ? -100 : $b['gap'];
         if ( $ga === $gb ) return $b['importance'] - $a['importance'];
@@ -36,7 +37,7 @@ function nb_discovery_format_email( $record, $instance ) {
     }
     $lines[] = '';
     $lines[] = '== 3-YEAR VISION ==';
-    $lines[] = $record['vision'] !== '' ? $record['vision'] : '(blank)';
+    $lines[] = ! empty( $record['vision'] ) ? $record['vision'] : '(blank)';
     $lines[] = '';
     $lines[] = '== DIRECTION (−50 … +50) ==';
     foreach ( $record['goal_vectors'] as $k => $val ) {
@@ -44,8 +45,8 @@ function nb_discovery_format_email( $record, $instance ) {
         $lines[] = sprintf( '%-44s %+d', $lab, $val );
     }
     $fix_label = "Fix what\u{2019}s urgent \u{2194} Invest long-term";
-    $lines[] = sprintf( '%-44s %+d', $fix_label, $record['posture']['fix_invest'] );
-    $lines[] = 'Timeline: ' . ( $record['posture']['timeline'] !== '' ? $record['posture']['timeline'] : '(blank)' );
+    $lines[] = sprintf( '%-44s %+d', $fix_label, $record['posture']['fix_invest'] ?? 0 );
+    $lines[] = 'Timeline: ' . ( ! empty( $record['posture']['timeline'] ) ? $record['posture']['timeline'] : '(blank)' );
     $lines[] = '';
     $lines[] = '== SYSTEMS TODAY ==';
     $lines[] = 'CRM: ' . $record['systems']['crm'];
@@ -56,7 +57,7 @@ function nb_discovery_format_email( $record, $instance ) {
     $lines[] = 'Territories: ' . $record['systems']['territories'];
     $lines[] = '';
     $lines[] = '== ANYTHING ELSE ==';
-    $lines[] = $record['open'] !== '' ? $record['open'] : '(blank)';
+    $lines[] = ! empty( $record['open'] ) ? $record['open'] : '(blank)';
 
     return array( 'subject' => $subject, 'body' => implode( "\n", $lines ) );
 }
