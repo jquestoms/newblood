@@ -9,4 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/routing.php';
-// Later tasks append: controller.php, submission.php, email.php
+require_once __DIR__ . '/view.php';
+require_once __DIR__ . '/controller.php';
+// Later tasks append: submission.php, email.php
