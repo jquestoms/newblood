@@ -1,5 +1,8 @@
 <?php
+assert_options( ASSERT_EXCEPTION, 1 );
+
 // Minimal WP-function stubs so pure-logic module files run under plain PHP CLI.
+// Existence-only stub: config.php checks defined('ABSPATH'), not its value.
 if ( ! defined( 'ABSPATH' ) ) define( 'ABSPATH', __DIR__ . '/' );
 if ( ! function_exists( 'sanitize_text_field' ) ) {
     function sanitize_text_field( $s ) { return trim( preg_replace( '/[\r\n\t]+/', ' ', strip_tags( (string) $s ) ) ); }

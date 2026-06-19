@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * All configured discovery instances, keyed by URL slug.
  * A new client = a new entry here. OHDBalt is instance #1.
  */
-function nb_discovery_instances() {
+function nb_discovery_instances(): array {
     return array(
         'overhead-door' => array(
             'slug'        => 'overhead-door',
@@ -52,7 +52,7 @@ function nb_discovery_instances() {
 /**
  * Look up one instance by slug. Returns null if unknown.
  */
-function nb_discovery_get_instance( $slug ) {
+function nb_discovery_get_instance( $slug ): ?array {
     $all = nb_discovery_instances();
     return isset( $all[ $slug ] ) ? $all[ $slug ] : null;
 }
