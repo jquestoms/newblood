@@ -14,6 +14,10 @@ function nb_discovery_render_page( $instance ) {
         'instance'  => $instance['slug'],
     ) );
 
+	if ( ! $cfg ) {
+		$cfg = '{}';
+	}
+
     $sc = $instance['section_copy'];
     ?><!doctype html>
 <html <?php language_attributes(); ?>>
