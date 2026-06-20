@@ -16,6 +16,16 @@ function nb_discovery_template_redirect() {
         status_header( 404 );
         return;
     }
+    if ( get_query_var( 'nb_discovery_report' ) ) {
+        if ( ! current_user_can( 'manage_options' ) ) {
+            global $wp_query;
+            $wp_query->set_404();
+            status_header( 404 );
+            return; // do not reveal the report to non-admins
+        }
+        nb_discovery_output_report( $instance );
+        exit;
+    }
     nb_discovery_render_page( $instance );
     exit;
 }
