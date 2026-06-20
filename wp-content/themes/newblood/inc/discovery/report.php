@@ -58,7 +58,7 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title><?php echo esc_html( 'Discovery report — ' . $client ); ?></title>
+<title>Discovery report — <?php echo esc_html( $client ); ?></title>
 <link rel="stylesheet" href="<?php echo esc_url( $css_uri ); ?>">
 </head>
 <body class="nb-r-body">
@@ -111,7 +111,7 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
         <details class="nb-r-detail"><summary>Per stakeholder</summary>
           <ul>
             <?php foreach ( $s['per_respondent'] as $p ) : ?>
-              <li><?php echo esc_html( $p['name'] ); ?>: importance <?php echo esc_html( $p['importance'] ); ?><?php echo $p['handling'] !== null ? ', handled ' . esc_html( $p['handling'] ) : ''; ?></li>
+              <li><?php echo esc_html( $p['name'] ); ?>: importance <?php echo esc_html( $p['importance'] ); ?><?php if ( $p['handling'] !== null ) { echo ', handled ' . esc_html( $p['handling'] ); } ?></li>
             <?php endforeach; ?>
           </ul>
         </details>
