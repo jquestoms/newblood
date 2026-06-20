@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'NB_DISCOVERY_DB_VERSION', '1' );
+define( 'NB_DISCOVERY_DB_VERSION', '2' );
 
 function nb_discovery_table_name() {
     global $wpdb;
@@ -24,6 +24,7 @@ function nb_discovery_install_table() {
         payload LONGTEXT NOT NULL,
         created_at DATETIME NOT NULL,
         ip VARCHAR(45) NOT NULL DEFAULT '',
+        excluded TINYINT(1) NOT NULL DEFAULT 0,
         PRIMARY KEY  (id),
         KEY instance (instance),
         KEY created_at (created_at)
