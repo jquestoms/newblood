@@ -62,6 +62,14 @@ assert( $byKey['lead_gen']['low']['name'] === 'Paul' && $byKey['lead_gen']['low'
 assert( $byKey['content']['mean_handling'] === null, 'content mean handling null' );
 assert( $byKey['content']['mean_gap'] === null, 'content mean gap null' );
 
+// per_respondent carries null handling for a non-rater (Paul didn't rate lead_gen handling).
+$lead_pr = $byKey['lead_gen']['per_respondent'];
+$paul_lead = null;
+foreach ( $lead_pr as $r ) { if ( $r['name'] === 'Paul' ) { $paul_lead = $r; } }
+assert( $paul_lead !== null && $paul_lead['handling'] === null, 'Paul lead_gen per_respondent handling is null' );
+// handling_spread over raters: website handling [4,2] -> spread 2.
+assert( $byKey['website']['handling_spread'] === 2, 'website handling_spread is 2' );
+
 // goal vector defend_expand: [30,-20] mean 5, spread 50 -> split (>=40).
 $gv = array();
 foreach ( $agg['goal_vectors'] as $v ) { $gv[ $v['key'] ] = $v; }
@@ -86,5 +94,20 @@ assert( $solo['count'] === 1, 'solo count 1' );
 // Zero-response: empty shape, no fatals.
 $empty = nb_discovery_aggregate( array(), $instance );
 assert( $empty['count'] === 0 && $empty['services'] === array(), 'empty aggregate' );
+
+// Split boundary: importance spread of exactly 4 -> split; 3 -> no split.
+$ba = array( 'id' => 1, 'name' => 'A', 'email' => 'a@x', 'payload' => array( 'services' => array(
+    array( 'key' => 'website', 'importance' => 8, 'handling' => null ),
+    array( 'key' => 'content', 'importance' => 7, 'handling' => null ),
+) ) );
+$bb = array( 'id' => 2, 'name' => 'B', 'email' => 'b@x', 'payload' => array( 'services' => array(
+    array( 'key' => 'website', 'importance' => 4, 'handling' => null ),
+    array( 'key' => 'content', 'importance' => 4, 'handling' => null ),
+) ) );
+$bagg = nb_discovery_aggregate( array( $ba, $bb ), $instance );
+$bk = array();
+foreach ( $bagg['services'] as $s ) { $bk[ $s['key'] ] = $s; }
+assert( $bk['website']['importance_spread'] === 4 && $bk['website']['split'] === true, 'spread 4 -> split' );
+assert( $bk['content']['importance_spread'] === 3 && $bk['content']['split'] === false, 'spread 3 -> no split' );
 
 echo "test-aggregate: PASS\n";

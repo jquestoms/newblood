@@ -69,12 +69,15 @@ function nb_discovery_aggregate( $submissions, $instance ) {
             'per_respondent' => $per,
         );
     }
-    // Rank by mean_gap desc; null gaps sink (sentinel -100); tie-break mean_importance desc.
+    // Rank by mean_gap desc; null gaps (service not rated by anyone) sink to the bottom; tie-break mean_importance desc.
     usort( $services, function ( $a, $b ) {
-        $ga = $a['mean_gap'] === null ? -100 : $a['mean_gap'];
-        $gb = $b['mean_gap'] === null ? -100 : $b['mean_gap'];
-        if ( $ga == $gb ) { return $b['mean_importance'] <=> $a['mean_importance']; }
-        return $gb <=> $ga;
+        $an = $a['mean_gap'] === null;
+        $bn = $b['mean_gap'] === null;
+        if ( $an && $bn ) { return $b['mean_importance'] <=> $a['mean_importance']; }
+        if ( $an ) { return 1; }
+        if ( $bn ) { return -1; }
+        if ( $a['mean_gap'] === $b['mean_gap'] ) { return $b['mean_importance'] <=> $a['mean_importance']; }
+        return $b['mean_gap'] <=> $a['mean_gap'];
     } );
 
     // ---- Goal vectors ----
