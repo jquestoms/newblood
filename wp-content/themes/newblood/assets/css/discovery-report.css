@@ -1,0 +1,61 @@
+:root{
+  --nb-base:#0f1117; --nb-panel:#161a23; --nb-accent:#22c55e; --nb-accent-light:#4ade80;
+  --nb-text:#ffffff; --nb-text-dim:#adb8c8; --nb-border:rgba(255,255,255,.08); --nb-amber:#fbbf24;
+}
+*{box-sizing:border-box}
+.nb-r-body{margin:0;font-family:"Inter",system-ui,-apple-system,sans-serif;color:var(--nb-text);
+  background:linear-gradient(160deg,#0f1117 0%,#111827 50%,#0f2218 100%);background-attachment:fixed;line-height:1.6;-webkit-font-smoothing:antialiased}
+.nb-r-shell{max-width:860px;margin:0 auto;padding:3rem 1.25rem 6rem}
+.nb-r-dot{color:var(--nb-accent-light)}
+.nb-r-eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;color:var(--nb-accent-light);margin:0 0 .5rem}
+.nb-r-head h1{font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.1;margin:0 0 .5rem}
+.nb-r-roster{color:var(--nb-text-dim);margin:0}
+.nb-r-section{background:rgba(255,255,255,.02);border:1px solid var(--nb-border);border-radius:16px;padding:1.75rem;margin-top:1.5rem}
+.nb-r-section h2{font-size:1.4rem;margin:0 0 .35rem}
+.nb-r-sub{color:var(--nb-text-dim);margin:0 0 1.25rem}
+.nb-r-empty{color:var(--nb-text-dim);margin:0}
+/* service gap rows */
+.nb-r-svc{padding:1rem 0;border-top:1px solid var(--nb-border)}
+.nb-r-svc:first-of-type{border-top:none}
+.nb-r-svc.is-split{background:rgba(251,191,36,.05);border-radius:10px;padding:1rem;margin:.25rem 0}
+.nb-r-svc-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.nb-r-svc-label{font-weight:600}
+.nb-r-gap{font-weight:700;color:var(--nb-accent-light);font-variant-numeric:tabular-nums}
+.nb-r-gap-na{color:var(--nb-text-dim);font-weight:400}
+.nb-r-bars{margin:.6rem 0 .3rem}
+.nb-r-bar{display:grid;grid-template-columns:7rem 1fr 2rem;align-items:center;gap:.6rem;margin:.25rem 0}
+.nb-r-bar-cap{font-size:.78rem;color:var(--nb-text-dim)}
+.nb-r-track{height:8px;border-radius:6px;background:var(--nb-border);overflow:hidden}
+.nb-r-fill{display:block;height:100%}
+.nb-r-fill-imp{background:linear-gradient(90deg,#22c55e,#16a34a)}
+.nb-r-fill-now{background:rgba(74,222,128,.4)}
+.nb-r-num{text-align:right;font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--nb-text-dim)}
+.nb-r-split{color:var(--nb-amber);font-size:.85rem;margin:.4rem 0 0}
+.nb-r-detail{margin-top:.4rem}
+.nb-r-detail summary{cursor:pointer;color:var(--nb-text-dim);font-size:.8rem}
+.nb-r-detail ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--nb-text-dim);font-size:.85rem}
+/* vectors */
+.nb-r-vec{padding:.7rem 0}
+.nb-r-vec.is-split .nb-r-vec-track{box-shadow:0 0 0 1px var(--nb-amber)}
+.nb-r-vec-row{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:.6rem}
+.nb-r-vec-cap{font-size:.82rem;color:var(--nb-text-dim);text-align:right}
+.nb-r-vec-cap-r{text-align:left}
+.nb-r-vec-track{position:relative;height:8px;border-radius:6px;background:var(--nb-border)}
+.nb-r-vec-mean{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:var(--nb-accent);transform:translate(-50%,-50%);border:2px solid #0f1117}
+/* lists */
+.nb-r-list{margin:.25rem 0 0;padding-left:1.1rem}
+.nb-r-list li{margin:.25rem 0}
+.nb-r-qh{font-size:1rem;margin:1.1rem 0 .25rem;color:var(--nb-accent-light)}
+/* roster + excluded controls (Task 6) */
+.nb-r-people{list-style:none;margin:.5rem 0 0;padding:0}
+.nb-r-people li{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.4rem 0;border-top:1px solid var(--nb-border)}
+.nb-r-excl-btn{background:none;border:1px solid var(--nb-border);color:var(--nb-text-dim);border-radius:8px;padding:.25rem .7rem;font:inherit;font-size:.78rem;cursor:pointer}
+.nb-r-excl-btn:hover{border-color:var(--nb-amber);color:var(--nb-amber)}
+.nb-r-excluded{margin-top:1.5rem;border:1px dashed var(--nb-border);border-radius:12px;padding:1rem 1.25rem}
+.nb-r-excluded h3{margin:0 0 .5rem;font-size:.95rem;color:var(--nb-text-dim)}
+@media(max-width:560px){
+  .nb-r-section{padding:1.25rem}
+  .nb-r-bar{grid-template-columns:5.5rem 1fr 1.8rem}
+  .nb-r-vec-row{grid-template-columns:1fr}
+  .nb-r-vec-cap,.nb-r-vec-cap-r{text-align:left}
+}
