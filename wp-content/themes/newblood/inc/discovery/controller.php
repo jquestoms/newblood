@@ -23,6 +23,8 @@ function nb_discovery_template_redirect() {
             status_header( 404 );
             return; // do not reveal the report to non-admins
         }
+        if ( ! defined( 'DONOTCACHEPAGE' ) ) { define( 'DONOTCACHEPAGE', true ); }
+        nocache_headers();
         nb_discovery_output_report( $instance );
         exit;
     }
@@ -55,7 +57,8 @@ function nb_discovery_handle_exclude() {
         );
     }
 
-    wp_safe_redirect( home_url( '/discovery/' . $instance . '/report' ) );
+    $redirect = nb_discovery_get_instance( $instance ) ? home_url( '/discovery/' . $instance . '/report' ) : home_url( '/' );
+    wp_safe_redirect( $redirect );
     exit;
 }
 add_action( 'admin_post_nb_discovery_exclude', 'nb_discovery_handle_exclude' );
