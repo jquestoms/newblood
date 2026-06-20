@@ -7,6 +7,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/aggregate.php';
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/routing.php';
 require_once __DIR__ . '/view.php';
