@@ -183,7 +183,7 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
 
   <?php if ( ! empty( $excluded_rows ) ) : ?>
   <section class="nb-r-excluded">
-    <h3>Excluded (<?php echo count( $excluded_rows ); ?>)</h3>
+    <h3>Excluded (<?php echo (int) count( $excluded_rows ); ?>)</h3>
     <ul class="nb-r-people">
       <?php foreach ( $excluded_rows as $ex ) : ?>
         <li><span><?php echo esc_html( $ex['name'] ); ?> &middot; <span style="color:var(--nb-text-dim)"><?php echo esc_html( $ex['created_at'] ); ?></span></span>
@@ -210,7 +210,7 @@ function nb_discovery_exclude_form( $id, $instance_slug, $to_excluded, $label ) 
       <input type="hidden" name="action" value="nb_discovery_exclude">
       <input type="hidden" name="id" value="<?php echo esc_attr( $id ); ?>">
       <input type="hidden" name="instance" value="<?php echo esc_attr( $instance_slug ); ?>">
-      <input type="hidden" name="excluded" value="<?php echo $to_excluded ? '1' : '0'; ?>">
+      <input type="hidden" name="excluded" value="<?php echo esc_attr( $to_excluded ? '1' : '0' ); ?>">
       <button type="submit" class="nb-r-excl-btn"><?php echo esc_html( $label ); ?></button>
     </form><?php
 }
