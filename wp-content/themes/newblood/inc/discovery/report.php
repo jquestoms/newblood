@@ -120,6 +120,17 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
   </section>
 
   <section class="nb-r-section">
+    <h2>Who responded<span class="nb-r-dot">.</span></h2>
+    <ul class="nb-r-people">
+      <?php foreach ( $aggregate['respondents'] as $r ) : ?>
+        <li><span><?php echo esc_html( $r['name'] ); ?> &middot; <span style="color:var(--nb-text-dim)"><?php echo esc_html( $r['email'] ); ?></span></span>
+          <?php nb_discovery_exclude_form( $r['id'], $instance['slug'], true, 'Exclude' ); ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </section>
+
+  <section class="nb-r-section">
     <h2>Strategic direction<span class="nb-r-dot">.</span></h2>
     <p class="nb-r-sub">Where the team wants to take the business — and where they don't yet agree.</p>
     <?php
@@ -170,9 +181,36 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
     <?php endforeach; ?>
   </section>
 
+  <?php if ( ! empty( $excluded_rows ) ) : ?>
+  <section class="nb-r-excluded">
+    <h3>Excluded (<?php echo count( $excluded_rows ); ?>)</h3>
+    <ul class="nb-r-people">
+      <?php foreach ( $excluded_rows as $ex ) : ?>
+        <li><span><?php echo esc_html( $ex['name'] ); ?> &middot; <span style="color:var(--nb-text-dim)"><?php echo esc_html( $ex['created_at'] ); ?></span></span>
+          <?php nb_discovery_exclude_form( $ex['id'], $instance['slug'], false, 'Re-include' ); ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </section>
+  <?php endif; ?>
+
   <?php endif; ?>
 
 </main>
 </body>
 </html><?php
+}
+
+/**
+ * One nonce'd exclude/re-include form button for a submission.
+ */
+function nb_discovery_exclude_form( $id, $instance_slug, $to_excluded, $label ) {
+    ?><form class="nb-r-excl-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+      <?php wp_nonce_field( 'nb_discovery_exclude' ); ?>
+      <input type="hidden" name="action" value="nb_discovery_exclude">
+      <input type="hidden" name="id" value="<?php echo esc_attr( $id ); ?>">
+      <input type="hidden" name="instance" value="<?php echo esc_attr( $instance_slug ); ?>">
+      <input type="hidden" name="excluded" value="<?php echo $to_excluded ? '1' : '0'; ?>">
+      <button type="submit" class="nb-r-excl-btn"><?php echo esc_html( $label ); ?></button>
+    </form><?php
 }

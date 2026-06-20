@@ -30,3 +30,32 @@ function nb_discovery_template_redirect() {
     exit;
 }
 add_action( 'template_redirect', 'nb_discovery_template_redirect' );
+
+/**
+ * Toggle a submission's excluded flag (admin-only, nonce-checked). Non-destructive.
+ */
+function nb_discovery_handle_exclude() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( 'Not allowed', '', array( 'response' => 403 ) );
+    }
+    check_admin_referer( 'nb_discovery_exclude' );
+
+    $id       = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : 0;
+    $excluded = ( isset( $_POST['excluded'] ) && $_POST['excluded'] === '1' ) ? 1 : 0;
+    $instance = isset( $_POST['instance'] ) ? sanitize_title( wp_unslash( $_POST['instance'] ) ) : '';
+
+    if ( $id && nb_discovery_get_instance( $instance ) ) {
+        global $wpdb;
+        $wpdb->update(
+            nb_discovery_table_name(),
+            array( 'excluded' => $excluded ),
+            array( 'id' => $id, 'instance' => $instance ),
+            array( '%d' ),
+            array( '%d', '%s' )
+        );
+    }
+
+    wp_safe_redirect( home_url( '/discovery/' . $instance . '/report' ) );
+    exit;
+}
+add_action( 'admin_post_nb_discovery_exclude', 'nb_discovery_handle_exclude' );
