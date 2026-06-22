@@ -73,7 +73,6 @@
 
 @media (max-width: 560px) {
   .nb-d-section { padding: 1.5rem 1.1rem; }
-  .nb-d-vector-row { grid-template-columns: 1fr; text-align: left; }
 }
 
 /* --- Segmented button groups (replaces sliders) --- */
@@ -112,9 +111,10 @@
 }
 .nb-d-progress-fill { display: block; height: 100%; width: 0; background: var(--nb-accent); transition: width .1s linear; }
 
-/* Mobile: stack vector caps above/below the segmented group */
+/* Mobile: stack vector caps above/below, keep all 5 scale buttons on one row */
 @media (max-width: 560px) {
-  .nb-d-vector-row { grid-template-columns: 1fr; gap: .25rem; }
+  .nb-d-vector-row { grid-template-columns: 1fr; gap: .3rem; text-align: left; }
   .nb-d-vector-cap-r { text-align: left; }
-  .nb-d-vector-row .nb-d-seg { min-width: 0; }
+  .nb-d-vector-row .nb-d-seg { min-width: 0; flex-wrap: nowrap; gap: .3rem; }
+  .nb-d-vector-row .nb-d-seg .nb-d-seg-btn { flex: 1 1 0; padding: .55rem .25rem; font-size: .78rem; white-space: nowrap; }
 }
