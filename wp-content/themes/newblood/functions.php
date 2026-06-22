@@ -15,6 +15,9 @@ function newblood_asset_version( $relative_path ) {
     return file_exists( $file ) ? filemtime( $file ) : NEWBLOOD_VERSION;
 }
 
+// Discovery form module (self-serve client intake).
+require_once get_template_directory() . '/inc/discovery/index.php';
+
 function newblood_enqueue_assets() {
     wp_enqueue_style(
         'newblood-animations',

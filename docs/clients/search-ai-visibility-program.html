@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Search &amp; AI Visibility — New Blood, Inc.</title>
+<style>
+  :root {
+    --base: #0f1117;
+    --base-mid: #111827;
+    --base-green: #0f2218;
+    --surface: #181c25;
+    --accent: #22c55e;
+    --accent-light: #4ade80;
+    --text-primary: #ffffff;
+    --text-body: #cbd5e1;
+    --text-secondary: #adb8c8;
+    --text-muted: #828ea0;
+    --border: rgba(255,255,255,0.08);
+    --border-subtle: rgba(255,255,255,0.05);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    background: var(--base);
+    color: var(--text-body);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 48px;
+  }
+  /* ---------- header ---------- */
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 64px;
+  }
+  .wordmark {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+  .wordmark span { color: var(--accent-light); }
+  .doc-type {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  /* ---------- hero ---------- */
+  .hero { margin-bottom: 72px; }
+  .hero .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+  .hero h1 .period { color: var(--accent-light); }
+  .hero .lede {
+    font-size: 1.12rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 60ch;
+  }
+  /* ---------- sections ---------- */
+  section { margin-bottom: 64px; }
+  .section-num {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--accent-light);
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+  }
+  h2 .period { color: var(--accent-light); }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 28px 0 8px;
+  }
+  p { margin-bottom: 16px; max-width: 68ch; }
+  strong { color: var(--text-primary); font-weight: 600; }
+  /* ---------- surfaces grid ---------- */
+  .surfaces {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .surface-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 22px;
+  }
+  .surface-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .surface-card p {
+    font-size: 0.86rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  /* ---------- ranked list ---------- */
+  ol.ranked {
+    list-style: none;
+    counter-reset: rank;
+    margin: 24px 0 8px;
+  }
+  ol.ranked li {
+    counter-increment: rank;
+    position: relative;
+    padding: 14px 0 14px 52px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  ol.ranked li:last-child { border-bottom: none; }
+  ol.ranked li::before {
+    content: counter(rank, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    letter-spacing: 0.05em;
+  }
+  ol.ranked li strong { display: block; margin-bottom: 2px; }
+  ol.ranked li span { font-size: 0.9rem; color: var(--text-secondary); }
+  /* ---------- program phases ---------- */
+  .phase {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    margin-top: 24px;
+  }
+  .phase.accented {
+    background: linear-gradient(135deg, var(--base-green) 0%, var(--surface) 60%);
+    border-color: rgba(74, 222, 128, 0.25);
+  }
+  .phase-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .phase-head h3 { margin: 0; font-size: 1.2rem; }
+  .phase-price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--accent-light);
+    white-space: nowrap;
+  }
+  .phase-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .phase ul {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .phase ul li {
+    position: relative;
+    padding: 7px 0 7px 26px;
+    font-size: 0.93rem;
+    color: var(--text-body);
+  }
+  .phase ul li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 16px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.85;
+  }
+  .phase ul li strong { color: var(--text-primary); }
+  /* ---------- signal callout ---------- */
+  .signal-callout {
+    background: linear-gradient(120deg, var(--base-green), var(--base-mid));
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 16px;
+    padding: 36px;
+  }
+  .signal-callout .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    border: 1px solid rgba(74,222,128,0.4);
+    border-radius: 99px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+  .signal-callout h3 { margin-top: 0; font-size: 1.2rem; }
+  /* ---------- math strip ---------- */
+  .math {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .math .cell {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+  }
+  .math .big {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+  .math .big em { font-style: normal; color: var(--accent-light); }
+  .math .small {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  /* ---------- terms ---------- */
+  .terms { border-top: 1px solid var(--border); padding-top: 8px; }
+  .terms .row {
+    display: flex;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .terms .row .k {
+    flex: 0 0 190px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .terms .row .v {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+  /* ---------- footer ---------- */
+  .doc-footer {
+    margin-top: 72px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .doc-footer .contact { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+  .doc-footer .contact strong { display: block; color: var(--text-primary); }
+  .doc-footer .fine { font-size: 0.75rem; color: var(--text-muted); text-align: right; }
+  a { color: var(--accent-light); text-decoration: none; }
+  /* ---------- print ---------- */
+  @media print {
+    body { background: var(--base) !important; }
+    .page { padding: 48px 40px; max-width: none; }
+    .phase, .signal-callout, .surfaces, .math, .terms, .doc-footer, ol.ranked li { break-inside: avoid; }
+    h2, h3 { break-after: avoid; }
+    @page { size: letter; margin: 0; background: #0f1117; }
+  }
+  @media (max-width: 640px) {
+    .page { padding: 40px 22px; }
+    .surfaces, .math { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    .terms .row { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <div class="wordmark">New Blood<span>.</span></div>
+    <div class="doc-type">Service Program · 2026</div>
+  </header>
+
+  <div class="hero">
+    <div class="eyebrow">Search &amp; AI Visibility</div>
+    <h1>Be the answer — wherever the question gets asked<span class="period">.</span></h1>
+    <p class="lede">Your next customer might type into Google, or they might ask ChatGPT who to call. Both are forming an opinion about your business before your website ever loads. This program tunes your entire presence — site, search, and the AI engines that now advise your customers — and then grows it, month over month, with reporting you can read in one page.</p>
+  </div>
+
+  <section>
+    <div class="section-num">01</div>
+    <h2>How people find you now<span class="period">.</span></h2>
+    <p>For twenty years, being found meant ranking in a list of blue links. That world still matters — but it's no longer the whole instrument. Today your visibility plays on three surfaces at once:</p>
+    <div class="surfaces">
+      <div class="surface-card">
+        <h4>Classic search</h4>
+        <p>Google's results and the local map pack — still where the calls come from, especially when someone needs you today.</p>
+      </div>
+      <div class="surface-card">
+        <h4>AI answers</h4>
+        <p>ChatGPT, Gemini, Perplexity, and Google's own AI Overviews now answer "who should I call?" directly — naming three to five businesses before a single website is visited.</p>
+      </div>
+      <div class="surface-card">
+        <h4>The machine-readable layer</h4>
+        <p>Structured data, consistent business information, and review signals — the substrate both search engines and AI draw from when they decide whom to recommend.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-num">02</div>
+    <h2>What actually produces calls<span class="period">.</span></h2>
+    <p>Most agencies blur this. We'd rather show you our sheet music. In order of impact for a local service business:</p>
+    <ol class="ranked">
+      <li><strong>Google Business Profile &amp; the map pack</strong><span>Where the phone calls live. Categories, services, photos, posts — kept active and accurate.</span></li>
+      <li><strong>Review velocity</strong><span>Count, recency, and owner responses. Also the single biggest input AI engines use when they recommend a local company.</span></li>
+      <li><strong>Service &amp; area pages</strong><span>Pages matched to what people in your market actually need, where they need it — the searcher is already holding the problem.</span></li>
+      <li><strong>Site conversion mechanics</strong><span>Fast pages, mobile-first, click-to-call where the thumb expects it. Visibility is wasted if the site doesn't convert.</span></li>
+      <li><strong>Citations &amp; entity consistency</strong><span>Your name, address, and details agreeing everywhere — the quiet foundation Google and AI both check.</span></li>
+      <li><strong>Content &amp; schema architecture</strong><span>Genuine answers to real customer questions, structured so engines can quote you cleanly.</span></li>
+      <li><strong>AI-answer visibility</strong><span>The growing share of decisions made before Google even loads — largely a product of doing the six things above well, and worth measuring on its own.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-num">03</div>
+    <h2>The program<span class="period">.</span></h2>
+    <p>Two movements: get the foundation right once, then build on it every month.</p>
+
+    <div class="phase">
+      <div class="phase-head">
+        <h3>Phase one — the foundation sweep</h3>
+        <div class="phase-price">$3,500 <span style="font-size:0.8rem; font-weight:500; color:var(--text-muted);">one-time</span></div>
+      </div>
+      <div class="phase-sub">A fixed-price engagement. Typically 3–4 weeks. Yours to keep even if we stop here.</div>
+      <ul>
+        <li><strong>Technical &amp; performance tune-up</strong> — code-level cleanup, speed, mobile, indexability; the full diagnostic audit with before/after measurement</li>
+        <li><strong>Schema architecture</strong> — a complete structured-data graph of your business: who you are, what you do, where you serve, wired so engines and AI read it without guessing</li>
+        <li><strong>Content machine-readability</strong> — restructuring key pages so the answers in them can be found, extracted, and quoted</li>
+        <li><strong>Business profile &amp; citations reset</strong> — Google Business Profile rebuilt properly; your business data made consistent across the web</li>
+        <li><strong>Baseline visibility report</strong> — where you rank, where you appear in AI answers today, and who's getting recommended instead of you</li>
+      </ul>
+    </div>
+
+    <div class="phase accented">
+      <div class="phase-head">
+        <h3>Phase two — monthly growth</h3>
+        <div class="phase-price">from $950<span style="font-size:0.8rem; font-weight:500; color:var(--text-muted);">/month</span></div>
+      </div>
+      <div class="phase-sub">Scoped precisely after the sweep's baseline — so you pay for what your market requires, nothing more.</div>
+      <ul>
+        <li><strong>Reputation engine</strong> — a working review system: requests after every job, owner responses, listings kept consistent</li>
+        <li><strong>Service &amp; area page build-out</strong> — steadily composing the pages that match real demand in your market</li>
+        <li><strong>Content that answers</strong> — drafted with AI for range, edited by humans for truth, structured for both Google and the assistants</li>
+        <li><strong>Authority building</strong> — earning the local mentions and links that engines treat as references</li>
+        <li><strong>The one-page monthly report</strong> — calls and quote requests first, rankings and AI visibility behind them. You always know what was done and what moved.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-num">04</div>
+    <h2>Measured where the market is going<span class="period">.</span></h2>
+    <div class="signal-callout">
+      <div class="tag">Signal · by New Blood</div>
+      <h3>We track what the AI engines say about you.</h3>
+      <p>Every month, our Signal monitoring asks the major AI assistants the questions your customers ask — "best <em>your trade</em> in <em>your town</em>," in dozens of variations — and records who gets named. Your report shows whether you're being recommended, who is when you aren't, and how that's trending as the work compounds. To our knowledge, no one else quoting you this month can show you that page.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-num">05</div>
+    <h2>The math, plainly<span class="period">.</span></h2>
+    <p>We won't promise rankings — no honest practitioner can. We'd rather anchor this in arithmetic you can check against your own books:</p>
+    <div class="math">
+      <div class="cell">
+        <div class="big"><em>1–2</em> jobs</div>
+        <div class="small">For most service businesses, one to two booked jobs cover an entire month of the program</div>
+      </div>
+      <div class="cell">
+        <div class="big">3–6 <em>months</em></div>
+        <div class="small">The honest window for organic results to take hold — groundwork first, compounding after</div>
+      </div>
+      <div class="cell">
+        <div class="big"><em>1</em> page</div>
+        <div class="small">The monthly report: leads first, evidence behind it. No vanity metrics, no mystery</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-num">06</div>
+    <h2>Terms that respect you<span class="period">.</span></h2>
+    <div class="terms">
+      <div class="row">
+        <div class="k">Initial build</div>
+        <div class="v">90 days — the minimum honest runway for organic work to register. We set explicit targets against the sweep's baseline.</div>
+      </div>
+      <div class="row">
+        <div class="k">Day-90 review</div>
+        <div class="v">We sit down with the trend lines. If the work isn't moving them, we'll say so first — before you have to ask.</div>
+      </div>
+      <div class="row">
+        <div class="k">After that</div>
+        <div class="v">Month to month. No annual contract, no lock-in. We'd rather keep you with results than with paperwork.</div>
+      </div>
+      <div class="row">
+        <div class="k">Transparency</div>
+        <div class="v">Every month's work is itemized in your report. You own everything we build — content, pages, profiles, data.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="doc-footer">
+    <div class="contact">
+      <strong>Jeremy Oms · New Blood, Inc.</strong>
+      <a href="mailto:joms@newblood.com">joms@newblood.com</a> · <a href="https://newblood.com">newblood.com</a>
+    </div>
+    <div class="fine">Prepared 2026 · Pricing valid 90 days<br>Search &amp; AI Visibility Program</div>
+  </footer>
+
+</div>
+</body>
+</html>
