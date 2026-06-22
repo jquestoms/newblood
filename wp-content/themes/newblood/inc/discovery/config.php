@@ -13,7 +13,7 @@ function nb_discovery_instances(): array {
             'logo'        => '', // root-relative path once a logo asset is placed; '' hides it
             'recipient'   => 'joms@newblood.com',
             'welcome'     => array(
-                'title' => 'Let’s build your plan around you.',
+                'title' => 'Let’s build your plan around you',
                 'intro' => 'Thank you for the chance to put together the full picture. The questions below take about 10 minutes — your answers shape a plan built around Overhead Door, not a template.',
             ),
             'services' => array(
