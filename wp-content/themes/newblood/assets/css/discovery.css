@@ -74,7 +74,6 @@
 @media (max-width: 560px) {
   .nb-d-section { padding: 1.5rem 1.1rem; }
   .nb-d-vector-row { grid-template-columns: 1fr; text-align: left; }
-  .nb-d-vector-row .nb-d-vector-cap:first-child { text-align: left; }
 }
 
 /* --- Segmented button groups (replaces sliders) --- */

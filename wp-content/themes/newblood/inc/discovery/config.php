@@ -13,7 +13,7 @@ function nb_discovery_instances(): array {
             'logo'        => '', // root-relative path once a logo asset is placed; '' hides it
             'recipient'   => 'joms@newblood.com',
             'welcome'     => array(
-                'title' => 'Let\'s build your plan around you.',
+                'title' => 'Let’s build your plan around you.',
                 'intro' => 'Thank you for the chance to put together the full picture. The questions below take about 10 minutes — your answers shape a plan built around Overhead Door, not a template.',
             ),
             'services' => array(
@@ -28,7 +28,7 @@ function nb_discovery_instances(): array {
                 array( 'key' => 'customer_comms',   'group' => 'operate',   'label' => 'Customer communication',                  'hint' => 'Following up with leads and customers by email and text.' ),
                 array( 'key' => 'automation_ai',    'group' => 'operate',   'label' => 'Automation & AI assistants',              'hint' => 'Automated routing and on-site AI chat that answers and books.' ),
                 array( 'key' => 'lead_gen',         'group' => 'grow',      'label' => 'Lead generation',                         'hint' => 'Driving new prospects through paid search and social ads.' ),
-                array( 'key' => 'reporting',        'group' => 'grow',      'label' => 'Reporting & analytics',                   'hint' => 'Clear reporting on what\'s working and what it\'s producing.' ),
+                array( 'key' => 'reporting',        'group' => 'grow',      'label' => 'Reporting & analytics',                   'hint' => 'Clear reporting on what’s working and what it’s producing.' ),
             ),
             'goal_vectors' => array(
                 array( 'key' => 'residential_commercial', 'left' => 'More residential',     'right' => 'More commercial' ),
@@ -39,10 +39,10 @@ function nb_discovery_instances(): array {
             ),
             'timeline_options' => array( 'As soon as possible', 'Within 1–3 months', '3–6 months', 'Just exploring' ),
             'section_copy' => array(
-                'priorities' => array( 'What matters most', 'Rate how important each capability is to you. Where it\'s critical, we\'ll ask how well it\'s handled today.' ),
-                'goals'      => array( 'Where you\'re headed', 'A few questions about the direction of the business.' ),
-                'systems'    => array( 'What\'s in place today', 'Light context on your current systems — a sentence each is plenty.' ),
-                'direction'  => array( 'Direction & timing', 'How you\'re thinking about this work.' ),
+                'priorities' => array( 'What matters most', 'Rate how important each capability is to you. Where it’s critical, we’ll ask how well it’s handled today.' ),
+                'goals'      => array( 'Where you’re headed', 'A few questions about the direction of the business.' ),
+                'systems'    => array( 'What’s in place today', 'Light context on your current systems — a sentence each is plenty.' ),
+                'direction'  => array( 'Direction & timing', 'How you’re thinking about this work.' ),
                 'open'       => array( 'Anything else', 'The floor is yours.' ),
             ),
         ),
