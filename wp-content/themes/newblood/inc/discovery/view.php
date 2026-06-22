@@ -1,6 +1,22 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/**
+ * Render one segmented button group. $opts is an ordered array of [ value => label ].
+ * $selected (string|null) pre-selects a button by value. $data_key (string|null),
+ * when set, is emitted as data-key on the group so JS can identify it.
+ */
+function nb_discovery_seg( array $classes, array $opts, $aria_label, $selected = null, $data_key = null ) {
+    $cls = implode( ' ', array_map( 'sanitize_html_class', $classes ) );
+    $key_attr = ( $data_key !== null ) ? ' data-key="' . esc_attr( $data_key ) . '"' : '';
+    echo '<div class="nb-d-seg ' . esc_attr( $cls ) . '"' . $key_attr . ' role="radiogroup" aria-label="' . esc_attr( $aria_label ) . '">';
+    foreach ( $opts as $val => $label ) {
+        $is = ( (string) $val === (string) $selected );
+        echo '<button type="button" class="nb-d-seg-btn' . ( $is ? ' is-selected' : '' ) . '" role="radio" aria-checked="' . ( $is ? 'true' : 'false' ) . '" data-val="' . esc_attr( (string) $val ) . '">' . esc_html( $label ) . '</button>';
+    }
+    echo '</div>';
+}
+
 function nb_discovery_render_page( $instance ) {
 	// Standalone page embeds a per-request nonce — never let a page cache (e.g. Hummingbird) store it.
 	if ( ! defined( 'DONOTCACHEPAGE' ) ) {
@@ -37,6 +53,7 @@ function nb_discovery_render_page( $instance ) {
 </head>
 <body class="nb-d-body">
 <main class="nb-d-shell">
+  <div class="nb-d-progress" aria-hidden="true"><span class="nb-d-progress-fill"></span></div>
 
   <header class="nb-d-welcome nb-d-section">
     <?php if ( $instance['logo'] ) : ?>
@@ -45,6 +62,7 @@ function nb_discovery_render_page( $instance ) {
     <p class="nb-d-eyebrow">New Blood × <?php echo esc_html( $instance['client_name'] ); ?></p>
     <h1><?php echo esc_html( $instance['welcome']['title'] ); ?><span class="nb-d-dot">.</span></h1>
     <p class="nb-d-lede"><?php echo esc_html( $instance['welcome']['intro'] ); ?></p>
+    <p class="nb-d-skip">Answer what you can — skip anything that doesn&#8217;t apply, and we&#8217;ll fill the gaps when we talk.</p>
   </header>
 
   <form id="nb-discovery-form" data-instance="<?php echo esc_attr( $instance['slug'] ); ?>" novalidate>
@@ -55,38 +73,9 @@ function nb_discovery_render_page( $instance ) {
 			</label>
 		</div>
 
+    <!-- 1. Where you're headed (vision + direction vectors) -->
     <section class="nb-d-section">
-      <h2><?php echo esc_html( $sc['priorities'][0] ); ?><span class="nb-d-dot">.</span></h2>
-      <p class="nb-d-sub"><?php echo esc_html( $sc['priorities'][1] ); ?></p>
-      <div class="nb-d-services">
-        <?php foreach ( $instance['services'] as $s ) :
-            $k = $s['key']; ?>
-        <div class="nb-d-service" data-key="<?php echo esc_attr( $k ); ?>">
-          <div class="nb-d-service-head">
-            <span class="nb-d-service-label"><?php echo esc_html( $s['label'] ); ?></span>
-            <span class="nb-d-service-hint"><?php echo esc_html( $s['hint'] ); ?></span>
-          </div>
-          <label class="nb-d-slider-row">
-            <span class="nb-d-slider-cap">Not a priority</span>
-            <input type="range" class="nb-d-importance" data-key="<?php echo esc_attr( $k ); ?>" min="0" max="10" value="0" step="1" aria-label="<?php echo esc_attr( $s['label'] . ' — importance' ); ?>">
-            <span class="nb-d-slider-cap">Critical</span>
-            <output class="nb-d-importance-out">0</output>
-          </label>
-          <div class="nb-d-handling" hidden>
-            <label class="nb-d-slider-row">
-              <span class="nb-d-slider-cap">Poorly</span>
-              <input type="range" class="nb-d-handling-input" data-key="<?php echo esc_attr( $k ); ?>" min="0" max="10" value="0" step="1" aria-label="<?php echo esc_attr( $s['label'] . ' — handled today' ); ?>">
-              <span class="nb-d-slider-cap">Very well</span>
-              <output class="nb-d-handling-out">0</output>
-            </label>
-            <p class="nb-d-handling-q">How well is this handled today?</p>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-    </section>
-
-    <section class="nb-d-section">
+      <p class="nb-d-step">Step 1 of 5</p>
       <h2><?php echo esc_html( $sc['goals'][0] ); ?><span class="nb-d-dot">.</span></h2>
       <p class="nb-d-sub"><?php echo esc_html( $sc['goals'][1] ); ?></p>
       <label class="nb-d-field">
@@ -96,17 +85,67 @@ function nb_discovery_render_page( $instance ) {
       <?php foreach ( $instance['goal_vectors'] as $v ) : ?>
       <div class="nb-d-vector-row">
         <span class="nb-d-vector-cap"><?php echo esc_html( $v['left'] ); ?></span>
-        <input type="range" class="nb-d-vector" data-key="<?php echo esc_attr( $v['key'] ); ?>" min="-50" max="50" value="0" step="1" aria-label="<?php echo esc_attr( $v['left'] . ' versus ' . $v['right'] ); ?>">
-        <span class="nb-d-vector-cap"><?php echo esc_html( $v['right'] ); ?></span>
+        <?php nb_discovery_seg(
+            array( 'nb-d-vector' ),
+            array( '-50' => 'Strongly', '-25' => 'Lean', '0' => 'No pref', '25' => 'Lean', '50' => 'Strongly' ),
+            $v['left'] . ' versus ' . $v['right'],
+            '0',
+            $v['key']
+        ); ?>
+        <span class="nb-d-vector-cap nb-d-vector-cap-r"><?php echo esc_html( $v['right'] ); ?></span>
       </div>
       <?php endforeach; ?>
     </section>
 
+    <!-- 2. What matters most (clustered priorities) -->
     <section class="nb-d-section">
+      <p class="nb-d-step">Step 2 of 5</p>
+      <h2><?php echo esc_html( $sc['priorities'][0] ); ?><span class="nb-d-dot">.</span></h2>
+      <p class="nb-d-sub"><?php echo esc_html( $sc['priorities'][1] ); ?></p>
+      <?php
+      $groups = nb_discovery_service_groups();
+      foreach ( $groups as $gkey => $glabel ) : ?>
+      <div class="nb-d-cluster">
+        <h3 class="nb-d-cluster-label"><?php echo esc_html( $glabel ); ?></h3>
+        <div class="nb-d-services">
+          <?php foreach ( $instance['services'] as $s ) :
+              if ( $s['group'] !== $gkey ) continue;
+              $k = $s['key']; ?>
+          <div class="nb-d-service" data-key="<?php echo esc_attr( $k ); ?>">
+            <div class="nb-d-service-head">
+              <span class="nb-d-service-label"><?php echo esc_html( $s['label'] ); ?></span>
+              <span class="nb-d-service-hint"><?php echo esc_html( $s['hint'] ); ?></span>
+            </div>
+            <?php nb_discovery_seg(
+                array( 'nb-d-importance' ),
+                array( '0' => 'Not a priority', '3' => 'Nice to have', '7' => 'Important', '10' => 'Critical' ),
+                $s['label'] . ' — importance',
+                null,
+                $k
+            ); ?>
+            <div class="nb-d-handling" hidden>
+              <p class="nb-d-handling-q">How well is this handled today?</p>
+              <?php nb_discovery_seg(
+                  array( 'nb-d-handling-seg' ),
+                  array( '2' => 'Poorly', '5' => 'OK', '7' => 'Well', '10' => 'Very well' ),
+                  $s['label'] . ' — handled today'
+              ); ?>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </section>
+
+    <!-- 3. What's in place today (systems + leads baseline) -->
+    <section class="nb-d-section">
+      <p class="nb-d-step">Step 3 of 5</p>
       <h2><?php echo esc_html( $sc['systems'][0] ); ?><span class="nb-d-dot">.</span></h2>
       <p class="nb-d-sub"><?php echo esc_html( $sc['systems'][1] ); ?></p>
       <label class="nb-d-field"><span>Do you use a CRM today? If so, which one?</span><input type="text" name="crm"></label>
       <label class="nb-d-field"><span>When a web lead comes in today, what happens?</span><textarea name="lead_handling" rows="3"></textarea></label>
+      <label class="nb-d-field"><span>Roughly how many web leads a month right now?</span><input type="text" name="leads_per_month"><span class="nb-d-field-hint">Ballpark is fine — and if you&#8217;re not tracking this yet, just say so.</span></label>
       <label class="nb-d-field"><span>Your reviews live in which system?</span><input type="text" name="reviews_system"></label>
       <label class="nb-d-field"><span>Any call-tracking / attribution in place? (e.g., Enspire)</span><input type="text" name="call_tracking"></label>
       <fieldset class="nb-d-field nb-d-radios">
@@ -118,13 +157,21 @@ function nb_discovery_render_page( $instance ) {
       <label class="nb-d-field"><span>Which locations / territories should the plan cover?</span><textarea name="territories" rows="2"></textarea></label>
     </section>
 
+    <!-- 4. Direction & timing -->
     <section class="nb-d-section">
+      <p class="nb-d-step">Step 4 of 5</p>
       <h2><?php echo esc_html( $sc['direction'][0] ); ?><span class="nb-d-dot">.</span></h2>
       <p class="nb-d-sub"><?php echo esc_html( $sc['direction'][1] ); ?></p>
       <div class="nb-d-vector-row">
-        <span class="nb-d-vector-cap">Fix what's urgent</span>
-        <input type="range" class="nb-d-vector" data-key="fix_invest" min="-50" max="50" value="0" step="1" aria-label="Fix what is urgent versus invest for long-term growth">
-        <span class="nb-d-vector-cap">Invest for long-term growth</span>
+        <span class="nb-d-vector-cap">Fix what&#8217;s urgent</span>
+        <?php nb_discovery_seg(
+            array( 'nb-d-vector' ),
+            array( '-50' => 'Strongly', '-25' => 'Lean', '0' => 'No pref', '25' => 'Lean', '50' => 'Strongly' ),
+            'Fix what is urgent versus invest for long-term growth',
+            '0',
+            'fix_invest'
+        ); ?>
+        <span class="nb-d-vector-cap nb-d-vector-cap-r">Invest for long-term growth</span>
       </div>
       <label class="nb-d-field">
         <span>Ideal timeline to begin?</span>
@@ -137,10 +184,12 @@ function nb_discovery_render_page( $instance ) {
       </label>
     </section>
 
+    <!-- 5. Anything else -->
     <section class="nb-d-section">
+      <p class="nb-d-step">Step 5 of 5</p>
       <h2><?php echo esc_html( $sc['open'][0] ); ?><span class="nb-d-dot">.</span></h2>
       <p class="nb-d-sub"><?php echo esc_html( $sc['open'][1] ); ?></p>
-      <label class="nb-d-field"><span>Anything we haven't asked?</span><textarea name="open" rows="4"></textarea></label>
+      <label class="nb-d-field"><span>Anything we haven&#8217;t asked?</span><textarea name="open" rows="4"></textarea></label>
       <label class="nb-d-field"><span>Your name</span><input type="text" name="respondent_name"></label>
       <label class="nb-d-field"><span>Your email</span><input type="email" name="respondent_email"></label>
     </section>
@@ -153,7 +202,7 @@ function nb_discovery_render_page( $instance ) {
 
   <div id="nb-d-thankyou" class="nb-d-section" hidden>
     <h2>Thank you<span class="nb-d-dot">.</span></h2>
-    <p class="nb-d-lede">We'll review your answers and prepare a plan built around your priorities. Jeremy will be in touch to walk through it with you.</p>
+    <p class="nb-d-lede">We&#8217;ll review your answers and prepare a plan built around your priorities. Jeremy will be in touch to walk through it with you.</p>
   </div>
 
 </main>
