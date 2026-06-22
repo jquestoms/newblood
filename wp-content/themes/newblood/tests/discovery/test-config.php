@@ -9,10 +9,15 @@ assert( $inst['recipient'] === 'joms@newblood.com', 'recipient set' );
 assert( count( $inst['services'] ) === 12, '12 service rows' );
 
 $keys = array_column( $inst['services'], 'key' );
-$expected = array( 'website','seo_aeo','hosting_security','content','reviews','lead_gen','lead_capture','customer_comms','crm','automation_ai','reporting','brand_creative' );
-assert( $keys === $expected, 'service keys match canonical order' );
+$expected = array( 'website','seo_aeo','brand_creative','lead_capture','reviews','content','hosting_security','crm','customer_comms','automation_ai','lead_gen','reporting' );
+assert( $keys === $expected, 'service keys match clustered order' );
+
+$groups = nb_discovery_service_groups();
+assert( array_keys( $groups ) === array( 'get_found','convert','operate','grow' ), 'four ordered groups' );
+$valid_groups = array_keys( $groups );
 foreach ( $inst['services'] as $s ) {
     assert( ! empty( $s['label'] ) && ! empty( $s['hint'] ), "service {$s['key']} has label + hint" );
+    assert( isset( $s['group'] ) && in_array( $s['group'], $valid_groups, true ), "service {$s['key']} has a valid group" );
 }
 assert( count( $inst['goal_vectors'] ) === 5, '5 goal vectors' );
 $vkeys = array_column( $inst['goal_vectors'], 'key' );
