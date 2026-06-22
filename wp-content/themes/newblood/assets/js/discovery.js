@@ -5,45 +5,88 @@
   var form = document.getElementById('nb-discovery-form');
   if (!form) return;
 
-  // Live slider readouts + progressive reveal of the "handled today?" slider.
-  function bindServiceRow(row) {
-    var imp = row.querySelector('.nb-d-importance');
-    var impOut = row.querySelector('.nb-d-importance-out');
+  // --- Segmented buttons: single-select within each .nb-d-seg group ---
+  function selectedVal(group) {
+    if (!group) return null;
+    var btn = group.querySelector('.nb-d-seg-btn.is-selected');
+    return btn ? parseInt(btn.getAttribute('data-val'), 10) : null;
+  }
+  function bindSeg(group, onChange) {
+    Array.prototype.forEach.call(group.querySelectorAll('.nb-d-seg-btn'), function (btn) {
+      btn.addEventListener('click', function () {
+        Array.prototype.forEach.call(group.querySelectorAll('.nb-d-seg-btn'), function (b) {
+          b.classList.remove('is-selected');
+          b.setAttribute('aria-checked', 'false');
+        });
+        btn.classList.add('is-selected');
+        btn.setAttribute('aria-checked', 'true');
+        if (onChange) onChange(selectedVal(group));
+      });
+    });
+  }
+
+  // Importance groups reveal/hide the sibling "handled today?" group.
+  Array.prototype.forEach.call(document.querySelectorAll('.nb-d-service'), function (row) {
+    var impGroup = row.querySelector('.nb-d-importance');
     var handling = row.querySelector('.nb-d-handling');
-    var handlingInput = row.querySelector('.nb-d-handling-input');
-    var handlingOut = row.querySelector('.nb-d-handling-out');
-    function syncImp() {
-      impOut.textContent = imp.value;
-      if (parseInt(imp.value, 10) >= threshold) {
+    var handGroup = row.querySelector('.nb-d-handling-seg');
+    bindSeg(impGroup, function (val) {
+      if (val !== null && val >= threshold) {
         handling.hidden = false;
       } else {
         handling.hidden = true;
+        // clear any handling selection when it no longer applies
+        Array.prototype.forEach.call(handGroup.querySelectorAll('.nb-d-seg-btn'), function (b) {
+          b.classList.remove('is-selected');
+          b.setAttribute('aria-checked', 'false');
+        });
       }
-    }
-    imp.addEventListener('input', syncImp);
-    handlingInput.addEventListener('input', function () { handlingOut.textContent = handlingInput.value; });
-    syncImp();
+    });
+    bindSeg(handGroup, null);
+  });
+
+  // Vector groups (goals + fix_invest) — default "No pref" (0) already selected in markup.
+  Array.prototype.forEach.call(document.querySelectorAll('.nb-d-vector'), function (g) { bindSeg(g, null); });
+
+  // --- Scroll progress bar ---
+  var fill = document.querySelector('.nb-d-progress-fill');
+  if (fill) {
+    var onScroll = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      var pct = max > 0 ? Math.min(100, Math.max(0, (doc.scrollTop || window.pageYOffset) / max * 100)) : 0;
+      fill.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
   }
-  Array.prototype.forEach.call(document.querySelectorAll('.nb-d-service'), bindServiceRow);
 
   function collect() {
     var get = function (name) { var el = form.querySelector('[name="' + name + '"]'); return el ? el.value.trim() : ''; };
+
     var services = [];
     Array.prototype.forEach.call(document.querySelectorAll('.nb-d-service'), function (row) {
-      var key = row.getAttribute('data-key');
-      var imp = parseInt(row.querySelector('.nb-d-importance').value, 10);
+      var impGroup = row.querySelector('.nb-d-importance');
+      var key = impGroup ? impGroup.getAttribute('data-key') : row.getAttribute('data-key');
+      var imp = selectedVal(impGroup);
+      if (imp === null) return; // untouched → omit (treated as not-rated)
       var obj = { key: key, importance: imp };
       if (imp >= threshold) {
-        obj.handling = parseInt(row.querySelector('.nb-d-handling-input').value, 10);
+        obj.handling = selectedVal(row.querySelector('.nb-d-handling-seg'));
       } else {
         obj.handling = null;
       }
       services.push(obj);
     });
+
     var vectors = {};
-    Array.prototype.forEach.call(document.querySelectorAll('.nb-d-vector'), function (v) {
-      vectors[v.getAttribute('data-key')] = parseInt(v.value, 10);
+    Array.prototype.forEach.call(document.querySelectorAll('.nb-d-vector'), function (g) {
+      var vkey = g.getAttribute('data-key');
+      if (!vkey) return;
+      vectors[vkey] = selectedVal(g) || 0;
     });
+
     var gbp = form.querySelector('input[name="gbp_access"]:checked');
     return {
       instance: cfg.instance || form.getAttribute('data-instance'),
@@ -60,6 +103,7 @@
       },
       systems: {
         crm: get('crm'),
+        leads_per_month: get('leads_per_month'),
         lead_handling: get('lead_handling'),
         reviews_system: get('reviews_system'),
         call_tracking: get('call_tracking'),
@@ -73,7 +117,6 @@
 
   var errEl = document.getElementById('nb-d-error');
   var btn = document.getElementById('nb-d-submit');
-
   function showError(msg) { if (errEl) { errEl.textContent = msg; errEl.hidden = false; } }
 
   form.addEventListener('submit', function (e) {
