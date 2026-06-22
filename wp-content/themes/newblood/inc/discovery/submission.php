@@ -55,6 +55,7 @@ function nb_discovery_sanitize_payload( $raw, $instance ) {
         ),
         'systems' => array(
             'crm'            => $txt( isset( $raw['systems']['crm'] ) ? $raw['systems']['crm'] : '' ),
+            'leads_per_month' => $txt( isset( $raw['systems']['leads_per_month'] ) ? $raw['systems']['leads_per_month'] : '' ),
             'lead_handling'  => $area( isset( $raw['systems']['lead_handling'] ) ? $raw['systems']['lead_handling'] : '' ),
             'reviews_system' => $txt( isset( $raw['systems']['reviews_system'] ) ? $raw['systems']['reviews_system'] : '' ),
             'call_tracking'  => $txt( isset( $raw['systems']['call_tracking'] ) ? $raw['systems']['call_tracking'] : '' ),

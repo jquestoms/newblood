@@ -119,7 +119,7 @@ function nb_discovery_aggregate( $submissions, $instance ) {
 
     // ---- Qualitative (verbatim per respondent) ----
     $qual_fields = array( 'vision', 'open' );
-    $sys_fields  = array( 'crm', 'lead_handling', 'reviews_system', 'call_tracking', 'territories', 'gbp_access' );
+    $sys_fields  = array( 'crm', 'leads_per_month', 'lead_handling', 'reviews_system', 'call_tracking', 'territories', 'gbp_access' );
     $qualitative = array();
     foreach ( array_merge( $qual_fields, $sys_fields ) as $f ) { $qualitative[ $f ] = array(); }
     foreach ( $submissions as $sub ) {

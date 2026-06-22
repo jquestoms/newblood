@@ -167,7 +167,7 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
     <?php
     $qual_labels = array(
       'vision' => '3-year vision', 'open' => 'Anything else',
-      'crm' => 'CRM today', 'lead_handling' => 'Lead handling today', 'reviews_system' => 'Reviews system',
+      'crm' => 'CRM today', 'leads_per_month' => 'Web leads / month', 'lead_handling' => 'Lead handling today', 'reviews_system' => 'Reviews system',
       'call_tracking' => 'Call tracking', 'territories' => 'Territories', 'gbp_access' => 'Google Business Profile access',
     );
     foreach ( $qual_labels as $field => $label ) :

@@ -50,6 +50,7 @@ function nb_discovery_format_email( $record, $instance ) {
     $lines[] = '';
     $lines[] = '== SYSTEMS TODAY ==';
     $lines[] = 'CRM: ' . $record['systems']['crm'];
+    $lines[] = 'Web leads/month: ' . ( isset( $record['systems']['leads_per_month'] ) ? $record['systems']['leads_per_month'] : '' );
     $lines[] = 'Lead handling: ' . $record['systems']['lead_handling'];
     $lines[] = 'Reviews system: ' . $record['systems']['reviews_system'];
     $lines[] = 'Call tracking: ' . $record['systems']['call_tracking'];
