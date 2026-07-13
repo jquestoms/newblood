@@ -13,7 +13,7 @@
 - **Repo/branch:** work in `~/Herd/newblood` on branch `feature/discovery-calindman`, cut from `feature/redesign` (the live line — the discovery module does NOT exist on `main`). The tree has unrelated dirty files (`.gitignore`, `TASKS.md`, `docs/clients/ohdbalt-discovery-email-DRAFT.md`, `signal-logs/signal.py`) — never `git add -A`; stage exact paths only.
 - **Theme root** (all relative paths below): `~/Herd/newblood/wp-content/themes/newblood/`.
 - **Tests run with:** `php -d zend.assertions=1 -d assert.exception=1 tests/discovery/<file>.php` from the theme root. All 5 existing files pass today; they must pass at every commit.
-- **OHDBalt compatibility bar** (spec §OHDBalt compatibility): form normalized-identical · sanitize fixture array-identical · aggregate JSON identical · report labels verbatim (qualitative heading order may follow form order) · email adopts `short` labels.
+- **OHDBalt compatibility bar** (spec §OHDBalt compatibility): form normalized-identical · sanitize fixture value-identical (canonical key sort) · aggregate JSON identical · report labels verbatim (qualitative heading order may follow form order) · email adopts `short` labels.
 - **Payload keys are API:** OHDBalt keys `crm, lead_handling, leads_per_month, reviews_system, call_tracking, gbp_access, territories` and vector keys `residential_commercial, leads_volume_quality, topline_lean, defend_expand, handson_managed` must not change.
 - **New-instance slug:** `calindman` (URL `newblood.com/discovery/calindman`). Recipient: `joms@newblood.com`.
 - Copy for the calindman instance is specified verbatim in the spec (§Part 2) — use it exactly; curly apostrophes (`’`) in PHP strings, not `'`, matching existing config style.
@@ -217,19 +217,26 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 
 **Interfaces:**
 - Consumes: `$instance['systems_questions']`, `$instance['goal_vectors']` (Task 2 shape).
-- Produces: `nb_discovery_sanitize_payload( $raw, $instance )` — same signature; `systems` keys now exactly the instance's question keys (in config order), `goal_vectors` keys exactly the instance's vector keys. For OHDBalt input/output is array-identical to pre-refactor (fixture-locked).
+- Produces: `nb_discovery_sanitize_payload( $raw, $instance )` — same signature; `systems` keys now exactly the instance's question keys (in config order), `goal_vectors` keys exactly the instance's vector keys. For OHDBalt input/output is value-identical to pre-refactor after canonical key sort (fixture-locked).
 
 - [ ] **Step 1: Add failing tests**
 
 Append to `tests/discovery/test-sanitize.php` (before the final `echo`):
 
 ```php
-// --- Fixture lock: OHDBalt sanitize output must be array-identical to the pre-refactor capture ---
-$fixture_file = dirname( __DIR__, 4 ) . '/.discovery-baseline/sanitize-fixture.json';
-if ( file_exists( $fixture_file ) ) { // baseline dir exists only during the refactor branch
+// --- Fixture lock: OHDBalt sanitize output must be value-identical to the pre-refactor capture ---
+// (strict equality after canonical key sort: assoc key order is not API — every consumer reads by
+// key name — and the old payload order differed from the form order; decided with Jeremy 2026-07-13)
+function nb_test_canon( $a ) {
+    if ( is_array( $a ) ) { ksort( $a ); foreach ( $a as &$v ) { $v = nb_test_canon( $v ); } }
+    return $a;
+}
+$fixture_file = dirname( __DIR__, 5 ) . '/.discovery-baseline/sanitize-fixture.json'; // repo root
+if ( file_exists( $fixture_file ) ) {
     $fixture = json_decode( file_get_contents( $fixture_file ), true );
     $got = nb_discovery_sanitize_payload( $fixture['raw'], nb_discovery_get_instance( 'overhead-door' ) );
-    assert( $got === $fixture['expected'], 'OHDBalt sanitize output identical to pre-refactor fixture' );
+    assert( nb_test_canon( $got ) === nb_test_canon( $fixture['expected'] ), 'OHDBalt sanitize output value-identical to pre-refactor fixture' );
+    echo "fixture-lock: RAN\n"; // visible proof the gate executed (baseline dir exists only on this branch)
 }
 
 // --- Config-driven behavior with a synthetic instance ---
