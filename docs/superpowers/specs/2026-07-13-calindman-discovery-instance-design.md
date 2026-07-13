@@ -60,7 +60,12 @@ Consumers switch to iterating config:
 ### OHDBalt compatibility
 
 - The `overhead-door` entry gets `systems_questions` expressing its **exact current seven questions** (same keys, same labels, same radio options/default) and keeps its five vector keys. Stored payload shape is unchanged, so existing submissions (incl. Chase's real response) render identically.
-- Verification: snapshot the rendered `/discovery/overhead-door` form HTML and the admin report HTML before the refactor; diff after — the bar is byte-identical (allowing only nonce/timestamp churn). Existing test suite (`tests/discovery/`) stays green; new tests cover config-driven sanitize (unknown keys dropped, radio whitelisting, per-instance vector keys).
+- Verification, precise bar (amended 2026-07-13 during planning — the module's three consumers render the seven questions in three different historical orders, so literal byte-identity across all of them is impossible with a single config order; config adopts the *form's* order):
+  - **Form** (`/discovery/overhead-door`): rendered HTML identical after normalization (nonce value, whitespace, `&#8217;` ↔ `’` entity form, and one added `id="nb-d-systems"` on the step-3 section tag).
+  - **Stored payloads:** sanitize output for a fixed raw OHDBalt payload is array-identical pre/post (locked by a fixture test).
+  - **Report:** aggregate data identical (JSON snapshot diff, key-order-insensitive); labels unchanged — each question carries a `short` label and OHDBalt's shorts are the report's current labels verbatim. Only allowed visual diff: qualitative headings follow form order (the Web-leads/Lead-handling pair swaps).
+  - **Email:** transient per-submission; adopts the `short` labels (e.g. `CRM:` → `CRM today:`). Acceptable by design.
+  - Existing test suite (`tests/discovery/`) stays green; new tests cover config-driven sanitize (unknown keys dropped, radio whitelisting, per-instance vector keys).
 
 ---
 
@@ -144,5 +149,5 @@ Timeline options (`As soon as possible` / `Within 1–3 months` / `3–6 months`
 ## Success criteria
 
 - `/discovery/calindman` live and on-brand; test submission stores, emails, and renders in the admin report (single + aggregate).
-- `/discovery/overhead-door` form and report byte-identical pre/post refactor; existing submissions untouched.
+- `/discovery/overhead-door` form normalized-identical and report data/labels identical pre/post refactor (see "OHDBalt compatibility" for the precise bar); existing submissions untouched.
 - Instance #3 requires config only — no PHP edits outside `config.php`.
