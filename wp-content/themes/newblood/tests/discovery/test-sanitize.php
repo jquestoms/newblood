@@ -35,12 +35,19 @@ assert( $clean['systems']['gbp_access'] === 'unsure', 'invalid gbp coerced to un
 assert( $clean['posture']['fix_invest'] === 12, 'posture vector kept' );
 assert( $clean['systems']['leads_per_month'] === 'about 5 a month maybe', 'leads_per_month sanitized + passed through' );
 
-// --- Fixture lock: OHDBalt sanitize output must be array-identical to the pre-refactor capture ---
-$fixture_file = dirname( __DIR__, 4 ) . '/.discovery-baseline/sanitize-fixture.json';
-if ( file_exists( $fixture_file ) ) { // baseline dir exists only during the refactor branch
+// --- Fixture lock: OHDBalt sanitize output must be value-identical to the pre-refactor capture ---
+// (strict equality after canonical key sort: assoc key order is not API — every consumer reads by
+// key name — and the old payload order differed from the form order; decided with Jeremy 2026-07-13)
+function nb_test_canon( $a ) {
+    if ( is_array( $a ) ) { ksort( $a ); foreach ( $a as &$v ) { $v = nb_test_canon( $v ); } }
+    return $a;
+}
+$fixture_file = dirname( __DIR__, 5 ) . '/.discovery-baseline/sanitize-fixture.json'; // repo root
+if ( file_exists( $fixture_file ) ) {
     $fixture = json_decode( file_get_contents( $fixture_file ), true );
     $got = nb_discovery_sanitize_payload( $fixture['raw'], nb_discovery_get_instance( 'overhead-door' ) );
-    assert( $got === $fixture['expected'], 'OHDBalt sanitize output identical to pre-refactor fixture' );
+    assert( nb_test_canon( $got ) === nb_test_canon( $fixture['expected'] ), 'OHDBalt sanitize output value-identical to pre-refactor fixture' );
+    echo "fixture-lock: RAN\n"; // visible proof the gate executed (baseline dir exists only on this branch)
 }
 
 // --- Config-driven behavior with a synthetic instance ---
