@@ -26,6 +26,7 @@ assert( $vkeys === array( 'residential_commercial','leads_volume_quality','topli
 assert( nb_discovery_get_instance( 'nope' ) === null, 'unknown slug returns null' );
 
 // --- systems_questions: every instance must define a valid question list ---
+$reserved_field_names = array( 'timeline', 'vision', 'open', 'respondent_name', 'respondent_email', 'hp_company' );
 foreach ( nb_discovery_instances() as $slug => $i ) {
     assert( ! empty( $i['systems_questions'] ) && is_array( $i['systems_questions'] ), "$slug has systems_questions" );
     $qkeys = array_column( $i['systems_questions'], 'key' );
@@ -33,11 +34,14 @@ foreach ( nb_discovery_instances() as $slug => $i ) {
     foreach ( $i['systems_questions'] as $q ) {
         assert( ! empty( $q['key'] ) && ! empty( $q['label'] ) && ! empty( $q['short'] ), "{$slug}:{$q['key']} has key/label/short" );
         assert( in_array( $q['type'], array( 'text', 'textarea', 'radio' ), true ), "{$slug}:{$q['key']} valid type" );
+        assert( ! in_array( $q['key'], $reserved_field_names, true ), "{$slug}:{$q['key']} does not collide with a reserved form field name" );
         if ( $q['type'] === 'radio' ) {
             assert( ! empty( $q['options'] ) && is_array( $q['options'] ), "{$slug}:{$q['key']} radio has options" );
             assert( isset( $q['default'] ) && isset( $q['options'][ $q['default'] ] ), "{$slug}:{$q['key']} radio default is an option" );
         }
     }
+    $ivkeys = array_column( $i['goal_vectors'], 'key' );
+    assert( ! in_array( 'fix_invest', $ivkeys, true ), "$slug goal_vectors does not use reserved key fix_invest" );
 }
 // OHDBalt keys locked to the historical payload shape (form order).
 $sq = array_column( nb_discovery_get_instance( 'overhead-door' )['systems_questions'], 'key' );

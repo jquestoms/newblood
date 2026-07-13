@@ -180,6 +180,8 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
     <?php endforeach; ?>
   </section>
 
+  <?php endif; ?>
+
   <?php if ( ! empty( $excluded_rows ) ) : ?>
   <section class="nb-r-excluded">
     <h3>Excluded (<?php echo (int) count( $excluded_rows ); ?>)</h3>
@@ -191,8 +193,6 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
       <?php endforeach; ?>
     </ul>
   </section>
-  <?php endif; ?>
-
   <?php endif; ?>
 
 </main>
