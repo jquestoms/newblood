@@ -32,4 +32,9 @@ assert( strpos( $mail['body'], 'Enspire' ) !== false, 'systems included' );
 assert( strpos( $mail['subject'], '—' ) !== false, 'subject uses em dash' );
 $posContent = strpos( $mail['body'], 'Content' );
 assert( $posContent !== false && $posContent > $posWeb, 'null-gap service sinks below rated services' );
+
+// Systems lines must use the config 'short' labels.
+assert( strpos( $mail['body'], 'CRM today: None' ) !== false, 'systems line uses short label' );
+assert( strpos( $mail['body'], 'Google Business Profile access: yes' ) !== false, 'gbp line uses short label' );
+
 echo "test-email: PASS\n";

@@ -165,11 +165,10 @@ function nb_discovery_render_report( $instance, $aggregate, $excluded_rows = arr
   <section class="nb-r-section">
     <h2>In their words<span class="nb-r-dot">.</span></h2>
     <?php
-    $qual_labels = array(
-      'vision' => '3-year vision', 'open' => 'Anything else',
-      'crm' => 'CRM today', 'leads_per_month' => 'Web leads / month', 'lead_handling' => 'Lead handling today', 'reviews_system' => 'Reviews system',
-      'call_tracking' => 'Call tracking', 'territories' => 'Territories', 'gbp_access' => 'Google Business Profile access',
-    );
+    $qual_labels = array( 'vision' => '3-year vision', 'open' => 'Anything else' );
+    foreach ( $instance['systems_questions'] as $q ) {
+        $qual_labels[ $q['key'] ] = $q['short'];
+    }
     foreach ( $qual_labels as $field => $label ) :
       if ( empty( $aggregate['qualitative'][ $field ] ) ) { continue; } ?>
       <h3 class="nb-r-qh"><?php echo esc_html( $label ); ?></h3>
