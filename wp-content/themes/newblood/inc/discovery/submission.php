@@ -35,33 +35,35 @@ function nb_discovery_sanitize_payload( $raw, $instance ) {
     $vec = function ( $key ) use ( $raw ) {
         return isset( $raw['goal_vectors'][ $key ] ) ? nb_discovery_clamp( $raw['goal_vectors'][ $key ], -50, 50 ) : 0;
     };
-    $gbp = isset( $raw['systems']['gbp_access'] ) ? $raw['systems']['gbp_access'] : 'unsure';
-    if ( ! in_array( $gbp, array( 'yes', 'no', 'unsure' ), true ) ) $gbp = 'unsure';
 
     $txt  = function ( $v ) { return sanitize_text_field( (string) $v ); };
     $area = function ( $v ) { return sanitize_textarea_field( (string) $v ); };
+
+    $goal_vectors = array();
+    foreach ( $instance['goal_vectors'] as $v ) {
+        $goal_vectors[ $v['key'] ] = $vec( $v['key'] );
+    }
+
+    $systems = array();
+    foreach ( $instance['systems_questions'] as $q ) {
+        $k   = $q['key'];
+        $val = isset( $raw['systems'][ $k ] ) ? $raw['systems'][ $k ] : '';
+        if ( $q['type'] === 'radio' ) {
+            $systems[ $k ] = ( is_string( $val ) && isset( $q['options'][ $val ] ) ) ? $val : $q['default'];
+        } elseif ( $q['type'] === 'textarea' ) {
+            $systems[ $k ] = $area( $val );
+        } else {
+            $systems[ $k ] = $txt( $val );
+        }
+    }
 
     return array(
         'instance'   => $instance['slug'],
         'respondent' => array( 'name' => $name, 'email' => $email ),
         'services'   => $services,
         'vision'     => $area( isset( $raw['vision'] ) ? $raw['vision'] : '' ),
-        'goal_vectors' => array(
-            'residential_commercial' => $vec( 'residential_commercial' ),
-            'leads_volume_quality'   => $vec( 'leads_volume_quality' ),
-            'topline_lean'           => $vec( 'topline_lean' ),
-            'defend_expand'          => $vec( 'defend_expand' ),
-            'handson_managed'        => $vec( 'handson_managed' ),
-        ),
-        'systems' => array(
-            'crm'            => $txt( isset( $raw['systems']['crm'] ) ? $raw['systems']['crm'] : '' ),
-            'leads_per_month' => $txt( isset( $raw['systems']['leads_per_month'] ) ? $raw['systems']['leads_per_month'] : '' ),
-            'lead_handling'  => $area( isset( $raw['systems']['lead_handling'] ) ? $raw['systems']['lead_handling'] : '' ),
-            'reviews_system' => $txt( isset( $raw['systems']['reviews_system'] ) ? $raw['systems']['reviews_system'] : '' ),
-            'call_tracking'  => $txt( isset( $raw['systems']['call_tracking'] ) ? $raw['systems']['call_tracking'] : '' ),
-            'gbp_access'     => $gbp,
-            'territories'    => $area( isset( $raw['systems']['territories'] ) ? $raw['systems']['territories'] : '' ),
-        ),
+        'goal_vectors' => $goal_vectors,
+        'systems' => $systems,
         'posture' => array(
             'fix_invest' => isset( $raw['posture']['fix_invest'] ) ? nb_discovery_clamp( $raw['posture']['fix_invest'], -50, 50 ) : 0,
             'timeline'   => $txt( isset( $raw['posture']['timeline'] ) ? $raw['posture']['timeline'] : '' ),

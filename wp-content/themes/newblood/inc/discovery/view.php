@@ -139,22 +139,24 @@ function nb_discovery_render_page( $instance ) {
     </section>
 
     <!-- 3. What's in place today (systems + leads baseline) -->
-    <section class="nb-d-section">
+    <section class="nb-d-section" id="nb-d-systems">
       <p class="nb-d-step">Step 3 of 5</p>
       <h2><?php echo esc_html( $sc['systems'][0] ); ?><span class="nb-d-dot">.</span></h2>
       <p class="nb-d-sub"><?php echo esc_html( $sc['systems'][1] ); ?></p>
-      <label class="nb-d-field"><span>Do you use a CRM today? If so, which one?</span><input type="text" name="crm"></label>
-      <label class="nb-d-field"><span>When a web lead comes in today, what happens?</span><textarea name="lead_handling" rows="3"></textarea></label>
-      <label class="nb-d-field"><span>Roughly how many web leads a month right now?</span><input type="text" name="leads_per_month"><span class="nb-d-field-hint">Ballpark is fine — and if you&#8217;re not tracking this yet, just say so.</span></label>
-      <label class="nb-d-field"><span>Your reviews live in which system?</span><input type="text" name="reviews_system"></label>
-      <label class="nb-d-field"><span>Any call-tracking / attribution in place? (e.g., Enspire)</span><input type="text" name="call_tracking"></label>
+      <?php foreach ( $instance['systems_questions'] as $q ) : ?>
+        <?php if ( $q['type'] === 'radio' ) : ?>
       <fieldset class="nb-d-field nb-d-radios">
-        <legend>Can you grant manager access to your Google Business Profile?</legend>
-        <label><input type="radio" name="gbp_access" value="yes"> Yes</label>
-        <label><input type="radio" name="gbp_access" value="no"> No</label>
-        <label><input type="radio" name="gbp_access" value="unsure" checked> Not sure</label>
+        <legend><?php echo esc_html( $q['label'] ); ?></legend>
+        <?php foreach ( $q['options'] as $oval => $olabel ) : ?>
+        <label><input type="radio" name="<?php echo esc_attr( $q['key'] ); ?>" value="<?php echo esc_attr( $oval ); ?>"<?php echo ( $q['default'] === $oval ) ? ' checked' : ''; ?>> <?php echo esc_html( $olabel ); ?></label>
+        <?php endforeach; ?>
       </fieldset>
-      <label class="nb-d-field"><span>Which locations / territories should the plan cover?</span><textarea name="territories" rows="2"></textarea></label>
+        <?php elseif ( $q['type'] === 'textarea' ) : ?>
+      <label class="nb-d-field"><span><?php echo esc_html( $q['label'] ); ?></span><textarea name="<?php echo esc_attr( $q['key'] ); ?>" rows="<?php echo (int) ( isset( $q['rows'] ) ? $q['rows'] : 3 ); ?>"></textarea></label>
+        <?php else : ?>
+      <label class="nb-d-field"><span><?php echo esc_html( $q['label'] ); ?></span><input type="text" name="<?php echo esc_attr( $q['key'] ); ?>"><?php if ( ! empty( $q['hint'] ) ) : ?><span class="nb-d-field-hint"><?php echo esc_html( $q['hint'] ); ?></span><?php endif; ?></label>
+        <?php endif; ?>
+      <?php endforeach; ?>
     </section>
 
     <!-- 4. Direction & timing -->
