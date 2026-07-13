@@ -38,6 +38,17 @@ function nb_discovery_instances(): array {
                 array( 'key' => 'handson_managed',        'left' => 'We stay hands-on',     'right' => 'Fully managed for us' ),
             ),
             'timeline_options' => array( 'As soon as possible', 'Within 1–3 months', '3–6 months', 'Just exploring' ),
+            'systems_questions' => array(
+                array( 'key' => 'crm',             'label' => 'Do you use a CRM today? If so, which one?',            'short' => 'CRM today',            'type' => 'text' ),
+                array( 'key' => 'lead_handling',   'label' => 'When a web lead comes in today, what happens?',        'short' => 'Lead handling today',  'type' => 'textarea', 'rows' => 3 ),
+                array( 'key' => 'leads_per_month', 'label' => 'Roughly how many web leads a month right now?',        'short' => 'Web leads / month',    'type' => 'text',
+                       'hint' => "Ballpark is fine — and if you\u{2019}re not tracking this yet, just say so." ),
+                array( 'key' => 'reviews_system',  'label' => 'Your reviews live in which system?',                   'short' => 'Reviews system',       'type' => 'text' ),
+                array( 'key' => 'call_tracking',   'label' => 'Any call-tracking / attribution in place? (e.g., Enspire)', 'short' => 'Call tracking',   'type' => 'text' ),
+                array( 'key' => 'gbp_access',      'label' => 'Can you grant manager access to your Google Business Profile?', 'short' => 'Google Business Profile access', 'type' => 'radio',
+                       'options' => array( 'yes' => 'Yes', 'no' => 'No', 'unsure' => 'Not sure' ), 'default' => 'unsure' ),
+                array( 'key' => 'territories',     'label' => 'Which locations / territories should the plan cover?', 'short' => 'Territories',          'type' => 'textarea', 'rows' => 2 ),
+            ),
             'section_copy' => array(
                 'priorities' => array( 'What matters most', 'Rate how important each capability is to you. Where it’s critical, we’ll ask how well it’s handled today.' ),
                 'goals'      => array( 'Where you’re headed', 'A few questions about the direction of the business.' ),
