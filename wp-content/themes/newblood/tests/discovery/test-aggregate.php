@@ -110,4 +110,15 @@ foreach ( $bagg['services'] as $s ) { $bk[ $s['key'] ] = $s; }
 assert( $bk['website']['importance_spread'] === 4 && $bk['website']['split'] === true, 'spread 4 -> split' );
 assert( $bk['content']['importance_spread'] === 3 && $bk['content']['split'] === false, 'spread 3 -> no split' );
 
+// Qualitative field list must follow the instance's systems_questions config.
+$fake_sys = $instance; // overhead-door base
+$fake_sys['systems_questions'] = array(
+    array( 'key' => 'photos', 'label' => 'F?', 'short' => 'Photos', 'type' => 'text' ),
+);
+$chase2 = $chase; $chase2['payload']['systems'] = array( 'photos' => 'Dropbox' );
+$agg2 = nb_discovery_aggregate( array( $chase2 ), $fake_sys );
+assert( isset( $agg2['qualitative']['photos'] ), 'config-driven qualitative key present' );
+assert( ! isset( $agg2['qualitative']['crm'] ), 'non-config qualitative key absent' );
+assert( $agg2['qualitative']['photos'][0]['value'] === 'Dropbox', 'qualitative value carried' );
+
 echo "test-aggregate: PASS\n";

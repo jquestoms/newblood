@@ -87,29 +87,35 @@
       vectors[vkey] = selectedVal(g) || 0;
     });
 
-    var gbp = form.querySelector('input[name="gbp_access"]:checked');
+    var goal_vectors = {};
+    Object.keys(vectors).forEach(function (k) {
+      if (k !== 'fix_invest') goal_vectors[k] = vectors[k] || 0;
+    });
+
+    var systems = {};
+    var sysSection = document.getElementById('nb-d-systems');
+    if (sysSection) {
+      Array.prototype.forEach.call(sysSection.querySelectorAll('input[type="text"], textarea'), function (el) {
+        if (el.name) systems[el.name] = el.value.trim();
+      });
+      var radioNames = {};
+      Array.prototype.forEach.call(sysSection.querySelectorAll('input[type="radio"]'), function (el) {
+        if (el.name) radioNames[el.name] = true;
+      });
+      Object.keys(radioNames).forEach(function (n) {
+        var checked = sysSection.querySelector('input[name="' + n + '"]:checked');
+        systems[n] = checked ? checked.value : '';
+      });
+    }
+
     return {
       instance: cfg.instance || form.getAttribute('data-instance'),
       hp: get('hp_company'),
       respondent: { name: get('respondent_name'), email: get('respondent_email') },
       services: services,
       vision: get('vision'),
-      goal_vectors: {
-        residential_commercial: vectors.residential_commercial || 0,
-        leads_volume_quality: vectors.leads_volume_quality || 0,
-        topline_lean: vectors.topline_lean || 0,
-        defend_expand: vectors.defend_expand || 0,
-        handson_managed: vectors.handson_managed || 0
-      },
-      systems: {
-        crm: get('crm'),
-        leads_per_month: get('leads_per_month'),
-        lead_handling: get('lead_handling'),
-        reviews_system: get('reviews_system'),
-        call_tracking: get('call_tracking'),
-        gbp_access: gbp ? gbp.value : 'unsure',
-        territories: get('territories')
-      },
+      goal_vectors: goal_vectors,
+      systems: systems,
       posture: { fix_invest: vectors.fix_invest || 0, timeline: get('timeline') },
       open: get('open')
     };

@@ -25,7 +25,7 @@ RANGES_CACHE = os.path.join(ROOT, 'data', 'ip-ranges.json')
 # Creds live in ~/Herd/<site>/.nexcess-credentials (NEXCESS_HOST/USER/PASS/PORT; optional
 # NEXCESS_LOG_DIR, default 'logs' relative to the SSH home — Nexcess puts transfer.log there).
 HERD = os.path.expanduser('~/Herd')
-NEXCESS_SITES = ['akta', 'ohdbalt', 'dadabilities', 'newblood']
+NEXCESS_SITES = ['akta', 'ohdbalt', 'dadabilities', 'newblood', 'rookgame']
 
 # --- bot signature table: substring (lowercased) -> (bot_id, family, kind) ---
 # kind: ai-train = AI training crawler, ai-search = AI search indexer,

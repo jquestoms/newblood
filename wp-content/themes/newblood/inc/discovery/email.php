@@ -49,13 +49,10 @@ function nb_discovery_format_email( $record, $instance ) {
     $lines[] = 'Timeline: ' . ( ! empty( $record['posture']['timeline'] ) ? $record['posture']['timeline'] : '(blank)' );
     $lines[] = '';
     $lines[] = '== SYSTEMS TODAY ==';
-    $lines[] = 'CRM: ' . $record['systems']['crm'];
-    $lines[] = 'Web leads/month: ' . ( isset( $record['systems']['leads_per_month'] ) ? $record['systems']['leads_per_month'] : '' );
-    $lines[] = 'Lead handling: ' . $record['systems']['lead_handling'];
-    $lines[] = 'Reviews system: ' . $record['systems']['reviews_system'];
-    $lines[] = 'Call tracking: ' . $record['systems']['call_tracking'];
-    $lines[] = 'GBP manager access: ' . $record['systems']['gbp_access'];
-    $lines[] = 'Territories: ' . $record['systems']['territories'];
+    foreach ( $instance['systems_questions'] as $q ) {
+        $val = isset( $record['systems'][ $q['key'] ] ) ? $record['systems'][ $q['key'] ] : '';
+        $lines[] = $q['short'] . ': ' . $val;
+    }
     $lines[] = '';
     $lines[] = '== ANYTHING ELSE ==';
     $lines[] = ! empty( $record['open'] ) ? $record['open'] : '(blank)';
