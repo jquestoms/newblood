@@ -415,16 +415,72 @@ function newblood_legacy_redirects() {
     if ( is_admin() ) {
         return;
     }
-    $redirects = array(
-        'case-studies' => '/work/',
-    );
     $path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
-    if ( '' !== $path && isset( $redirects[ $path ] ) ) {
+    if ( '' === $path ) {
+        return;
+    }
+
+    $redirects = array(
+        'case-studies'                     => '/work/',
+        // iOS/browser blind requests for root icons. The real
+        // <link rel="apple-touch-icon"> tag (site-icon crop) covers clients
+        // that read the HTML; these cover the ones that don't.
+        'apple-touch-icon.png'             => '/wp-content/uploads/2016/04/cropped-favicon-180x180.png',
+        'apple-touch-icon-precomposed.png' => '/wp-content/uploads/2016/04/cropped-favicon-180x180.png',
+    );
+    if ( isset( $redirects[ $path ] ) ) {
         wp_safe_redirect( home_url( $redirects[ $path ] ), 301 );
         exit;
     }
+
+    // Prefix matches — old indexed URLs arrive with suffix/no-slash variants.
+    $prefix_redirects = array(
+        'seo-guest-lecture-at-bis-in-pasadena-ca' => '/about/',
+    );
+    foreach ( $prefix_redirects as $prefix => $dest ) {
+        if ( 0 === strpos( $path, $prefix ) ) {
+            wp_safe_redirect( home_url( $dest ), 301 );
+            exit;
+        }
+    }
+
+    // The old site lived under /blog/ — its media is still hotlinked with
+    // that prefix. The upload files themselves were migrated, so map the
+    // whole class onto the current uploads tree (404s stay 404s either way).
+    if ( 0 === strpos( $path, 'blog/wp-content/uploads/' ) ) {
+        wp_safe_redirect( home_url( '/' . substr( $path, strlen( 'blog/' ) ) ), 301 );
+        exit;
+    }
+
+    // /notes/ is the future Notes index (launch-gated via NB_NOTES_PUBLIC).
+    // Temporary redirect only: a cached 301 would keep sending repeat
+    // visitors to the homepage after the section launches at this URL.
+    // Drops out automatically when the gate flips.
+    if ( 'notes' === $path && ! NB_NOTES_PUBLIC ) {
+        wp_safe_redirect( home_url( '/' ), 302 );
+        exit;
+    }
 }
-add_action( 'template_redirect', 'newblood_legacy_redirects' );
+// Priority 1: must beat core's redirect_canonical (priority 10), which
+// mis-canonicalizes the legacy /blog/wp-content/uploads/* paths to the
+// homepage before these rules would otherwise run.
+add_action( 'template_redirect', 'newblood_legacy_redirects', 1 );
+
+/**
+ * XML-RPC lockdown.
+ *
+ * Nothing uses XML-RPC here (no Jetpack, no mobile apps) and bots probe it
+ * tens of thousands of times a month. Refuse the request at theme load,
+ * before any XML-RPC method can execute, and disable the API for anything
+ * that slips through. Nexcess Managed WordPress is nginx-only (.htaccess is
+ * not honored), so a true pre-PHP deny needs an nginx rule via host support.
+ */
+if ( defined( 'XMLRPC_REQUEST' ) && XMLRPC_REQUEST ) {
+    status_header( 403 );
+    nocache_headers();
+    exit( 'XML-RPC services are disabled on this site.' );
+}
+add_filter( 'xmlrpc_enabled', '__return_false' );
 
 /**
  * Shortcode: [nb_related_notes]
