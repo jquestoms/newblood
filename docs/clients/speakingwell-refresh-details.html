@@ -152,9 +152,10 @@
 	<li>The active plugin count went from twenty-nine to twelve, removing abandoned code and the security exposure that comes with it.</li>
 	<li><b>Anonymous visitors are now served with no cookies at all</b>, down from nine per request. That was the barrier that made the site impossible to cache, and it is gone.</li>
 	<li>Images are served in a modern, lighter format where available.</li>
-	<li>Time to first byte improved from roughly 1.19 seconds to about 0.95 on the measurements taken either side of launch.</li>
+	<li>Page caching is now active, so most visits are served without rebuilding the page at all.</li>
+	<li><b>Time to first byte went from roughly 1.19 seconds before the refresh to about 0.29 seconds today</b>, measured on the live site. That is a little over three times faster.</li>
 </ul>
-<div class="callout"><b>Being straight about the caching.</b> Removing the cookies was the part within the site's control, and it is done. The host's page cache is still declining to store pages, which appears to be a platform-level rule rather than anything in the site. The next step, already planned, is to put Cloudflare in front of the site, which caches independently of the host and is also the durable fix for a separate domain-name risk noted below. Until then the site is meaningfully faster than before but not yet as fast as it will be.</div>
+<div class="callout"><b>How the speed was won.</b> Two things had to happen. First, the site had to stop sending cookies to anonymous visitors, because a page carrying a cookie cannot be cached; that was addressed during the refresh and the count went from nine per request to zero. Second, something had to actually store the finished pages. That arrived on 18 August through two components included free with your Nexcess plan, a business-class object cache and a page cache, which we enabled and then checked. Pages in every language are cached separately, so a Spanish visitor is never served an English page, and the cart, checkout and account pages are deliberately excluded so shopping always works on live data.</div>
 
 <h2 class="serif">9 &middot; Measurement and privacy</h2>
 <p>Analytics is ready in two complementary forms: a standard option (Google Analytics 4, awaiting your property identifier to switch on) and a privacy-friendly server-side traffic measure that needs no on-page tracking scripts and no cookie banner. The features that remember a visitor's place live entirely in that visitor's own browser, with no accounts and no tracking.</p>
@@ -177,7 +178,7 @@
 <h3>Still open</h3>
 <ul>
 	<li><span class="status--open status">Awaiting you</span> &nbsp;The Google Analytics property identifier, to switch measurement on.</li>
-	<li><span class="status--open status">Next step</span> &nbsp;Cloudflare in front of the site, for the caching above and to remove a domain-name risk: the domain's records still live at a former host whose automation once redirected the site by mistake.</li>
+	<li><span class="status--open status">Next step</span> &nbsp;Cloudflare in front of the site. Not for caching any more, which is solved, but to serve the pages from locations near your overseas listeners, and to remove a domain-name risk: the domain's records still live at a former host whose automation once redirected the site by mistake.</li>
 	<li><span class="status--open status">Your call</span> &nbsp;Native-speaker review of the machine-drafted Donate and Privacy translations, and whether the four remaining English-only pages should be translated.</li>
 </ul>
 
@@ -209,7 +210,8 @@
 	<li>Anonymous responses emit zero cookies. Two sources were addressed: the spam plugin's tracking cookies and the security plugin's bot cookies. A third was found only during the migration, because the translation plugin sets a language cookie unless it detects a page cache, and production does not define the constant it looks for. That is handled in the theme rather than left to server configuration.</li>
 	<li>The header cart indicator uses WooCommerce cart fragments, so it appears only for actual shoppers and does not defeat the cache.</li>
 	<li>All resume and progress state is client-side in localStorage. No accounts, no cookies.</li>
-	<li><b>Caveat, stated plainly:</b> the host's Varnish layer still returns BYPASS for HTML while caching static assets normally. WordPress sends no cache-control header that would explain it, so this reads as a platform rule. Cloudflare is the planned answer.</li>
+	<li>Page caching is provided by W3 Total Cache in Disk: Enhanced mode, alongside Object Cache Pro for the object cache, both included with the Nexcess plan. Verified after enabling: per-language cache separation holds (checked across five languages), WooCommerce cart, checkout and account URIs report as rejected rather than cached, and anonymous responses still carry zero cookies. Measured time to first byte is about 0.29 seconds against 1.19 before the refresh.</li>
+	<li>The host's own Varnish layer still reports BYPASS for HTML. That is now cosmetic rather than costly, since the pages are cached in front of it, but it is worth a question to the platform team.</li>
 </ul>
 
 <h3>Content integrity</h3>
