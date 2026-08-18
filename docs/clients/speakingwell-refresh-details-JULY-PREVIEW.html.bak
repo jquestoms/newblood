@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Speaking Well of God — Website Refresh, Detailed Summary</title>
+<style>
+	@page { size: letter; margin: 0.9in 0.85in; }
+	* { box-sizing: border-box; margin: 0; padding: 0; }
+	:root {
+		--ink: #16283C; --deep: #0E2A47; --primary: #2E6DA8;
+		--soft: #E9F1F8; --gold: #C89B3C; --muted: #5A6B7E;
+	}
+	body { font: 10.5pt/1.55 -apple-system, "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
+	.serif { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; }
+
+	/* ---- cover ---- */
+	.cover { page-break-after: always; }
+	.cover__eyebrow { color: var(--gold); font-weight: 700; letter-spacing: .22em; font-size: 8.5pt; text-transform: uppercase; margin-bottom: 10pt; }
+	.cover__panel { background: linear-gradient(160deg, #0B1F35 0%, var(--deep) 55%, #1B4B79 100%); color: #fff; padding: 34pt 30pt 0; border-radius: 2pt; min-height: 620pt; display: flex; flex-direction: column; }
+	.cover__title { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 33pt; line-height: 1.12; font-weight: 700; margin-bottom: 12pt; }
+	.cover__sub { font-size: 12.5pt; color: #DCE7F2; max-width: 34em; }
+	.cover__spacer { flex: 1; }
+	.cover__foot { border-top: 1px solid rgba(255,255,255,.25); margin: 0 -30pt; padding: 14pt 30pt 26pt; font-size: 9.5pt; color: #C4D3E2; }
+	.cover__foot b { color: #fff; }
+
+	/* ---- sections ---- */
+	h2 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; color: var(--deep); font-size: 16pt; font-weight: 700; border-bottom: 1.5pt solid var(--gold); padding-bottom: 4pt; margin: 22pt 0 10pt; break-after: avoid; }
+	h3 { color: var(--primary); font-size: 9.5pt; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; margin: 13pt 0 5pt; break-after: avoid; }
+	p { margin: 0 0 7pt; }
+	ul { margin: 0 0 8pt 14pt; }
+	li { margin-bottom: 3.5pt; }
+	.lead { color: var(--muted); }
+	code { background: var(--soft); border-radius: 3pt; padding: 0 3pt; font-size: 9pt; font-family: Menlo, Consolas, monospace; }
+	.callout { background: var(--soft); border-left: 3pt solid var(--gold); border-radius: 3pt; padding: 8pt 11pt; margin: 9pt 0; break-inside: avoid; }
+	.cols { display: flex; gap: 22pt; margin: 10pt 0 4pt; }
+	.cols > div { flex: 1; }
+	.pagebreak { page-break-before: always; }
+
+	/* ---- rollout table ---- */
+	table { width: 100%; border-collapse: collapse; margin: 8pt 0; }
+	td { border-bottom: .75pt solid #D6DEE7; padding: 6pt 8pt; vertical-align: top; }
+	td.step { width: 24%; font-weight: 700; color: var(--deep); white-space: nowrap; }
+
+	.docfoot { margin-top: 20pt; border-top: .75pt solid #D6DEE7; padding-top: 6pt; color: var(--muted); font-size: 8.5pt; }
+</style>
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<div class="cover">
+	<div class="cover__eyebrow">Website Refresh &middot; Detailed Summary</div>
+	<div class="cover__panel">
+		<div class="cover__title">Speaking Well of&nbsp;God</div>
+		<div class="cover__sub">A complete rebuild of the listening, reading, searching, and multilingual experience, prepared for review.</div>
+		<div class="cover__spacer"></div>
+		<div class="cover__foot">
+			Prepared by <b>New Blood</b> for <b>Cherie Kirk</b>, Speaking Well of God / Pine Knoll &middot; July 2026<br>
+			Private preview: <b>a1b1ef6334.nxcli.io</b> &nbsp;&middot;&nbsp; Nothing is live until approved.
+		</div>
+	</div>
+</div>
+
+<!-- ================= AT A GLANCE ================= -->
+<h2 class="serif">At a glance</h2>
+<p class="lead">Every part of the site was rebuilt on a private preview copy. The production site at speakingwellofgod.org is unchanged and untouched until you approve the switch. Below is the complete list of what was done, area by area, with a technical appendix at the end for a more technical reader.</p>
+<div class="cols">
+	<div>
+		<h3>Experience</h3>
+		<ul>
+			<li>Owned, Spotify-style audio player (no paid plugins)</li>
+			<li>Audio library grouped by speaker, with real talk titles</li>
+			<li>Modern "Watch" video section</li>
+			<li>Rebuilt written-materials reader that remembers your place</li>
+			<li>Site-wide search, in every language</li>
+		</ul>
+	</div>
+	<div>
+		<h3>Foundation</h3>
+		<ul>
+			<li>New custom theme with an evolved visual identity</li>
+			<li>All 11 languages migrated with no address or SEO loss</li>
+			<li>Faster, lighter, cache-friendly delivery</li>
+			<li>Restored analytics; gift store carried over untouched</li>
+		</ul>
+	</div>
+</div>
+
+<!-- ================= 1 LISTENING ================= -->
+<h2 class="serif">1 &middot; The listening experience</h2>
+<p>Listening is the heart of this ministry, so it became the heart of the site.</p>
+<h3>A player we own</h3>
+<ul>
+	<li>Built in-house rather than licensed, so there are <b>no recurring plugin fees</b> and full control over how it behaves.</li>
+	<li>Works like a modern streaming app: a bar fixed to the bottom of the screen that <b>keeps playing while visitors browse</b> the rest of the site.</li>
+	<li><b>Remembers where a listener left off</b> and offers to continue, in the visitor's own language.</li>
+	<li>Series pages now mark each talk: a gold <b>&#10003; for finished</b> talks and a dot for ones in progress, so returning listeners can see exactly where they are in a long series.</li>
+	<li>Phone-friendly: large touch targets, playback-speed control, and lock-screen / headphone controls on mobile devices.</li>
+	<li>Streams efficiently (audio is delivered in ranges, not one large download), which matters for the international audience.</li>
+</ul>
+
+<!-- ================= 2 LIBRARY ================= -->
+<h2 class="serif">2 &middot; The audio library</h2>
+<h3>Organized by speaker</h3>
+<p>The library is grouped under each speaker's name, the way the ministry has always presented it, so authorship is front and center:</p>
+<ul>
+	<li><b>A. Graham Maxwell</b>: God in All 66, Conversations About God, Atonement and Your Picture of God, Prisoners Talk About God, Servants or Friends</li>
+	<li><b>Richard Nies</b>: Feelings</li>
+	<li><b>Jack Provonsha</b>: Issues in Christian Ethics</li>
+	<li><b>Paul Jacobson</b>: The Picture of God in All 66</li>
+</ul>
+<p>Each series page also shows the speaker as a byline beneath the title.</p>
+<h3>Real episode titles</h3>
+<p>During the years of migrations, the individual talks had been reduced to file names such as <code>cag_01</code> or <code>atone_and_pict_01</code>. We restored the <b>authentic talk titles</b>, for example <i>"The Conflict in God's Family,"</i> <i>"All God Asks is Trust,"</i> and <i>"Talking to God as a Friend."</i></p>
+<div class="callout">These titles were sourced from <b>Pine Knoll's own resource records</b> (and cross-checked against the published <i>Conversations About God</i> book and the Internet Archive), in both <b>English and Spanish</b>, not invented or machine-translated. Where Pine Knoll's records genuinely hold no distinct per-talk title, we used a clean "Part 1 / Part 2" rather than guess. A short list of Spanish titles that arrived without accent marks has been marked for a quick native-speaker check before launch.</div>
+<h3>One tidy collection</h3>
+<p>An earlier migration had accidentally split the 57-part <i>God in All 66</i> series into dozens of separate one-lecture entries. We reassembled it into a single collection presented in Bible order (Introduction, Genesis, Exodus &hellip; Revelation), and removed stray leftover/duplicate entries. No audio was lost; we verified every original file is present.</p>
+
+<!-- ================= 3 WATCH ================= -->
+<h2 class="serif">3 &middot; The "Watch" video section</h2>
+<p>The Vimeo teachings previously appeared as a long plain list. They now live in a dedicated, modern <b>Watch</b> section with video-style cards (thumbnail, length, episode count) grouped into their three collections: <i>Conversations About God</i>, <i>Another Look at God</i>, and <i>One of the Lads</i>, each opening to its full set of episodes. All videos are preserved; the presentation is simply cleaner and more inviting.</p>
+
+<!-- ================= 4 READER ================= -->
+<h2 class="serif">4 &middot; The written-materials reader</h2>
+<p>The books were rebuilt into a genuine reading experience:</p>
+<ul>
+	<li>A <b>chapter picker</b> and table of contents, with clear next / previous navigation.</li>
+	<li>Comfortable typography sized for phones, with images fitted neatly into the text and the cover placed so chapters are visible right away. Old fixed-width layouts from the previous site (hand-built poem tables, forced-justified paragraphs) now adapt to small screens instead of running off the edge.</li>
+	<li>A slim gold <b>progress bar</b> shows how far through a chapter you are.</li>
+	<li>The site <b>remembers where you stopped reading</b>: come back to a book and a "Continue reading" button takes you straight to your chapter, with how far along you were.</li>
+	<li>Works consistently across all languages.</li>
+</ul>
+
+<!-- ================= 5 SEARCH ================= -->
+<h2 class="serif">5 &middot; Search everything</h2>
+<p>A search now sits in the top corner of every page. It understands the whole library, not just page titles:</p>
+<ul>
+	<li>Finds <b>series, individual talks, books, and chapters</b>. Searching "Genesis," for example, surfaces the Genesis talk inside <i>God in All 66</i>.</li>
+	<li><b>Works in every language</b>: searching from the Spanish site returns Spanish results with Spanish labels, and likewise for all eleven languages.</li>
+	<li>Gift-store books appear in English results too, so shoppers can find them from anywhere.</li>
+</ul>
+
+<!-- ================= 6 DESIGN ================= -->
+<h2 class="serif">6 &middot; Design &amp; identity</h2>
+<ul>
+	<li>An <b>evolved</b> version of the site's blue identity (refreshed, not replaced) so it still feels like Speaking Well of God.</li>
+	<li>The deep navy-and-gold identity now carries through the <b>whole</b> site: every inner page and series page opens with a navy title band, not just the home page.</li>
+	<li>A centered, uncluttered layout with a sticky navigation bar that gently shrinks as visitors scroll.</li>
+	<li>Fully responsive: the design adapts cleanly from desktop down to phone.</li>
+	<li>Colors were checked against accessibility contrast standards (WCAG AA), so text stays readable for every visitor.</li>
+</ul>
+
+<!-- ================= 7 LANGUAGES ================= -->
+<h2 class="serif">7 &middot; Languages (all eleven)</h2>
+<p>The site serves Arabic, Bulgarian, Chinese, Dutch, English, Estonian, Latvian, Portuguese (Brazil), Russian, Slavic, and Spanish. All eleven languages were carried over with everything that matters preserved:</p>
+<ul>
+	<li><b>Same web addresses</b> for every language, so no links break and <b>search rankings are preserved</b>.</li>
+	<li>Each language now receives the full new design, including a localized home page.</li>
+	<li><b>Arabic keeps its correct right-to-left layout</b> throughout the new design.</li>
+	<li>Menus and footer links now <b>stay in your language</b>: a Spanish visitor tapping "Escuchar" lands on the Spanish audio library, not the English one.</li>
+	<li>Every interface label, including the player's controls and the "Continue" buttons, is translated in all eleven languages.</li>
+	<li>Language switching is clean and clearly labeled, with each language shown in its own alphabet (including Bulgarian, which previously appeared in English).</li>
+</ul>
+<p class="lead"><i>A couple of pre-existing content gaps (a few Latvian placeholder pages, some garbled characters in older Slavic pages carried over from the previous site) are noted for your input; they predate this refresh.</i></p>
+
+<!-- ================= 8 PERFORMANCE ================= -->
+<h2 class="serif">8 &middot; Performance &amp; reliability</h2>
+<ul>
+	<li>The number of active plugins was reduced substantially, removing old and abandoned code and its security exposure.</li>
+	<li>The site is now fully <b>page-cacheable for anonymous visitors</b>, which dramatically speeds up repeat and international visits.</li>
+	<li>Images are served in a modern, lighter format (WebP).</li>
+	<li>The result is a faster, steadier site, particularly for the overseas mobile audience the ministry cares about.</li>
+</ul>
+
+<!-- ================= 9 ANALYTICS ================= -->
+<h2 class="serif">9 &middot; Analytics &amp; privacy</h2>
+<p>Meaningful measurement is back, in two complementary forms: a standard analytics option (Google Analytics 4, ready to switch on with your account) and a <b>privacy-friendly, server-side</b> traffic measure that requires no on-page tracking scripts and no cookie banners. You'll be able to see what's being listened to and read, without compromising visitor privacy. The new "remembers where you left off" features work the same way: they live entirely in the visitor's own browser, with no accounts and no tracking.</p>
+
+<!-- ================= 10 STORE ================= -->
+<h2 class="serif">10 &middot; The gift-book store</h2>
+<p>The book-giveaway store was deliberately <b>left untouched</b>. It continues to work exactly as before; we only made sure the new design wraps around it cleanly and that shoppers always have a clear path to the cart and checkout.</p>
+
+<!-- ================= 11 ROLLOUT ================= -->
+<h2 class="serif">11 &middot; How we roll it out</h2>
+<table>
+	<tr><td class="step">1 &middot; You review</td><td>Click through the private preview, especially on a phone, and note anything you'd like changed.</td></tr>
+	<tr><td class="step">2 &middot; We adjust</td><td>We make any wording, image, or layout changes you request.</td></tr>
+	<tr><td class="step">3 &middot; You approve</td><td>Only on your go-ahead do we schedule the switch to the live site.</td></tr>
+	<tr><td class="step">4 &middot; Go live</td><td>A seamless cutover with no downtime and no broken links, followed by a final check.</td></tr>
+</table>
+<div class="callout"><b>Nothing is live yet.</b> The current speakingwellofgod.org is exactly as it was; the refresh waits entirely on your approval.</div>
+
+<!-- ================= APPENDIX ================= -->
+<div class="pagebreak"></div>
+<h2 class="serif">Technical appendix</h2>
+<p class="lead">For a more technical reader (e.g., Alan Farner at Pine Knoll). Plain-language readers can stop at the previous page.</p>
+
+<h3>Platform &amp; architecture</h3>
+<ul>
+	<li><b>WordPress</b> with a purpose-built <b>block theme</b> (full-site editing, <code>theme.json</code>-driven design tokens) replacing the previous commercial theme stack.</li>
+	<li>A single <b>owned plugin</b> provides the audio/video player and the series model; no third-party "pro" audio plugin and no associated license.</li>
+	<li>The player is dependency-free front-end JavaScript using the browser's native audio, the Media Session API for lock-screen controls, and HTTP range requests for efficient streaming.</li>
+</ul>
+
+<h3>Multilingual &amp; internationalization</h3>
+<ul>
+	<li>A per-language URL-parity check against the current production site confirms every translated URL resolves identically, protecting existing SEO.</li>
+	<li>Correct <code>hreflang</code> signaling including <code>x-default</code>; Arabic remains RTL at the language level.</li>
+	<li>Every interface string (navigation, footer, player controls, reader labels, search) flows through a per-language dictionary with Polylang string-translation overrides, so labels are editable without code.</li>
+	<li>Navigation and footer targets resolve to the <b>translated page</b> for the visitor's language at render time, falling back to English only where no translation exists.</li>
+	<li>Renamed page slugs 301-redirect via a small theme shim (WordPress core only old-slug-redirects posts, not pages); language-level data fixes live in an idempotent script that re-runs at cutover.</li>
+</ul>
+
+<h3>Site search</h3>
+<ul>
+	<li>Language-aware search across pages, books/chapters, the series catalog, and store items, matching <b>episode titles inside series</b> as well as series names.</li>
+	<li>The series catalog is an untranslated custom post type keyed by a language field, so it is matched directly rather than through the translation plugin's query scoping (which would silently exclude it).</li>
+	<li>Result excerpts strip legacy shortcode tags left behind by retired plugins.</li>
+</ul>
+
+<h3>Performance &amp; caching</h3>
+<ul>
+	<li>Active plugin count reduced from ~34 to ~12; abandoned plugins removed.</li>
+	<li>Anonymous responses emit <b>zero cookies</b>, unlocking full-page (Varnish) caching that was previously bypassed on every request; the header cart indicator uses WooCommerce cart-fragments so it appears only for actual shoppers without breaking the cache.</li>
+	<li>All resume/progress state (playback positions, finished flags, reading position) is kept in <code>localStorage</code> client-side; no accounts, no cookies, cache-safety preserved.</li>
+	<li>WebP image delivery.</li>
+</ul>
+
+
+<h3>Content sourcing &amp; integrity</h3>
+<ul>
+	<li>Episode titles sourced from Pine Knoll's resource data (English and Spanish), recorded with their source and a confidence flag; applied by an idempotent, backed-up script that matches each title to its track by file number and refuses to run if any track is unaccounted for.</li>
+	<li>The library-consolidation and title scripts each verify the complete audio file inventory before and after, so no recording can be dropped by a reorganization.</li>
+</ul>
+
+<h3>Quality &amp; safety</h3>
+<ul>
+	<li>An automated regression test suite (25 suites: 17 theme, 8 player) covers the theme, player, reader, languages, catalog, search, SEO, and store, and is run green before each change is accepted.</li>
+	<li>Color contrast across the palette was verified against WCAG AA.</li>
+	<li>All work lives in version control; the production database and media are never overwritten by the deploy process, and the go-live is a controlled, reversible cutover.</li>
+</ul>
+
+<div class="docfoot">New Blood &middot; Website refresh summary for Speaking Well of God &middot; July 2026 &middot; Private preview: a1b1ef6334.nxcli.io (temporary, retires at launch)</div>
+
+</body>
+</html>
