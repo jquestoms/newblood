@@ -173,8 +173,8 @@
     <div class="wp-block-group nb-showcase-card">
       <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#0e2a47"}}} -->
       <div class="wp-block-group nb-showcase-image">
-        <!-- wp:image {"id":6765,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
-        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/08/swog-case-study.png" alt="Speaking Well of God homepage - twenty years of theology lectures in eleven languages" class="wp-image-6765"/></figure>
+        <!-- wp:image {"id":6874,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/08/swog-case-study.png" alt="Speaking Well of God homepage - twenty years of theology lectures in eleven languages" class="wp-image-6874"/></figure>
         <!-- /wp:image -->
       </div>
       <!-- /wp:group -->
