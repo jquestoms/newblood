@@ -169,7 +169,37 @@
     </div>
     <!-- /wp:group -->
 
-  </div>
-  <!-- /wp:group -->
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#0e2a47"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6765,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/08/swog-case-study.png" alt="Speaking Well of God homepage - twenty years of theology lectures in eleven languages" class="wp-image-6765"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>Speaking Well of God</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Nonprofit &middot; Multilingual Audio</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">Twenty years of Loma Linda theology lectures, in eleven languages, on an audio player the ministry owns - and three times faster without a CDN.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-speaking-well-of-god/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study &rarr;</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
+
+  </div>
+  <!-- /wp:group -->
+
+    

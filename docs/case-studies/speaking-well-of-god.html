@@ -1,0 +1,133 @@
+<!-- wp:group {"align":"full","className":"nb-gradient-section nb-reveal","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"800px"}} -->
+<div class="wp-block-group alignfull nb-gradient-section nb-reveal">
+
+  <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.7"}}} -->
+  <p class="has-text-secondary-color"><strong>Stack:</strong> WordPress · purpose-built block theme (full-site editing, theme.json) · Polylang · WooCommerce · an audio plugin we wrote · Nexcess<br><strong>Engagement:</strong> Full refresh — platform migration, custom audio player, eleven languages, performance<br><strong>Client:</strong> Pine Knoll Publications, a 501(c)(3) in Redlands, California<br><strong>Live:</strong> <a href="https://speakingwellofgod.org/">speakingwellofgod.org</a></p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:image {"id":6765,"sizeSlug":"large","linkDestination":"none","className":"nb-case-screenshot"} -->
+  <figure class="wp-block-image size-large nb-case-screenshot"><img src="/wp-content/uploads/2026/08/swog-case-study.png" alt="Speaking Well of God homepage: navy hero reading Come take another look at God, with a gold Listen now button" class="wp-image-6765"/></figure>
+  <!-- /wp:image -->
+
+  <!-- wp:heading -->
+  <h2>What we were asked to do</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>Speaking Well of God publishes the recorded lectures of A. Graham Maxwell, emeritus professor of New Testament at Loma Linda University, along with talks by Richard Nies, Jack Provonsha and Paul Jacobson. It is run by Pine Knoll Publications, a 501(c)(3) in Redlands, California. Everything on it is free. The books are given away rather than sold, and the store exists to take an address, not a payment.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The site had been running since the early 2000s and carried the wear you would expect: twenty-nine active plugins, several abandoned by their authors, a commercial audio player on an annual licence, a translation plugin whose licence had lapsed while still holding eleven languages hostage, and 5.4 GB of audio spread across fifty-nine playlists. Analytics had been dead since roughly 2023. Every anonymous visitor was handed nine cookies, which meant no page could ever be cached, which meant every visit rebuilt the page from scratch — about 1.19 seconds before the first byte arrived, from anywhere in the world.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The audience is not local. It is in Latvia, Estonia, Brazil, Russia, the Arabic-speaking world and China, often on phones and often on connections that punish a heavy page. And the budget was a ministry budget. The brief, unstated but obvious, was to make a twenty-year-old archive feel current and fast for people ten thousand miles away, without adding recurring costs the ministry would have to justify every year.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>What changed</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:table -->
+  <figure class="wp-block-table"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>Time to first byte</td><td>1.19s</td><td><strong>0.29s</strong></td></tr><tr><td>Mobile Performance (PageSpeed)</td><td>82 at launch</td><td><strong>96</strong></td></tr><tr><td>Desktop Performance</td><td>100</td><td>99</td></tr><tr><td>Accessibility / Best Practices / SEO</td><td>—</td><td><strong>100 / 100 / 100</strong></td></tr><tr><td>Homepage requests</td><td>39</td><td><strong>16</strong></td></tr><tr><td>Render-blocking stylesheets (homepage)</td><td>9</td><td><strong>1</strong></td></tr><tr><td>Cookies on an anonymous request</td><td>9</td><td><strong>0</strong></td></tr><tr><td>Active plugins</td><td>29</td><td><strong>12</strong></td></tr><tr><td>Recurring licence cost for the audio player</td><td>annual</td><td><strong>none</strong></td></tr><tr><td>CDN cost</td><td>—</td><td><strong>none</strong></td></tr></tbody></table></figure>
+  <!-- /wp:table -->
+
+  <!-- wp:paragraph -->
+  <p>The migration itself was rehearsed against a copy of real production data before it was run. On the day, 259 web addresses were re-tested against the live site: all 259 resolved identically, none lost. All eleven languages kept their URLs, and with them their search history.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>What we actually did</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>1. An audio player the ministry owns outright</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The site's whole reason to exist is listening, and that was being handled by a commercial plugin on a renewing licence. For a nonprofit publishing free material, a subscription sitting between the audience and the sermons is the wrong shape. We replaced it with a plugin we wrote, which the ministry now owns.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>It is dependency-free front-end JavaScript over the browser's native <code>&lt;audio&gt;</code> element. No framework, no jQuery, no player library. That choice pays twice: nothing to license, and almost nothing to download on a slow connection in Riga.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list -->
+  <ul><li><strong>It persists across navigation.</strong> The player docks to the bottom of the screen and keeps playing while the visitor browses the rest of the site — the behaviour people already know from Spotify.</li><li><strong>It remembers where you stopped.</strong> Position and progress live in <code>localStorage</code>, in the visitor's own browser. No accounts, no server-side profiles, and critically no cookies — which is what keeps every page cacheable.</li><li><strong>It works from the lock screen.</strong> The Media Session API supplies title, series and artwork to the phone's own controls, so a talk can be paused from a car stereo or a locked phone.</li><li><strong>It streams rather than downloads.</strong> HTTP range requests mean a 62-hour collection starts playing immediately instead of buffering a whole file.</li><li><strong>It marks what you have finished.</strong> Series pages tick off completed talks, which matters when a collection runs to fifty-seven parts.</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:paragraph -->
+  <p>The same plugin models the catalog. The migration had fragmented the flagship collection, <em>God in All 66</em>, into roughly fifty-eight separate entries with raw filenames for titles — <code>cag_01</code> rather than <em>The Conflict in God's Family</em>. We rebuilt it as one fifty-seven-part collection in Bible order, and sourced the real titles from Pine Knoll's own records, in English and Spanish, so the catalog reads the way the ministry actually talks about it: grouped by speaker, under the speaker's name.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>2. Worldwide page speed on a not-for-profit budget</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The standard answer to "our audience is overseas and the site is slow" is a content delivery network. We did not buy one. Not out of purism — a CDN is a real improvement — but because three cheaper things had to happen first, and once they had, most of the gap a CDN is bought to close had already closed.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p><strong>First, we made the site cacheable at all.</strong> No caching layer can help a page that arrives with a cookie attached, and this one was emitting nine per anonymous request: tracking cookies from the anti-spam plugin, bot cookies from the security plugin, and a third source found only during the migration — the translation plugin sets a language cookie unless it detects a page cache, and production did not define the constant it looks for. That last one would have quietly defeated the entire caching strategy on launch day. We handled it in the theme rather than leaving it to server configuration. Anonymous responses now carry zero cookies.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p><strong>Second, we found caching the client was already paying for.</strong> The hosting plan included a business-class object cache and a page cache, and neither had ever been switched on, because the host's own control panel had never loaded for this site. The reason turned out to be a single missing loader file, most likely lost years earlier in a migration from a previous host: the platform's code directory was present, but WordPress only auto-runs PHP files at the top level of <code>mu-plugins</code>, so the platform plugin had simply never booted. Restoring one file gave the ministry two caching products at no additional cost. Time to first byte went from 1.19 seconds to 0.29.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p><strong>Third, we stopped the shop loading on pages that are not the shop.</strong> With caching in, pages arrived fast but phones still took a moment to draw them, and the reason was not weight — it was the number of files a browser had to fetch and parse before it was permitted to paint anything. WooCommerce was enqueuing five stylesheets and eight scripts on every page in the site, the anti-spam plugin two stylesheets and a 27KB head bundle, and between them they were dragging in jQuery. The audio library and every chapter page were paying for a checkout they do not contain.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>Diagnosis first: the homepage's largest contentful paint element is a paragraph of <em>text</em>, with a load delay of zero and a render delay of about four seconds. Nothing there is an image to compress. The score was set entirely by how many render-blocking requests sat in the head. So we scoped those plugins to the pages that use them. Away from the shop the site now loads one stylesheet and no blocking scripts, and jQuery is not dequeued by hand — nothing in the theme uses it, so once WooCommerce's scripts go it stops being printed on its own. A test asserts that rather than trusting it.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The complication was the header cart badge, which had deliberately been wired to WooCommerce's cart-fragments AJAX so it could never be baked into a cached page — and that was the one thing keeping jQuery alive site-wide. We checked the assumption underneath it and found the page cache serves its cached copy even to visitors already holding WooCommerce cart and session cookies, so a server-rendered count genuinely cannot be trusted. The badge now ships hidden with an empty count on every cached page and fills from a cookie the theme writes on cart change, read by a few lines of plain JavaScript. On shop pages, where jQuery is present anyway, the live fragment refresh stays. The cookie is never written for a visitor with no cart, so anonymous responses still carry none.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>The homepage went from thirty-nine requests to sixteen and from nine render-blocking stylesheets to one. Mobile PageSpeed went from 82 to 96, with Accessibility, Best Practices and SEO at 100. Running cost of all of it: nothing. A CDN remains available later — and Cloudflare is still worth doing for this client, though mainly to move the domain's name records off an old hosting account whose automation once repointed the site to the wrong server unasked. That is a resilience problem, not a speed problem, and we would rather say so than sell edge delivery as a cure for something already fixed.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":3} -->
+  <h3>3. A Loma Linda theology, published from Redlands, in eleven languages</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>The hardest part of this project was not the player or the caching. It was moving eleven languages between translation plugins without losing a single URL. WPML held the site's Arabic, Bulgarian, Chinese, Dutch, English, Estonian, Latvian, Brazilian Portuguese, Russian, Slavic and Spanish content, and its licence had lapsed. Polylang was the destination. Twenty years of accumulated search equity sat on those addresses.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:paragraph -->
+  <p>We ran the migration locally first and replayed every known URL against the result: 263 of 263 returned 200. We rehearsed the production cutover against a restored copy of real production data, which caught ten defects while they were still harmless — including one that would have shipped a fragmented catalog to the live site, and the language-cookie problem that would have defeated the caching work. On the day, 259 addresses re-tested identical and none were lost.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list -->
+  <ul><li><strong>Arabic keeps its right-to-left layout</strong>, which the import silently drops and which we restore explicitly, because the previous site already had it and losing it would have been a regression.</li><li><strong>Each language is cached separately</strong>, verified across five of them, so a Spanish visitor is never served an English page from cache.</li><li><strong>Navigation never offers a page that does not exist in your language.</strong> A resolution bug we found meant WordPress was serving the English <em>Written Materials</em> page to Dutch visitors, because page paths resolve language-blind and return the lowest post ID. It was linked from the Dutch menu, and it was the exact complaint a reader had raised. Fixed generically, with a regression test verified to fail without the fix.</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:paragraph -->
+  <p>The design carries the ministry rather than a template. Graham Maxwell taught New Testament at Loma Linda University for decades, and the material is discursive, generous and unhurried — sixty-six books, one picture of God. The site opens with his own words and a single button, and the typography is a serif reading face sized for a phone, because most of what happens here is listening and reading rather than clicking. The gift-book store, with its 4,500-plus fulfilled orders, was deliberately left alone.</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading -->
+  <h2>The philosophy</h2>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph -->
+  <p>A nonprofit with a worldwide audience and no budget for recurring services is not a constrained version of a commercial project. It is a different problem, and it rewards different instincts:</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:list -->
+  <ul><li>Own the thing your site exists to do. A licensed player between a ministry and its own sermons is a recurring tax on the core function.</li><li>Check what the client is already paying for before recommending a purchase. Two caching products and the largest single speed win here were already inside the hosting plan, unused, behind one missing file.</li><li>Diagnose before optimizing. The slow element was text, not an image; the cost was request count, not bytes. Compressing pictures would have achieved nothing.</li><li>Verify the assumption the design rests on. "Shoppers bypass the cache" sounded right and was false, and we only knew because we tested it against production.</li><li>Say when the expensive option is not needed yet. A CDN would help this site. It is not what was wrong with it.</li></ul>
+  <!-- /wp:list -->
+
+  <!-- wp:paragraph -->
+  <p>Twenty years of recordings, eleven languages, three times faster, and nothing new to renew.</p>
+  <!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->
