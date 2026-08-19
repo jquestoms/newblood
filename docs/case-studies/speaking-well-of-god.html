@@ -18,7 +18,7 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:paragraph -->
-  <p>The site had been running since the early 2000s and carried the wear you would expect: twenty-nine active plugins, several abandoned by their authors, a commercial audio player on an annual licence, a translation plugin whose licence had lapsed while still holding eleven languages hostage, and 5.4 GB of audio spread across fifty-nine playlists. Analytics had been dead since roughly 2023. Every anonymous visitor was handed nine cookies, which meant no page could ever be cached, which meant every visit rebuilt the page from scratch — about 1.19 seconds before the first byte arrived, from anywhere in the world.</p>
+  <p>The site had been running since the early 2000s and carried the wear you would expect: twenty-nine active plugins, several abandoned by their authors, a commercial audio player on an annual licence, a translation plugin holding eleven languages, and 5.4 GB of audio spread across fifty-nine playlists. Analytics had been dead since roughly 2023. Every anonymous visitor was handed nine cookies, which meant no page could ever be cached, which meant every visit rebuilt the page from scratch — about 1.19 seconds before the first byte arrived, from anywhere in the world.</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:paragraph -->
@@ -66,19 +66,15 @@
   <!-- /wp:heading -->
 
   <!-- wp:paragraph -->
-  <p>The standard answer to "our audience is overseas and the site is slow" is a content delivery network. We did not buy one. Not out of purism — a CDN is a real improvement — but because three cheaper things had to happen first, and once they had, most of the gap a CDN is bought to close had already closed.</p>
+  <p>The standard answer to "our audience is overseas and the site is slow" is a content delivery network. We did not buy one. Not out of purism — a CDN is a real improvement — but because two cheaper things had to happen first, and once they had, most of the gap a CDN is bought to close had already closed.</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:paragraph -->
-  <p><strong>First, we made the site cacheable at all.</strong> No caching layer can help a page that arrives with a cookie attached, and this one was emitting nine per anonymous request: tracking cookies from the anti-spam plugin, bot cookies from the security plugin, and a third source found only during the migration — the translation plugin sets a language cookie unless it detects a page cache, and production did not define the constant it looks for. That last one would have quietly defeated the entire caching strategy on launch day. We handled it in the theme rather than leaving it to server configuration. Anonymous responses now carry zero cookies.</p>
+  <p><strong>First, we made the site cacheable at all.</strong> No caching layer can help a page that arrives with a cookie attached, and this one was emitting nine per anonymous request: tracking cookies from the anti-spam plugin, bot cookies from the security plugin, and a third source found only during the migration — the translation plugin sets a language cookie unless it detects a page cache, and production did not define the constant it looks for. That last one would have quietly defeated the entire caching strategy on launch day. We handled it in the theme rather than leaving it to server configuration. Anonymous responses now carry zero cookies, page caching could finally do its job, and time to first byte fell from 1.19 seconds to 0.29.</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:paragraph -->
-  <p><strong>Second, we found caching the client was already paying for.</strong> The hosting plan included a business-class object cache and a page cache, and neither had ever been switched on, because the host's own control panel had never loaded for this site. The reason turned out to be a single missing loader file, most likely lost years earlier in a migration from a previous host: the platform's code directory was present, but WordPress only auto-runs PHP files at the top level of <code>mu-plugins</code>, so the platform plugin had simply never booted. Restoring one file gave the ministry two caching products at no additional cost. Time to first byte went from 1.19 seconds to 0.29.</p>
-  <!-- /wp:paragraph -->
-
-  <!-- wp:paragraph -->
-  <p><strong>Third, we stopped the shop loading on pages that are not the shop.</strong> With caching in, pages arrived fast but phones still took a moment to draw them, and the reason was not weight — it was the number of files a browser had to fetch and parse before it was permitted to paint anything. WooCommerce was enqueuing five stylesheets and eight scripts on every page in the site, the anti-spam plugin two stylesheets and a 27KB head bundle, and between them they were dragging in jQuery. The audio library and every chapter page were paying for a checkout they do not contain.</p>
+  <p><strong>Second, we stopped the shop loading on pages that are not the shop.</strong> With caching in, pages arrived fast but phones still took a moment to draw them, and the reason was not weight — it was the number of files a browser had to fetch and parse before it was permitted to paint anything. WooCommerce was enqueuing five stylesheets and eight scripts on every page in the site, the anti-spam plugin two stylesheets and a 27KB head bundle, and between them they were dragging in jQuery. The audio library and every chapter page were paying for a checkout they do not contain.</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:paragraph -->
@@ -98,7 +94,7 @@
   <!-- /wp:heading -->
 
   <!-- wp:paragraph -->
-  <p>The hardest part of this project was not the player or the caching. It was moving eleven languages between translation plugins without losing a single URL. WPML held the site's Arabic, Bulgarian, Chinese, Dutch, English, Estonian, Latvian, Brazilian Portuguese, Russian, Slavic and Spanish content, and its licence had lapsed. Polylang was the destination. Twenty years of accumulated search equity sat on those addresses.</p>
+  <p>The hardest part of this project was not the player or the caching. It was moving eleven languages between translation plugins without losing a single URL. WPML held the site's Arabic, Bulgarian, Chinese, Dutch, English, Estonian, Latvian, Brazilian Portuguese, Russian, Slavic and Spanish content. Polylang was the destination. Twenty years of accumulated search equity sat on those addresses.</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:paragraph -->
@@ -122,7 +118,7 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:list -->
-  <ul><li>Own the thing your site exists to do. A licensed player between a ministry and its own sermons is a recurring tax on the core function.</li><li>Check what the client is already paying for before recommending a purchase. Two caching products and the largest single speed win here were already inside the hosting plan, unused, behind one missing file.</li><li>Diagnose before optimizing. The slow element was text, not an image; the cost was request count, not bytes. Compressing pictures would have achieved nothing.</li><li>Verify the assumption the design rests on. "Shoppers bypass the cache" sounded right and was false, and we only knew because we tested it against production.</li><li>Say when the expensive option is not needed yet. A CDN would help this site. It is not what was wrong with it.</li></ul>
+  <ul><li>Own the thing your site exists to do. A licensed player between a ministry and its own sermons is a recurring tax on the core function.</li><li>Exhaust the free moves before recommending a paid one. Every speed gain on this site came from removing work rather than buying capacity.</li><li>Diagnose before optimizing. The slow element was text, not an image; the cost was request count, not bytes. Compressing pictures would have achieved nothing.</li><li>Verify the assumption the design rests on. "Shoppers bypass the cache" sounded right and was false, and we only knew because we tested it against production.</li><li>Say when the expensive option is not needed yet. A CDN would help this site. It is not what was wrong with it.</li></ul>
   <!-- /wp:list -->
 
   <!-- wp:paragraph -->
