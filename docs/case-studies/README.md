@@ -81,7 +81,7 @@ The threshold is a fraction of the *target's own* height. For an element taller 
 
 Use `nb-gradient-section` alone. If you want the entrance animation, put a separate `nb-reveal` on each H2 section group — each is short enough to fire on its own. Short patterns and cards are fine with a wrapper-level `nb-reveal`; that is the class's intended use.
 
-Hit three times so far: `newfoodcenter.html` (2026-05-16), `rtz-audio-visual.html`, and `speaking-well-of-god.html` (2026-08-19).
+**All seven case-study files are now clean (2026-08-19)** — `newfoodcenter` and `rtz-audio-visual` were fixed earlier; `speaking-well-of-god`, `57cards`, `mikes-master-classes`, `ca-lindman` and `overhead-door` were fixed in the 8/19 sweep. Keep it that way: `head -1 docs/case-studies/<slug>.html | grep nb-reveal` should return nothing before you publish.
 
 ## ⚠️ Don't edit case studies via WP-Admin
 
