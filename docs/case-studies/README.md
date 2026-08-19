@@ -43,7 +43,7 @@ Reason: `newblood.test` is the local Herd hostname. Production is `newblood.com`
      --porcelain
    ```
    Capture the integer attachment ID. Capture the URL via `wp post get <id> --field=guid`, then strip the `http://newblood.test` prefix to make it root-relative.
-3. Create a new file in this directory named `<slug>.html`. Use `57cards.html` as a template.
+3. Create a new file in this directory named `<slug>.html`. **Use `rtz-audio-visual.html` or `newfoodcenter.html` as the template — not `57cards.html`.** The older files (`57cards`, `mikes-master-classes`, `overhead-door`, `ca-lindman`) carry `nb-reveal` on their outer wrapper, which makes a long body render **blank until the reader scrolls** (see "Don't put nb-reveal on the outer wrapper" below). Copying from one of them propagates the bug — that is exactly how `speaking-well-of-god.html` got it on 2026-08-19.
 4. Push to the WP DB:
    ```
    php -d memory_limit=512M /opt/homebrew/bin/wp --path=/Users/jeremyoms/Herd/newblood post create \
@@ -72,6 +72,16 @@ php -d memory_limit=512M /opt/homebrew/bin/wp --path=/Users/jeremyoms/Herd/newbl
 php -d memory_limit=512M /opt/homebrew/bin/wp --path=/Users/jeremyoms/Herd/newblood post update <id> \
   --post_content="$(cat docs/case-studies/<slug>.html)"
 ```
+
+## Don't put `nb-reveal` on the outer wrapper
+
+The body's outermost `wp:group` must **not** include `nb-reveal` in its `className`. That class is `opacity: 0` until `assets/js/scroll-reveal.js` adds `.is-visible`, and its IntersectionObserver uses `threshold: 0.15`.
+
+The threshold is a fraction of the *target's own* height. For an element taller than the viewport, the visible fraction can never exceed `viewportHeight / elementHeight` — so a long case-study body starts below 15% and only crosses it after the reader scrolls. The page loads blank and fills in on scroll.
+
+Use `nb-gradient-section` alone. If you want the entrance animation, put a separate `nb-reveal` on each H2 section group — each is short enough to fire on its own. Short patterns and cards are fine with a wrapper-level `nb-reveal`; that is the class's intended use.
+
+Hit three times so far: `newfoodcenter.html` (2026-05-16), `rtz-audio-visual.html`, and `speaking-well-of-god.html` (2026-08-19).
 
 ## ⚠️ Don't edit case studies via WP-Admin
 
