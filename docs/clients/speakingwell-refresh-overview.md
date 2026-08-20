@@ -8,7 +8,7 @@ Hi Cherie,
 
 Here's a friendly summary of everything we've rebuilt for Speaking Well of God. We've done the whole thing on a **private preview copy**, so the live site hasn't changed at all. Nothing goes public until you've looked it over and given the word. A detailed companion document (for anyone more technical, like Alan) accompanies this overview.
 
-**Preview it here:** https://a1b1ef6334.nxcli.io *(a temporary working address; it retires once we go live at speakingwellofgod.org)*
+**See it here:** https://speakingwellofgod.org
 
 ## What's new, in plain terms
 
