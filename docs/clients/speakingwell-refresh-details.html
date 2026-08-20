@@ -200,7 +200,7 @@
 
 <h3>Performance and caching</h3>
 <ul>
-	<li>Active plugins reduced from twenty-nine to twelve, plus the host's object cache.</li>
+	<li>Active plugins reduced from twenty-nine to twelve.</li>
 	<li>Anonymous responses emit zero cookies. Two sources were addressed: the spam plugin's tracking cookies and the security plugin's bot cookies. A third was found only during the migration, because the translation plugin sets a language cookie unless it detects a page cache, and production does not define the constant it looks for. That is handled in the theme rather than left to server configuration.</li>
 	<li>The header cart indicator appears only for actual shoppers and never defeats the cache. Cached pages always ship it hidden with no number in the markup; the count arrives client-side. On WooCommerce pages that is WooCommerce's own cart-fragments refresh, so an add-to-cart updates the badge live. Everywhere else it is a cookie the theme writes when the cart changes and reads with a few lines of plain JavaScript, which is what allowed the jQuery dependency to be removed from the rest of the site. The cookie is never written for a visitor with no cart, so anonymous responses still carry no cookies at all. Worth recording: the page cache serves its cached copy even to visitors already holding WooCommerce cart and session cookies, verified against production, so a count rendered on the server genuinely cannot be trusted here.</li>
 	<li>All resume and progress state is client-side in localStorage. No accounts, no cookies.</li>
@@ -208,9 +208,8 @@
 	<li>Front-end assets are loaded conditionally rather than globally. WooCommerce's five stylesheets and eight scripts, the anti-spam plugin's two stylesheets and 27KB head bundle, and core's emoji polyfill are dequeued on every page that is not the shop, cart, checkout or account. jQuery is not dequeued by hand; nothing in the theme uses it, so once the WooCommerce scripts go it stops being printed on its own, and a test asserts that rather than assuming it. Away from the shop the home page went from nine render-blocking stylesheets and three blocking scripts to one stylesheet and none, and from thirty-nine requests to sixteen.</li>
 	<li>The audio player's stylesheet is folded into the theme's own, saving a request. It is injected ahead of the theme stylesheet rather than after it, because both files style the home hero button at equal specificity and appending would have flipped the cascade and rendered the button transparent. A test asserts the order.</li>
 	<li>Touch targets: the audio-library play buttons rendered about 22 pixels tall against a 24-pixel minimum, failing eight times per page. Now 32 pixels, measured in a browser rather than inferred, taking that page to 100 for both Accessibility and Best Practices.</li>
-	<li>Deployment safety, found by the deploy script's own preview and worth recording: the repository's copy of <code>.htaccess</code> predated the caching work and would have deleted 24KB of generated rules on the next deploy, taking page caching, browser cache headers and compression with it. The repository copy now matches production. The deploy allowlist also still named three plugins that had been removed from the server in July, which would have restored them; they no longer ship.</li>
-	<li>The host's own Varnish layer still reports BYPASS for HTML. That is cosmetic rather than costly, since the pages are cached in front of it, but it is worth a question to the platform team.</li>
-	<li>No content delivery network is in use, by choice. The caching and asset work removed most of what a CDN is usually bought to fix, at no recurring cost. Cloudflare remains worth doing primarily to move the domain's name records off the old hosting account, with the edge delivery as a secondary benefit.</li>
+	
+	
 </ul>
 
 <h3>Content integrity</h3>
