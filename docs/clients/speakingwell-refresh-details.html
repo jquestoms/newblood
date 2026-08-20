@@ -185,12 +185,12 @@
 	<li>WordPress with a purpose-built block theme (full-site editing, theme.json design tokens) replacing the previous commercial theme stack. The old theme remains installed but inactive, which is what makes a rollback a single command.</li>
 	<li>One owned plugin provides the audio and video player and the series model. No third-party audio plugin and no licence.</li>
 	<li>The player is dependency-free front-end JavaScript over the browser's native audio, using the Media Session API for lock-screen controls and HTTP range requests for streaming.</li>
-	<li>Deployment is an allowlisted rsync of custom code only. Stock plugins, the uploads directory, the database and wp-config are never touched by it, so the platform's own auto-updates are never rolled back.</li>
+	
 </ul>
 
 <h3>Multilingual</h3>
 <ul>
-	<li><b>WPML was replaced by Polylang</b>, removing a lapsed licence. The migration ran on production on 17 August after being rehearsed against a copy of the production database.</li>
+	<li><b>WPML was replaced by Polylang.</b> The migration ran on production on 17 August after being rehearsed against a copy of the production database.</li>
 	<li>A per-language URL parity harness captured every published address before the migration and replayed it afterwards. Result: 259 identical, 0 regressions. It grades a redirect that lands in a different language as a failure, not a pass, which is how one real defect was caught before launch.</li>
 	<li>Correct hreflang including x-default. Arabic is right-to-left at the language level.</li>
 	<li>Interface strings flow through a per-language dictionary with Polylang string-translation overrides, so labels are editable without code.</li>
@@ -206,7 +206,7 @@
 	<li>All resume and progress state is client-side in localStorage. No accounts, no cookies.</li>
 	<li>Page caching is provided by W3 Total Cache in Disk: Enhanced mode, alongside Object Cache Pro for the object cache. Verified after enabling: per-language cache separation holds (checked across five languages), WooCommerce cart, checkout and account URIs report as rejected rather than cached, and anonymous responses still carry zero cookies. Measured time to first byte is about 0.29 seconds against 1.19 before the refresh.</li>
 	<li>Front-end assets are loaded conditionally rather than globally. WooCommerce's five stylesheets and eight scripts, the anti-spam plugin's two stylesheets and 27KB head bundle, and core's emoji polyfill are dequeued on every page that is not the shop, cart, checkout or account. jQuery is not dequeued by hand; nothing in the theme uses it, so once the WooCommerce scripts go it stops being printed on its own, and a test asserts that rather than assuming it. Away from the shop the home page went from nine render-blocking stylesheets and three blocking scripts to one stylesheet and none, and from thirty-nine requests to sixteen.</li>
-	<li>The audio player's stylesheet is folded into the theme's own, saving a request. It is injected ahead of the theme stylesheet rather than after it, because both files style the home hero button at equal specificity and appending would have flipped the cascade and rendered the button transparent. A test asserts the order.</li>
+	<li>The audio player's stylesheet is folded into the theme's own, saving a request.</li>
 	<li>Touch targets: the audio-library play buttons rendered about 22 pixels tall against a 24-pixel minimum, failing eight times per page. Now 32 pixels, measured in a browser rather than inferred, taking that page to 100 for both Accessibility and Best Practices.</li>
 	
 	
@@ -216,15 +216,15 @@
 <ul>
 	<li>Episode titles came from Pine Knoll's resource data, recorded with their source and a confidence flag, applied by an idempotent backed-up script that matches each title to its track by file number and refuses to run if any track is unaccounted for.</li>
 	<li>The consolidation and title scripts each verify the complete audio inventory before and after, so no recording can be dropped by a reorganization.</li>
-	<li>Content repairs are scripts rather than hand edits: each backs up what it touches, asserts the result, and reverts itself if anything but the intended change occurred. The line-break repair, for instance, compared the visible words before and after on every page and would have rolled back on any difference.</li>
-	<li>One operational note worth passing on: Polylang deliberately allows the same slug in two languages, but the filter that permits it does not load under WP-CLI, so an unguarded programmatic update to such a page silently renames it. Anything scripted against this site pins the slug and verifies it afterwards.</li>
+	
+	
 </ul>
 
 <h3>Quality and safety</h3>
 <ul>
 	<li>An automated regression suite (26 suites across theme and player) covers the reader, languages, catalog, search, SEO and store, and is run green before any change is accepted.</li>
 	<li>All work is in version control, tagged at the pre-cutover and live states.</li>
-	<li>The cutover was a scripted sequence with an assertion after every step, a URL parity gate that halted the run while a rollback was still a single plugin toggle, and a database dump taken minutes beforehand.</li>
+	
 </ul>
 
 <div class="docfoot">New Blood &middot; What was built for Speaking Well of God &middot; August 2026 &middot; Live at speakingwellofgod.org</div>
