@@ -12,6 +12,7 @@ Bot signatures live in ~/Herd/signal-ingest/lib/bots.json (shared with the TS
 rollup cron) — the tables below are a fallback if that file is missing.
 """
 import sys, os, re, json, sqlite3, zipfile, ipaddress, socket, urllib.request, subprocess
+from urllib.parse import urlparse
 from collections import defaultdict
 from datetime import datetime
 
@@ -25,7 +26,7 @@ RANGES_CACHE = os.path.join(ROOT, 'data', 'ip-ranges.json')
 # Creds live in ~/Herd/<site>/.nexcess-credentials (NEXCESS_HOST/USER/PASS/PORT; optional
 # NEXCESS_LOG_DIR, default 'logs' relative to the SSH home — Nexcess puts transfer.log there).
 HERD = os.path.expanduser('~/Herd')
-NEXCESS_SITES = ['akta', 'ohdbalt', 'dadabilities', 'newblood', 'rookgame']
+NEXCESS_SITES = ['akta', 'ohdbalt', 'dadabilities', 'newblood', 'lomalindamarket', 'rookgame']
 
 # --- bot signature table: substring (lowercased) -> (bot_id, family, kind) ---
 # kind: ai-train = AI training crawler, ai-search = AI search indexer,
@@ -92,6 +93,45 @@ if os.path.exists(_BOTS_JSON):
 LOG_RE = re.compile(
     r'(?P<ip>\S+) \S+ \S+ \[(?P<ts>[^\]]+)\] "(?P<method>\S+) (?P<path>\S+)[^"]*" '
     r'(?P<status>\d{3}) (?P<bytes>\S+) "(?P<ref>[^"]*)" "(?P<ua>[^"]*)"')
+
+def ai_referrer(ref):
+    """AI assistant referral label for a human visit, or None.
+
+    Matches on the referrer's HOST, never a raw substring. A substring test
+    counted a site's own utm-tagged URL as an inbound AI visit -- e.g.
+    'https://lomalindamarket.com/?utm_source=chatgpt.com' contains
+    'chatgpt.com', so one real ChatGPT arrival inflated into an AI referral for
+    every internal click that followed (557 counted vs 3 real, 2026-08-20).
+
+    A few table keys carry a path ('www.bing.com/chat'); those must match the
+    host AND that path prefix, so plain Bing search is not labelled Copilot.
+    Fails closed: an unparseable referrer is not an AI referral.
+    Mirrors aiReferrer() in signal-ingest/lib/bots.ts -- keep both in step.
+    """
+    if not ref or ref == '-':
+        return None
+    try:
+        u = urlparse(ref)
+        host = (u.hostname or '').lower()
+    except Exception:
+        return None
+    if not host:
+        return None
+    path = (u.path or '').lower()
+    for dom, label in AI_REFERRERS.items():
+        dom_host, slash, dom_path = dom.partition('/')
+        dom_host = dom_host.lower()
+        # Exact host, or a subdomain of it -- never a suffix collision like
+        # "notchatgpt.com" against "chatgpt.com".
+        if host != dom_host and not host.endswith('.' + dom_host):
+            continue
+        if slash:
+            prefix = '/' + dom_path.lower()
+            if path != prefix and not path.startswith(prefix + '/'):
+                continue
+        return label
+    return None
+
 
 def classify(ua):
     low = ua.lower()
@@ -397,9 +437,9 @@ def report():
             WHERE site=? AND bot IS NULL AND ref!="-" GROUP BY ref''', site)
         ai_refs = defaultdict(int)
         for ref, n in refs:
-            for dom, label in AI_REFERRERS.items():
-                if dom in ref:
-                    ai_refs[label] += n
+            label = ai_referrer(ref)
+            if label:
+                ai_refs[label] += n
         if ai_refs:
             for label, n in sorted(ai_refs.items(), key=lambda x: -x[1]):
                 lines.append(f'- **{label}** sent {n} visits')
