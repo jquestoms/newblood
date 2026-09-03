@@ -1136,3 +1136,41 @@ html {
 .nb-service-card-link:hover .nb-service-mark {
   transform: scale(1.05);
 }
+
+/* ===== Homepage Two Doors (below the hero) ===== */
+.nb-two-doors .wp-block-columns.nb-stagger {
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.nb-two-doors .nb-door {
+  display: flex;
+  flex-direction: column;
+}
+
+.nb-two-doors .nb-door-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.nb-two-doors .nb-door-links {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+.nb-two-doors .nb-door-textlink {
+  color: #4ade80;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nb-two-doors .nb-door-textlink:hover,
+.nb-two-doors .nb-door-textlink:focus-visible {
+  text-decoration: underline;
+}
