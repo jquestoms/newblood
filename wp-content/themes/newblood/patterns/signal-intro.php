@@ -21,10 +21,10 @@
   <p class="has-text-body-color">We built a small tool that runs the queries that matter for your category across the major AI engines, scores how you appear, surfaces who's being recommended instead, and reverse-engineers why. The result is a personal report — in your voice, with a prioritized punch list of what to fix and a clear sense of where you stand.</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
-  <p class="has-text-body-color">By appointment for now. We're working with a small group of clients while we tune the methodology. If you'd like to know where you stand, write to us.</p>
+  <p class="has-text-body-color">By appointment for now, and now the search-territory reading inside the Four Gaps Audit, where it sits beside your inquiry database and whatever advertising you run. If you'd like to know where you stand, start there.</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
-  <p><a class="nb-btn-primary" href="/contact">Begin a conversation</a></p>
+  <p><a class="nb-btn-primary" href="/four-gaps-audit/">See the Four Gaps Audit</a></p>
   <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

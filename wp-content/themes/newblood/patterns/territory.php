@@ -384,10 +384,10 @@
     <p class="has-text-muted-color">The platform kept running, and the content program that builds on it, month after month.</p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.7"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-    <p class="has-text-body-color">Every engagement starts with the Four Gaps Audit: we read your ad platform, your inquiry database, and your search territory, and show you the four gaps on your own numbers. Its fee credits in full toward the build.</p>
+    <p class="has-text-body-color">Every engagement starts with the <a href="/four-gaps-audit/">Four Gaps Audit</a>: we read your inquiry database, your search territory, and whatever advertising you run, and show you the four gaps on your own numbers. Its fee credits in full toward the build.</p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-    <p><a class="nb-btn-primary" href="/contact/" style="display:block;text-align:center">Ask for the Four Gaps Audit</a></p>
+    <p><a class="nb-btn-primary" href="/four-gaps-audit/" style="display:block;text-align:center">See the Four Gaps Audit</a></p>
     <!-- /wp:paragraph -->
   </div>
   <!-- /wp:group -->

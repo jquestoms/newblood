@@ -188,7 +188,7 @@
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
-        <li>We read your ad platform, inquiry database, and search territory</li>
+        <li>We read your inquiry database, your search territory, and whatever advertising you run</li>
         <li>The four gaps, shown on your own numbers</li>
         <li>Where you appear in search and AI answers today, and who appears instead</li>
         <li>A written plan you keep, whoever builds it</li>
@@ -196,7 +196,7 @@
       </ul>
       <!-- /wp:list -->
       <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-      <p><a class="nb-btn-primary" href="/contact" style="display:block;text-align:center">Ask for the audit</a></p>
+      <p><a class="nb-btn-primary" href="/four-gaps-audit/" style="display:block;text-align:center">See the audit</a></p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->

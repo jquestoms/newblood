@@ -388,7 +388,7 @@ function newblood_shortcode_contact_form() {
         'fields'      => 'ids',
     ) );
     if ( ! empty( $forms ) ) {
-        return do_shortcode( '[wpforms id="' . (int) $forms[0] . '"]' );
+        return newblood_contact_subject_lead() . do_shortcode( '[wpforms id="' . (int) $forms[0] . '"]' ) . newblood_contact_subject_script();
     }
 
     // Fallback: never silently lose the contact path if the form is missing.
@@ -399,6 +399,47 @@ function newblood_shortcode_contact_form() {
     return '<p class="nb-contact-fallback" style="font-size:1rem">Reach us directly at <a href="mailto:' . esc_attr( $email ) . '">' . esc_html( $email ) . '</a>.</p>';
 }
 add_shortcode( 'nb_contact_form', 'newblood_shortcode_contact_form' );
+
+/**
+ * Contact-form subject preselect. Offer pages link to /contact/?subject=<key>;
+ * a known key adds a lead-in above the form and pre-fills the message field.
+ * Theme-owned on purpose: the WPForms config lives in the DB and differs
+ * between local and prod, so nothing here depends on field ids or form settings.
+ */
+function newblood_contact_subjects() {
+    return array(
+        'four-gaps-audit' => array(
+            'lead'    => 'You are asking about the <strong>Four Gaps Audit</strong>. Tell us a little about the business and which systems you run, and we will set up the short call.',
+            'message' => "I'd like to talk about the Four Gaps Audit.",
+        ),
+    );
+}
+
+function newblood_contact_current_subject() {
+    if ( empty( $_GET['subject'] ) ) {
+        return null;
+    }
+    $key      = sanitize_key( wp_unslash( $_GET['subject'] ) );
+    $subjects = newblood_contact_subjects();
+    return isset( $subjects[ $key ] ) ? $subjects[ $key ] : null;
+}
+
+function newblood_contact_subject_lead() {
+    $subject = newblood_contact_current_subject();
+    if ( ! $subject ) {
+        return '';
+    }
+    return '<p class="nb-contact-lead">' . wp_kses( $subject['lead'], array( 'strong' => array() ) ) . '</p>';
+}
+
+function newblood_contact_subject_script() {
+    $subject = newblood_contact_current_subject();
+    if ( ! $subject ) {
+        return '';
+    }
+    $message = wp_json_encode( $subject['message'] );
+    return '<script>(function(){var t=document.querySelector(".wpforms-form textarea");if(t&&!t.value){t.value=' . $message . ';}})();</script>';
+}
 
 /**
  * Legacy URL redirects (301).

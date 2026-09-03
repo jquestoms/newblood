@@ -1195,11 +1195,15 @@ html {
 /* Four-card rows (gaps, commitments) wrap 2x2 at tablet width, like the services cards */
 @media (max-width: 1024px) and (min-width: 769px) {
   .nb-territory-gaps .wp-block-columns.nb-stagger,
-  .nb-territory-commitments .wp-block-columns.nb-stagger {
+  .nb-territory-commitments .wp-block-columns.nb-stagger,
+  .nb-audit-deliverables .wp-block-columns.nb-stagger,
+  .nb-audit-steps .wp-block-columns.nb-stagger {
     flex-wrap: wrap !important;
   }
   .nb-territory-gaps .wp-block-columns.nb-stagger > .wp-block-column,
-  .nb-territory-commitments .wp-block-columns.nb-stagger > .wp-block-column {
+  .nb-territory-commitments .wp-block-columns.nb-stagger > .wp-block-column,
+  .nb-audit-deliverables .wp-block-columns.nb-stagger > .wp-block-column,
+  .nb-audit-steps .wp-block-columns.nb-stagger > .wp-block-column {
     flex-basis: calc(50% - 0.75rem) !important;
     flex-grow: 0 !important;
   }
@@ -1321,3 +1325,16 @@ html {
   .nb-diagram .node, .nb-diagram .ah, .nb-diagram .t, .nb-diagram .s { opacity: 1; transition: none; }
   .nb-diagram .dot { transform: scale(1); animation: none; }
 }
+
+/* Four Gaps Audit page */
+.nb-contact-lead {
+  max-width: 60ch;
+  margin: 0 auto var(--wp--preset--spacing--40);
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  border-radius: 12px;
+  color: var(--wp--preset--color--text-secondary, #d1d5db);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+.nb-contact-lead strong { color: #4ade80; }
