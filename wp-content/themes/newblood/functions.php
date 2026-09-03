@@ -412,6 +412,10 @@ function newblood_contact_subjects() {
             'lead'    => 'You are asking about the <strong>Four Gaps Audit</strong>. Tell us a little about the business and which systems you run, and we will set up the short call.',
             'message' => "I'd like to talk about the Four Gaps Audit.",
         ),
+        'operations-platform' => array(
+            'lead'    => 'You are asking about the <strong>Operations Platform</strong>. Tell us about the business, how many people sell, and which systems you run today. We will set up a call, and the honest first step is usually the Four Gaps Audit.',
+            'message' => "I'd like to talk about the Operations Platform.",
+        ),
     );
 }
 

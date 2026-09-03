@@ -239,22 +239,22 @@
       <h3>Operations Platform</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">For multi-location operators who want the business, not just the front door, on one system.</p>
+      <p class="has-text-muted-color">For established operators who want the whole business, not just the front door, on one record.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span style="color:#4ade80">Scoped per operator</span></p>
+      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span class="nb-price-note">from </span><span style="color:#4ade80">$90,000</span><span class="nb-price-note"> build, plus a monthly scoped with it</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
         <li>Everything in Territory</li>
-        <li>CRM backbone and revenue attribution</li>
-        <li>AI agents for the work behind the phone</li>
-        <li>Customer portal</li>
-        <li>Multi-location build-out</li>
+        <li>One record: lead, quote, job, dollars</li>
+        <li>Agents for the work behind the phone: quoting, specifications, dispatch, and voice when you choose it</li>
+        <li>A customer portal: quotes, orders, history</li>
+        <li>Connected to the systems you run, or built as your own</li>
       </ul>
       <!-- /wp:list -->
       <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-      <p><a class="nb-btn-primary" href="/contact" style="display:block;text-align:center">Let's talk</a></p>
+      <p><a class="nb-btn-primary" href="/contact/?subject=operations-platform" style="display:block;text-align:center">Let's talk</a></p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
