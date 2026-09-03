@@ -32,9 +32,9 @@ The public services are **Build · Tune · Manage · Empower** (4 cards in servi
 - Manage = hosting, security, monitoring
 - Empower = client content control + training
 
-The `/pricing` page has 3 build tiers (Starter $3,500 / Business $5,000 / Reach "Let's Talk") plus a separate "Already have a site?" section with Tune / Tune Plus.
+The `/pricing` page is two doors. Door one: Starter $3,500 / Business $5,000 plus the "Already have a site?" Tune / Tune Plus row. Door two (added 2026-09-02): Four Gaps Audit $1,500-$2,500 / Territory Platform $35,000 + $3,200/mo (Flagship) / Operations Platform ("Scoped per operator" until a shape doc exists; then "from $90,000"). The `/territory` page (pattern `newblood/territory`) is the flagship offer page; the homepage has a `newblood/two-doors` section directly below the hero (the `statement` pattern is no longer in `front-page.html` but stays on disk). Territory is Build + Manage + the content program packaged for established operators, not a fifth service. Plan: `docs/newblood-territory-repositioning-2026-09.md`. The header nav is inline in `parts/header.html` (the wp_navigation posts 6737/6738/6739 are not referenced by the header); add nav items there.
 
-The Signal AI Visibility Audit is a separate by-appointment service line that lives quietly on the About page only — see `docs/superpowers/specs/2026-04-26-signal-sales-surface-design.md`. Its product (the audit tool itself) is in a separate repo at `/Users/jeremyoms/newblood-signal/`.
+The Signal AI Visibility Audit is a separate by-appointment service line that lives quietly on the About page only — see `docs/superpowers/specs/2026-04-26-signal-sales-surface-design.md`. Its product (the audit tool itself) is in a separate repo at `/Users/jeremyoms/newblood-signal/`. Its About-page intro will point to the Four Gaps Audit page once that page exists (phase two).
 
 ## Voice direction
 
