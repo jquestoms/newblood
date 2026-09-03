@@ -465,7 +465,7 @@
     <p class="has-text-body-color" style="margin-top:var(--wp--preset--spacing--40)">What moves it up: voice, the owned-mode record, dispatch triage that writes into your system, the full portal, and each additional location. The monthly runs above Territory's and is scoped with the build, because it carries the agents' usage, the connections, and the reporting.</p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.7"}}} -->
-    <p class="has-text-body-color">No first dollar is spent twice. The audit fee credits in full toward the Territory build, and the Territory build credits in full toward Operations, within twelve months. Nothing here is a quote: the first Operations engagement is scoped after Territory is live and the audit has read your systems.</p>
+    <p class="has-text-body-color">Nothing here is a quote: the first Operations engagement is scoped after Territory is live and the audit has read your systems.</p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
     <p style="margin-top:var(--wp--preset--spacing--40)"><a class="nb-btn-primary" href="/contact/?subject=operations-platform" style="display:block;text-align:center">Ask about the Operations Platform</a></p>

@@ -86,7 +86,7 @@ Six to nine months after Territory goes live, for a single-location operator. No
 
 **The monthly.** Above Territory's $3,200, scoped with the build, because it carries the agents' usage, the connections, and the reporting. Telephone and text usage beyond a generous included pool is passed through at cost.
 
-**The ladder holds.** The audit fee credits in full toward the Territory build, and the Territory build credits in full toward Operations, within twelve months. No first dollar is spent twice.
+**The ladder, and where it stops in public.** The audit fee credits in full toward the Territory build, within twelve months, and that is printed. A Territory-to-Operations credit is **not** offered on the site or in the doc's public copy (Jeremy, 2026-09-03): it is held back as a closing concession, offered only in the room if an operator is worried about paying twice. Do not print it or put it in a proposal unprompted.
 
 Nothing above is a quote. The first Operations engagement is scoped after Territory is live and the audit has read the operator's systems.
 
@@ -110,7 +110,7 @@ Pricing page, door two, third card:
 > - A customer portal: quotes, orders, history
 > - Connected to the systems you run, or built as your own
 
-The "Scoped per operator" line becomes "from $90,000". The credit line under door two is unchanged.
+The "Scoped per operator" line becomes "from $90,000". The credit line under door two names only the audit-to-Territory credit.
 
 ## Open questions, held here rather than decided
 

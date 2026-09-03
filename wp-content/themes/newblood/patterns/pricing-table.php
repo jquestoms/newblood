@@ -264,7 +264,7 @@
   <!-- wp:group {"className":"nb-reveal nb-credit-line","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}},"layout":{"type":"constrained","contentSize":"760px"}} -->
   <div class="wp-block-group nb-reveal nb-credit-line" style="text-align:center">
     <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.9375rem"}}} -->
-    <p class="has-text-muted-color">No first dollar is spent twice. The audit fee credits in full toward the Territory build, and the Territory build credits in full toward Operations, within twelve months.</p>
+    <p class="has-text-muted-color">No first dollar is spent twice. The Four Gaps Audit fee credits in full toward the Territory build, within twelve months.</p>
     <!-- /wp:paragraph -->
   </div>
   <!-- /wp:group -->
