@@ -15,7 +15,7 @@
   <h2>Start your project</h2>
   <!-- /wp:heading -->
   <!-- wp:paragraph {"textColor":"text-secondary","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} -->
-  <p class="has-text-secondary-color">Tell us about your business and what you need. We'll get back to you within 24 hours.</p>
+  <p class="has-text-secondary-color">Tell us about your business and what you need. We'll reply within a business day and tell you what the right first step is. Or call <a href="tel:+14106852314">410-685-2314</a>.</p>
   <!-- /wp:paragraph -->
   <!-- wp:shortcode -->
   [nb_contact_form]
