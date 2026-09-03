@@ -1355,3 +1355,27 @@ html {
 }
 .nb-proof-tile a { color: #4ade80; text-decoration: none; }
 .nb-proof-tile a:hover { text-decoration: underline; }
+
+/* Services page diagrams (replace the stock illustrations) */
+.nb-service-diagram {
+  box-sizing: border-box;
+  max-width: none;
+  margin: var(--wp--preset--spacing--40) 0 var(--wp--preset--spacing--50);
+  padding: var(--wp--preset--spacing--40);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.nb-diagram .node.dim { stroke: rgba(148, 163, 184, 0.45); fill: rgba(255, 255, 255, 0.02); }
+.nb-diagram .d.bar.dim { stroke: rgba(148, 163, 184, 0.55); }
+.nb-diagram-arrange { margin-bottom: var(--wp--preset--spacing--50); }
+@media (min-width: 601px) {
+  /* Tune's wide bar carries long labels; scale like the timeline only on desktop */
+  .nb-diagram-tune .t { font-size: 22px; }
+}
+@media (max-width: 600px) {
+  .nb-diagram-tune .t { font-size: 22px; }
+  .nb-diagram-tune .s { font-size: 17px; }
+  .nb-diagram-tune .dot { r: 7; }
+  .nb-diagram-tune .track, .nb-diagram-tune .d.bar { stroke-width: 6; }
+}
