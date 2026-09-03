@@ -19,6 +19,15 @@
   <div class="wp-block-columns nb-stagger">
     <!-- wp:column {"className":"nb-glass nb-reveal nb-door"} -->
     <div class="wp-block-column nb-glass nb-reveal nb-door" style="padding:2.5rem">
+      <div class="nb-service-mark">
+        <svg viewBox="0 0 80 80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <path class="stroke draw" d="M14 66 L52 28 l10 10 L24 76z"/>
+          <line class="stroke draw draw--2" x1="46" y1="34" x2="56" y2="44"/>
+          <path class="stroke draw draw--3" d="M56 14 l10 10 -8 8 -10-10z"/>
+          <circle class="dot" cx="18" cy="72" r="2.2"/>
+          <line class="baseline" x1="8" y1="78" x2="72" y2="78"/>
+        </svg>
+      </div>
       <!-- wp:heading {"level":2,"className":"nb-door-title"} -->
       <h2 class="nb-door-title">A site that represents you<span style="color:#4ade80">.</span></h2>
       <!-- /wp:heading -->
@@ -32,6 +41,18 @@
     <!-- /wp:column -->
     <!-- wp:column {"className":"nb-glass nb-reveal nb-door nb-door--territory","style":{"border":{"color":"rgba(74,222,128,0.3)","width":"1px"}}} -->
     <div class="wp-block-column nb-glass nb-reveal nb-door nb-door--territory" style="padding:2.5rem;border-color:rgba(74,222,128,0.3)">
+      <div class="nb-service-mark">
+        <svg viewBox="0 0 80 80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <rect class="stroke draw" x="10" y="12" width="22" height="16" rx="3"/>
+          <rect class="stroke draw draw--2" x="48" y="12" width="22" height="16" rx="3"/>
+          <rect class="stroke draw draw--2" x="48" y="48" width="22" height="16" rx="3"/>
+          <rect class="stroke draw draw--3" x="10" y="48" width="22" height="16" rx="3"/>
+          <path class="stroke draw draw--2" d="M32 20 H48 M59 28 V48 M48 56 H32"/>
+          <path class="stroke draw draw--3" d="M21 48 V34"/>
+          <path class="dot" d="M21 30 l-5 8 h10z"/>
+          <circle class="dot" cx="59" cy="56" r="2.2"/>
+        </svg>
+      </div>
       <!-- wp:heading {"level":2,"className":"nb-door-title"} -->
       <h2 class="nb-door-title">A platform that wins your territory<span style="color:#4ade80">.</span></h2>
       <!-- /wp:heading -->

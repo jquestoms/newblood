@@ -12,7 +12,7 @@
   <h2>Let's build something great<span style="color:#4ade80">.</span></h2>
   <!-- /wp:heading -->
   <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1rem"}}} -->
-  <p class="has-text-secondary-color">Tell us about your business and what you need. We'll get back to you within 24 hours with a plan and timeline.</p>
+  <p class="has-text-secondary-color">Tell us about your business and what you need. We'll reply within a business day and tell you what the right first step is.</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
   <p><a class="nb-btn-primary" href="/contact" style="padding:0.75rem 2rem;font-size:1rem">Start Your Project</a></p>

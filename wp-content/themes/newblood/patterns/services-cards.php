@@ -38,7 +38,7 @@
       <h3>Build</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">We design and develop your site from the ground up — pairing 25+ years of craft with modern AI workflows to build a considered, performant website made for your business.</p>
+      <p class="has-text-muted-color">We design and develop your site from the ground up, pairing 25+ years of craft with modern AI workflows to build a considered, performant website made for your business.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
@@ -57,7 +57,7 @@
       <h3>Tune</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">Bring your existing site up to speed. A fixed-price tune-up that gets your performance and SEO into the band Google rewards — without rebuilding anything.</p>
+      <p class="has-text-muted-color">Bring your existing site up to speed. A fixed-price tune-up that gets your performance and SEO into the band Google rewards, without rebuilding anything.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
@@ -77,7 +77,7 @@
       <h3>Manage</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">Hosting, security patches, daily backups, uptime monitoring — we keep everything running so you never have to think about it.</p>
+      <p class="has-text-muted-color">Hosting, security patches, daily backups, uptime monitoring. We keep everything running so you never have to think about it.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
@@ -97,7 +97,7 @@
       <h3>Empower</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">Your site, your content. Update pages, posts, and images through an intuitive visual editor — no developer required. We're a call away when you need us.</p>
+      <p class="has-text-muted-color">Your site, your content. Update pages, posts, and images through your own admin backend, no developer required. We're a call away when you need us.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
