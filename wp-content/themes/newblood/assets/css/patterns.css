@@ -1140,7 +1140,6 @@ html {
 /* ===== Homepage Two Doors (below the hero) ===== */
 .nb-two-doors .wp-block-columns.nb-stagger {
   gap: 2.5rem;
-  align-items: stretch;
 }
 
 .nb-two-doors .nb-door {

@@ -285,7 +285,7 @@
     <h3>The build, once</h3>
     <!-- /wp:heading -->
     <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
-    <p><span style="color:#4ade80">$35,000</span></p>
+    <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"><span style="color:#4ade80">$35,000</span></p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.9375rem"}}} -->
     <p class="has-text-muted-color">The new site and the full platform behind it, built in the first ninety days.</p>
@@ -294,7 +294,7 @@
     <h3 style="margin-top:var(--wp--preset--spacing--50)">The program</h3>
     <!-- /wp:heading -->
     <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
-    <p><span style="color:#4ade80">$3,200</span><span class="nb-price-note"> a month</span></p>
+    <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"><span style="color:#4ade80">$3,200</span><span class="nb-price-note"> a month</span></p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.9375rem"}}} -->
     <p class="has-text-muted-color">In two lines: the platform at $1,950 and the content program at $1,250. The content line is the separable one.</p>

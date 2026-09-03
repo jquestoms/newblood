@@ -26,7 +26,7 @@
       <p class="has-text-muted-color">Custom design and clean code for businesses that want a website made for them, not chosen from a template. Build, Tune, Manage, Empower, with pricing you can read before you call.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"className":"nb-door-links"} -->
-      <p class="nb-door-links"><a class="nb-btn-secondary" href="/pricing/">See pricing</a><a class="nb-door-textlink" href="/work/">See our work</a></p>
+      <p class="nb-door-links"><a class="nb-btn-secondary" href="/pricing/">See pricing</a> <a class="nb-door-textlink" href="/work/">See our work</a></p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->

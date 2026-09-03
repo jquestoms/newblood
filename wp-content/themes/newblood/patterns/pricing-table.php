@@ -16,7 +16,7 @@
   </div>
   <!-- /wp:group -->
 
-  <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+  <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained","contentSize":"760px"}} -->
   <div class="wp-block-group nb-reveal" style="text-align:center">
     <!-- wp:paragraph {"className":"nb-label"} -->
     <p class="nb-label">Door one</p>
@@ -41,7 +41,7 @@
       <p class="has-text-muted-color">Perfect for small businesses getting started online.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">$3,500</span></p>
+      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span style="color:#4ade80">$3,500</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
@@ -64,7 +64,7 @@
         <h3>Business</h3>
         <!-- /wp:heading -->
         <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.625rem","textTransform":"uppercase","letterSpacing":"1px","fontWeight":"700"},"color":{"background":"rgba(34,197,94,0.15)","text":"#4ade80"},"spacing":{"padding":{"top":"0.25rem","bottom":"0.25rem","left":"0.5rem","right":"0.5rem"}},"border":{"radius":"4px"}}} -->
-        <p>Popular</p>
+        <p class="has-text-color has-background" style="font-size:0.625rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;color:#4ade80;background-color:rgba(34,197,94,0.15);padding:0.25rem 0.5rem;border-radius:4px;margin:0;align-self:center">Popular</p>
         <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
@@ -72,7 +72,7 @@
       <p class="has-text-muted-color">For businesses that need more functionality and a custom look.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">$5,000</span></p>
+      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span style="color:#4ade80">$5,000</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
@@ -113,7 +113,7 @@
       <p class="has-text-muted-color">A fixed-price 5-7 hour engagement that brings your existing WordPress site up to speed.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">$2,000</span></p>
+      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span style="color:#4ade80">$2,000</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
@@ -137,7 +137,7 @@
       <p class="has-text-muted-color">Adds critical-CSS extraction for clients targeting Mobile 90+. Stretch engagement.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">$4,500</span></p>
+      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span style="color:#4ade80">$4,500</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
@@ -184,7 +184,7 @@
       <p class="has-text-muted-color">For an established operator who wants to see the gaps before committing to anything.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">$1,500</span><span class="nb-price-note"> to $2,500</span></p>
+      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span style="color:#4ade80">$1,500</span><span class="nb-price-note"> to $2,500</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
@@ -208,7 +208,7 @@
         <h3>Territory Platform</h3>
         <!-- /wp:heading -->
         <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.625rem","textTransform":"uppercase","letterSpacing":"1px","fontWeight":"700"},"color":{"background":"rgba(34,197,94,0.15)","text":"#4ade80"},"spacing":{"padding":{"top":"0.25rem","bottom":"0.25rem","left":"0.5rem","right":"0.5rem"}},"border":{"radius":"4px"}}} -->
-        <p>Flagship</p>
+        <p class="has-text-color has-background" style="font-size:0.625rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;color:#4ade80;background-color:rgba(34,197,94,0.15);padding:0.25rem 0.5rem;border-radius:4px;margin:0;align-self:center">Flagship</p>
         <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
@@ -216,7 +216,7 @@
       <p class="has-text-muted-color">A website, a content program, and a measurement system, with everything in your name.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">$35,000</span><span class="nb-price-note"> build, then $3,200 / mo</span></p>
+      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span style="color:#4ade80">$35,000</span><span class="nb-price-note"> build, then $3,200 / mo</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
@@ -242,7 +242,7 @@
       <p class="has-text-muted-color">For multi-location operators who want the business, not just the front door, on one system.</p>
       <!-- /wp:paragraph -->
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-      <p><span style="color:#4ade80">Scoped per operator</span></p>
+      <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"><span style="color:#4ade80">Scoped per operator</span></p>
       <!-- /wp:paragraph -->
       <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
       <ul class="has-text-body-color">
