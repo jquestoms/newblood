@@ -21,7 +21,7 @@
   <!-- /wp:details -->
   <!-- wp:details -->
   <details><summary>Can I update the website myself?</summary><!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"}}} -->
-  <p class="has-text-body-color">Absolutely. Every site we build uses WordPress's modern block editor, which lets you edit pages visually — no coding required. We provide training to get you comfortable.</p>
+  <p class="has-text-body-color">Yes. We build on a modern code base, and you get admin access to the backend that runs it: sign in, update pages, posts, hours, and images, and publish without touching code. We set it up around how you work and train you on it. For anything structural, we are a call away.</p>
   <!-- /wp:paragraph --></details>
   <!-- /wp:details -->
   <!-- wp:details -->
