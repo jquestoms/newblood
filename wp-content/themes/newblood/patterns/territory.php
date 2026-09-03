@@ -297,12 +297,9 @@
     <p style="font-size:2.5rem;font-weight:800;margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"><span style="color:#4ade80">$3,200</span><span class="nb-price-note"> a month</span></p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.9375rem"}}} -->
-    <p class="has-text-muted-color">In two lines: the platform at $1,950 and the content program at $1,250. The content line is the separable one.</p>
+    <p class="has-text-muted-color">The platform kept running, and the content program that builds on it, month after month.</p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.7"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-    <p class="has-text-body-color">Paid search management is available as an added line if your advertising moves to us, priced when you decide. Our recommendation is always a gradual taper, with nothing cut for the first six months.</p>
-    <!-- /wp:paragraph -->
-    <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.7"}}} -->
     <p class="has-text-body-color">Every engagement starts with the Four Gaps Audit: we read your ad platform, your inquiry database, and your search territory, and show you the four gaps on your own numbers. Its fee credits in full toward the build.</p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
