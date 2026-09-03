@@ -254,7 +254,7 @@
       </ul>
       <!-- /wp:list -->
       <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-      <p><a class="nb-btn-primary" href="/contact/?subject=operations-platform" style="display:block;text-align:center">Let's talk</a></p>
+      <p><a class="nb-btn-primary" href="/operations/" style="display:block;text-align:center">See the platform</a></p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->

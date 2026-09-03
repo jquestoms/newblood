@@ -1197,13 +1197,15 @@ html {
   .nb-territory-gaps .wp-block-columns.nb-stagger,
   .nb-territory-commitments .wp-block-columns.nb-stagger,
   .nb-audit-deliverables .wp-block-columns.nb-stagger,
-  .nb-audit-steps .wp-block-columns.nb-stagger {
+  .nb-audit-steps .wp-block-columns.nb-stagger,
+  .nb-operations-cards .wp-block-columns.nb-stagger {
     flex-wrap: wrap !important;
   }
   .nb-territory-gaps .wp-block-columns.nb-stagger > .wp-block-column,
   .nb-territory-commitments .wp-block-columns.nb-stagger > .wp-block-column,
   .nb-audit-deliverables .wp-block-columns.nb-stagger > .wp-block-column,
-  .nb-audit-steps .wp-block-columns.nb-stagger > .wp-block-column {
+  .nb-audit-steps .wp-block-columns.nb-stagger > .wp-block-column,
+  .nb-operations-cards .wp-block-columns.nb-stagger > .wp-block-column {
     flex-basis: calc(50% - 0.75rem) !important;
     flex-grow: 0 !important;
   }
