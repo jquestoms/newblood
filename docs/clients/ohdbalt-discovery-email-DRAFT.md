@@ -5,13 +5,19 @@
 
 Hi Chase,
 
-Thank you — "show us the maximum scope you'd recommend" is exactly the conversation I was hoping for, and I want to get it right rather than fast.
+This is exactly the right line of thinking — and the right time to be having it.
 
-To build something genuinely tailored to Overhead Door (not a template), I've put together a short discovery step — about 10 minutes. It captures where you want to take the business and how much each capability matters to *you*, so the plan I bring back reflects your priorities, not my guesses:
+Before I put a plan and a number in front of you, I'd rather understand where you actually want to take Overhead Door than guess at it. So I've put together a short questionnaire — about 10 minutes — that captures your priorities and how you're weighing the short term against the long term.
 
-**Start your discovery → https://newblood.com/discovery/overhead-door**
+One ask: if Paul and whoever owns your sales/operations side fill it out too, even better. It's designed to combine everyone's answers into a single picture — including where you all line up and where you don't — which tells me a lot about where to focus.
 
-Once you've gone through it, I'll prepare the comprehensive scope and pricing, and we can walk through it together with Paul whenever it suits you.
+Here's the link: https://newblood.com/discovery/overhead-door
 
-Best,
+Once I have your answers, I'll know where the highest-return opportunities are and can build a plan and pricing tailored to them — not a template. Then we'll walk through it together, whenever suits you.
+
+Thanks Chase,
 Jeremy
+
+---
+
+_Revised 2026-06-22 (Jeremy approved). Notes: adds the live link + clear next step; makes the multi-stakeholder ask intentional (drives the combined report's consensus/divergence view); keeps the deliberative, tailored-not-templated framing that answers Chase's "most comprehensive solution" request. If keeping it to Chase only, drop the middle ("One ask…") paragraph._

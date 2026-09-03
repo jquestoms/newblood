@@ -217,10 +217,10 @@
     <!-- wp:column {"className":"nb-glass nb-reveal"} -->
     <div class="wp-block-column nb-glass nb-reveal" style="padding:1.5rem">
       <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem"}}} -->
-      <h3>Your systems are read only</h3>
+      <h3>Your systems stay yours</h3>
       <!-- /wp:heading -->
       <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem"}}} -->
-      <p class="has-text-muted-color">We pull numbers out of the tools you already run. We never write in. Stopping the read leaves them untouched.</p>
+      <p class="has-text-muted-color">We connect to the tools you already run, on your terms. Some operators want numbers read out, some want new leads written straight in. Either way, switching the connection off leaves your tools as they were.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
