@@ -22,13 +22,13 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.25rem"},"spacing":{"margin":{"top":"var:preset|spacing|60"}}}} -->
-  <h3>Fortune 500 craft. Right-sized budgets.</h3>
+  <h3>Fortune 500 craft. At the scale of your business.</h3>
   <!-- /wp:heading -->
   <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
   <p class="has-text-body-color">We've always believed small businesses deserve the same caliber of web presence as the biggest companies in the world. That means real discovery to understand your customers, considered user experience, custom design, and development practices that prioritize performance and creative ambition — not a template with your logo dropped in.</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
-  <p class="has-text-body-color">What's changed is the economics. By pairing decades of hands-on craft with modern AI workflows, we can take on creative, technically ambitious projects that used to require a much bigger team — and a much bigger budget. The strategic thinking and creative polish that high-end agencies charge a premium for is now within reach, and every dollar you invest goes further.</p>
+  <p class="has-text-body-color">What’s changed is the reach. By pairing decades of hands-on craft with modern AI workflows, we take on creative, technically ambitious projects that used to require a much bigger team. The strategic thinking and creative polish that high-end agencies reserve for their largest accounts now goes into every project we take on, whatever its size.</p>
   <!-- /wp:paragraph -->
 
   <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.25rem"},"spacing":{"margin":{"top":"var:preset|spacing|60"}}}} -->
@@ -38,7 +38,7 @@
   <p class="has-text-body-color">A good website behaves a little like a good piece of music — proportion, phrasing, and restraint on the details that don't matter so the ones that do can land. It's not an accident, and it's not a template. It's arranged.</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
-  <p class="has-text-body-color">That kind of care used to be a premium. Twenty-five years of engineering, paired with modern AI workflows, is what makes it reachable again — even on a small-business budget. Interactive 3D, generative visuals, physics-driven animation, custom integrations: tools we reach for whenever a project calls for them, not features you're upsold.</p>
+  <p class="has-text-body-color">That kind of care used to be reserved for the largest accounts. Twenty-five years of engineering, paired with modern AI workflows, is what lets us bring it to every project, from a five-page site to a platform that runs a company’s front door. Interactive 3D, generative visuals, physics-driven animation, custom integrations: tools we reach for whenever a project calls for them, not features you’re upsold.</p>
   <!-- /wp:paragraph -->
   <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
   <p class="has-text-body-color">We build with the ear of a studio trained across more than one form. Not because a website is a song, but because the things that make one work are the same things that make the other work: pacing, proportion, and nothing unearned.</p>

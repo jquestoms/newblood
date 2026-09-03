@@ -15,7 +15,7 @@
   <h1 class="nb-hero-headline">Websites with rhythm, range, and restraint<span style="color:#4ade80">.</span></h1>
   <!-- /wp:heading -->
   <!-- wp:paragraph {"className":"nb-hero-body","style":{"typography":{"fontSize":"1.125rem"}},"textColor":"text-secondary"} -->
-  <p class="nb-hero-body has-text-secondary-color">We pair decades of hands-on craft with modern AI workflows to build sites that are measured in every sense — more considered, more technically ambitious, and more memorable than the budget should allow.</p>
+  <p class="nb-hero-body has-text-secondary-color">We pair decades of hands-on craft with modern AI workflows to build sites that are measured in every sense: more considered, more technically ambitious, and more memorable than the brief called for.</p>
   <!-- /wp:paragraph -->
   <!-- wp:group {"className":"nb-hero-cta","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
   <div class="wp-block-group nb-hero-cta">

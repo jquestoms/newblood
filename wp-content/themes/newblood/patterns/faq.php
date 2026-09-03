@@ -16,7 +16,7 @@
   <!-- /wp:heading -->
   <!-- wp:details -->
   <details><summary>How long does it take to build a website?</summary><!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"}}} -->
-  <p class="has-text-body-color">Most projects are delivered in 1-2 weeks. Our AI-augmented development process dramatically accelerates the build timeline without sacrificing quality.</p>
+  <p class="has-text-body-color">It depends on the shape of the project. A focused site takes a few weeks from discovery to launch. A platform build runs about ninety days: foundations first, then build and prove, then launch and watch. You get a timeline at the end of discovery, and we don’t rush the parts that decide whether the site works.</p>
   <!-- /wp:paragraph --></details>
   <!-- /wp:details -->
   <!-- wp:details -->
