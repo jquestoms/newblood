@@ -330,17 +330,17 @@
       </div>
       <div class="nb-service-tldr-item nb-service-tldr-item--includes">
         <span class="nb-service-tldr-label">Includes</span>
-        <p class="nb-service-tldr-value nb-service-tldr-value--includes">Block editor · Hands-on training · A real point of contact</p>
+        <p class="nb-service-tldr-value nb-service-tldr-value--includes">Your own admin backend · Hands-on training · A real point of contact</p>
       </div>
     </div>
     <!-- /wp:html -->
 
     <!-- wp:image {"id":6753,"sizeSlug":"large","linkDestination":"none","className":"nb-service-illustration"} -->
-    <figure class="wp-block-image size-large nb-service-illustration"><img src="/wp-content/uploads/2026/05/nb-services-empower.jpg" alt="Visual drag-and-drop block editor for a website" class="wp-image-6753"/></figure>
+    <figure class="wp-block-image size-large nb-service-illustration"><img src="/wp-content/uploads/2026/05/nb-services-empower.jpg" alt="Admin backend for editing a website's own content" class="wp-image-6753"/></figure>
     <!-- /wp:image -->
 
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
-    <p class="has-text-body-color">We believe you shouldn't need to call a developer every time you want to update your hours, add a blog post, or change an image. That's why every site we build uses WordPress's modern block editor — a visual, drag-and-drop interface that puts you in control of your own content.</p>
+    <p class="has-text-body-color">We believe you shouldn't need to call a developer every time you want to update your hours, add a blog post, or change an image. That's why every site we build comes with an admin backend of its own: sign in, edit your content, publish. On a modern code build it is a custom admin made for your content; on WordPress it is the block editor.</p>
     <!-- /wp:paragraph -->
     <!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"}}} -->
     <p class="has-text-body-color">We don't just hand you the keys and walk away. Every project includes training so you feel confident making changes on your own. And when you do need help — whether it's a design tweak, a new feature, or just a question — we're one call or email away.</p>
@@ -353,7 +353,7 @@
         <div class="wp-block-column">
           <!-- wp:list {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem","lineHeight":"2"}}} -->
           <ul class="has-text-body-color">
-            <li>Visual block editor — no coding needed</li>
+            <li>Your own admin backend — no coding needed</li>
             <li>Edit pages, posts, and media yourself</li>
             <li>Hands-on training included with every build</li>
           </ul>

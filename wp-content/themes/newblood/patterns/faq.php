@@ -35,8 +35,8 @@
   <!-- /wp:paragraph --></details>
   <!-- /wp:details -->
   <!-- wp:details -->
-  <details><summary>Do you build on platforms other than WordPress?</summary><!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"}}} -->
-  <p class="has-text-body-color">We specialize in WordPress because it's the most powerful, flexible CMS available — and it puts you in control of your own content. For most businesses, it's the best choice.</p>
+  <details><summary>What do you build on?</summary><!-- wp:paragraph {"textColor":"text-body","style":{"typography":{"fontSize":"0.875rem"}}} -->
+  <p class="has-text-body-color">It depends on the site. New builds go on a modern code platform, most often Next.js, with an admin backend you sign into to manage your own content. It loads faster, holds up under traffic, and is not tied to a plugin ecosystem. If you already have a WordPress site, Tune and Manage keep it fast and safe, and we still build on WordPress where it is the right fit.</p>
   <!-- /wp:paragraph --></details>
   <!-- /wp:details -->
 </div>
