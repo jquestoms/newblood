@@ -32,7 +32,7 @@
   <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
   <div class="wp-block-group nb-reveal" style="text-align:center">
     <!-- wp:paragraph {"className":"nb-label"} -->
-    <p class="nb-label">What we usually find</p>
+    <p class="nb-label">Do any of the following connect?</p>
     <!-- /wp:paragraph -->
     <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)"}}} -->
     <h2>Four gaps, read from your own numbers<span style="color:#4ade80">.</span></h2>
