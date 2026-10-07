@@ -4,7 +4,7 @@ Order is Jeremy's to change. Re-sweep 6 months after the last sweep.
 
 | # | Category | Status | Last swept | Batch file | Added to CRM | Re-sweep due |
 |---|---|---|---|---|---|---|
-| 1 | HVAC | in progress | 2026-10-07 | 2026-10-07-hvac.md | 1 (Control Temp) | 2027-04-07 |
+| 1 | HVAC | in progress | 2026-10-07 | 2026-10-07-hvac.md | 2 (Control Temp, Cal-Air) | 2027-04-07 |
 | 2 | Garage doors | next | | | | |
 | 3 | Roofing | queued | | | | |
 | 4 | Plumbing | queued | | | | |
