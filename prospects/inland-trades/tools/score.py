@@ -119,3 +119,64 @@ def rank(batch):
     ranked.sort(key=lambda r: (-r["score"]["total"], -(r["business"].get("reviews") or 0),
                                _norm(r["business"]["name"])))
     return {"ranked": ranked, "skipped": skipped, "warnings": warnings}
+
+
+def render(batch, result, top=8):
+    ranked, skipped, warnings = result["ranked"], result["skipped"], result["warnings"]
+    seen = len(batch.get("businesses") or [])
+    out = ["# %s — batch %s" % (batch.get("category", "").strip(), batch.get("date", "")),
+           "",
+           "Search: `%s` · seen %d · skipped %d · scored %d"
+           % (batch.get("search", ""), seen, len(skipped), len(ranked)),
+           ""]
+    for i, r in enumerate(ranked[:top], 1):
+        b, s = r["business"], r["score"]
+        out.append("### %d. %s (%s) — %d/100" % (i, b["name"], b.get("city") or "?", s["total"]))
+        for part, label, cap in (("fit", "Fit", 35), ("opportunity", "Opportunity", 30),
+                                 ("way_in", "Way in", 25), ("reach", "Reachability", 10)):
+            out.append("- %s %d/%d: %s" % (label, s[part], cap, "; ".join(s["reasons"][part]) or "nothing found"))
+        for f in r["flags"]:
+            out.append("- ⚠️ %s" % f)
+        out.append("")
+    out += ["## Skipped", ""]
+    out += ["- %s: %s" % (x["business"]["name"], x["reason"]) for x in skipped] or ["_none_"]
+    out += ["", "## Everyone else", ""]
+    rest = ranked[top:]
+    if rest:
+        out += ["| Business | City | Score | Why not higher |", "|---|---|---|---|"]
+        for r in rest:
+            s = r["score"]
+            weakest = min(("fit", 35), ("opportunity", 30), ("way_in", 25), ("reach", 10),
+                          key=lambda p: s[p[0]] / float(p[1]))[0]
+            out.append("| %s | %s | %d | weakest: %s |" % (r["business"]["name"],
+                                                         r["business"].get("city") or "?",
+                                                         s["total"], weakest.replace("_", " ")))
+    else:
+        out.append("_none_")
+    if warnings:
+        out += ["", "## Warnings", ""] + ["- %s" % w for w in warnings]
+    return "\n".join(out) + "\n"
+
+
+def main(argv=None):
+    import argparse
+    import json
+    import sys
+
+    ap = argparse.ArgumentParser(description="Score an inland trades prospect batch")
+    ap.add_argument("batch")
+    ap.add_argument("--top", type=int, default=8)
+    args = ap.parse_args(argv)
+    with open(args.batch) as f:
+        batch = json.load(f)
+    try:
+        result = rank(batch)
+    except BatchError as e:
+        sys.stderr.write("ERROR: %s\n" % e)
+        return 2
+    sys.stdout.write(render(batch, result, args.top))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -123,5 +123,57 @@ class RankTests(unittest.TestCase):
             rank(self.batch([biz(), biz(name="X", phone="1", email="a@b.c", email_kind="person")]))
 
 
+import json
+import os
+import subprocess
+import sys
+import tempfile
+
+from score import render
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+
+class RenderTests(unittest.TestCase):
+    def sample(self):
+        return {"category": "HVAC", "search": "hvac near Loma Linda, CA", "date": "2026-10-07",
+                "conflict_deals": [{"trade": "HVAC", "deal": "Daniels HVAC Territory"}],
+                "businesses": [biz(name="A Co", phone="1"), biz(name="B Co", phone="2", owner_run=False),
+                               biz(name="C Co", phone="3", skip="in_crm")]}
+
+    def test_render_counts_blocks_and_table(self):
+        b = self.sample()
+        md = render(b, rank(b), top=1)
+        self.assertIn("seen 3 · skipped 1 · scored 2", md)
+        self.assertIn("### 1. A Co (Redlands)", md)
+        self.assertIn("conflicts with Daniels HVAC Territory", md)
+        self.assertIn("| B Co |", md)          # second business lands in the table
+        self.assertIn("C Co: in_crm", md)
+
+    def test_fewer_than_top_is_fine(self):
+        b = self.sample()
+        md = render(b, rank(b), top=8)
+        self.assertIn("### 2. B Co", md)
+        self.assertIn("_none_", md)            # empty "everyone else"
+
+    def test_cli_error_exit_code(self):
+        bad = self.sample()
+        bad["businesses"][0].update(email="x@y.z", email_kind="person")
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(bad, f)
+        p = subprocess.run([sys.executable, os.path.join(HERE, "score.py"), f.name],
+                           capture_output=True, text=True)
+        self.assertEqual(p.returncode, 2)
+        self.assertIn("never guess", p.stderr)
+
+    def test_cli_ok(self):
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(self.sample(), f)
+        p = subprocess.run([sys.executable, os.path.join(HERE, "score.py"), f.name, "--top", "1"],
+                           capture_output=True, text=True)
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("### 1. A Co", p.stdout)
+
+
 if __name__ == "__main__":
     unittest.main()
