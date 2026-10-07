@@ -1,0 +1,3 @@
+# Prospect names stay local (spec: never to external services)
+batches/
+20*.md
