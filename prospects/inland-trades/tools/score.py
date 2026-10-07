@@ -14,7 +14,13 @@ def _norm(s):
 
 
 def _digits(s):
-    return re.sub(r"\D", "", s or "")
+    d = re.sub(r"\D", "", s or "")
+    return d[1:] if len(d) == 11 and d.startswith("1") else d
+
+
+def _has_website(url):
+    # Facebook-only presence counts as no website (spec: "no website or Facebook only")
+    return bool(url) and not re.search(r"(?i)^(https?://)?([a-z]+\.)?(facebook|fb)\.com\b", url.strip())
 
 
 def validate_business(b):
@@ -62,7 +68,7 @@ def score_business(b):
 
     opp = 0
     gaps = b.get("web_gaps") or []
-    if not b.get("website"):
+    if not _has_website(b.get("website")):
         opp = 5
         reasons["opportunity"].append("no website +5")
     else:
@@ -100,6 +106,8 @@ def rank(batch):
         validate_business(b)
 
     category = _norm(batch.get("category"))
+    if batch.get("conflict_deals") and not category:
+        raise BatchError("batch has conflict_deals but no category, so conflict flags cannot be applied")
     conflicts = [c["deal"] for c in batch.get("conflict_deals") or [] if _norm(c.get("trade")) == category]
 
     ranked, skipped, warnings, seen = [], [], [], {}

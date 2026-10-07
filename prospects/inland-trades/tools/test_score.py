@@ -118,6 +118,21 @@ class RankTests(unittest.TestCase):
                             conflicts=[{"trade": "HVAC", "deal": "Daniels HVAC Territory"}]))
         self.assertEqual(r["ranked"][0]["flags"], [])
 
+    def test_facebook_only_counts_as_no_website(self):
+        for url in ("https://facebook.com/acme", "https://www.facebook.com/acme", "https://m.facebook.com/a",
+                    "https://fb.com/acme"):
+            self.assertEqual(score_business(biz(website=url))["opportunity"], 5, url)
+
+    def test_duplicate_phone_with_country_code(self):
+        r = rank(self.batch([biz(phone="(909) 555-0100"), biz(name="Acme 2", phone="+1 909-555-0100")]))
+        self.assertEqual(len(r["ranked"]), 1)
+        self.assertTrue(r["warnings"])
+
+    def test_conflicts_without_category_rejected(self):
+        b = self.batch([biz()], category="", conflicts=[{"trade": "HVAC", "deal": "Daniels HVAC Territory"}])
+        with self.assertRaises(BatchError):
+            rank(b)
+
     def test_invalid_business_fails_whole_batch(self):
         with self.assertRaises(BatchError):
             rank(self.batch([biz(), biz(name="X", phone="1", email="a@b.c", email_kind="person")]))
