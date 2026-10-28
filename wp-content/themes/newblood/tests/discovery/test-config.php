@@ -57,4 +57,20 @@ assert( array_column( $cal['services'], 'key' ) === array( 'website','seo_aeo','
 assert( array_column( $cal['goal_vectors'], 'key' ) === array( 'volume_fit','deepen_expand','cal_crw','topline_lean','handson_managed' ), 'calindman vector keys' );
 assert( array_column( $cal['systems_questions'], 'key' ) === array( 'pipeline_tracking','lead_handling','lead_sources','photo_library','gbp_access','coverage' ), 'calindman systems keys' );
 
+// --- mdproperties instance (Maryland Properties, instance #3) ---
+$mdp = nb_discovery_get_instance( 'mdproperties' );
+assert( is_array( $mdp ), 'mdproperties instance exists' );
+assert( $mdp['client_name'] === 'Maryland Properties', 'mdproperties client name' );
+assert( $mdp['recipient'] === 'joms@newblood.com', 'mdproperties recipient' );
+assert( count( $mdp['services'] ) === 12, 'mdproperties 12 service rows' );
+assert( array_column( $mdp['services'], 'key' ) === array( 'situations','local_expert','seo_aeo','show_work','offer_math','easy_contact','lead_inbox','self_updates','followup','hosting_security','trust_brand','referrals' ), 'mdproperties service keys in clustered order' );
+assert( array_column( $mdp['goal_vectors'], 'key' ) === array( 'volume_fit','deepen_expand','handson_managed','polished_plain','real_stock','numbers_story','formal_neighborly','modern_traditional','quiet_bold' ), 'mdproperties vector keys (3 business + 6 design)' );
+assert( array_column( $mdp['systems_questions'], 'key' ) === array( 'lead_sources','lead_handling','leads_per_month','callback_speed','crm','gbp_access','counties','phones','feedback_mode' ), 'mdproperties systems keys' );
+assert( ! empty( $mdp['skip'] ) && ! empty( $mdp['thankyou'] ), 'mdproperties overrides the skip line and thank-you copy' );
+// House rule: no em dashes anywhere in client-facing copy for this instance.
+$flat = json_encode( $mdp, JSON_UNESCAPED_UNICODE );
+assert( strpos( $flat, "\u{2014}" ) === false, 'mdproperties config contains no em dashes' );
+// The two existing instances must not pick up the new optional keys.
+assert( ! isset( nb_discovery_get_instance( 'overhead-door' )['skip'] ) && ! isset( nb_discovery_get_instance( 'calindman' )['thankyou'] ), 'optional copy keys are mdproperties-only' );
+
 echo "test-config: PASS\n";
