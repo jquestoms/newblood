@@ -62,7 +62,11 @@ function nb_discovery_render_page( $instance ) {
     <p class="nb-d-eyebrow">New Blood × <?php echo esc_html( $instance['client_name'] ); ?></p>
     <h1><?php echo esc_html( $instance['welcome']['title'] ); ?><span class="nb-d-dot">.</span></h1>
     <p class="nb-d-lede"><?php echo esc_html( $instance['welcome']['intro'] ); ?></p>
+    <?php if ( ! empty( $instance['skip'] ) ) : ?>
+    <p class="nb-d-skip"><?php echo esc_html( $instance['skip'] ); ?></p>
+    <?php else : ?>
     <p class="nb-d-skip">Answer what you can — skip anything that doesn&#8217;t apply, and we&#8217;ll fill the gaps when we talk.</p>
+    <?php endif; ?>
   </header>
 
   <form id="nb-discovery-form" data-instance="<?php echo esc_attr( $instance['slug'] ); ?>" novalidate>
@@ -204,7 +208,11 @@ function nb_discovery_render_page( $instance ) {
 
   <div id="nb-d-thankyou" class="nb-d-section" hidden>
     <h2>Thank you<span class="nb-d-dot">.</span></h2>
+    <?php if ( ! empty( $instance['thankyou'] ) ) : ?>
+    <p class="nb-d-lede"><?php echo esc_html( $instance['thankyou'] ); ?></p>
+    <?php else : ?>
     <p class="nb-d-lede">We&#8217;ll review your answers and prepare a plan built around your priorities. Jeremy will be in touch to walk through it with you.</p>
+    <?php endif; ?>
   </div>
 
 </main>
