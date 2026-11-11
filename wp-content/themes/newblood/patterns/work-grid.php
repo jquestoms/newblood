@@ -1,0 +1,234 @@
+<?php
+/**
+ * Title: Work Grid
+ * Slug: newblood/work-grid
+ * Categories: newblood
+ * Description: The Work page grid: every case study, featured project first. The home page uses newblood/portfolio-grid (three cards and a link here); add a new case study card to both.
+ */
+?>
+<!-- wp:group {"align":"full","className":"nb-gradient-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group alignfull nb-gradient-section">
+  <!-- wp:group {"className":"nb-reveal","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
+  <div class="wp-block-group nb-reveal" style="text-align:center">
+    <!-- wp:paragraph {"className":"nb-label"} -->
+    <p class="nb-label">Showcase</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)"}}} -->
+    <h2>Built and tuned with New Blood</h2>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"1rem"}}} -->
+    <p class="has-text-secondary-color">Real projects. Modern design. Blazing performance.</p>
+    <!-- /wp:paragraph -->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:group {"className":"nb-showcase-grid nb-reveal-scale","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
+  <div class="wp-block-group nb-showcase-grid">
+
+    <!-- wp:group {"className":"nb-showcase-card nb-showcase-featured","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card nb-showcase-featured">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a1a2e"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6912,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/11/ohdbalt-platform-home-1024x512.png" alt="The new ohdbalt.com home page for Overhead Door Company of Baltimore" class="wp-image-6912"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"}} -->
+        <div class="wp-block-group">
+          <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.25rem"}}} -->
+          <h3>Overhead Door Company of Baltimore</h3>
+          <!-- /wp:heading -->
+          <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+          <p class="nb-showcase-badge">Commercial Doors · Territory Platform</p>
+          <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
+        <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"0.875rem","lineHeight":"1.6"}}} -->
+        <p class="has-text-secondary-color">The Overhead Door distributor for the Baltimore region since 1947. A new ohdbalt.com built for commercial buyers and homeowners alike, with every form, chat and call counted in one record the company owns.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+        <p><a class="nb-btn-secondary" href="/case-study-overhead-door-platform/" style="font-size:0.8125rem;padding:0.4rem 1rem">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a1a2e"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6749,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/05/mikesmasterclasses-case-study.png" alt="Mike's Master Classes online jazz guitar education platform" class="wp-image-6749"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>Mike's Master Classes</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">E-Commerce · Education</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">A premium jazz guitar education platform featuring master-level courses from world-class musicians, with integrated e-commerce.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-mikes-master-classes/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#10141c"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6763,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/06/rtzav-custom-web-project.png" alt="RTZ Audio Visual website screenshot" class="wp-image-6763"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>RTZ Audio Visual</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">AV Integration · Custom CMS</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">A 35-year Maryland AV integrator's site, rebuilt on Next.js with a custom Postgres-backed CMS for 231 brands and a federal client roster.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-rtz-audio-visual/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a2332"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6745,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/03/screenshot-ca-lindman-1.png" alt="C.A. Lindman website screenshot" class="wp-image-6745"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>C.A. Lindman</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Content control · Manage Engagement</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">A 36-year-old restoration firm that publishes its own content while we look after everything underneath.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-ca-lindman/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1f1814"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6747,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/04/57cards-website-scan.png" alt="57Cards website homepage" class="wp-image-6747"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>57Cards</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Performance · Tune Engagement</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">A working WooCommerce store, made fast without a rebuild.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-57cards/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a1f12"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6760,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/05/newfoodcenter-website.png" alt="newfoodcenter.com homepage, a multilingual grocery deals web app for the Inland Empire" class="wp-image-6760"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>newfoodcenter.com</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Grocery Deals · AI Web App</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">A multilingual grocery-deals platform for the Inland Empire: search the week's best prices in your own language.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-newfoodcenter/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#0e2a47"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6874,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/08/swog-case-study.png" alt="Speaking Well of God homepage - twenty years of theology lectures in eleven languages" class="wp-image-6874"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>Speaking Well of God</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">Nonprofit &middot; Multilingual Audio</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">Twenty years of Loma Linda theology lectures, in eleven languages, on an audio player the ministry owns - and three times faster without a CDN.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-speaking-well-of-god/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study &rarr;</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->
+
+  </div>
+  <!-- /wp:group -->
+
+    

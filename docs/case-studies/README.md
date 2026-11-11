@@ -55,7 +55,7 @@ Reason: `newblood.test` is the local Herd hostname. Production is `newblood.com`
      --post_content="$(cat docs/case-studies/<slug>.html)" \
      --porcelain
    ```
-5. Add a card to `wp-content/themes/newblood/patterns/portfolio-grid.php` linking to `/case-study-<slug>/`.
+5. Add a card to `wp-content/themes/newblood/patterns/work-grid.php` (the Work page: every case study) linking to `/case-study-<slug>/`, and update the count in the "See all N projects" link in `patterns/portfolio-grid.php` (the home page: three curated cards). Put the card in `portfolio-grid.php` too only if it should be one of the home three. After deploying a NEW pattern file, run `wp eval 'wp_get_theme()->delete_pattern_cache();'` on the server or it will not register.
 
 ### Screenshots wider than 2560 px: point `src` at a generated size
 
