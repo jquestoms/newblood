@@ -29,8 +29,8 @@
     <div class="wp-block-group nb-showcase-card nb-showcase-featured">
       <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a1a2e"}}} -->
       <div class="wp-block-group nb-showcase-image">
-        <!-- wp:image {"id":6749,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
-        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/05/mikesmasterclasses-case-study.png" alt="Mike's Master Classes online jazz guitar education platform" class="wp-image-6749"/></figure>
+        <!-- wp:image {"id":6912,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/11/ohdbalt-platform-home-1024x512.png" alt="The new ohdbalt.com home page for Overhead Door Company of Baltimore" class="wp-image-6912"/></figure>
         <!-- /wp:image -->
       </div>
       <!-- /wp:group -->
@@ -39,18 +39,46 @@
         <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"}} -->
         <div class="wp-block-group">
           <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.25rem"}}} -->
-          <h3>Mike's Master Classes</h3>
+          <h3>Overhead Door Company of Baltimore</h3>
           <!-- /wp:heading -->
           <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
-          <p class="nb-showcase-badge">E-Commerce · Education</p>
+          <p class="nb-showcase-badge">Commercial Doors · Territory Platform</p>
           <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
         <!-- wp:paragraph {"textColor":"text-secondary","style":{"typography":{"fontSize":"0.875rem","lineHeight":"1.6"}}} -->
-        <p class="has-text-secondary-color">A premium jazz guitar education platform featuring master-level courses from world-class musicians. Built with a modern dark theme, integrated e-commerce, and optimized for a seamless learning experience.</p>
+        <p class="has-text-secondary-color">The Overhead Door distributor for the Baltimore region since 1947. A new ohdbalt.com built for commercial buyers and homeowners alike, with every form, chat and call counted in one record the company owns.</p>
         <!-- /wp:paragraph -->
         <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-        <p><a class="nb-btn-secondary" href="/case-study-mikes-master-classes/" style="font-size:0.8125rem;padding:0.4rem 1rem">View Case Study →</a></p>
+        <p><a class="nb-btn-secondary" href="/case-study-overhead-door-platform/" style="font-size:0.8125rem;padding:0.4rem 1rem">View Case Study →</a></p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nb-showcase-card">
+      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a1a2e"}}} -->
+      <div class="wp-block-group nb-showcase-image">
+        <!-- wp:image {"id":6749,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
+        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/05/mikesmasterclasses-case-study.png" alt="Mike's Master Classes online jazz guitar education platform" class="wp-image-6749"/></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+      <div class="wp-block-group nb-showcase-info">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
+        <h3>Mike's Master Classes</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
+        <p class="nb-showcase-badge">E-Commerce · Education</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
+        <p class="has-text-muted-color">A premium jazz guitar education platform featuring master-level courses from world-class musicians, with integrated e-commerce.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+        <p><a href="/case-study-mikes-master-classes/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
         <!-- /wp:paragraph -->
       </div>
       <!-- /wp:group -->
@@ -85,40 +113,12 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"className":"nb-showcase-card","layout":{"type":"constrained"}} -->
-    <div class="wp-block-group nb-showcase-card">
-      <!-- wp:group {"className":"nb-showcase-image","style":{"color":{"background":"#1a2332"}}} -->
-      <div class="wp-block-group nb-showcase-image">
-        <!-- wp:image {"id":6745,"sizeSlug":"large","linkDestination":"none","className":"nb-showcase-img"} -->
-        <figure class="wp-block-image size-large nb-showcase-img"><img src="/wp-content/uploads/2026/03/screenshot-ca-lindman-1.png" alt="C.A. Lindman website screenshot" class="wp-image-6745"/></figure>
-        <!-- /wp:image -->
-      </div>
-      <!-- /wp:group -->
-      <!-- wp:group {"className":"nb-showcase-info","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
-      <div class="wp-block-group nb-showcase-info">
-        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1rem"}}} -->
-        <h3>C.A. Lindman</h3>
-        <!-- /wp:heading -->
-        <!-- wp:paragraph {"className":"nb-showcase-badge"} -->
-        <p class="nb-showcase-badge">Content control · Manage Engagement</p>
-        <!-- /wp:paragraph -->
-        <!-- wp:paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.8125rem"}}} -->
-        <p class="has-text-muted-color">A 36-year-old restoration firm that publishes its own content while we look after everything underneath.</p>
-        <!-- /wp:paragraph -->
-        <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
-        <p><a href="/case-study-ca-lindman/" style="color:#4ade80;font-size:0.75rem;text-decoration:none">View Case Study →</a></p>
-        <!-- /wp:paragraph -->
-      </div>
-      <!-- /wp:group -->
-    </div>
-    <!-- /wp:group -->
-
 </div>
 <!-- /wp:group -->
   <!-- wp:group {"className":"nb-reveal nb-showcase-more","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
   <div class="wp-block-group nb-reveal nb-showcase-more" style="text-align:center;margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--30)">
     <!-- wp:paragraph -->
-    <p><a class="nb-btn-secondary" href="/work/">See all six projects</a></p>
+    <p><a class="nb-btn-secondary" href="/work/">See all seven projects</a></p>
     <!-- /wp:paragraph -->
   </div>
   <!-- /wp:group -->

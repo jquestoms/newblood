@@ -57,6 +57,10 @@ Reason: `newblood.test` is the local Herd hostname. Production is `newblood.com`
    ```
 5. Add a card to `wp-content/themes/newblood/patterns/portfolio-grid.php` linking to `/case-study-<slug>/`.
 
+### Screenshots wider than 2560 px: point `src` at a generated size
+
+WordPress scales any upload wider than 2560 px and attaches the `-scaled.png` copy. An `<img>` whose `src` is the original filename then matches nothing in the attachment's metadata, so WordPress adds no `srcset` and every visitor downloads the full original (2.7 MB on the Overhead Door platform study, 2026-11-11). Write the `src` as the size the block names, e.g. `sizeSlug: "large"` with `src=".../<name>-1024x512.png"`. The same applies to the card in `patterns/portfolio-grid.php`. Check after publishing: the live `<img>` should carry a `srcset`.
+
 ### Don't prefix the body with a header pattern reference
 
 Body files in this directory must start directly with the case study's outer `wp:group` block. Do NOT prepend `<!-- wp:pattern {"slug":"newblood/page-header"} /-->` or `<!-- wp:pattern {"slug":"newblood/case-study"} /-->` — `templates/page.html` already auto-renders the page-header for every page. Adding a pattern reference at the top of `post_content` produces a duplicate H1 stacked on top of the auto-rendered header.
